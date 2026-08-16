@@ -31,7 +31,7 @@ Use as the entry point for *any* new initiative. It acts as the "Wayfinder" for 
 
 4. **Skill Mapping:** Auto-select the critical path subset of the 72 skills using the updated `SKILL.md` frontmatter metadata (owner/domain).
 
-5. **Dependency Generation:** Structure the skills into a dependency chain (e.g., Discovery → HLD → Security → Prod Gate).
+5. **Dependency & Governance Generation:** Structure the skills into a dependency chain (e.g., Discovery → HLD → Security → Prod Gate). Mandatory injection of `/security-architecture-review` and `/production-readiness` for all regulated-bank architectural paths.
 
 6. **Taskify:** Generate the `TaskCreate` list for this session (`/tasks`).
 
