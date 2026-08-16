@@ -10,14 +10,15 @@ If you find a bug in a skill or the documentation, please create an issue on Git
 - Steps to reproduce the issue.
 - Expected behavior vs. actual behavior.
 
-### Suggesting Enhancements
-We welcome new skills and improvements to existing ones!
-- Open an issue discussing your proposed changes before putting in significant work.
-- Provide a clear rationale for why this skill benefits the enterprise banking domain.
+### Suggesting Enhancements & Providing Feedback
+We welcome new skills and improvements to existing ones! Your feedback from using these skills in real-world scenarios is invaluable for enhancing them.
+- Open an issue discussing your proposed changes or feedback before putting in significant work.
+- Provide a clear rationale for why this change benefits the enterprise banking domain or how a skill can be improved based on your architectural usage.
+- If a skill feels generic or misses a specific constraint like PDPL or CBUAE regulations, let us know so we can harden it!
 
 ### Pull Requests
 1. Fork the repo and create your branch from main.
-2. Format your new skills using the SKILL_TEMPLATE.md.
+2. Format your new or updated skills using the SKILL_TEMPLATE.md.
 3. Ensure your PR description clearly describes the problem and solution.
 4. If you've added or changed an agentic skill, please test it locally with Claude Code, Cursor, or your preferred agent.
 5. Submit the PR for review!
