@@ -1,0 +1,19 @@
+{
+  "name": "orchestrator",
+  "description": "Meta-skill to map requirements to architectural skills",
+  "mappings": [
+    {
+      "trigger": "modernization",
+      "skills": ["legacy-assessment", "impact-analysis", "technical-debt", "refactoring-plan", "modernization-roadmap"]
+    },
+    {
+      "trigger": "new-banking-service",
+      "skills": ["requirements-analysis", "hld-generator", "api-design", "threat-model", "production-readiness"]
+    },
+    {
+      "trigger": "governance-review",
+      "skills": ["architecture-board", "solution-review", "compliance"]
+    }
+  ],
+  "default_chain": ["requirements-analysis", "hld-generator", "production-readiness"]
+}

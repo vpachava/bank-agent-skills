@@ -1,0 +1,57 @@
+---
+name: production-readiness
+owner: Architectural Governance
+version: 0.1.0
+last-reviewed: 2026-08-15
+description: "Use when assessing if a service is ready for the production-banking environment — produces a production-readiness artifact (readiness-scorecard, operational-resiliency-audit, supportability-verdict)."
+required-inputs:
+  - Monitoring, logging, alerting readiness-definition
+  - Incident-management operational-maturity (PIRs/Toil)
+  - Disaster-recovery & business-continuity plan
+  - Compliance/Regulatory signoff
+expected-deliverables:
+  - Production-readiness scorecard
+  - Operational-resiliency audit-report
+  - Supportability-verdict (Go/No-go)
+---
+
+# /production-readiness
+
+## When to apply
+Use for the final gate before a new/updated banking service goes "Live." Production readiness is the difference between a successful release and a catastrophic production-incident. In banking, this is explicitly tied to *operational-resiliency* regulations.
+
+## Inputs
+- **Operational-Maturity.** Is it "engineered" or "hacked"?
+- **Audit-Evidence.** Logs/Metrics/Alerts setup?
+
+## Process
+1. **Operational-Resiliency-Audit.** Run through the checklists: observability, alerting, automated-recovery, failover-testing.
+2. **Supportability-Review.** Does the production-support-team have the run-books, access, and training?
+3. **Regulatory-Gate-Verification.** Are all compliance-gates formally signed off?
+4. **Issue-Scorecard.** Provide quantitative-score and Qualitative-Verdict.
+
+## Bulletproofing against Rationalization
+- **"Monitoring-Is-Enough"** — Thinking that having Grafana-dashboards constitutes "Production-Readiness" while failing to configure *actionable-alerts* that actually trigger support-action.
+- **Support-Team-Ambush** — Deploying a service to production without giving the production-support-team the necessary Training/Run-books, leading to inevitable service-failure.
+- **Disaster-Recovery-Paper-Tiger** — Having a "DR-Plan" in a Word-doc that has never been *formally-exercised* in a non-production-failover-test.
+- **Ignoring-The-Business-Resiliency-Mandate** — Not defining *how* the service fails gracefully (e.g. "Do we fail-closed or fail-open on an-event-bus-failure?"), leading to massive business-disruption.
+
+## Bulletproofing against Rationalization
+To prevent unstable rollouts breaching regulatory thresholds, you MUST:
+
+1. **Mandatory Rollback Execution Proof:** The deployment plan MUST contain a rollback script/process, and its methodology MUST be verified as functional, not merely theoretical.
+2. **Mandatory Defect Zero-Tolerance for Security:** You CANNOT bypass critical or high InfoSec vulnerabilities via local project acceptance. Executive clearance is required.
+3. **Mandatory Data Sanity Pre-Checks:** A Production launch affecting Ledger operations MUST explicitly mandate pre-flight balancing/reconciliation hooks.
+4. **Explicit Outage Window Mapping:** Cutover plans MUST explicitly align against the published Operational Downtime windows of affected core banking rails.
+
+**Violating these rules invalidates the Production Readiness gate.**
+
+## Outputs
+- **Production-readiness scorecard** — Objective measure-of-readiness.
+- **Operational-resiliency audit-report** — The findings of the audit.
+- **Supportability-verdict** — Final Go/No-go-decision.
+
+## Related skills
+- [sre-review](../../devops/sre-review/SKILL.md)
+- [release-readiness](../../devops/release-readiness/SKILL.md)
+- [dr-review](../dr-review/SKILL.md)

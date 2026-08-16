@@ -1,0 +1,35 @@
+{
+  "schema_version": 1,
+  "diagram_type": "sequence",
+  "meta": {
+    "title": "Pre-approved Credit Limit Increase",
+    "subtitle": "Trigger, eligibility check, limit update, and customer notification",
+    "quality_profile": "showcase",
+    "animation": "trace"
+  },
+  "participants": [
+    { "id": "customer", "type": "external", "label": "Customer" },
+    { "id": "analytics", "type": "backend", "label": "Analytics", "sublabel": "Model" },
+    { "id": "api", "type": "backend", "label": "Banking API", "sublabel": "Orchestrator" },
+    { "id": "core", "type": "database", "label": "Core Banking", "sublabel": "Account Records" },
+    { "id": "notification", "type": "messagebus", "label": "Notify", "sublabel": "Alerts" }
+  ],
+  "messages": [
+    { "from": "analytics", "to": "api", "y": 160, "label": "Trigger: Increase Eligibility", "variant": "emphasis" },
+    { "from": "api", "to": "core", "y": 210, "label": "Check Account Status", "variant": "default" },
+    { "from": "core", "to": "api", "y": 260, "label": "Status/Balance", "variant": "return" },
+    { "from": "api", "to": "core", "y": 310, "label": "Update Credit Limit", "variant": "emphasis" },
+    { "from": "core", "to": "api", "y": 360, "label": "Confirmation", "variant": "return" },
+    { "from": "api", "to": "notification", "y": 410, "label": "Send Notification", "variant": "emphasis" },
+    { "from": "notification", "to": "customer", "y": 460, "label": "Limit Increase Alert", "variant": "default" }
+  ],
+  "activations": [
+    { "participant": "api", "from": 140, "to": 410, "type": "backend" },
+    { "participant": "core", "from": 190, "to": 360, "type": "database" }
+  ],
+  "cards": [
+    { "dot": "cyan", "title": "Eligibility Trigger", "items": ["Analytics model identifies candidate", "Trigger sent to Banking API"] },
+    { "dot": "orange", "title": "Account Check", "items": ["Verification of account status", "Core Banking records updated"] },
+    { "dot": "emerald", "title": "Customer Notification", "items": ["Asynchronous alert sent to customer"] }
+  ]
+}

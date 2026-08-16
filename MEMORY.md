@@ -1,0 +1,1 @@
+- [TDD Documentation](tdd-documentation/SKILL.md) — disciplined, TDD-based skill construction

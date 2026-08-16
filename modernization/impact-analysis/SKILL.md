@@ -1,0 +1,76 @@
+---
+name: impact-analysis
+owner: Solution Architecture
+version: 0.1.0
+last-reviewed: 2026-08-09
+description: "Use when a planned change may ripple across the bank's interdependent estate — produces an impact-analysis report (blast radius, affected integrations/data/regulatory paths, severity) so the change is sized before it ships."
+required-inputs:
+  - The planned change & its scope
+  - Estate inventory & integration map (inbound/outbound per system)
+  - Data-flow & ownership map
+  - Regulatory-bearing paths touched
+expected-deliverables:
+  - Impact-analysis report (direct & ripple impact, per-system severity)
+  - Affected-integrations & affected-data list
+  - Regulatory-path exposure call
+  - Reverse-impact (who breaks downstream)
+---
+
+# /impact-analysis
+
+## When to apply
+Use *before* a release, migration wave, refactor cut, or deprecation — to size the blast radius of a change across the interdependent estate. In a bank where the core sits under dozens of callers and owns the canonical data, every change has a shadow; this skill finds it. Feeds `/refactoring-plan`, `/migration-wave-planning`, and `/cutover-plan`, and gates `/design-review`.
+
+## Inputs
+- **The planned change** — scope, in-scope systems, what's added/changed/removed/withdrawn.
+- **Estate inventory & integration map** — inbound/outbound calls per system, sync vs async, the partner/rail integrations.
+- **Data-flow & ownership map** — which system owns which data; where changes propagate via data, not just via calls.
+- **Regulatory-bearing paths touched** — KYC verdict, payments, AML, residency-affected stores, audit postings.
+
+## Process
+1. **Bound the change precisely — direct impact first.** Which systems/components are directly modified. This is the trivial layer; the danger is everywhere *downstream* of it.
+
+2. **Trace ripple impact — who calls the changed thing, who consumes its data/events.** Walk the inbound/integration graph: every system that calls the changed interface/consumes the changed data/events. Each ripple may break (consume behavior changes), tolerate (interface stable but semantics shift), or be null.
+   > A bank's danger is the *event* ripple — an event schema change consumers never asked for breaks them silently, exactly-once consumers may double-process on replay. Trace data & events, not just calls.
+
+3. **Score impact per affected system — Major/Minor/None.** Major = breaks the consumer or a regulatory path. Minor = tolerated surface change. None = no real effect. Per-system, with the specific failure mode if Major (breaks build; runtime behavior; data-integrity; regulatory).
+
+4. **Surface regulatory-path exposure explicitly.** Does the change touch KYC verdict, AML screening, payment amount handling, residency of PII/payment data, audit postings, dual-control ceremonies? A change on a regulated path is severity-amplified — "minor" interface churn on the AML screening path is *not* minor.
+
+5. **Identify reverse-impact — what breaks downstream of the changed systems' own consumers.** The blast radius isn't one hop; a payment-service change can ripple to reconciliation, to the customer statement, to the dispute path. Walk two hops minimum.
+
+6. **Capture the compensating actions.** Per Major impact: co-deploy, version-staged, consumer-side change ticket, dual-run, or explicit "break & migrate." The impact analysis is only useful if it tells you what to *do* about each hit.
+
+7. **Tie to the change-advisory & release gates.** The impact analysis is the input to the change board, the `/cutover-plan`, the `/migration-wave-planning`; Major impacts shape the wave and the rollback.
+
+## Banking pitfalls
+- **Direct-impact-only** — "we changed interface X, Y calls it, we'll tell Y" traces one hop and misses the data/event ripple two hops down; an event-schema change is the canonical silent break.
+- **Async ripple ignored** — changes to event payloads/consumers treated as harmless; exactly-once consumers replay/double-process, ordered consumers' ordering breaks, idempotency assumptions shatter. The async path is where most bank-change incidents live.
+- **Regulatory-path severity not amplified** — interface churn scored "Minor" because it's small, but on the AML/payment/KYC path it's Major by content; severity is consequence-weighted not size-weighted.
+- **Impact without compensating action** — an impact analysis that lists "X breaks" without "co-deploy / version-stage / dual-run" is a finding that won't get closed; require the action.
+- **No reverse-impact** — stopping at the direct consumer and missing the statement/dispute/reconciliation path two hops down; trace two hops minimum.
+- **Change without the consumer contracts** — analyzing impact without the actual consumer contracts in hand means guessing; pull the contracts or the integration map before scoring.
+
+## Bulletproofing against Rationalization
+To prevent this skill from being applied as superficial box-ticking, you MUST:
+
+1. **Mandatory Explicit Verification:** You CANNOT assume compliance. You MUST explicitly verify that the output of impact-analysis meets all regulatory, security, and enterprise standards.
+2. **Mandatory Accountability:** Every output artifact MUST clearly trace back to an identified business requirement, NFR, or technical constraint without ambiguity.
+3. **No Unjustified Exemptions:** Any deviation from the standard architecture patterns MUST be explicitly documented as a critical risk and formally accepted.
+
+**Violating these rules invalidates the impact-analysis process.**
+
+## Outputs
+- **Impact-analysis report** — direct + ripple impact per system with severity and specific failure mode.
+- **Affected-integrations & affected-data list** — and the async/event consumers that ripple.
+- **Regulatory-path exposure call** — explicit yes/no per regulated path, with severity-amplification where yes.
+- **Compensating actions** — per Major impact, the co-deploy / version-stage / dual-run / break-and-migrate call, feeding the wave & cutover plan.
+
+## Related skills
+- [migration-wave-planning](../../migration/migration-wave-planning/SKILL.md) — uses the impact analysis to group/separate waves.
+- [cutover-plan](../../migration/cutover-plan/SKILL.md) — uses the impact analysis for the go/no-go risk & compensating actions.
+- [rollback-plan](../../migration/rollback-plan/SKILL.md) — uses the impact analysis for the reversal triggers.
+- [refactoring-plan](../refactoring-plan/SKILL.md) — uses the impact analysis to size the safe steps.
+- [design-review](../../governance/design-review/SKILL.md) — the gate that consumes the impact analysis.
+- [event-driven](../../integration/event-driven/SKILL.md) — for async ripples.
+- [legacy-assessment](../legacy-assessment/SKILL.md) — the verdict whose impact this sizes.

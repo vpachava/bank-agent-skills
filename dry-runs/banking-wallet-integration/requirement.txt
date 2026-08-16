@@ -1,0 +1,1 @@
+Requirement: Create a new digital wallet integration for retail banking in UAE, enabling instant account-to-account top-ups via Aani payment rail.
