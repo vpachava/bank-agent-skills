@@ -1,6 +1,9 @@
----
+﻿---
 name: idempotent-api
 description: Use when designing API endpoints requiring idempotency to prevent duplicated transactions.
+togaf-phases: [Phase C]
+togaf-artifacts: [HLD]
+bian-service-domains: [Integration.API]
 ---
 
 # /idempotent-api
@@ -60,4 +63,5 @@ def process_request(idempotency_key, payload):
 1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+
 

@@ -1,6 +1,9 @@
----
+﻿---
 name: security-nfr-baseline-check
 description: Use as the mandatory first step before any architecture or design assessment to verify essential security and regulatory NFRs.
+togaf-phases: [Phase D]
+togaf-artifacts: [Security Baseline]
+bian-service-domains: [Security.Auth]
 ---
 
 # /security-nfr-baseline-check
@@ -52,4 +55,5 @@ Mandatory, first-step gate before any design assessment (discovery, greenfield, 
 1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+
 

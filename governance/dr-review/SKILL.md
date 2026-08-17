@@ -1,9 +1,9 @@
----
+﻿---
 name: dr-review
 owner: Architectural Governance
 version: 0.1.0
 last-reviewed: 2026-08-15
-description: "Use when performing a disaster-recovery (DR) architectural-review — produces a DR-assessment (RPO/RTO, failover-mechanisms, validation-strategy)."
+description: "Use when performing a disaster-recovery (DR) architectural-review â€” produces a DR-assessment (RPO/RTO, failover-mechanisms, validation-strategy)."
 required-inputs:
   - Disaster-recovery strategy (active/passive, active/active)
   - RPO/RTO targets for banking-services
@@ -13,6 +13,9 @@ expected-deliverables:
   - Disaster-recovery assessment-report
   - RPO/RTO compliance-verification
   - Failover-validation roadmap
+togaf-phases: [Phase G]
+togaf-artifacts: [Compliance Checklist]
+bian-service-domains: [Security.Auth]
 ---
 
 # /dr-review
@@ -32,10 +35,10 @@ Use to validate the robustness of the bank's ability to survive catastrophic fai
 5. **Issue-Report.** Clearly catalog gaps in resilience.
 
 ## Bulletproofing against Rationalization
-- **RPO/RTO "Dreaming"** — Committing to an RTO of "seconds" for a mainframe-core that only supports daily-batch-sync (mathematically-impossible-goal).
-- **Silent-DR-Replication-Failures** — Relying on cross-region-replication that hasn't successfully-synced in days, without *alerting* the support-team of the drift.
-- **Failover-Authority-Confusion** — Having a service-failover that *can* be triggered by anyone, leading to accidental-triggers (operator-error), or conversely, requiring an executive-signoff-chain that makes the failover too-slow.
-- **Data-Residency-DR-Trap** — Failing over to a DR-site in a *different country/jurisdiction*, unknowingly violating PDPL or CBUAE-data-residency-compliance-policy.
+- **RPO/RTO "Dreaming"** â€” Committing to an RTO of "seconds" for a mainframe-core that only supports daily-batch-sync (mathematically-impossible-goal).
+- **Silent-DR-Replication-Failures** â€” Relying on cross-region-replication that hasn't successfully-synced in days, without *alerting* the support-team of the drift.
+- **Failover-Authority-Confusion** â€” Having a service-failover that *can* be triggered by anyone, leading to accidental-triggers (operator-error), or conversely, requiring an executive-signoff-chain that makes the failover too-slow.
+- **Data-Residency-DR-Trap** â€” Failing over to a DR-site in a *different country/jurisdiction*, unknowingly violating PDPL or CBUAE-data-residency-compliance-policy.
 
 ## Bulletproofing against Rationalization
 To prevent theoretical Disaster Recovery architectures that collapse in production, you MUST:
@@ -48,9 +51,9 @@ To prevent theoretical Disaster Recovery architectures that collapse in producti
 **Violating these rules invalidates the DR Review.**
 
 ## Outputs
-- **Disaster-recovery assessment-report** — Findings on survival-posture.
-- **RPO/RTO compliance-verification** — Can we actually meet the targets?
-- **Failover-validation roadmap** — Plan-of-action for testing.
+- **Disaster-recovery assessment-report** â€” Findings on survival-posture.
+- **RPO/RTO compliance-verification** â€” Can we actually meet the targets?
+- **Failover-validation roadmap** â€” Plan-of-action for testing.
 
 ## Related skills
 - [production-readiness](../production-readiness/SKILL.md)
@@ -81,4 +84,5 @@ To prevent theoretical Disaster Recovery architectures that collapse in producti
 1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+
 

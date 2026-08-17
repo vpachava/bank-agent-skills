@@ -1,9 +1,9 @@
----
+﻿---
 name: design-document
 owner: Architectural Governance
 version: 0.1.0
 last-reviewed: 2026-08-15
-description: "Use when drafting a technical design document (TDD/Design-Spec) for a banking solution — produces a design-spec (architecture, data-flow, integration, security)."
+description: "Use when drafting a technical design document (TDD/Design-Spec) for a banking solution â€” produces a design-spec (architecture, data-flow, integration, security)."
 required-inputs:
   - Functional & non-functional requirements
   - Technical-stack & integration patterns
@@ -13,6 +13,9 @@ expected-deliverables:
   - Technical design-document
   - Data-flow diagram (C4-model)
   - Security/Compliance assessment-view
+togaf-phases: [Phase A]
+togaf-artifacts: [Architecture Vision]
+bian-service-domains: [Customer Account.Origination]
 ---
 
 # /design-document
@@ -21,9 +24,9 @@ expected-deliverables:
 Use for the formal, peer-reviewed technical-specification of a solution. In a banking-architecture practice, this document replaces "informal-diagrams-on-whiteboards." It is the canonical source for what is being built, how it is secured, and how it complies with policy.
 
 ## Inputs
-- **Functional Requirements** — What does it do?
-- **NFRs** — How fast/reliable/secure must it be?
-- **Integration Points** — What legacy/external-API does it talk to?
+- **Functional Requirements** â€” What does it do?
+- **NFRs** â€” How fast/reliable/secure must it be?
+- **Integration Points** â€” What legacy/external-API does it talk to?
 
 ## Process
 1. **Architecture/Component-Model.** Use C4-modelling (Context, Container, Component).
@@ -33,10 +36,10 @@ Use for the formal, peer-reviewed technical-specification of a solution. In a ba
 5. **Architectural-Review.** Formal sign-off by Architecture-Board.
 
 ## Banking pitfalls
-- **Diagrams-without-Flow** — Drawing boxes (components) without documenting the data-payload or the security-attributes of the connections.
-- **Ignoring-Legacy-Interfaces** — Designing elegant APIs in the new-app without defining *how* they map to the 30-year-old mainframe databases.
-- **Security-as-an-afterthought** — Designing the data-flow and only *then* thinking about encryption and PII-masking, forcing a total architectural-redesign.
-- **NFR-omission** — Designing a high-throughput payment-component without defining the latency-NFRs, leaving the system unusable at peak-load.
+- **Diagrams-without-Flow** â€” Drawing boxes (components) without documenting the data-payload or the security-attributes of the connections.
+- **Ignoring-Legacy-Interfaces** â€” Designing elegant APIs in the new-app without defining *how* they map to the 30-year-old mainframe databases.
+- **Security-as-an-afterthought** â€” Designing the data-flow and only *then* thinking about encryption and PII-masking, forcing a total architectural-redesign.
+- **NFR-omission** â€” Designing a high-throughput payment-component without defining the latency-NFRs, leaving the system unusable at peak-load.
 
 ## Bulletproofing against Rationalization
 To prevent this skill from being applied as superficial box-ticking, you MUST:
@@ -48,9 +51,9 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 **Violating these rules invalidates the design-document process.**
 
 ## Outputs
-- **Technical design-document** — The formal TDD (Template-aligned).
-- **Data-flow diagram (C4-model)** — The visual-truth of data-movement.
-- **Security/Compliance assessment-view** — Identified security-controls.
+- **Technical design-document** â€” The formal TDD (Template-aligned).
+- **Data-flow diagram (C4-model)** â€” The visual-truth of data-movement.
+- **Security/Compliance assessment-view** â€” Identified security-controls.
 
 ## Related skills
 - [hld-generator](../../architecture/hld-generator/SKILL.md)
@@ -81,4 +84,5 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+
 

@@ -1,9 +1,9 @@
----
+﻿---
 name: sre-review
 owner: Architectural Governance
 version: 0.1.0
 last-reviewed: 2026-08-15
-description: "Use when running an SRE review for a banking service — produces an SRE review report (SLOs/SLIs, error-budgets, toil, incident-mgmt)."
+description: "Use when running an SRE review for a banking service â€” produces an SRE review report (SLOs/SLIs, error-budgets, toil, incident-mgmt)."
 required-inputs:
   - Service SLO/SLI definitions
   - Incident-management operational-history
@@ -13,6 +13,9 @@ expected-deliverables:
   - SRE service-review report
   - Error-budget compliance-assessment
   - Toil-reduction strategy-map
+togaf-phases: [Phase G]
+togaf-artifacts: [Compliance Checklist]
+bian-service-domains: [Security.Auth]
 ---
 
 # /sre-review
@@ -21,9 +24,9 @@ expected-deliverables:
 Use to professionalize the support and reliability posture of a banking service. Moves teams from "reactive firefighting" to codified reliability management (SRE) by grounding reliability in quantified SLOs and budgetary control.
 
 ## Inputs
-- **SLO definition** — Targets for availability/latency.
-- **Incident report** — Recent post-incident reviews (PIRs).
-- **Toil measurement** — How much time is spent on manual operational tasks?
+- **SLO definition** â€” Targets for availability/latency.
+- **Incident report** â€” Recent post-incident reviews (PIRs).
+- **Toil measurement** â€” How much time is spent on manual operational tasks?
 
 ## Process
 1. **SLO/SLI Audit.** Are these goals actually tethered to business-outcomes (e.g., payments-processed/sec)?
@@ -33,10 +36,10 @@ Use to professionalize the support and reliability posture of a banking service.
 5. **Issue SRE Report.** Document maturity and gaps.
 
 ## Banking pitfalls
-- **Silent SLO-descoping** — Reducing SLO-targets just to "meet" the budget, rather than improving the system-architecture.
-- **Incident-management-secrecy** — Managing incidents privately without the audit-trail/reporting required for banking regulators (e.g. CBUAE/DIFC).
-- **"Toil-as-feature-work"** — Allowing operators to spend all time on manual tasks, ignoring the need for SRE-led engineering fixes that make the system more resilient.
-- **Ignoring the "Shared-on-call-responsibility"** — Creating silos where devs "ship features" but never face the reliability-consequences that Ops-teams face.
+- **Silent SLO-descoping** â€” Reducing SLO-targets just to "meet" the budget, rather than improving the system-architecture.
+- **Incident-management-secrecy** â€” Managing incidents privately without the audit-trail/reporting required for banking regulators (e.g. CBUAE/DIFC).
+- **"Toil-as-feature-work"** â€” Allowing operators to spend all time on manual tasks, ignoring the need for SRE-led engineering fixes that make the system more resilient.
+- **Ignoring the "Shared-on-call-responsibility"** â€” Creating silos where devs "ship features" but never face the reliability-consequences that Ops-teams face.
 
 ## Bulletproofing against Rationalization
 To prevent this skill from being applied as superficial box-ticking, you MUST:
@@ -48,9 +51,9 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 **Violating these rules invalidates the sre-review process.**
 
 ## Outputs
-- **SRE service-review report** — Maturity, maturity-assessment, reliability-gaps.
-- **Error-budget compliance-assessment** — Is the budget being respected?
-- **Toil-reduction strategy-map** — Prioritized roadmap of toil-elimination work.
+- **SRE service-review report** â€” Maturity, maturity-assessment, reliability-gaps.
+- **Error-budget compliance-assessment** â€” Is the budget being respected?
+- **Toil-reduction strategy-map** â€” Prioritized roadmap of toil-elimination work.
 
 ## Related skills
 - [observability](../observability/SKILL.md)
@@ -75,7 +78,7 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 **Scenario:** Reducing operational toil in the end-of-day treasury reconciliation service.
 - **Architecture Lens Check:** Prioritization of SRE engineering work (automating recons) over manual data-patching.
 - **Sample Outcome:** "Toil-Reduction Strategy-Map: Priority #1: Automated reconciler for `UAEFTS` clearing data (estimated saving: 30 hours/week of manual toil)."
-- **Common Pitfall:** Accepting manual toil (e.g., Ops staff manually patching reconciliation files every night) as a 'standard procedure'. This scale-bottleneck is a major reliability risk; if the manual staff gets it wrong, the ledger becomes unbalanced—unacceptable for any banking institution.
+- **Common Pitfall:** Accepting manual toil (e.g., Ops staff manually patching reconciliation files every night) as a 'standard procedure'. This scale-bottleneck is a major reliability risk; if the manual staff gets it wrong, the ledger becomes unbalancedâ€”unacceptable for any banking institution.
 
 ### Banking Context & Examples
 
@@ -101,4 +104,5 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+
 

@@ -1,4 +1,4 @@
----
+﻿---
 name: ai-governance
 owner: Security & Architecture
 version: 0.1.0
@@ -12,9 +12,12 @@ expected-deliverables:
   - LLM Data Residency sign-off
   - Semantic Guardrail configuration
   - Deterministic Fallback mechanism approval
+togaf-phases: [Phase G]
+togaf-artifacts: [Compliance Checklist]
+bian-service-domains: [Security.Auth]
 ---
 
-﻿---
+ï»¿---
 name: ai-model-governance
 description: Framework for monitoring AI model performance, drift, and regulatory compliance.
 metadata:
@@ -83,4 +86,5 @@ To prevent compliance breaches and unchecked data exfiltration via LLMs, you MUS
 1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+
 

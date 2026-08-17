@@ -1,9 +1,9 @@
----
+﻿---
 name: architecture-board
 owner: Architectural Governance
 version: 0.1.0
 last-reviewed: 2026-08-15
-description: "Use when running or presenting to an Architectural Governance Board — produces an board-review artifact (agenda, decisions, risks, board-governance)."
+description: "Use when running or presenting to an Architectural Governance Board â€” produces an board-review artifact (agenda, decisions, risks, board-governance)."
 required-inputs:
   - Initiative/Project context
   - Key architectural decisions requiring approval
@@ -13,6 +13,9 @@ expected-deliverables:
   - Governance-board agenda
   - Architecture-decision approval record
   - Action-item/Risk log
+togaf-phases: [Phase C]
+togaf-artifacts: [HLD]
+bian-service-domains: [Integration.API]
 ---
 
 # /architecture-board
@@ -21,8 +24,8 @@ expected-deliverables:
 Use to professionalize and organize the formal Architectural Governance Board (AGB). Banking-governance is not a bureaucratic hurdle; it is the primary mechanism for preventing "architectural-drift," ensuring security adherence, and maintaining regulatory-compliance across the enterprise.
 
 ## Inputs
-- **Decision-Packages** — The specific items needing AGB endorsement.
-- **Compliance-Gate-Status** — Explicit confirmation that what is being proposed doesn't violate residency/CBUAE-rules.
+- **Decision-Packages** â€” The specific items needing AGB endorsement.
+- **Compliance-Gate-Status** â€” Explicit confirmation that what is being proposed doesn't violate residency/CBUAE-rules.
 
 ## Process
 1. **Agenda Setting.** Clearly state what items need decisions (not just "info-sharing").
@@ -42,9 +45,9 @@ To prevent "info-sharing" sessions that avoid scrutiny and evade accountability,
 ---
 
 ## Outputs
-- **Governance-board agenda** — Structured list of items-for-decision.
-- **Architecture-decision approval record** — The formal binding-record of the AGB.
-- **Action-item/Risk log** — Follow-up tracker.
+- **Governance-board agenda** â€” Structured list of items-for-decision.
+- **Architecture-decision approval record** â€” The formal binding-record of the AGB.
+- **Action-item/Risk log** â€” Follow-up tracker.
 
 ## Related skills
 - [solution-review](../solution-review/SKILL.md)
@@ -57,7 +60,7 @@ To prevent "info-sharing" sessions that avoid scrutiny and evade accountability,
 **Scenario:** Presenting a new third-party integration for digital credit card issuance.
 - **Architecture Lens Check:** Verification of `AECB` connectivity and `CBUAE` compliance on data processing by the third party.
 - **Sample Outcome:** "Decision: Approved contingent on `Data Processing Agreement` (DPA) reflecting UAE data-residency compliance."
-- **Common Pitfall:** Presenting the integration without showing how it isolates banking data from the provider’s broader dataset, failing the AGB's mandatory security/residency review.
+- **Common Pitfall:** Presenting the integration without showing how it isolates banking data from the providerâ€™s broader dataset, failing the AGB's mandatory security/residency review.
 
 #### (2) Customer Profile Management Example
 **Scenario:** Approving a new cross-channel customer dashboard allowing profile updates.
@@ -76,4 +79,5 @@ To prevent "info-sharing" sessions that avoid scrutiny and evade accountability,
 1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+
 

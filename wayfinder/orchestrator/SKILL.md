@@ -1,4 +1,4 @@
----
+﻿---
 name: orchestrator
 owner: Architectural Governance
 version: 0.1.1
@@ -10,6 +10,9 @@ required-inputs:
 expected-deliverables:
   - Skill-mapping report
   - Actionable dependency workflow
+togaf-phases: [Phase A]
+togaf-artifacts: [Architecture Vision]
+bian-service-domains: [Customer Account.Origination]
 ---
 
 # /orchestrator
@@ -31,7 +34,7 @@ Use as the entry point for *any* new initiative. It acts as the "Wayfinder" for 
 
 4. **Skill Mapping:** Auto-select the critical path subset of the 72 skills using the updated `SKILL.md` frontmatter metadata (owner/domain).
 
-5. **Dependency & Governance Generation:** Structure the skills into a dependency chain (e.g., Discovery → HLD → Security → Prod Gate). Mandatory injection of `/security-architecture-review` and `/production-readiness` for all regulated-bank architectural paths.
+5. **Dependency & Governance Generation:** Structure the skills into a dependency chain (e.g., Discovery â†’ HLD â†’ Security â†’ Prod Gate). Mandatory injection of `/security-architecture-review` and `/production-readiness` for all regulated-bank architectural paths.
 
 6. **Taskify:** Generate the `TaskCreate` list for this session (`/tasks`).
 
@@ -60,4 +63,5 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+
 

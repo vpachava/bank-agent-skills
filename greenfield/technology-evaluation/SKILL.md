@@ -1,9 +1,9 @@
----
+﻿---
 name: technology-evaluation
 owner: Architectural Governance
 version: 0.1.0
 last-reviewed: 2026-08-15
-description: "Use when evaluating a specific tech/component for a banking initiative — produces an evaluation report (build/buy/use, fit, risk, support) and architectural verdict."
+description: "Use when evaluating a specific tech/component for a banking initiative â€” produces an evaluation report (build/buy/use, fit, risk, support) and architectural verdict."
 required-inputs:
   - Component/tech candidate
   - Evaluation criteria & use cases
@@ -13,6 +13,9 @@ expected-deliverables:
   - Technology evaluation report
   - Banking-fit and risk assessment
   - Architectural veto/approval verdict
+togaf-phases: [Phase A]
+togaf-artifacts: [Architecture Vision]
+bian-service-domains: [Customer Account.Origination]
 ---
 
 # /technology-evaluation
@@ -21,10 +24,10 @@ expected-deliverables:
 Use when a delivery team wants to introduce a new technology, service, or component (e.g. new integration library, data-streaming engine, specific AI/ML model, new database SKU). Prevents uncontrolled tech-stack sprawl by enforcing a documented, scored, and regulatory-aware evaluation for every new introduction into the bank's production environment.
 
 ## Inputs
-- **Technology candidate** — what is it and why do we need it?
-- **Use case / Context** — exactly where in the banking journey does this fit?
-- **Evaluation criteria** — fit-for-purpose (banking capability mapping), cost, risk, supportability (does the bank have the skills?), licensing, compliance.
-- **Regulatory/Security** — PDPL/CBUAE/Freezone considerations.
+- **Technology candidate** â€” what is it and why do we need it?
+- **Use case / Context** â€” exactly where in the banking journey does this fit?
+- **Evaluation criteria** â€” fit-for-purpose (banking capability mapping), cost, risk, supportability (does the bank have the skills?), licensing, compliance.
+- **Regulatory/Security** â€” PDPL/CBUAE/Freezone considerations.
 
 ## Process
 1. **Define the assessment lens.**
@@ -42,11 +45,11 @@ Use when a delivery team wants to introduce a new technology, service, or compon
 4. **Issue verdict.** Recommendation: Approved, Approved-with-conditions, Vetoed, or Resubmit-with-modifications.
 
 ## Banking pitfalls
-- **"New & shiny" bias** — adopting a cutting-edge engine for a commodity banking use case (e.g. niche streaming tech for a simple nightly-batch report).
-- **Ignoring the integration-tax** — cost of wrapping, logging, monitoring, and IAM-federating a new component into the banking estate.
-- **Vendor-lock-in without an exit plan** — adopting a SaaS-only component without clear data-export/portability plans for regulators (like CBUAE operational resilience requirements).
-- **Security-blind evaluation** — component is functional, but lacks the bank-appropriate IAM integration, auditability, or data-protection compliance.
-- **Skill-gap failure** — introducing a tech the bank ops/dev team cannot actually operate.
+- **"New & shiny" bias** â€” adopting a cutting-edge engine for a commodity banking use case (e.g. niche streaming tech for a simple nightly-batch report).
+- **Ignoring the integration-tax** â€” cost of wrapping, logging, monitoring, and IAM-federating a new component into the banking estate.
+- **Vendor-lock-in without an exit plan** â€” adopting a SaaS-only component without clear data-export/portability plans for regulators (like CBUAE operational resilience requirements).
+- **Security-blind evaluation** â€” component is functional, but lacks the bank-appropriate IAM integration, auditability, or data-protection compliance.
+- **Skill-gap failure** â€” introducing a tech the bank ops/dev team cannot actually operate.
 
 ## Bulletproofing against Rationalization
 To prevent this skill from being applied as superficial box-ticking, you MUST:
@@ -58,17 +61,18 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 **Violating these rules invalidates the technology-evaluation process.**
 
 ## Outputs
-- **Technology evaluation report** — summary of the evaluation, candidate, decision rationale, risk-register items.
-- **Architectural verdict** — explicit Approved or Vetoed stance.
-- **Banking-fit/risk assessment** — specific banking-capability/regulatory fit.
+- **Technology evaluation report** â€” summary of the evaluation, candidate, decision rationale, risk-register items.
+- **Architectural verdict** â€” explicit Approved or Vetoed stance.
+- **Banking-fit/risk assessment** â€” specific banking-capability/regulatory fit.
 
 ## Related skills
-- [reference-architecture](../reference-architecture/SKILL.md) — where the vetted technology lands.
-- [platform-selection](../platform-selection/SKILL.md) — higher-level decision than a single component.
-- [technical-debt](../../modernization/technical-debt/SKILL.md) — how to manage the lifecycle of technologies after they are introduced.
+- [reference-architecture](../reference-architecture/SKILL.md) â€” where the vetted technology lands.
+- [platform-selection](../platform-selection/SKILL.md) â€” higher-level decision than a single component.
+- [technical-debt](../../modernization/technical-debt/SKILL.md) â€” how to manage the lifecycle of technologies after they are introduced.
 
 ### Regulatory References
 1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+
 

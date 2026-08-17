@@ -1,9 +1,9 @@
----
+﻿---
 name: landing-zone-review
 owner: Architectural Governance
 version: 0.1.0
 last-reviewed: 2026-08-15
-description: "Use when reviewing banking Landing-Zones — produces a Landing-Zone review (governance, policy, network, security) against the banking foundation."
+description: "Use when reviewing banking Landing-Zones â€” produces a Landing-Zone review (governance, policy, network, security) against the banking foundation."
 required-inputs:
   - Landing-zone design & IaC
   - Regulatory-residency constraints
@@ -13,6 +13,9 @@ expected-deliverables:
   - Landing-zone governance assessment report
   - Network-policy & isolation risk-profile
   - Banking compliance gap-analysis
+togaf-phases: [Phase D]
+togaf-artifacts: [Deployment Diagram]
+bian-service-domains: [Integration.API]
 ---
 
 # /landing-zone-review
@@ -21,8 +24,8 @@ expected-deliverables:
 Use to validate the "Foundation" of the bank's cloud presence (the Landing Zone). A flawed Landing Zone makes compliant, secure banking work impossible. This governs the cross-account/subscription structure.
 
 ## Inputs
-- **LZ Configuration** — VPC/VNet/Account-structure/Policy-foundation.
-- **Compliance** — Banking-residency laws + cross-zone transfer rules.
+- **LZ Configuration** â€” VPC/VNet/Account-structure/Policy-foundation.
+- **Compliance** â€” Banking-residency laws + cross-zone transfer rules.
 
 ## Process
 1. **Goverance-structure review.** Account-structure, subscription-nesting, tag-policies (must facilitate regulatory-cost-allocation).
@@ -32,10 +35,10 @@ Use to validate the "Foundation" of the bank's cloud presence (the Landing Zone)
 5. **Issue Review Verdict.** Formal assessment of the "Banking-Readiness" of the Foundation.
 
 ## Banking pitfalls
-- **Over-complex account-hiring** — Creating 100+ accounts without a clear organizational hierarchy/billing-model for regulatory audit.
-- **Flat-Network-Foundations** — LZ designed without clear isolation between App/DB/Interface-adapter subnets.
-- **Policy-Audit-Lag** — Policies deployed but not monitored; drift not remediated within X-days.
-- **Ignoring "Egress-Controls"** — LZ lacking centralized egress-firewalls for banking traffic.
+- **Over-complex account-hiring** â€” Creating 100+ accounts without a clear organizational hierarchy/billing-model for regulatory audit.
+- **Flat-Network-Foundations** â€” LZ designed without clear isolation between App/DB/Interface-adapter subnets.
+- **Policy-Audit-Lag** â€” Policies deployed but not monitored; drift not remediated within X-days.
+- **Ignoring "Egress-Controls"** â€” LZ lacking centralized egress-firewalls for banking traffic.
 
 ## Bulletproofing against Rationalization
 To prevent this skill from being applied as superficial box-ticking, you MUST:
@@ -47,9 +50,9 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 **Violating these rules invalidates the landing-zone-review process.**
 
 ## Outputs
-- **LZ Capability Assessment** — Governance/Policy assessment report.
-- **Network-Isolation profile** — Risks in hub-spoke/transit-gateway logic.
-- **Banking compliance gap-analysis** — Compliance gaps (e.g. residency/logging gaps).
+- **LZ Capability Assessment** â€” Governance/Policy assessment report.
+- **Network-Isolation profile** â€” Risks in hub-spoke/transit-gateway logic.
+- **Banking compliance gap-analysis** â€” Compliance gaps (e.g. residency/logging gaps).
 
 ## Related skills
 - [aws-review](../aws-review/SKILL.md)
@@ -80,4 +83,5 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+
 

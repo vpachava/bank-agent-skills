@@ -1,9 +1,9 @@
----
+﻿---
 name: kubernetes
 owner: Architectural Governance
 version: 0.1.0
 last-reviewed: 2026-08-15
-description: "Use when reviewing or planning banking Kubernetes clusters (AKS/EKS/GKE) — produces a K8s-review (pod-security, networking, ingress, residency)."
+description: "Use when reviewing or planning banking Kubernetes clusters (AKS/EKS/GKE) â€” produces a K8s-review (pod-security, networking, ingress, residency)."
 required-inputs:
   - Banking workload/app-design
   - Infrastructure/VPC/Region network configuration
@@ -13,6 +13,9 @@ expected-deliverables:
   - K8s readiness assessment report
   - Pod/Namespace security-profile
   - Network/Ingress/Egress risk-profile
+togaf-phases: [Phase D]
+togaf-artifacts: [Deployment Diagram]
+bian-service-domains: [Integration.API]
 ---
 
 # /kubernetes
@@ -21,9 +24,9 @@ expected-deliverables:
 Use to validate that a Kubernetes environment (AKS/EKS/GKE) is hardened for high-stakes banking workloads, not just developer convenience. Focuses on cluster-hardening, tenancy, and regulatory data-isolation.
 
 ## Inputs
-- **Cluster Design** — IaC, Network policies, cluster-scope.
-- **Security Posture** — Pod-security-standards, RBAC setup.
-- **Residency Target** — UAE regions.
+- **Cluster Design** â€” IaC, Network policies, cluster-scope.
+- **Security Posture** â€” Pod-security-standards, RBAC setup.
+- **Residency Target** â€” UAE regions.
 
 ## Process
 1. **Verify UAE-Region/Zone.** Ensure nodes occupy compliant zones.
@@ -35,13 +38,13 @@ Use to validate that a Kubernetes environment (AKS/EKS/GKE) is hardened for high
    - Ingress controller hardening.
    - Egress-gateway for filtering bank-to-external-API traffic (critical for security).
 4. **Data-Residency/Encryption.** Ensure persistent-volumes (PVs) are encrypted at rest (CMK).
-5. **Operational Audit.** Ensure Prometheus/Grafana or cloud-native logs flow securely to the bank’s SOC.
+5. **Operational Audit.** Ensure Prometheus/Grafana or cloud-native logs flow securely to the bankâ€™s SOC.
 
 ## Banking pitfalls
-- **Permissive pod-security** — Running privileged containers or containers with hostPath access.
-- **"Flat" Networking/Flat-cluster** — Allowing unrestricted pod-to-pod communication across different banking-domains; must segmented by namespace+NetworkPolicy.
-- **Stale secrets-management** — Kubernetes Secrets-in-etcd-plain-text (must use CSI-driver with Azure/AWS/GCP Secrets Manager).
-- **Public-API-server** — The K8s API server being reachable from the public internet (must have authorized-IPs or be private-link).
+- **Permissive pod-security** â€” Running privileged containers or containers with hostPath access.
+- **"Flat" Networking/Flat-cluster** â€” Allowing unrestricted pod-to-pod communication across different banking-domains; must segmented by namespace+NetworkPolicy.
+- **Stale secrets-management** â€” Kubernetes Secrets-in-etcd-plain-text (must use CSI-driver with Azure/AWS/GCP Secrets Manager).
+- **Public-API-server** â€” The K8s API server being reachable from the public internet (must have authorized-IPs or be private-link).
 
 ## Bulletproofing against Rationalization
 To prevent this skill from being applied as superficial box-ticking, you MUST:
@@ -53,9 +56,9 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 **Violating these rules invalidates the kubernetes process.**
 
 ## Outputs
-- **K8s readiness assessment** — Hardening gaps, config findings.
-- **Security-profile** — Documentation of tenant/namespace isolation.
-- **Risk-profile** — Network/Ingress/Egress risks.
+- **K8s readiness assessment** â€” Hardening gaps, config findings.
+- **Security-profile** â€” Documentation of tenant/namespace isolation.
+- **Risk-profile** â€” Network/Ingress/Egress risks.
 
 ## Related skills
 - [aws-review](../aws-review/SKILL.md)
@@ -68,7 +71,7 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 **Scenario:** Deploying a service processing sensitive payment messages.
 - **Architecture Lens Check:** Verification that the Pod Security Admission (PSA) enforces the "restricted" profile, forbidding privileged mode and high-risk hostPath volumes.
 - **Sample Outcome:** "Namespace `payments` verified for Restricted PSS; pods are prevented from escalating privileges, mitigating container breakout risks."
-- **Common Pitfall:** Using "privileged" containers just to easily install debugging tools in staging; it’s too easy to accidentally carry this configuration over to production, creating a massive security vulnerability.
+- **Common Pitfall:** Using "privileged" containers just to easily install debugging tools in staging; itâ€™s too easy to accidentally carry this configuration over to production, creating a massive security vulnerability.
 
 #### (2) Flat Networking Segregation Example
 **Scenario:** Running high-risk `KYC-Management` and low-risk `Marketing-Content` microservices on the same cluster.
@@ -79,10 +82,11 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 **Scenario:** Limiting egress from an aggregator pod to specifically approved third-party rate-providers.
 - **Architecture Lens Check:** Using an `Egress-Gateway` to whitelist only authorized APIs, preventing data-exfiltration.
 - **Sample Outcome:** "Egress Compliance: Pod traffic limited via Egress-Gateway to API-whitelisted domains only."
-- **Common Pitfall:** Allowing `0.0.0.0/0` egress to the public internet. A compromised container can then exfiltrate sensitive data or reach a command-and-control server without being blocked by the cluster’s network configuration.
+- **Common Pitfall:** Allowing `0.0.0.0/0` egress to the public internet. A compromised container can then exfiltrate sensitive data or reach a command-and-control server without being blocked by the clusterâ€™s network configuration.
 
 ### Regulatory References
 1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+
 

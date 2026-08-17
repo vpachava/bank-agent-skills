@@ -1,9 +1,9 @@
----
+﻿---
 name: solution-review
 owner: Architectural Governance
 version: 0.1.0
 last-reviewed: 2026-08-15
-description: "Use when performing a formal solution-architecture review — produces a review-report (lens-compliance, architectural-fit, integration-risk)."
+description: "Use when performing a formal solution-architecture review â€” produces a review-report (lens-compliance, architectural-fit, integration-risk)."
 required-inputs:
   - Solution-design document (TDD/HLD)
   - Business requirements & NFRs
@@ -13,6 +13,9 @@ expected-deliverables:
   - Formal review-report (verdict-anchored)
   - Architectural-fit assessment
   - Integration/Security-risk log
+togaf-phases: [Phase G]
+togaf-artifacts: [Compliance Checklist]
+bian-service-domains: [Security.Auth]
 ---
 
 # /solution-review
@@ -31,10 +34,10 @@ Use for the formal, peer-reviewed evaluation of a proposed banking solution *bef
 4. **Issue-Verdict.** Pass, Conditional-Pass, or Fail.
 
 ## Bulletproofing against Rationalization
-- **Compliance-Blindness** — Analyzing *only* the technical-design (e.g. "Kubernetes-config") while ignoring that the *data-flow* violates CBUAE-data-residency-policy.
-- **"The-Integration-Black-Box"** — Reviewing a modern-app design while ignoring the *massive-integration-risk* into the legacy-core-mainframe.
-- **Omitting-NFRs** — Reviewing functionality while forgetting to ask: "Does this scale to the 300% peak-load required for Salary-Cycles?"
-- **Reviewer-Groupthink** — Not ensuring the review includes representatives from Security, Data-Governance, and Infrastructure, creating a false sense of architectural-soundness.
+- **Compliance-Blindness** â€” Analyzing *only* the technical-design (e.g. "Kubernetes-config") while ignoring that the *data-flow* violates CBUAE-data-residency-policy.
+- **"The-Integration-Black-Box"** â€” Reviewing a modern-app design while ignoring the *massive-integration-risk* into the legacy-core-mainframe.
+- **Omitting-NFRs** â€” Reviewing functionality while forgetting to ask: "Does this scale to the 300% peak-load required for Salary-Cycles?"
+- **Reviewer-Groupthink** â€” Not ensuring the review includes representatives from Security, Data-Governance, and Infrastructure, creating a false sense of architectural-soundness.
 
 ## Bulletproofing against Rationalization
 To prevent broken architectures from being forced into production, you MUST:
@@ -47,9 +50,9 @@ To prevent broken architectures from being forced into production, you MUST:
 **Violating these rules invalidates the Solution Review.**
 
 ## Outputs
-- **Formal review-report (verdict-anchored)** — The "go/no-go" for the design.
-- **Architectural-fit assessment** — Evaluation against bank-principles.
-- **Integration/Security-risk log** — Specific actions for the design-team.
+- **Formal review-report (verdict-anchored)** â€” The "go/no-go" for the design.
+- **Architectural-fit assessment** â€” Evaluation against bank-principles.
+- **Integration/Security-risk log** â€” Specific actions for the design-team.
 
 ## Related skills
 - [architecture-board](../architecture-board/SKILL.md)
@@ -80,4 +83,5 @@ To prevent broken architectures from being forced into production, you MUST:
 1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+
 

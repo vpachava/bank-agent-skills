@@ -1,9 +1,12 @@
----
+﻿---
 name: compliance
 owner: Architectural Governance
 version: 0.1.1
 last-reviewed: 2026-08-16
 description: Use when verifying an architecture against local rules, ensuring PCI-DSS, CBUAE, NESA, or GDPR regulations are strictly enforced.
+togaf-phases: [Phase D]
+togaf-artifacts: [Security Baseline]
+bian-service-domains: [Security.Auth]
 ---
 
 # /compliance
@@ -65,4 +68,5 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+
 

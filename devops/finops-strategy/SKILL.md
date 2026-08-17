@@ -1,9 +1,12 @@
----
+﻿---
 name: finops-strategy
 owner: DevOps
 version: 0.1.0
 last-reviewed: 2026-08-16
 description: Use for cloud cost optimization, specifically for high-frequency financial workloads in banking environments.
+togaf-phases: [Phase G]
+togaf-artifacts: [Compliance Checklist]
+bian-service-domains: [Security.Auth]
 ---
 
 # /finops-strategy
@@ -61,4 +64,5 @@ Any FinOps ADR MUST include:
 1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+
 

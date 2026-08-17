@@ -1,9 +1,9 @@
----
+﻿---
 name: gcp-review
 owner: Architectural Governance
 version: 0.1.0
 last-reviewed: 2026-08-15
-description: "Use when reviewing GCP-based banking architectures — produces a GCP-review report (well-architected alignment, UAE-residency, security)."
+description: "Use when reviewing GCP-based banking architectures â€” produces a GCP-review report (well-architected alignment, UAE-residency, security)."
 required-inputs:
   - GCP architectural design/IaC
   - Data-residency requirements (UAE regions)
@@ -13,6 +13,9 @@ expected-deliverables:
   - GCP Well-Architected review report
   - UAE data-residency compliance verification
   - Security/IAM risk-register entries
+togaf-phases: [Phase D]
+togaf-artifacts: [Deployment Diagram]
+bian-service-domains: [Integration.API]
 ---
 
 # /gcp-review
@@ -21,9 +24,9 @@ expected-deliverables:
 Use for reviewing Google Cloud Platform (GCP) solutions in a banking context. Ensures adherence to GCP Well-Architected Framework and, critically, strict adherence to UAE-specific data-residency and banking-security mandates.
 
 ## Inputs
-- **GCP Design/Code** — Projects/Folders/Terraform config.
-- **Residency Target** — `me-central1` (Doha - *Verify actual UAE coverage*) alignment (Note: check current GCC region availability).
-- **Workload Profile** — Criticality, PII/Payment-data classification.
+- **GCP Design/Code** â€” Projects/Folders/Terraform config.
+- **Residency Target** â€” `me-central1` (Doha - *Verify actual UAE coverage*) alignment (Note: check current GCC region availability).
+- **Workload Profile** â€” Criticality, PII/Payment-data classification.
 
 ## Process
 1. **Verify UAE-Region Alignment.** Confirm all resources exclusively reside in regions serving the UAE (or approved GCC regions).
@@ -36,10 +39,10 @@ Use for reviewing Google Cloud Platform (GCP) solutions in a banking context. En
 5. **Issue Review Verdict.** Approve, Conditional-approve, Veto.
 
 ## Banking pitfalls
-- **Region-misalignment** — Assuming GCP regions are interchangeable; must explicitly lock region-scope.
-- **Orphaned-projects** — GCP projects created for PoCs without proper labeling, billing, or security-owner responsibility.
-- **Over-privileged-Service-Accounts** — Service-accounts with broad "Editor" roles across the Organization/Folder.
-- **VPC-Network-Exposure** — Cloud-NAT or Public-IP assignments on components that should have been purely internal.
+- **Region-misalignment** â€” Assuming GCP regions are interchangeable; must explicitly lock region-scope.
+- **Orphaned-projects** â€” GCP projects created for PoCs without proper labeling, billing, or security-owner responsibility.
+- **Over-privileged-Service-Accounts** â€” Service-accounts with broad "Editor" roles across the Organization/Folder.
+- **VPC-Network-Exposure** â€” Cloud-NAT or Public-IP assignments on components that should have been purely internal.
 
 ## Bulletproofing against Rationalization
 To prevent this skill from being applied as superficial box-ticking, you MUST:
@@ -51,9 +54,9 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 **Violating these rules invalidates the gcp-review process.**
 
 ## Outputs
-- **GCP Review Report** — Well-architected gaps + bank-specific findings.
-- **UAE Residency Verification** — Formal confirmation of compliant placement.
-- **Risk-register entries** — Specific security/governance risks discovered.
+- **GCP Review Report** â€” Well-architected gaps + bank-specific findings.
+- **UAE Residency Verification** â€” Formal confirmation of compliant placement.
+- **Risk-register entries** â€” Specific security/governance risks discovered.
 
 ## Related skills
 - [cloud-migration](../../migration/cloud-migration/SKILL.md)
@@ -84,4 +87,5 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+
 

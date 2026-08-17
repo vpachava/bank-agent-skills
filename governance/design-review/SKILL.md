@@ -1,9 +1,9 @@
----
+﻿---
 name: design-review
 owner: Architectural Governance
 version: 0.1.0
 last-reviewed: 2026-08-15
-description: "Use when performing a detailed technical-design review (TDD/Design-Spec) — produces a design-review report (clash-detection, implementation-path, security-controls, performance-suitability)."
+description: "Use when performing a detailed technical-design review (TDD/Design-Spec) â€” produces a design-review report (clash-detection, implementation-path, security-controls, performance-suitability)."
 required-inputs:
   - Technical-design document (TDD/Spec)
   - Data-flow diagrams/C4-views
@@ -13,6 +13,9 @@ expected-deliverables:
   - Technical design-review report
   - Clash-detection log
   - Implementation go/no-go recommendation
+togaf-phases: [Phase G]
+togaf-artifacts: [Compliance Checklist]
+bian-service-domains: [Security.Auth]
 ---
 
 # /design-review
@@ -42,9 +45,9 @@ To prevent superficial box-ticking masquerading as a Design Review, you MUST:
 **Violating these rules invalidates the Design Review.**
 
 ## Outputs
-- **Technical design-review report** — Formal-feedback on the spec.
-- **Clash-detection log** — Specific technical-defects to be resolved.
-- **Implementation go/no-go recommendation** — Is it time to build?
+- **Technical design-review report** â€” Formal-feedback on the spec.
+- **Clash-detection log** â€” Specific technical-defects to be resolved.
+- **Implementation go/no-go recommendation** â€” Is it time to build?
 
 ## Related skills
 - [design-document](../../documentation/design-document/SKILL.md)
@@ -75,4 +78,5 @@ To prevent superficial box-ticking masquerading as a Design Review, you MUST:
 1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+
 

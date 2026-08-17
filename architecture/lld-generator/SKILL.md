@@ -1,9 +1,9 @@
----
+﻿---
 name: lld-generator
 owner: Solution Architecture
 version: 0.1.0
 last-reviewed: 2026-08-08
-description: "Use when an HLD is approved and the build needs detail — produces a Low-Level Design (component APIs, data, sequences, deployment) that an engineering team can implement against."
+description: "Use when an HLD is approved and the build needs detail â€” produces a Low-Level Design (component APIs, data, sequences, deployment) that an engineering team can implement against."
 required-inputs:
   - Approved High-Level Design (/hld-generator)
   - Open-questions register from the HLD
@@ -14,35 +14,38 @@ expected-deliverables:
   - API contracts (sketches) per component
   - Deployment view (delegates to /deployment-diagrams)
   - Resolved open-questions register (reflected back to the HLD if they change shape)
+togaf-phases: [Phase C]
+togaf-artifacts: [HLD]
+bian-service-domains: [Integration.API]
 ---
 
 # /lld-generator
 
 ## When to apply
-Use after the HLD is reviewed and tentatively approved — the LLD commits the *detail*: component APIs, data structures, the sequence-level interactions, and deployment. This is the altitude the build team works to. Feeds the build, the design review (`/design-review`), and release readiness.
+Use after the HLD is reviewed and tentatively approved â€” the LLD commits the *detail*: component APIs, data structures, the sequence-level interactions, and deployment. This is the altitude the build team works to. Feeds the build, the design review (`/design-review`), and release readiness.
 
 ## Inputs
-- **Approved HLD** — the shape that the LLD deepens; if the HLD is shaky, the LLD inherits the shakiness — fix the HLD first.
-- **Open-questions register** — the decisions suspended at HLD altitude; resolve them here.
-- **Current-system API/schema inventory** — legacy core operations, channel APIs, partner contracts; the LLD designs *against* and *around* these, not over them.
-- **NFR checklist** — at completion level so the LLD commits perf, residency, audit, security specifics.
+- **Approved HLD** â€” the shape that the LLD deepens; if the HLD is shaky, the LLD inherits the shakiness â€” fix the HLD first.
+- **Open-questions register** â€” the decisions suspended at HLD altitude; resolve them here.
+- **Current-system API/schema inventory** â€” legacy core operations, channel APIs, partner contracts; the LLD designs *against* and *around* these, not over them.
+- **NFR checklist** â€” at completion level so the LLD commits perf, residency, audit, security specifics.
 
 ## Process
-1. **Decompose containers into components.** Each HLD container becomes its components with clear responsibilities (orchestrator, adapter, validator, gateway). Name each component, its responsibility, the container it lives in — and the BIAN Service Domain if relevant.
+1. **Decompose containers into components.** Each HLD container becomes its components with clear responsibilities (orchestrator, adapter, validator, gateway). Name each component, its responsibility, the container it lives in â€” and the BIAN Service Domain if relevant.
 
-2. **Define each component's API contract.** Operation, inputs, outputs, errors, idempotency (critical for payments/KYC steps), authz. Use a contract-first sketch (OpenAPI/Async), at LLD altitude — not a code-gen file necessarily. Mark regulated operations distinctly.
+2. **Define each component's API contract.** Operation, inputs, outputs, errors, idempotency (critical for payments/KYC steps), authz. Use a contract-first sketch (OpenAPI/Async), at LLD altitude â€” not a code-gen file necessarily. Mark regulated operations distinctly.
 
 3. **Specify the data model & persistence.** Per store: schema sketch, ownership, residency (onshore/free-zone), retention, the integrity guarantees (ACID, eventual, reconciliation-backed). Mark PII/biometric/payment data and its residency explicitly.
 
 4. **Detail the key flows to sequence depth.** Take the HLD's key flows and produce real sequence diagrams (delegate to `/sequence-diagrams` rendered by `/archify`): every actor, every call, every regulated gate, every fallback/exception path. The sequence diagram is where hidden assumptions surface (retry, timeout, reconcile, escalate).
 
-5. **Resolve the HLD's open questions — or escalate.** Each suspended decision in the open-questions register resolves with a concrete answer *or* escalates to a new decision (ADR / `/solution-options`). Don't carry open questions silently into the build.
+5. **Resolve the HLD's open questions â€” or escalate.** Each suspended decision in the open-questions register resolves with a concrete answer *or* escalates to a new decision (ADR / `/solution-options`). Don't carry open questions silently into the build.
 
-6. **Commit the deployment view.** Regions, AZ pairing, HA/DR, the landing-zone topology (delegate to `/deployment-diagrams`). Capture cross-region and the cross-zone (onshore ↔ DIFC/ADGM) data-residency implications — the SCC/BCR point from the UAE research if it applies.
+6. **Commit the deployment view.** Regions, AZ pairing, HA/DR, the landing-zone topology (delegate to `/deployment-diagrams`). Capture cross-region and the cross-zone (onshore â†” DIFC/ADGM) data-residency implications â€” the SCC/BCR point from the UAE research if it applies.
 
 7. **Map NFRs to design decisions.** Each completed NFR traces to a design decision in the LLD (a retry policy, a residency choice, a cache tier). NFRs with no design backing are aspirations.
 
-8. **Cross-check against current-system contracts.** The LLD must fit the legacy core's actual interfaces, the partner contracts, the channel SDKs — not a wished-for version. Any seam that needs a new adapter or a strangler cut is flagged for `/application-migration`.
+8. **Cross-check against current-system contracts.** The LLD must fit the legacy core's actual interfaces, the partner contracts, the channel SDKs â€” not a wished-for version. Any seam that needs a new adapter or a strangler cut is flagged for `/application-migration`.
 
 ## Bulletproofing against Rationalization
 To prevent leaky LLDs that ignore idempotency, error states, and data residence constraints, you MUST:
@@ -57,20 +60,20 @@ To prevent leaky LLDs that ignore idempotency, error states, and data residence 
 ---
 
 ## Outputs
-- **LLD document** — components + responsibilities + APIs + data + sequences + deployment + NFR-to-design mapping + resolved open questions.
-- **API contract sketches** — per component, with idempotency, authz, and regulated-op markers.
-- **Deployment view** — via `/deployment-diagrams`, with residency/cross-zone implications.
-- **Sequence diagrams** — via `/sequence-diagrams` rendered by `/archify`, incl. exception paths.
-- **Resolved open-questions register** — and any escalations to ADR / `/solution-options`.
+- **LLD document** â€” components + responsibilities + APIs + data + sequences + deployment + NFR-to-design mapping + resolved open questions.
+- **API contract sketches** â€” per component, with idempotency, authz, and regulated-op markers.
+- **Deployment view** â€” via `/deployment-diagrams`, with residency/cross-zone implications.
+- **Sequence diagrams** â€” via `/sequence-diagrams` rendered by `/archify`, incl. exception paths.
+- **Resolved open-questions register** â€” and any escalations to ADR / `/solution-options`.
 
 ## Related skills
-- [hld-generator](../hld-generator/SKILL.md) — the altitude this deepens.
-- [c4-model](../c4-model/SKILL.md) — the component-level (Level 3) C4 view.
-- [sequence-diagrams](../sequence-diagrams/SKILL.md) — the sequence detail this commits.
-- [deployment-diagrams](../deployment-diagrams/SKILL.md) — the deployment view.
-- [api-design](../../integration/api-design/SKILL.md) — the contract-design discipline this leans on.
-- [design-review](../../governance/design-review/SKILL.md) — the gate this LLD passes through.
-- [application-migration](../../migration/application-migration/SKILL.md) — where legacy-core seams get migrated.
+- [hld-generator](../hld-generator/SKILL.md) â€” the altitude this deepens.
+- [c4-model](../c4-model/SKILL.md) â€” the component-level (Level 3) C4 view.
+- [sequence-diagrams](../sequence-diagrams/SKILL.md) â€” the sequence detail this commits.
+- [deployment-diagrams](../deployment-diagrams/SKILL.md) â€” the deployment view.
+- [api-design](../../integration/api-design/SKILL.md) â€” the contract-design discipline this leans on.
+- [design-review](../../governance/design-review/SKILL.md) â€” the gate this LLD passes through.
+- [application-migration](../../migration/application-migration/SKILL.md) â€” where legacy-core seams get migrated.
 
 ### Banking Context & Examples
 
@@ -96,4 +99,5 @@ To prevent leaky LLDs that ignore idempotency, error states, and data residence 
 1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+
 

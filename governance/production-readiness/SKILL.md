@@ -1,9 +1,9 @@
----
+﻿---
 name: production-readiness
 owner: Architectural Governance
 version: 0.1.0
 last-reviewed: 2026-08-15
-description: "Use when assessing if a service is ready for the production-banking environment — produces a production-readiness artifact (readiness-scorecard, operational-resiliency-audit, supportability-verdict)."
+description: "Use when assessing if a service is ready for the production-banking environment â€” produces a production-readiness artifact (readiness-scorecard, operational-resiliency-audit, supportability-verdict)."
 required-inputs:
   - Monitoring, logging, alerting readiness-definition
   - Incident-management operational-maturity (PIRs/Toil)
@@ -13,6 +13,9 @@ expected-deliverables:
   - Production-readiness scorecard
   - Operational-resiliency audit-report
   - Supportability-verdict (Go/No-go)
+togaf-phases: [Phase G]
+togaf-artifacts: [Compliance Checklist]
+bian-service-domains: [Security.Auth]
 ---
 
 # /production-readiness
@@ -31,10 +34,10 @@ Use for the final gate before a new/updated banking service goes "Live." Product
 4. **Issue-Scorecard.** Provide quantitative-score and Qualitative-Verdict.
 
 ## Bulletproofing against Rationalization
-- **"Monitoring-Is-Enough"** — Thinking that having Grafana-dashboards constitutes "Production-Readiness" while failing to configure *actionable-alerts* that actually trigger support-action.
-- **Support-Team-Ambush** — Deploying a service to production without giving the production-support-team the necessary Training/Run-books, leading to inevitable service-failure.
-- **Disaster-Recovery-Paper-Tiger** — Having a "DR-Plan" in a Word-doc that has never been *formally-exercised* in a non-production-failover-test.
-- **Ignoring-The-Business-Resiliency-Mandate** — Not defining *how* the service fails gracefully (e.g. "Do we fail-closed or fail-open on an-event-bus-failure?"), leading to massive business-disruption.
+- **"Monitoring-Is-Enough"** â€” Thinking that having Grafana-dashboards constitutes "Production-Readiness" while failing to configure *actionable-alerts* that actually trigger support-action.
+- **Support-Team-Ambush** â€” Deploying a service to production without giving the production-support-team the necessary Training/Run-books, leading to inevitable service-failure.
+- **Disaster-Recovery-Paper-Tiger** â€” Having a "DR-Plan" in a Word-doc that has never been *formally-exercised* in a non-production-failover-test.
+- **Ignoring-The-Business-Resiliency-Mandate** â€” Not defining *how* the service fails gracefully (e.g. "Do we fail-closed or fail-open on an-event-bus-failure?"), leading to massive business-disruption.
 
 ## Bulletproofing against Rationalization
 To prevent unstable rollouts breaching regulatory thresholds, you MUST:
@@ -47,9 +50,9 @@ To prevent unstable rollouts breaching regulatory thresholds, you MUST:
 **Violating these rules invalidates the Production Readiness gate.**
 
 ## Outputs
-- **Production-readiness scorecard** — Objective measure-of-readiness.
-- **Operational-resiliency audit-report** — The findings of the audit.
-- **Supportability-verdict** — Final Go/No-go-decision.
+- **Production-readiness scorecard** â€” Objective measure-of-readiness.
+- **Operational-resiliency audit-report** â€” The findings of the audit.
+- **Supportability-verdict** â€” Final Go/No-go-decision.
 
 ## Related skills
 - [sre-review](../../devops/sre-review/SKILL.md)
@@ -80,4 +83,5 @@ To prevent unstable rollouts breaching regulatory thresholds, you MUST:
 1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+
 

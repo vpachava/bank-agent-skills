@@ -1,6 +1,9 @@
----
+﻿---
 name: database-design
 description: Use when designing database schemas and infrastructure, including vector database integration for AI-native workloads.
+togaf-phases: [Phase C]
+togaf-artifacts: [HLD]
+bian-service-domains: [Integration.API]
 ---
 
 # /database-design
@@ -58,4 +61,5 @@ Any ADR referencing a database design MUST include:
 1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+
 

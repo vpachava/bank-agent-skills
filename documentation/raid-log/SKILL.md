@@ -1,9 +1,9 @@
----
+﻿---
 name: raid-log
 owner: Architectural Governance
 version: 0.1.0
 last-reviewed: 2026-08-15
-description: "Use when maintaining a project RAID log — (Risks, Assumptions, Issues, Dependencies) for banking projects."
+description: "Use when maintaining a project RAID log â€” (Risks, Assumptions, Issues, Dependencies) for banking projects."
 required-inputs:
   - List of risks, assumptions, issues, and dependencies
   - Impact assessments and mitigation/owner mapping
@@ -11,6 +11,9 @@ expected-deliverables:
   - RAID log artifact
   - Risk-priority heat-map
   - Dependency-blocker trajectory
+togaf-phases: [Phase A]
+togaf-artifacts: [Architecture Vision]
+bian-service-domains: [Customer Account.Origination]
 ---
 
 # /raid-log
@@ -19,10 +22,10 @@ expected-deliverables:
 Use for the continuous lifecycle-management of banking-projects. RAID logs (Risks, Assumptions, Issues, Dependencies) are the primary tool for Banking PMOs to track if a project is going to hit its regulatory milestones or derail due to internal/external blockers.
 
 ## Inputs
-- **Risks** — Known unknowns (e.g. key dev leaving).
-- **Assumptions** — Things we treat as true (e.g. legacy-API will be available).
-- **Issues** — Known knowns requiring action (e.g. project budget frozen).
-- **Dependencies** — External teams/services we rely on.
+- **Risks** â€” Known unknowns (e.g. key dev leaving).
+- **Assumptions** â€” Things we treat as true (e.g. legacy-API will be available).
+- **Issues** â€” Known knowns requiring action (e.g. project budget frozen).
+- **Dependencies** â€” External teams/services we rely on.
 
 ## Process
 1. **Categorize.** Place items into R, A, I, or D.
@@ -33,10 +36,10 @@ Use for the continuous lifecycle-management of banking-projects. RAID logs (Risk
 6. **Review Rhythm.** Every RAID item must be reviewed weekly in the project-governance-forum.
 
 ## Banking pitfalls
-- **Turning Risks into "Ghosts"** — Setting a risk (e.g. "Vendor might miss deadline") and then forgetting to track it until it turns into a catastrophic Issue on the morning of deployment.
-- **Ignoring Dependency-Deadlines** — Assuming the "Core-Banking Team" will deliver their API by Date X, without a formal signed-dependency-agreement.
-- **Assumption-Creep** — Not auditing your "assumptions" when the project-landscape changes (e.g. "We assumed we could use global cloud, but CBUAE-rules-changed").
-- **No-PII-in-RAID** — Accidentally putting PII or sensitive-bank-internal-data into a project-RAID that might be visible to 3rd-party-consultants.
+- **Turning Risks into "Ghosts"** â€” Setting a risk (e.g. "Vendor might miss deadline") and then forgetting to track it until it turns into a catastrophic Issue on the morning of deployment.
+- **Ignoring Dependency-Deadlines** â€” Assuming the "Core-Banking Team" will deliver their API by Date X, without a formal signed-dependency-agreement.
+- **Assumption-Creep** â€” Not auditing your "assumptions" when the project-landscape changes (e.g. "We assumed we could use global cloud, but CBUAE-rules-changed").
+- **No-PII-in-RAID** â€” Accidentally putting PII or sensitive-bank-internal-data into a project-RAID that might be visible to 3rd-party-consultants.
 
 ## Bulletproofing against Rationalization
 To prevent this skill from being applied as superficial box-ticking, you MUST:
@@ -48,9 +51,9 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 **Violating these rules invalidates the raid-log process.**
 
 ## Outputs
-- **RAID log artifact** — Central register.
-- **Risk-priority heat-map** — Visual view for leadership.
-- **Dependency-blocker trajectory** — Are we unblocking on time?
+- **RAID log artifact** â€” Central register.
+- **Risk-priority heat-map** â€” Visual view for leadership.
+- **Dependency-blocker trajectory** â€” Are we unblocking on time?
 
 ## Related skills
 - [risk-register](../risk-register/SKILL.md)
@@ -81,4 +84,5 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+
 

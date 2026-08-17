@@ -1,9 +1,9 @@
----
+﻿---
 name: terraform
 owner: Architectural Governance
 version: 0.1.0
 last-reviewed: 2026-08-15
-description: "Use when reviewing banking Terraform/IaC codebase — produces an IaC-review (threats, state-mgt, drift, modularization, secrets)."
+description: "Use when reviewing banking Terraform/IaC codebase â€” produces an IaC-review (threats, state-mgt, drift, modularization, secrets)."
 required-inputs:
   - Banking Terraform source-code
   - Infrastructure scope & target environment
@@ -12,6 +12,9 @@ expected-deliverables:
   - Terraform code-quality report
   - State-management & drift-detection risks
   - Security/Compliance IaC-scan findings
+togaf-phases: [Phase D]
+togaf-artifacts: [Deployment Diagram]
+bian-service-domains: [Integration.API]
 ---
 
 # /terraform
@@ -20,8 +23,8 @@ expected-deliverables:
 Use for reviewing banking Terraform/IaC to prevent "IaC-rot," drift, and catastrophic infrastructure-misconfigurations in production. Essential gate for any banking deployment.
 
 ## Inputs
-- **IaC Code** — Terraform/Bicep/ARM code.
-- **Environment** — DEV/QA/PROD targets.
+- **IaC Code** â€” Terraform/Bicep/ARM code.
+- **Environment** â€” DEV/QA/PROD targets.
 
 ## Process
 1. **Security Scan.** Run IaC tools (e.g., Checkov, tfsec) to catch public-buckets, open-security-groups, or unencrypted-storage defined in code.
@@ -31,10 +34,10 @@ Use for reviewing banking Terraform/IaC to prevent "IaC-rot," drift, and catastr
 5. **Issue Verdict.** Review-findings + veto-conditions.
 
 ## Banking pitfalls
-- **State-file exposure** — State files containing sensitive infra-keys/secret-ARNs stored in unsecured buckets.
-- **"Copy-Paste" Modularization** — Copy-pasting instead of referencing shared modules, leading to divergence and massive security debt across environments.
-- **Ignoring "Default-provider-is-non-compliant"** — Terraform defaults (e.g., S3-bucket-encryption:false) that must be overridden for banking compliance.
-- **Manual-change-drift** — Infrastructure being manually updated via UI/CLI after Terraform-deployment, rendering IaC stale.
+- **State-file exposure** â€” State files containing sensitive infra-keys/secret-ARNs stored in unsecured buckets.
+- **"Copy-Paste" Modularization** â€” Copy-pasting instead of referencing shared modules, leading to divergence and massive security debt across environments.
+- **Ignoring "Default-provider-is-non-compliant"** â€” Terraform defaults (e.g., S3-bucket-encryption:false) that must be overridden for banking compliance.
+- **Manual-change-drift** â€” Infrastructure being manually updated via UI/CLI after Terraform-deployment, rendering IaC stale.
 
 ## Bulletproofing against Rationalization
 To prevent this skill from being applied as superficial box-ticking, you MUST:
@@ -46,8 +49,8 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 **Violating these rules invalidates the terraform process.**
 
 ## Outputs
-- **IaC review report** — Scan results, security-findings, state-risks.
-- **Infrastructure-drift status** — Drift-detection maturity-assessment.
+- **IaC review report** â€” Scan results, security-findings, state-risks.
+- **Infrastructure-drift status** â€” Drift-detection maturity-assessment.
 
 ## Related skills
 - [aws-review](../aws-review/SKILL.md)
@@ -78,4 +81,5 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+
 

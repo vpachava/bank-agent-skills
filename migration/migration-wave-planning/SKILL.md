@@ -1,9 +1,9 @@
----
+﻿---
 name: migration-wave-planning
 owner: Architectural Governance
 version: 0.1.0
 last-reviewed: 2026-08-15
-description: "Use when sequencing banking workloads for migration — produces a wave plan (dependencies, risk, banking gates)."
+description: "Use when sequencing banking workloads for migration â€” produces a wave plan (dependencies, risk, banking gates)."
 required-inputs:
   - Total migration scope (app/DB/platform inventory)
   - Inter-service & inter-domain dependencies
@@ -13,6 +13,9 @@ expected-deliverables:
   - Migration wave plan (sequenced roadmap)
   - Workload-dependency & risk-classification matrix
   - Migration-gating schedule
+togaf-phases: [Phase F]
+togaf-artifacts: [Migration Plan]
+bian-service-domains: [Integration.Migration]
 ---
 
 # /migration-wave-planning
@@ -21,9 +24,9 @@ expected-deliverables:
 Use to structure the multi-year bank transformation into manageable, risk-mitigated delivery increments (waves), ensuring that sequencing is technically sound and regulatorily compliant.
 
 ## Inputs
-- **Workload Portfolio** — All initiatives/workloads to be migrated.
-- **Dependency Map** — Hard technical dependencies (e.g. App A requires Database B).
-- **Phasing constraints** — Regulatory freeze periods, peak business seasons, resource availability.
+- **Workload Portfolio** â€” All initiatives/workloads to be migrated.
+- **Dependency Map** â€” Hard technical dependencies (e.g. App A requires Database B).
+- **Phasing constraints** â€” Regulatory freeze periods, peak business seasons, resource availability.
 
 ## Process
 1. **Classify and Rank.** Categorize workloads by (1) Difficulty (Technical/Regulatory), (2) Value-to-Bank, (3) Risk.
@@ -35,10 +38,10 @@ Use to structure the multi-year bank transformation into manageable, risk-mitiga
 5. **Author wave plan.** Document the sequencing, justification, and high-level milestones per wave.
 
 ## Banking pitfalls
-- **"Foundation-as-an-afterthought"** — Expecting functional application-waves to succeed before the *fundamental* cloud-platform/identity-fabric-foundation is production-ready.
-- **Regulatory-gating invisibility** — Planning migration waves without accounting for "Compliance/Audit review" windows that can block a wave for months.
-- **"Migrate-only-the-easy-stuff"** — Sequencing low-value periphery services first, leaving the hardest core-banking/monolith risk-bottlenecks to the end (opposite of strangler-fig pattern).
-- **Ignoring "resilience-capacity"** — Planning migration waves that consume so much team capacity/risk-budget that the bank is effectively unable to fix bugs in the core-banking system.
+- **"Foundation-as-an-afterthought"** â€” Expecting functional application-waves to succeed before the *fundamental* cloud-platform/identity-fabric-foundation is production-ready.
+- **Regulatory-gating invisibility** â€” Planning migration waves without accounting for "Compliance/Audit review" windows that can block a wave for months.
+- **"Migrate-only-the-easy-stuff"** â€” Sequencing low-value periphery services first, leaving the hardest core-banking/monolith risk-bottlenecks to the end (opposite of strangler-fig pattern).
+- **Ignoring "resilience-capacity"** â€” Planning migration waves that consume so much team capacity/risk-budget that the bank is effectively unable to fix bugs in the core-banking system.
 
 ## Bulletproofing against Rationalization
 To prevent this skill from being applied as superficial box-ticking, you MUST:
@@ -50,9 +53,9 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 **Violating these rules invalidates the migration-wave-planning process.**
 
 ## Outputs
-- **Migration wave plan** — The sequenced roadmap document.
-- **Workload-dependency matrix** — Critical risks and sequencing logic per unit.
-- **Migration-gating schedule** — Timeline mapped to business/compliance triggers.
+- **Migration wave plan** â€” The sequenced roadmap document.
+- **Workload-dependency matrix** â€” Critical risks and sequencing logic per unit.
+- **Migration-gating schedule** â€” Timeline mapped to business/compliance triggers.
 
 ## Related skills
 - [modernization-roadmap](../../modernization/modernization-roadmap/SKILL.md)
@@ -83,4 +86,5 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+
 

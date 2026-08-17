@@ -1,9 +1,9 @@
----
+﻿---
 name: risk-register
 owner: Architectural Governance
 version: 0.1.0
 last-reviewed: 2026-08-15
-description: "Use when drafting a risk register for a banking initiative — produces a risk-register (severity-scores, mitigation, regulatory-impact)."
+description: "Use when drafting a risk register for a banking initiative â€” produces a risk-register (severity-scores, mitigation, regulatory-impact)."
 required-inputs:
   - Inventory of potential threats
   - Likelihood/Impact ratings
@@ -13,6 +13,9 @@ expected-deliverables:
   - Comprehensive risk-register table
   - Mitigation-action roadmap
   - Regulatory risk-exposure dashboard
+togaf-phases: [Phase A]
+togaf-artifacts: [Architecture Vision]
+bian-service-domains: [Customer Account.Origination]
 ---
 
 # /risk-register
@@ -21,9 +24,9 @@ expected-deliverables:
 Use for the formal, auditable risk-landscape for a project. In banking, this is NOT optional; it is required by the CRO (Chief Risk Officer) and internal-audit. If it isn't in the risk-register and mitigated, it's a "finding."
 
 ## Inputs
-- **Threat source** — e.g. Technical, Operational, Regulatory, Third-party.
-- **Rating** — Likelihood x Impact.
-- **Regulatory Gating** — Does this threat violate a bank-policy or local regulation?
+- **Threat source** â€” e.g. Technical, Operational, Regulatory, Third-party.
+- **Rating** â€” Likelihood x Impact.
+- **Regulatory Gating** â€” Does this threat violate a bank-policy or local regulation?
 
 ## Process
 1. **Identify.** Document the risk clearly (e.g. "Cloud-provider service-outage leads to 4-hour settlement-breach").
@@ -33,10 +36,10 @@ Use for the formal, auditable risk-landscape for a project. In banking, this is 
 5. **Report.** Weekly status of mitigation-progress for the Board/Executive-Committee.
 
 ## Banking pitfalls
-- **Under-rating Operational-Resiliency-Risks** — Rating "System-Down-Time" as Impact-3 when in a *Payment-System*, it is Impact-5 (immediate regulatory-breach).
-- **Ignoring Cumulative-Risk** — Treating 5 "Medium-severity-security-gaps" as separate, rather than documenting that their combination constitutes a "Major-Compliance-Failure."
-- **Ghost-Mitigation** — Defining a mitigation strategy (e.g. "We will have a failover test") but never *formally-executing* that test as evidence for audit.
-- **Data-Residency-Gaps** — Identifying "using-global-cloud" as a risk without explicitly mapping it to the bank's CBUAE-data-residency-compliance-policy.
+- **Under-rating Operational-Resiliency-Risks** â€” Rating "System-Down-Time" as Impact-3 when in a *Payment-System*, it is Impact-5 (immediate regulatory-breach).
+- **Ignoring Cumulative-Risk** â€” Treating 5 "Medium-severity-security-gaps" as separate, rather than documenting that their combination constitutes a "Major-Compliance-Failure."
+- **Ghost-Mitigation** â€” Defining a mitigation strategy (e.g. "We will have a failover test") but never *formally-executing* that test as evidence for audit.
+- **Data-Residency-Gaps** â€” Identifying "using-global-cloud" as a risk without explicitly mapping it to the bank's CBUAE-data-residency-compliance-policy.
 
 ## Bulletproofing against Rationalization
 To prevent this skill from being applied as superficial box-ticking, you MUST:
@@ -48,9 +51,9 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 **Violating these rules invalidates the risk-register process.**
 
 ## Outputs
-- **Comprehensive risk-register table** — The canonical document.
-- **Mitigation-action roadmap** — Tasks linked in Jira/ADO.
-- **Regulatory risk-exposure dashboard** — The report for Compliance/CRO.
+- **Comprehensive risk-register table** â€” The canonical document.
+- **Mitigation-action roadmap** â€” Tasks linked in Jira/ADO.
+- **Regulatory risk-exposure dashboard** â€” The report for Compliance/CRO.
 
 ## Related skills
 - [raid-log](../raid-log/SKILL.md)
@@ -81,4 +84,5 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+
 

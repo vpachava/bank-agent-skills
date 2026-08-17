@@ -1,9 +1,9 @@
----
+﻿---
 name: event-driven
 owner: Solution Architecture
 version: 0.1.0
 last-reviewed: 2026-08-09
-description: "Use when designing an event-driven flow over a legacy core — produces an event design (domain events vs CDC, choreography vs orchestration, the backbone topology) with idempotency, ordering, and replay handled."
+description: "Use when designing an event-driven flow over a legacy core â€” produces an event design (domain events vs CDC, choreography vs orchestration, the backbone topology) with idempotency, ordering, and replay handled."
 required-inputs:
   - The flow & its producers/consumers
   - Whether events are domain-business or change-data-capture
@@ -13,46 +13,49 @@ expected-deliverables:
   - Event design (event types/schemas, choreography vs orchestration choice)
   - Reliability model (ordering, idempotency, replay, DLQ)
   - Backbone topology note (domain-topic layout, partitioning keys)
+togaf-phases: [Phase C]
+togaf-artifacts: [HLD]
+bian-service-domains: [Integration.API]
 ---
 
 # /event-driven
 
 ## When to apply
-Use when a flow should be *reactive* — the legacy core emits, services react — rather than a chain of synchronous calls. High-leverage in a bank where the core is the bottleneck and extending it with new sync calls starves the core. The home of much modernization risk: event systems done badly drop, duplicate, and reorder — done well they decouple and scale. Pairs with `/messaging` (the transport) and `/data-sync` (the CDC side).
+Use when a flow should be *reactive* â€” the legacy core emits, services react â€” rather than a chain of synchronous calls. High-leverage in a bank where the core is the bottleneck and extending it with new sync calls starves the core. The home of much modernization risk: event systems done badly drop, duplicate, and reorder â€” done well they decouple and scale. Pairs with `/messaging` (the transport) and `/data-sync` (the CDC side).
 
 ## Inputs
-- **The flow & its producers/consumers** — who emits, who reacts, what state each owns.
-- **Domain-events vs CDC-events** — the crucial first call: domain events express a business fact (PaymentInitiated) and are publish-deliberate; CDC events mechanically mirror a data change and are publish-implicit. Mixing them in the same stream is the most common event architecture bug.
-- **Reliability requirements** — ordering (per-stream? globally?), delivery (at-least-once / exactly-once-in-kafka / exactly-once-application), replay tolerance.
-- **Consumers' side-effect nature** — are they safe to re-run (idempotent) or do they charge/issue/notify?
+- **The flow & its producers/consumers** â€” who emits, who reacts, what state each owns.
+- **Domain-events vs CDC-events** â€” the crucial first call: domain events express a business fact (PaymentInitiated) and are publish-deliberate; CDC events mechanically mirror a data change and are publish-implicit. Mixing them in the same stream is the most common event architecture bug.
+- **Reliability requirements** â€” ordering (per-stream? globally?), delivery (at-least-once / exactly-once-in-kafka / exactly-once-application), replay tolerance.
+- **Consumers' side-effect nature** â€” are they safe to re-run (idempotent) or do they charge/issue/notify?
 
 ## Process
-1. **Distinguish domain events from CDC events — and keep them separate.** Domain events = deliberate business signals published by the producer; CDC events = a stream of row-changes captured mechanically (Debezium) from the core. Mixing carries the legacy core's table grit into the event surface. Separate streams per category; the system of record owns domain events.
+1. **Distinguish domain events from CDC events â€” and keep them separate.** Domain events = deliberate business signals published by the producer; CDC events = a stream of row-changes captured mechanically (Debezium) from the core. Mixing carries the legacy core's table grit into the event surface. Separate streams per category; the system of record owns domain events.
 
 2. **Choose choreography vs orchestration per flow.** Choreography (services react to events, no central director) for genuinely decoupled cross-domain reactions; orchestration (a central flow drives calls/commands + listens) where the journey has a regulated deterministic spine. A bank's regulated journeys usually need *orchestration with events*, not pure choreography, because somebody must be accountable for the KYC/issuance decision.
 
 3. **Design event schemas versioned + additive-only.** Events are forever-once-published; consumers you don't know about depend on them. Version in the schema + envelope; within a version, additive-only; breaking change = new event type + a deprecation runway, never a silent schema change.
 
-4. **Model partitioning keys to preserve ordering where it matters.** Ordering is per-partition, not global. Pick the partition key that matches your ordering invariant — per account, per transaction (UETR), per customer — not "round-robin for throughput." The wrong key means a consumer sees out-of-order events and makes wrong decisions (status-of-payment consumed before initiation).
+4. **Model partitioning keys to preserve ordering where it matters.** Ordering is per-partition, not global. Pick the partition key that matches your ordering invariant â€” per account, per transaction (UETR), per customer â€” not "round-robin for throughput." The wrong key means a consumer sees out-of-order events and makes wrong decisions (status-of-payment consumed before initiation).
    > Kafka ordering guarantee is within-partition only, not global. A partition keyed by account-id preserves order for that account; keyed at random for throughput preserves no order at all.
 
-5. **Make consumers idempotent by construction — at-least-once is your real guarantee.** Kafka's "exactly-once" is within-Kafka only; the moment a consumer side-effects (HTTP call, DB write), the end-to-end delivery guarantee drops to at-least-once unless the consumer is idempotent. Design an idempotency key per event (UETR-style) and dedupe at the consumer; **don't rely on the broker's exactly-once to make your consumer safe.**
+5. **Make consumers idempotent by construction â€” at-least-once is your real guarantee.** Kafka's "exactly-once" is within-Kafka only; the moment a consumer side-effects (HTTP call, DB write), the end-to-end delivery guarantee drops to at-least-once unless the consumer is idempotent. Design an idempotency key per event (UETR-style) and dedupe at the consumer; **don't rely on the broker's exactly-once to make your consumer safe.**
 
-6. **Handle poison messages with a DLQ + bounded retries.** A malformed event retried forever blocks its partition (and everything behind it in that partition — ordering). Use a dead-letter queue + a bounded retry count; alert on DLQ growth; define whether DLQ'd events are order-suspended or skipped.
+6. **Handle poison messages with a DLQ + bounded retries.** A malformed event retried forever blocks its partition (and everything behind it in that partition â€” ordering). Use a dead-letter queue + a bounded retry count; alert on DLQ growth; define whether DLQ'd events are order-suspended or skipped.
 
 7. **Define replay semantics explicitly.** Replay re-feeds past events to consumers. For idempotent consumers replays are safe; for side-effecting consumers replays duplicate the side-effects unless idempotent/dedupe holds. State replay tolerance per consumer; many bank consumers (notification, charge) are *not* safely replayable without dedupe.
 
-8. **Use the transactional-outbox to avoid the dual-write problem.** Publishing to a broker + writing your own DB in one transaction needs the outbox: write the event to an outbox table in the same DB transaction, a relay publishes it. Otherwise you get "DB committed, event never published" or the inverse — exactly the silent data-loss banks suffer under naive event designs.
+8. **Use the transactional-outbox to avoid the dual-write problem.** Publishing to a broker + writing your own DB in one transaction needs the outbox: write the event to an outbox table in the same DB transaction, a relay publishes it. Otherwise you get "DB committed, event never published" or the inverse â€” exactly the silent data-loss banks suffer under naive event designs.
 
 ## Banking pitfalls
-- **Domain events entangled with CDC events** — row-change grit from the core pollutes the business event stream; consumers depend on the core's table structure (locked forever). Keep them separate streams.
-- **Pure choreography on a regulated journey** — no accountable director for the KYC/issuance decision; regulated journeys need orchestration-with-events, not free-floating reaction.
-- **Consumers assumed exactly-once because Kafka says so** — Kafka's exactly-once is within-Kafka; the consumer's HTTP call / DB write drops to at-least-once end-to-end. Design consumer idempotency + dedupe, always.
-- **Wrong partition keys** — partitioned for throughput (random) not for ordering invariants; out-of-order consuming produces wrong decisions. Key by the ordering-invariant (account/UETR/customer).
-- **Naive dual-write** — DB commit + broker publish in two separate operations → silent publish-loss or ghost publish; use the transactional outbox.
-- **Poison-message without DLQ** — a malformed event retried forever stalls the partition (and everything behind it, ordering); bounded-retry + DLQ + alerting or the legacy core's grit stops the stream.
-- **Replay assumed safe** — re-running events against side-effecting consumers (charge, notify) duplicates the side-effects unless idempotency-keyed/deduped; state replay tolerance per consumer.
-- **Event schema breaking-versioned silently** — a quiet schema change breaks unknown consumers; additive-only within a version, breaking = new type + deprecation runway.
+- **Domain events entangled with CDC events** â€” row-change grit from the core pollutes the business event stream; consumers depend on the core's table structure (locked forever). Keep them separate streams.
+- **Pure choreography on a regulated journey** â€” no accountable director for the KYC/issuance decision; regulated journeys need orchestration-with-events, not free-floating reaction.
+- **Consumers assumed exactly-once because Kafka says so** â€” Kafka's exactly-once is within-Kafka; the consumer's HTTP call / DB write drops to at-least-once end-to-end. Design consumer idempotency + dedupe, always.
+- **Wrong partition keys** â€” partitioned for throughput (random) not for ordering invariants; out-of-order consuming produces wrong decisions. Key by the ordering-invariant (account/UETR/customer).
+- **Naive dual-write** â€” DB commit + broker publish in two separate operations â†’ silent publish-loss or ghost publish; use the transactional outbox.
+- **Poison-message without DLQ** â€” a malformed event retried forever stalls the partition (and everything behind it, ordering); bounded-retry + DLQ + alerting or the legacy core's grit stops the stream.
+- **Replay assumed safe** â€” re-running events against side-effecting consumers (charge, notify) duplicates the side-effects unless idempotency-keyed/deduped; state replay tolerance per consumer.
+- **Event schema breaking-versioned silently** â€” a quiet schema change breaks unknown consumers; additive-only within a version, breaking = new type + deprecation runway.
 
 ## Bulletproofing against Rationalization
 To prevent async chaotic messaging that loses financial events, you MUST:
@@ -68,18 +71,18 @@ To prevent async chaotic messaging that loses financial events, you MUST:
 **Violating these rules invalidates the Event-Driven Design.**
 
 ## Outputs
-- **Event design** — domain vs CDC separated, event types/schemas (versioned + additive), choreography-vs-orchestration call per flow.
-- **Reliability model** — partition keys (ordering invariants), idempotency keys (dedupe at consumer), DLQ + bounded retry, replay tolerance per consumer.
-- **Transactional-outbox decision** — where needed to avoid dual-write loss.
-- **Backbone topology note** — domain-topic layout, partitioning strategy, the bridge to any enterprise hub.
+- **Event design** â€” domain vs CDC separated, event types/schemas (versioned + additive), choreography-vs-orchestration call per flow.
+- **Reliability model** â€” partition keys (ordering invariants), idempotency keys (dedupe at consumer), DLQ + bounded retry, replay tolerance per consumer.
+- **Transactional-outbox decision** â€” where needed to avoid dual-write loss.
+- **Backbone topology note** â€” domain-topic layout, partitioning strategy, the bridge to any enterprise hub.
 
 ## Related skills
-- [messaging](../messaging/SKILL.md) — the transport this runs over.
-- [data-sync](../data-sync/SKILL.md) — the CDC sibling for the data-synchronization side.
-- [api-design](../api-design/SKILL.md) — the command-API half of an orchestrated event flow.
-- [integration-patterns](../integration-patterns/SKILL.md) — picks the surrounding integration pattern.
-- [application-migration](../../migration/application-migration/SKILL.md) — for strangler-fig the event seam out of the core.
-- [observability](../../devops/observability/SKILL.md) — distributed tracing across the event chain.
+- [messaging](../messaging/SKILL.md) â€” the transport this runs over.
+- [data-sync](../data-sync/SKILL.md) â€” the CDC sibling for the data-synchronization side.
+- [api-design](../api-design/SKILL.md) â€” the command-API half of an orchestrated event flow.
+- [integration-patterns](../integration-patterns/SKILL.md) â€” picks the surrounding integration pattern.
+- [application-migration](../../migration/application-migration/SKILL.md) â€” for strangler-fig the event seam out of the core.
+- [observability](../../devops/observability/SKILL.md) â€” distributed tracing across the event chain.
 
 ### Banking Context & Examples
 
@@ -125,4 +128,5 @@ To prevent async chaotic messaging that loses financial events, you MUST:
 1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+
 

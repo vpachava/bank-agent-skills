@@ -1,9 +1,9 @@
----
+﻿---
 name: aws-review
 owner: Architectural Governance
 version: 0.1.0
 last-reviewed: 2026-08-15
-description: "Use when reviewing AWS-based banking architectures — produces an AWS-review report (well-architected alignment, UAE-residency, security)."
+description: "Use when reviewing AWS-based banking architectures â€” produces an AWS-review report (well-architected alignment, UAE-residency, security)."
 required-inputs:
   - AWS architectural design/IaC
   - Data-residency requirements (UAE regions)
@@ -13,6 +13,9 @@ expected-deliverables:
   - AWS Well-Architected review report
   - UAE data-residency compliance verification
   - Security/IAM risk-register entries
+togaf-phases: [Phase D]
+togaf-artifacts: [Deployment Diagram]
+bian-service-domains: [Integration.API]
 ---
 
 # /aws-review
@@ -21,9 +24,9 @@ expected-deliverables:
 Use for reviewing AWS-based banking solutions. Ensures alignment with AWS Well-Architected Framework while strictly enforcing banking-specific constraints (residency, security-governance) for the UAE market.
 
 ## Inputs
-- **AWS Design/Code** — Target VPC/account/service-configs.
-- **Residency Target** — `me-central-1` (UAE) alignment.
-- **Workload Profile** — Criticality, PII/Payment-data classification.
+- **AWS Design/Code** â€” Target VPC/account/service-configs.
+- **Residency Target** â€” `me-central-1` (UAE) alignment.
+- **Workload Profile** â€” Criticality, PII/Payment-data classification.
 
 ## Process
 1. **Verify UAE-Region Alignment.** Confirm workload is exclusively deployed to `me-central-1` or appropriate CBUAE-compliant regions.
@@ -36,10 +39,10 @@ Use for reviewing AWS-based banking solutions. Ensures alignment with AWS Well-A
 5. **Issue Review Verdict.** Approve, Conditional-approve, Veto.
 
 ## Banking pitfalls
-- **Region-misalignment** — Deploying to US/EU regions for "convenience" or "feature availability," violating data-residency laws.
-- **Static-credential-sprawl** — Using IAM Users/Access-keys inside EC2/lambda; forces managed-identities/roles-everywhere.
-- **Public-data-exposure** — S3/RDS instances configured with public-access-enabled (violation of base security sanity).
-- **Ignoring "Cloud-Audit-Blindness"** — Failing to feed CloudTrail/Config-data into the bank’s central SOC-SIEM-toolchain.
+- **Region-misalignment** â€” Deploying to US/EU regions for "convenience" or "feature availability," violating data-residency laws.
+- **Static-credential-sprawl** â€” Using IAM Users/Access-keys inside EC2/lambda; forces managed-identities/roles-everywhere.
+- **Public-data-exposure** â€” S3/RDS instances configured with public-access-enabled (violation of base security sanity).
+- **Ignoring "Cloud-Audit-Blindness"** â€” Failing to feed CloudTrail/Config-data into the bankâ€™s central SOC-SIEM-toolchain.
 
 ## Bulletproofing against Rationalization
 To prevent this skill from being applied as superficial box-ticking, you MUST:
@@ -51,9 +54,9 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 **Violating these rules invalidates the aws-review process.**
 
 ## Outputs
-- **AWS Review Report** — Well-architected gaps + bank-specific findings.
-- **UAE Residency Verification** — Formal confirmation of compliant placement.
-- **Risk-register entries** — Specific security/governance risks discovered.
+- **AWS Review Report** â€” Well-architected gaps + bank-specific findings.
+- **UAE Residency Verification** â€” Formal confirmation of compliant placement.
+- **Risk-register entries** â€” Specific security/governance risks discovered.
 
 ## Related skills
 - [cloud-migration](../../migration/cloud-migration/SKILL.md)
@@ -84,4 +87,5 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+
 

@@ -1,9 +1,12 @@
----
+﻿---
 name: api-design
-description: Use when designing a new API component—internal, channel, or partner—to ensure banking-grade contract boundaries and standard vocabulary.
+description: Use when designing a new API componentâ€”internal, channel, or partnerâ€”to ensure banking-grade contract boundaries and standard vocabulary.
+togaf-phases: [Phase C]
+togaf-artifacts: [HLD]
+bian-service-domains: [Integration.API]
 ---
 
-﻿---
+ï»¿---
 name: api-design
 description: Design standard for REST, gRPC, and AsyncAPI/Event-Driven patterns.
 metadata:
@@ -16,7 +19,7 @@ metadata:
 Design standard for Synchronous and Asynchronous API patterns in banking. Requires API-First exposure; no file/DB access.
 
 ## When to apply
-Use when designing a new API component—internal, channel, or partner—to ensure banking-grade contract boundaries and standard vocabulary.
+Use when designing a new API componentâ€”internal, channel, or partnerâ€”to ensure banking-grade contract boundaries and standard vocabulary.
 
 ## Process
 1. **Contract Sketch**: Define operations (for Sync) or Topics/Channels (for Async), inputs, outputs, errors.
@@ -76,4 +79,5 @@ To prevent leaky API boundaries that skip banking requirements, you MUST:
 1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+
 

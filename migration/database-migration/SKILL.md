@@ -1,9 +1,9 @@
----
+﻿---
 name: database-migration
 owner: Architectural Governance
 version: 0.1.0
 last-reviewed: 2026-08-15
-description: "Use when planning a banking database migration (schema, data, cutover, sync) — produces a DB-migration plan including core-banking data constraints."
+description: "Use when planning a banking database migration (schema, data, cutover, sync) â€” produces a DB-migration plan including core-banking data constraints."
 required-inputs:
   - Source & target database schema/tech stack
   - Data privacy & residency sensitivity (PII/Payment-data)
@@ -13,6 +13,9 @@ expected-deliverables:
   - Database migration strategy document
   - Data-synchronization runbook (dual-write/CDC)
   - Cutover validation plan
+togaf-phases: [Phase F]
+togaf-artifacts: [Migration Plan]
+bian-service-domains: [Integration.Migration]
 ---
 
 # /database-migration
@@ -21,9 +24,9 @@ expected-deliverables:
 Use for migrating banking data, especially core-banking or payment data. Focuses on minimizing downtime, ensuring data integrity, and respecting strict residency requirements for sensitive banking information.
 
 ## Inputs
-- **Schema & Tech** — Source database (e.g., Oracle RAC) to target (e.g., Azure SQL, OCI Exadata).
-- **Sensitive Data Profile** — Maps PII, PCI, and payment data for residency enforcement (PDPL).
-- **Migration constraints** — Required downtime window, max latency, replication bandwidth.
+- **Schema & Tech** â€” Source database (e.g., Oracle RAC) to target (e.g., Azure SQL, OCI Exadata).
+- **Sensitive Data Profile** â€” Maps PII, PCI, and payment data for residency enforcement (PDPL).
+- **Migration constraints** â€” Required downtime window, max latency, replication bandwidth.
 
 ## Process
 1. **Define Data Migration Pattern.** Select from:
@@ -35,10 +38,10 @@ Use for migrating banking data, especially core-banking or payment data. Focuses
 5. **Author DB-migration runbook.** Detailed steps, triggers, rollback procedure ([rollback-plan](../rollback-plan/SKILL.md)).
 
 ## Banking pitfalls
-- **Silent data drift** — Replication issues or CDC-lag introduce inconsistencies between source/target without triggering failure-alerts.
-- **Orphaned integrations** — Migrating the DB *before* updating all integrations (e.g., downstream reporting systems) breaks existing banking services.
-- **Ignoring "reconciliation debt"** — Failing to automate the final data-validity check between source/target before cutover, necessitating manual, high-risk, time-consuming investigation.
-- **Insecure migration-transit** — Moving sensitive payment data over networks (even cloud-internal) that lack sufficiently rigorous encryption/TLS/MTLS compliance for banking workloads.
+- **Silent data drift** â€” Replication issues or CDC-lag introduce inconsistencies between source/target without triggering failure-alerts.
+- **Orphaned integrations** â€” Migrating the DB *before* updating all integrations (e.g., downstream reporting systems) breaks existing banking services.
+- **Ignoring "reconciliation debt"** â€” Failing to automate the final data-validity check between source/target before cutover, necessitating manual, high-risk, time-consuming investigation.
+- **Insecure migration-transit** â€” Moving sensitive payment data over networks (even cloud-internal) that lack sufficiently rigorous encryption/TLS/MTLS compliance for banking workloads.
 
 ## Bulletproofing against Rationalization
 To prevent this skill from being applied as superficial box-ticking, you MUST:
@@ -50,9 +53,9 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 **Violating these rules invalidates the database-migration process.**
 
 ## Outputs
-- **Database migration strategy** — The authoritative migration approach document.
-- **Data-synchronization runbook** — Detailed steps for dual-write or CDC-based sync.
-- **Cutover validation plan** — Checklists to ensure data integrity pre/post-cutover.
+- **Database migration strategy** â€” The authoritative migration approach document.
+- **Data-synchronization runbook** â€” Detailed steps for dual-write or CDC-based sync.
+- **Cutover validation plan** â€” Checklists to ensure data integrity pre/post-cutover.
 
 ## Related skills
 - [integration-seams](../../modernization/research/integration-seams.md)
@@ -83,4 +86,5 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+
 

@@ -1,9 +1,9 @@
----
+﻿---
 name: integration-patterns
 owner: Solution Architecture
 version: 0.1.0
 last-reviewed: 2026-08-09
-description: "Use when a banking scenario needs the right integration pattern chosen — produces a scoped integration-patterns selection (gateway / ACL / strangler / saga / sync-async / idempotency) with rationale per integration seam."
+description: "Use when a banking scenario needs the right integration pattern chosen â€” produces a scoped integration-patterns selection (gateway / ACL / strangler / saga / sync-async / idempotency) with rationale per integration seam."
 required-inputs:
   - The integration seam & the systems across it
   - Trust tier & regulatory posture of the seam
@@ -13,37 +13,40 @@ expected-deliverables:
   - Selected integration pattern(s) per seam with rationale
   - Pattern catalog entry (the seam, the chosen pattern, the alternatives rejected, the traps)
   - Cross-references to the deeper skills when the seam needs ETL / event / sync
+togaf-phases: [Phase C]
+togaf-artifacts: [HLD]
+bian-service-domains: [Integration.API]
 ---
 
 # /integration-patterns
 
 ## When to apply
-Use when the *shaping* of an integration is the question — which pattern across the seam — rather than the detail of one (API contract → `/api-design`; event model → `/event-driven`; transport → `/messaging`; batch pipeline → `/etl`). This skill is the *picker*: it picks the surrounding pattern(s) and hands off to the detail skill. Feeds `/hld-generator` and `/solution-options`.
+Use when the *shaping* of an integration is the question â€” which pattern across the seam â€” rather than the detail of one (API contract â†’ `/api-design`; event model â†’ `/event-driven`; transport â†’ `/messaging`; batch pipeline â†’ `/etl`). This skill is the *picker*: it picks the surrounding pattern(s) and hands off to the detail skill. Feeds `/hld-generator` and `/solution-options`.
 
 ## Inputs
-- **The integration seam** — what system talks to what, across what trust boundary / legacy / partner boundary.
-- **Trust tier & regulatory posture** — internal / partner / public; whether regulated data flows across the seam.
-- **Modernization vs greenfield** — a seam over a legacy core differs from a brand-new inter-service seam (strangler & ACL matter for legacy).
-- **Reliability & latency requirements** — sync-required vs async-OK, ordering, idempotency.
+- **The integration seam** â€” what system talks to what, across what trust boundary / legacy / partner boundary.
+- **Trust tier & regulatory posture** â€” internal / partner / public; whether regulated data flows across the seam.
+- **Modernization vs greenfield** â€” a seam over a legacy core differs from a brand-new inter-service seam (strangler & ACL matter for legacy).
+- **Reliability & latency requirements** â€” sync-required vs async-OK, ordering, idempotency.
 
 ## Process
 
 1. **Characterize the seam.** Across a trust boundary (partner/public)? Over a legacy core? Service-to-service within one boundary? Data-flow (not call)? The seam's character rules out most patterns immediately.
 
-2. **Overlay a legacy core → reach for Anti-Corruption Layer + Strangler + Facade.** When the seam crosses a legacy core: put a façade/API gateway in front (route traffic through one controllable boundary), an Anti-Corruption Layer behind it (translate core's grit into the consuming domain's clean model — your domain never inherits the core's table grudges), and phase replacement via strangler (route incrementally to the new path, retire the old).
-   > Never big-bang the core. The seam design *is* the legacy migration's safety — façade + ACL + strangler.
+2. **Overlay a legacy core â†’ reach for Anti-Corruption Layer + Strangler + Facade.** When the seam crosses a legacy core: put a faÃ§ade/API gateway in front (route traffic through one controllable boundary), an Anti-Corruption Layer behind it (translate core's grit into the consuming domain's clean model â€” your domain never inherits the core's table grudges), and phase replacement via strangler (route incrementally to the new path, retire the old).
+   > Never big-bang the core. The seam design *is* the legacy migration's safety â€” faÃ§ade + ACL + strangler.
 
 3. **Match the seam to a pattern, then to a detail skill.**
-   - **Sync command over internal seam** → API contract (`/api-design`).
-   - **Status/recon or fire-and-react** → event + Async-API (`/event-driven`, `/messaging`).
-   - **Two-system current-view** → CDC-based sync (`/data-sync`).
-   - **Scheduled analytic/reporting movement** → ETL/ELT (`/etl`).
-   - **Long-running multi-step with compensations** → saga (chosen here, detailed in the flow's `/lld-generator`).
-   - **Partner / public** → API + FAPI2/authn/authz + rate-limitation (`/api-design` + `/security-architecture-review`).
+   - **Sync command over internal seam** â†’ API contract (`/api-design`).
+   - **Status/recon or fire-and-react** â†’ event + Async-API (`/event-driven`, `/messaging`).
+   - **Two-system current-view** â†’ CDC-based sync (`/data-sync`).
+   - **Scheduled analytic/reporting movement** â†’ ETL/ELT (`/etl`).
+   - **Long-running multi-step with compensations** â†’ saga (chosen here, detailed in the flow's `/lld-generator`).
+   - **Partner / public** â†’ API + FAPI2/authn/authz + rate-limitation (`/api-design` + `/security-architecture-review`).
 
 4. **Choose sync vs async per operation, not per system.** A system can expose a sync command API and an async event feed simultaneously; decide per operation whether the caller needs the result synchronously (command, sync) or can react later (event, async). Forcing everything sync chains the bottleneck; forcing everything async loses the command/response contract.
 
-5. **Orchestrate RPA as a Microservice.** For legacy seams that lack APIs, wrap RPA agents as a microservice façade: 
+5. **Orchestrate RPA as a Microservice.** For legacy seams that lack APIs, wrap RPA agents as a microservice faÃ§ade: 
     - Expose standard Sync/Async API wrappers for the RPA process.
     - Decouple RPA agent lifecycle from API request lifecycle via persistent queuing.
     - Implement robust error handling (RPA step retry) and reconciliation.
@@ -56,14 +59,14 @@ Use when the *shaping* of an integration is the question — which pattern acros
 7. **Document the alternative rejected and the trap it avoided.** The pattern catalog entry is most valuable when it states: *we chose X (not Y), because Z, and Y's trap was W*. The rejected alternative is at least as instructive as the choice.
 
 ## Banking pitfalls
-- **No seam characterization** — picking a pattern before understanding whether the seam crosses a trust boundary, a legacy core, or synchronous-time-critical flow; wrong seam → wrong pattern.
-- **Big-bang across a legacy core** — replacing the core's seam without façade + ACL + strangler; the migration is unsafe, the new path can't be progressively cut, and rollback is a re-deploy everything.
-- **Everything sync → chained bottleneck** — the core is already the bottleneck; new sync calls through it compound the stall; let status/recon flow async where the caller doesn't need it synchronously.
-- **Everything async → no command/response contract** — callers who need the result treated as event-subscribers; over-async erases the call/response contract and breaks ORMs/tests.
-- **Saga without compensations** — multi-service flow that only has forward steps; a failure mid-saga leaves inconsistent state (issued-but-not-debited); every step needs a compensating action.
-- **Cross-seam without idempotency/recon** — where duplicated requests double-effect and where drift goes uncaught; bake UETR-style idempotency + statement-vs-ledger recon at every seam.
-- **Anti-Corruption Layer skipped "for speed"** — letting the core's nouns (its table structure, its decades-accumulated field connotations) leak straight into a modern service; the leak is forever and locks every consumer.
-- **Pattern chosen without documenting the rejected alternative** — six months later nobody remembers why the obvious-synchronous call is async; record it (an ADR, or the catalog entry's "rejected because" line).
+- **No seam characterization** â€” picking a pattern before understanding whether the seam crosses a trust boundary, a legacy core, or synchronous-time-critical flow; wrong seam â†’ wrong pattern.
+- **Big-bang across a legacy core** â€” replacing the core's seam without faÃ§ade + ACL + strangler; the migration is unsafe, the new path can't be progressively cut, and rollback is a re-deploy everything.
+- **Everything sync â†’ chained bottleneck** â€” the core is already the bottleneck; new sync calls through it compound the stall; let status/recon flow async where the caller doesn't need it synchronously.
+- **Everything async â†’ no command/response contract** â€” callers who need the result treated as event-subscribers; over-async erases the call/response contract and breaks ORMs/tests.
+- **Saga without compensations** â€” multi-service flow that only has forward steps; a failure mid-saga leaves inconsistent state (issued-but-not-debited); every step needs a compensating action.
+- **Cross-seam without idempotency/recon** â€” where duplicated requests double-effect and where drift goes uncaught; bake UETR-style idempotency + statement-vs-ledger recon at every seam.
+- **Anti-Corruption Layer skipped "for speed"** â€” letting the core's nouns (its table structure, its decades-accumulated field connotations) leak straight into a modern service; the leak is forever and locks every consumer.
+- **Pattern chosen without documenting the rejected alternative** â€” six months later nobody remembers why the obvious-synchronous call is async; record it (an ADR, or the catalog entry's "rejected because" line).
 
 ## Bulletproofing against Rationalization
 To prevent anti-patterns masquerading as "enterprise integration," you MUST:
@@ -75,25 +78,25 @@ To prevent anti-patterns masquerading as "enterprise integration," you MUST:
 **Violating these rules invalidates the Integration Pattern.**
 
 ## Outputs
-- **Selected integration pattern(s) per seam** — with rationale + the rejected alternative + trap avoided.
-- **Pattern catalog entry** — seam description, chosen pattern, deeper-skill handoff (`/api-design`, `/event-driven`, `/etl`, `/data-sync`).
-- **Idempotency & reconciliation requirements** — per seam, even if handed off to a detail skill.
+- **Selected integration pattern(s) per seam** â€” with rationale + the rejected alternative + trap avoided.
+- **Pattern catalog entry** â€” seam description, chosen pattern, deeper-skill handoff (`/api-design`, `/event-driven`, `/etl`, `/data-sync`).
+- **Idempotency & reconciliation requirements** â€” per seam, even if handed off to a detail skill.
 
 ## Related skills
-- [api-design](../api-design/SKILL.md) — sync-command seams.
-- [event-driven](../event-driven/SKILL.md) — async / saga-choreography seams.
-- [messaging](../messaging/SKILL.md) — the transport.
-- [data-sync](../data-sync/SKILL.md) — CDC / current-view seams.
-- [etl](../etl/SKILL.md) — batch / reporting seams.
-- [application-migration](../../migration/application-migration/SKILL.md) — strangler-figging the curated legacy seam.
-- [hld-generator](../../architecture/hld-generator/SKILL.md) — the seam choices embed in the HLD.
+- [api-design](../api-design/SKILL.md) â€” sync-command seams.
+- [event-driven](../event-driven/SKILL.md) â€” async / saga-choreography seams.
+- [messaging](../messaging/SKILL.md) â€” the transport.
+- [data-sync](../data-sync/SKILL.md) â€” CDC / current-view seams.
+- [etl](../etl/SKILL.md) â€” batch / reporting seams.
+- [application-migration](../../migration/application-migration/SKILL.md) â€” strangler-figging the curated legacy seam.
+- [hld-generator](../../architecture/hld-generator/SKILL.md) â€” the seam choices embed in the HLD.
 
 ### Banking Context & Examples
 
 #### (1) Legacy Core Integration Pattern Example
 **Scenario:** Modernizing the customer-facing `Mobile-App` by modernizing access to the `Legacy-Core-Banking-System`.
-- **Integration Choice:** [Façade + ACL (Anti-Corruption Layer) + Strangler-Fig]. 
-- **Rationale:** Protects the new mobile architecture from the legacy core's inconsistent schema (ACL), provides a unified entry point (Façade), and allows iterative migration (Strangler).
+- **Integration Choice:** [FaÃ§ade + ACL (Anti-Corruption Layer) + Strangler-Fig]. 
+- **Rationale:** Protects the new mobile architecture from the legacy core's inconsistent schema (ACL), provides a unified entry point (FaÃ§ade), and allows iterative migration (Strangler).
 - **Reject Alternative:** [Direct-Database-Connect]. Rejected because it bypasses legacy business rules and creates unacceptable operational risk.
 - **Trap Avoided:** Tightly coupling the new portal to legacy table structures, which would require re-modernization later.
 
@@ -113,4 +116,5 @@ To prevent anti-patterns masquerading as "enterprise integration," you MUST:
 1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+
 

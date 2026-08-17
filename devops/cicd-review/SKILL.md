@@ -1,9 +1,12 @@
----
+﻿---
 name: cicd-review
 owner: Architectural Governance
 version: 0.1.1
 last-reviewed: 2026-08-16
-description: "Use when reviewing a banking CI/CD pipeline — produces a review report (gates, build-integrity, artifact-security, promotion, audit-trail, and automated readiness)."
+description: "Use when reviewing a banking CI/CD pipeline â€” produces a review report (gates, build-integrity, artifact-security, promotion, audit-trail, and automated readiness)."
+togaf-phases: [Phase G]
+togaf-artifacts: [Compliance Checklist]
+bian-service-domains: [Security.Auth]
 ---
 
 # /cicd-review
@@ -12,9 +15,9 @@ description: "Use when reviewing a banking CI/CD pipeline — produces a review 
 Use to validate that a banking team's CI/CD pipeline ensures *software supply chain integrity*, preventing unauthorized or unverified code from reaching production. It transforms pipelines from "developer productivity tools" into "regulated banking control-points."
 
 ## Inputs
-- **Pipeline definition** — Pipeline as code (e.g. Jenkinsfile, GitHub Actions, Azure Pipelines).
-- **Control strategy** — How are secrets/signed-artifacts handled?
-- **Audit Requirement** — Traceability: build-ID to commit to artifact-signature.
+- **Pipeline definition** â€” Pipeline as code (e.g. Jenkinsfile, GitHub Actions, Azure Pipelines).
+- **Control strategy** â€” How are secrets/signed-artifacts handled?
+- **Audit Requirement** â€” Traceability: build-ID to commit to artifact-signature.
 
 ## Process
 1. **Source/Build Integrity.** Verify build-from-tag-only. Enforce code-signing at build-time.
@@ -25,10 +28,10 @@ Use to validate that a banking team's CI/CD pipeline ensures *software supply ch
 6. **Issue Review Verdict.** Report findings & non-negotiables.
 
 ## Banking pitfalls
-- **"Bypass-pipeline" culture** — Allowing direct-to-PROD deployments without pipeline-orchestrated automated controls (critical compliance risk).
-- **Artifact-registry-exposure** — Unsigned build-artifacts sitting in publicly-accessible/unauthorized registries (software supply chain risk).
-- **Missing approval-audit** — Pipeline stages that "promote" but do not capture the identity of the human-approver for the required-audit-file.
-- **Credential-management-in-pipeline** — Pipeline scripts with raw-credentials/secrets instead of managed-secrets + OIDC-federated-service-accounts.
+- **"Bypass-pipeline" culture** â€” Allowing direct-to-PROD deployments without pipeline-orchestrated automated controls (critical compliance risk).
+- **Artifact-registry-exposure** â€” Unsigned build-artifacts sitting in publicly-accessible/unauthorized registries (software supply chain risk).
+- **Missing approval-audit** â€” Pipeline stages that "promote" but do not capture the identity of the human-approver for the required-audit-file.
+- **Credential-management-in-pipeline** â€” Pipeline scripts with raw-credentials/secrets instead of managed-secrets + OIDC-federated-service-accounts.
 
 ## Bulletproofing against Rationalization
 To prevent this skill from being applied as superficial box-ticking, you MUST:
@@ -40,9 +43,9 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 **Violating these rules invalidates the cicd-review process.**
 
 ## Outputs
-- **CI/CD review report** — Automated-control gaps + pipeline-hardening steps.
-- **Security/Audit-gap analysis** — Specific compliance-issues found in build/deploy logic.
-- **Promotion-pipeline risk-profile** — Summary of residual risk in the pipeline.
+- **CI/CD review report** â€” Automated-control gaps + pipeline-hardening steps.
+- **Security/Audit-gap analysis** â€” Specific compliance-issues found in build/deploy logic.
+- **Promotion-pipeline risk-profile** â€” Summary of residual risk in the pipeline.
 
 ## Related skills
 - [release-readiness](../release-readiness/SKILL.md)
@@ -73,4 +76,5 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+
 

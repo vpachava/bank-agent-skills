@@ -1,9 +1,9 @@
----
+﻿---
 name: azure-review
 owner: Architectural Governance
 version: 0.1.0
 last-reviewed: 2026-08-15
-description: "Use when reviewing Azure-based banking architectures — produces an Azure-review report (well-architected alignment, UAE-residency, security)."
+description: "Use when reviewing Azure-based banking architectures â€” produces an Azure-review report (well-architected alignment, UAE-residency, security)."
 required-inputs:
   - Azure architectural design/IaC
   - Data-residency requirements (UAE regions)
@@ -13,6 +13,9 @@ expected-deliverables:
   - Azure Well-Architected review report
   - UAE data-residency compliance verification
   - Security/IAM risk-register entries
+togaf-phases: [Phase D]
+togaf-artifacts: [Deployment Diagram]
+bian-service-domains: [Integration.API]
 ---
 
 # /azure-review
@@ -21,9 +24,9 @@ expected-deliverables:
 Use for reviewing Azure-based banking solutions. Ensures alignment with Microsoft Azure Well-Architected / CAF, while strictly enforcing banking-specific constraints (residency, security-governance) for the UAE market.
 
 ## Inputs
-- **Azure Design/Code** — ARM/Bicep/Terraform targeting Resource-groups/subscriptions.
-- **Residency Target** — `uaenorth` / `uaecentral` alignment.
-- **Workload Profile** — Criticality, PII/Payment-data classification.
+- **Azure Design/Code** â€” ARM/Bicep/Terraform targeting Resource-groups/subscriptions.
+- **Residency Target** â€” `uaenorth` / `uaecentral` alignment.
+- **Workload Profile** â€” Criticality, PII/Payment-data classification.
 
 ## Process
 1. **Verify UAE-Region Alignment.** Confirm all resources exclusively reside in `uaenorth` (Dubai) / `uaecentral` (Abu Dhabi).
@@ -36,10 +39,10 @@ Use for reviewing Azure-based banking solutions. Ensures alignment with Microsof
 5. **Issue Review Verdict.** Approve, Conditional-approve, Veto.
 
 ## Banking pitfalls
-- **Region-misalignment** — Accidentally deploying resources into non-UAE regions (e.g. `westeurope` dev-default).
-- **Public-endpoint-exposure** — Azure App-services/Storage-accounts with "Allow Public Access" for ease-of-testing (critical vulnerability).
-- **RBAC-overpermissioning** — "Contributor" roles granted to entire resource-group scopes (instead of least-privilege).
-- **Ignoring "Azure-Security-Center-as-a-Silo"** — Not integrating Azure-security-alerts into the bank's enterprise-SIEM.
+- **Region-misalignment** â€” Accidentally deploying resources into non-UAE regions (e.g. `westeurope` dev-default).
+- **Public-endpoint-exposure** â€” Azure App-services/Storage-accounts with "Allow Public Access" for ease-of-testing (critical vulnerability).
+- **RBAC-overpermissioning** â€” "Contributor" roles granted to entire resource-group scopes (instead of least-privilege).
+- **Ignoring "Azure-Security-Center-as-a-Silo"** â€” Not integrating Azure-security-alerts into the bank's enterprise-SIEM.
 
 ## Bulletproofing against Rationalization
 To prevent this skill from being applied as superficial box-ticking, you MUST:
@@ -51,9 +54,9 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 **Violating these rules invalidates the azure-review process.**
 
 ## Outputs
-- **Azure Review Report** — Well-architected gaps + bank-specific findings.
-- **UAE Residency Verification** — Formal confirmation of compliant placement.
-- **Risk-register entries** — Specific security/governance risks discovered.
+- **Azure Review Report** â€” Well-architected gaps + bank-specific findings.
+- **UAE Residency Verification** â€” Formal confirmation of compliant placement.
+- **Risk-register entries** â€” Specific security/governance risks discovered.
 
 ## Related skills
 - [cloud-migration](../../migration/cloud-migration/SKILL.md)
@@ -84,4 +87,5 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+
 

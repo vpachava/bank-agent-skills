@@ -1,9 +1,9 @@
----
+﻿---
 name: deployment-diagrams
 owner: Solution Architecture
 version: 0.1.0
 last-reviewed: 2026-08-08
-description: "Use when a banking solution needs its deployment/topology committed — produces deployment diagrams (via /archify) with regions, HA/DR pairing, landing-zone topology, and the UAE residency perimeter."
+description: "Use when a banking solution needs its deployment/topology committed â€” produces deployment diagrams (via /archify) with regions, HA/DR pairing, landing-zone topology, and the UAE residency perimeter."
 required-inputs:
   - Current landing-zone / cloud estate (AWS, Azure, Oracle/private)
   - NFRs: availability (RTO/RPO), residency, scale targets
@@ -14,24 +14,27 @@ expected-deliverables:
   - Residency-perimeter annotation (onshore / DIFC / ADGM, incl. cross-zone transfer points)
   - HA/DR pairing and data-store placement notes
   - Cloud / landing-zone alignment notes (delegates to /landing-zone-review)
+togaf-phases: [Phase C]
+togaf-artifacts: [HLD]
+bian-service-domains: [Integration.API]
 ---
 
 # /deployment-diagrams
 
 ## When to apply
-Use when the deployment shape needs to be committed — the HLD lands topology at altitude, the LLD commits it, and any governance / production-readiness review will ask "where does it run, how is it redundant, where does the data live." Rendering delegates to `/archify`. This skill owns *what* to depict and the banking topology conventions.
+Use when the deployment shape needs to be committed â€” the HLD lands topology at altitude, the LLD commits it, and any governance / production-readiness review will ask "where does it run, how is it redundant, where does the data live." Rendering delegates to `/archify`. This skill owns *what* to depict and the banking topology conventions.
 
 ## Inputs
-- **Current landing-zone / cloud estate** — AWS, Azure, Oracle/private; the subscriptions/accounts, hub-spoke, network segmentation in place (cross-link `/landing-zone-review`).
-- **NFRs** — availability (RTO/RPO), residency, scale (latency/throughput) — these drive the topology (paired regions, multi-AZ, data-store placement).
-- **Containers from the HLD** — the deployable units this diagram places.
-- **Residency obligations** — onshore UAE vs DIFC/ADGM, the CBUAE sectoral in-country-residency rules, the free-zone cross-zone SCC/BCR obligation.
+- **Current landing-zone / cloud estate** â€” AWS, Azure, Oracle/private; the subscriptions/accounts, hub-spoke, network segmentation in place (cross-link `/landing-zone-review`).
+- **NFRs** â€” availability (RTO/RPO), residency, scale (latency/throughput) â€” these drive the topology (paired regions, multi-AZ, data-store placement).
+- **Containers from the HLD** â€” the deployable units this diagram places.
+- **Residency obligations** â€” onshore UAE vs DIFC/ADGM, the CBUAE sectoral in-country-residency rules, the free-zone cross-zone SCC/BCR obligation.
 
 ## Process
-1. **Choose the abstraction — infrastructure topology, not container layout.** A deployment diagram is where things *run* (regions, zones, clusters, store placement, network) with the containers placed on them. Don't conflate with the C4 container diagram; this is the substrate under it.
+1. **Choose the abstraction â€” infrastructure topology, not container layout.** A deployment diagram is where things *run* (regions, zones, clusters, store placement, network) with the containers placed on them. Don't conflate with the C4 container diagram; this is the substrate under it.
 
 2. **Place regions/availability zones per residency rule.** For a UAE bank, onshore region(s) for the CBUAE-residency data; free-zone landing zones for DIFC/ADGM activity if applicable. Mark the **residency perimeter** explicitly as a dotted boundary.
-   > Where the cross-zone (onshore ↔ DIFC/ADGM) transfer happens, annotate it with the SCC/BCR implication surfaced by the UAE-compliance research — this is the diagram that either honors or violates that obligation.
+   > Where the cross-zone (onshore â†” DIFC/ADGM) transfer happens, annotate it with the SCC/BCR implication surfaced by the UAE-compliance research â€” this is the diagram that either honors or violates that obligation.
 
 3. **Lay the landing-zone topology.** Hub-spoke, management/landing/online-offline subscriptions, network segmentation, the egress/ingress gates. Delegate finer governance review to `/landing-zone-review`; here show the broad topology the HLD/LLD commits to.
 
@@ -47,13 +50,13 @@ Use when the deployment shape needs to be committed — the HLD lands topology a
 8. **Delegate rendering to `/archify`.** Hand it the structured topology input; it returns polished explorable diagrams. This skill owns the *topology + banking conventions*, `/archify` the rendering.
 
 ## Bulletproofing against Rationalization
-- **No residency perimeter** — a deployment diagram without the onshore/DIFC/ADGM perimeter conceals the cross-border residency obligation; the very review this feeds (production-readiness) will fail it. Mark the perimeter.
-- **Single-cloud assumption for a multi-cloud estate** — drawing AWS-only when the estate runs AWS+Azure+Oracle/private hides the inter-cloud seams where migration, latency, and cost risks cluster.
-- **HA/DR shown without data-replication** — paired regions drawn as boxes without the replication topology that makes failover real (and without the DR runbook reference) oversells availability.
-- **Residency left to "it's all in-region"** — when the estate in fact straddles onshore and a free zone, the residency diagram must show both and the transfer point; "all in-region" is often a lie.
-- **Topology without the legacy-core ingress choke point** — the bottleneck for many bank flows is the single ingress to the core; if the diagram hides it, the perf review is blindsided.
-- **Conflating with C4** — deployment is the *substrate* (regions/zones/network); C4 is the *software structure* placed on top. Keep them separate but linked (each C4 container placed on a deployment node).
-- **Rendering-obsessed** — the pretty topology that misplaces the residency boundary or omits the DR pairing is worse than a rough correct one; own the content.
+- **No residency perimeter** â€” a deployment diagram without the onshore/DIFC/ADGM perimeter conceals the cross-border residency obligation; the very review this feeds (production-readiness) will fail it. Mark the perimeter.
+- **Single-cloud assumption for a multi-cloud estate** â€” drawing AWS-only when the estate runs AWS+Azure+Oracle/private hides the inter-cloud seams where migration, latency, and cost risks cluster.
+- **HA/DR shown without data-replication** â€” paired regions drawn as boxes without the replication topology that makes failover real (and without the DR runbook reference) oversells availability.
+- **Residency left to "it's all in-region"** â€” when the estate in fact straddles onshore and a free zone, the residency diagram must show both and the transfer point; "all in-region" is often a lie.
+- **Topology without the legacy-core ingress choke point** â€” the bottleneck for many bank flows is the single ingress to the core; if the diagram hides it, the perf review is blindsided.
+- **Conflating with C4** â€” deployment is the *substrate* (regions/zones/network); C4 is the *software structure* placed on top. Keep them separate but linked (each C4 container placed on a deployment node).
+- **Rendering-obsessed** â€” the pretty topology that misplaces the residency boundary or omits the DR pairing is worse than a rough correct one; own the content.
 
 ## Bulletproofing against Rationalization
 To prevent abstracted topology masking systemic fragility, you MUST:
@@ -66,20 +69,20 @@ To prevent abstracted topology masking systemic fragility, you MUST:
 **Violating these rules invalidates the Deployment Diagram.**
 
 ## Outputs
-- **Deployment/topology diagram(s)** — rendered by `/archify`.
-- **Residency-perimeter annotation** — onshore / DIFC / ADGM zones, cross-zone transfer points with SCC/BCR implication.
-- **HA/DR pairing** — regions, replication, failover mode, DR-runbook reference.
-- **Data-store placement** — per store, residency + retention.
+- **Deployment/topology diagram(s)** â€” rendered by `/archify`.
+- **Residency-perimeter annotation** â€” onshore / DIFC / ADGM zones, cross-zone transfer points with SCC/BCR implication.
+- **HA/DR pairing** â€” regions, replication, failover mode, DR-runbook reference.
+- **Data-store placement** â€” per store, residency + retention.
 - **Multi-cloud-seam** + **scale-anchor** notes.
 
 ## Related skills
-- [/archify](../../../../) — rendering engine.
-- [landing-zone-review](../../cloud/landing-zone-review/SKILL.md) — the governance review of the topology this depicts.
-- [c4-model](../c4-model/SKILL.md) — the software structure placed on this substrate.
-- [hld-generator](../hld-generator/SKILL.md) — commits topology at altitude.
-- [lld-generator](../lld-generator/SKILL.md) — commits the detailed topology.
-- [dr-review](../../governance/dr-review/SKILL.md) — the DR posture this topology implies.
-- [performance-review](../../devops/performance-review/SKILL.md) — reads this for scale anchors and choke points.
+- [/archify](../../../../) â€” rendering engine.
+- [landing-zone-review](../../cloud/landing-zone-review/SKILL.md) â€” the governance review of the topology this depicts.
+- [c4-model](../c4-model/SKILL.md) â€” the software structure placed on this substrate.
+- [hld-generator](../hld-generator/SKILL.md) â€” commits topology at altitude.
+- [lld-generator](../lld-generator/SKILL.md) â€” commits the detailed topology.
+- [dr-review](../../governance/dr-review/SKILL.md) â€” the DR posture this topology implies.
+- [performance-review](../../devops/performance-review/SKILL.md) â€” reads this for scale anchors and choke points.
 
 ### Banking Context & Examples
 
@@ -105,4 +108,5 @@ To prevent abstracted topology masking systemic fragility, you MUST:
 1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+
 

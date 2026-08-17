@@ -1,6 +1,9 @@
----
+﻿---
 name: ai-model-governance
 description: Use when designing or deploying AI models that require tracking for drift, bias, and regulatory compliance.
+togaf-phases: [Phase G]
+togaf-artifacts: [Compliance Checklist]
+bian-service-domains: [Security.Auth]
 ---
 
 # /ai-model-governance
@@ -54,4 +57,5 @@ Any ADR referencing a model governed by this skill MUST include:
 1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+
 

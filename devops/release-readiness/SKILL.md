@@ -1,9 +1,9 @@
----
+﻿---
 name: release-readiness
 owner: Architectural Governance
 version: 0.1.0
 last-reviewed: 2026-08-15
-description: "Use when gating a release for go/no-go — produces a release-readiness checklist/verdict (change-advisory, test-evidence, rollback-plan, compliance)."
+description: "Use when gating a release for go/no-go â€” produces a release-readiness checklist/verdict (change-advisory, test-evidence, rollback-plan, compliance)."
 required-inputs:
   - Initiative/system-service-context
   - Test evidence & verification reports
@@ -13,6 +13,9 @@ expected-deliverables:
   - Release-readiness scorecard
   - Go/No-Go decision-verdict
   - Regulatory release-traceability record
+togaf-phases: [Phase G]
+togaf-artifacts: [Compliance Checklist]
+bian-service-domains: [Security.Auth]
 ---
 
 # /release-readiness
@@ -21,9 +24,9 @@ expected-deliverables:
 Use for the mandatory "go/no-go" gate before *any* release. Ensures that releases are not just technically sound, but fully compliant, audited, and rollback-ready before hitting the banking production domain.
 
 ## Inputs
-- **Release-context** — Release-ID, impacted services, business-impact analysis.
-- **Evidence-pack** — Test logs, SAST reports, approval sign-offs.
-- **Contingency Status** — Rollback-plan validated?
+- **Release-context** â€” Release-ID, impacted services, business-impact analysis.
+- **Evidence-pack** â€” Test logs, SAST reports, approval sign-offs.
+- **Contingency Status** â€” Rollback-plan validated?
 
 ## Process
 1. **Change-Advisory Gate.** Verify the CAB/Change-board-approval (or equivalent automated-gate data).
@@ -33,10 +36,10 @@ Use for the mandatory "go/no-go" gate before *any* release. Ensures that release
 5. **Issue Verdict.** Go, No-go, or Conditional-go (with-risks-accepted).
 
 ## Banking pitfalls
-- **Evidence-fabrication/omission** — Assuming "it ran through the pipeline" is sufficient evidence without auditing the actual test-exit-criteria log.
-- **Rollback "assumed"** — Believing the app can be rolled-back without practicing the DB-data-reversal-step in a non-production environment.
-- **Failing to notify Stakeholders** — Releasing without the documented communication-plan for Compliance/SOC, or missing a regulatory-reporting trigger.
-- **Regulatory-gating invisibility** — Approving a release that requires a specific CBUAE approval-letter that hasn't actually arrived yet.
+- **Evidence-fabrication/omission** â€” Assuming "it ran through the pipeline" is sufficient evidence without auditing the actual test-exit-criteria log.
+- **Rollback "assumed"** â€” Believing the app can be rolled-back without practicing the DB-data-reversal-step in a non-production environment.
+- **Failing to notify Stakeholders** â€” Releasing without the documented communication-plan for Compliance/SOC, or missing a regulatory-reporting trigger.
+- **Regulatory-gating invisibility** â€” Approving a release that requires a specific CBUAE approval-letter that hasn't actually arrived yet.
 
 ## Bulletproofing against Rationalization
 To prevent this skill from being applied as superficial box-ticking, you MUST:
@@ -48,9 +51,9 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 **Violating these rules invalidates the release-readiness process.**
 
 ## Outputs
-- **Release-readiness scorecard** — The objective measure of gates vs targets.
-- **Go/No-Go decision-verdict** — Executable command to release.
-- **Regulatory release-traceability record** — Snapshot of release-compliance for the audit-trail.
+- **Release-readiness scorecard** â€” The objective measure of gates vs targets.
+- **Go/No-Go decision-verdict** â€” Executable command to release.
+- **Regulatory release-traceability record** â€” Snapshot of release-compliance for the audit-trail.
 
 ## Related skills
 - [cicd-review](../cicd-review/SKILL.md)
@@ -101,4 +104,5 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+
 
