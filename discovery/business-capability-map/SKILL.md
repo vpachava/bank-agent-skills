@@ -75,3 +75,25 @@ To prevent abstract map-generation and detached capability siloing without measu
 - [requirements-analysis](../requirements-analysis/SKILL.md) — the ask the map is scoped to serve.
 - [architecture-review](../../architecture/architecture-review/SKILL.md) — the BIAN-lens review that uses this map.
 - [legacy-assessment](../../modernization/legacy-assessment/SKILL.md) — the realization view feeding legacy-health assessment.
+
+### Banking Context & Examples
+
+#### (1) Credit Card Onboarding Example
+**Scenario:** Mapping the capability "Credit Card Origination" for a retail bank launching a new digital-only card.
+- **Sample Input (Capability):** `Retail Banking` -> `Payments` -> `Credit Card Origination`
+- **Sample Input (Realization):** Realized by `Legacy-Core` and `Digital-Origination-Microsvc`.
+- **UAE Context:** Must include CBUAE-mandated `AECB` credit check capability *prior* to final approval.
+- **Sample Output (Heatmap Entry):** `[Credit Card Origination]: Maturity=Amber, Duplication=High, Regulatory-Exposure=High`
+- **Common Pitfall:** Mapping "Credit Card Origination" but forgetting the integration with `AECB` reporting, leading to a gap in the business capability map that will cause a regulatory block in production.
+
+#### (2) Customer Profile Management Example
+**Scenario:** Rationalizing customer data across branch, mobile, and web channels.
+- **Sample Input:** `Retail Banking` -> `Customer Domain` -> `Customer Profile Management`
+- **UAE Context:** Must comply with `PDPL` (Personal Data Protection Law) standards regarding data residency in UAE.
+- **Common Pitfall:** Mapping "Customer Profile" as a single domain when, in practice, the bank maintains "KYC Profile" and "Marketing Profile" separately. Failing to decompose these leads to PIPL/PDPL compliance issues.
+
+#### (3) Lending/Loans Onboarding Example
+**Scenario:** Mapping a new Sharia-compliant personal loan product.
+- **Sample Input:** `Retail Banking` -> `Lending` -> `Sharia-Compliant Loan Origination`
+- **UAE Context:** Requires integration with a `Sharia Governance Board` service domain for product certification.
+- **Common Pitfall:** Treating Sharia-compliant lending as a generic loan process. It differs significantly in the `Amortization Schedule` and `Interest-Equivalent Calculation` capabilities.

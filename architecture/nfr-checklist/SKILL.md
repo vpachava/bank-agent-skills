@@ -79,3 +79,23 @@ To prevent vague Non-Functional Requirements that engineers cannot test against,
 - [production-readiness](../../governance/production-readiness/SKILL.md) — the gate that the NFRs satisfy.
 - [dr-review](../../governance/dr-review/SKILL.md) — owns the availability/DR NFRs.
 - [sre-review](../../devops/sre-review/SKILL.md) — owns the SLO/error-budget family of NFRs.
+
+### Banking Context & Examples
+
+#### (1) Retail Banking Scenario
+**Scenario:** Applying this skill in a retail bank core-modernization effort.
+- **Architecture Lens Check:** Verification of compliance with CBUAE data-residency rules (e.g. [[compliance]]).
+- **Sample Outcome:** "Design: Automated workflow integration; [[observability]] logs scrubbed of PII."
+- **Common Pitfall:** Ignoring the Sharia-governance impact on the product-schema.
+
+#### (2) Corporate Banking Scenario
+**Scenario:** Using this skill for a corporate digital-onboarding integration.
+- **Architecture Lens Check:** Alignment with AECB credit-reporting integration for legal-entity applicants.
+- **Sample Outcome:** "Design: Integration-seam validated for high-assurance KYC; [[api-design]] handles large payload-signatures."
+- **Common Pitfall:** Bypassing the mandatory legal-entity KYC check due to tight project timelines.
+
+#### (3) Islamic Banking Scenario
+**Scenario:** Utilizing this skill for Sharia-compliant loan product rollouts.
+- **Architecture Lens Check:** Sharia-Board approval workflow documented within the [[architecture-decision-records]].
+- **Sample Outcome:** "Design: Profit-distribution calculation encapsulated; [[api-design]] schema includes mandatory Sharia-compliance flag."
+- **Common Pitfall:** Applying standard interest-based loan models to Islamic products, violating compliance.

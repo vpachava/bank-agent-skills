@@ -56,3 +56,24 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - [proposal](../proposal/SKILL.md)
 - [executive-summary](../executive-summary/SKILL.md)
 - [raid-log](../raid-log/SKILL.md)
+
+
+### Banking Context & Examples
+
+#### (1) Credit Card Onboarding Example
+**Scenario:** Drafting a charter for a new credit-card issuance initiative.
+- **Architecture Lens Check:** High-level project goal must explicitly state compliance with `CBUAE` requirements for credit card product issuance (e.g., DBR/AECB checks).
+- **Sample Outcome:** "Project Charter: Authorized to deliver virtual-card features compliant with CBUAE consumer-protection regulations for retail banking."
+- **Common Pitfall:** Drafting a generic 'Digital-Card-Project' charter, thereby failing to capture the project's regulatory 'compliance-as-code' obligations which can stall go-live.
+
+#### (2) Customer Profile Management Example
+**Scenario:** Project charter for cross-border dashboard rationalization.
+- **Architecture Lens Check:** Documentation of `PDPL` residency-compliance as a foundational project boundary.
+- **Sample Outcome:** "Constraints: All customer PII management must strictly comply with UAE Data Residency policies (PDPL)."
+- **Common Pitfall:** Omitting residency-compliance as a project constraint, encouraging developers to use cloud services that may later be found in violation of local CBUAE/PDPL rules.
+
+#### (3) Lending/Loans Onboarding Example
+**Scenario:** Project charter for Sharia-compliant personal loan product.
+- **Architecture Lens Check:** Explicit requirement for `Sharia Board` approval as part of the project's critical governance path.
+- **Sample Outcome:** "Governance Path: Project cannot proceed to go-live without formal certification from the Internal Sharia Governance Board."
+- **Common Pitfall:** Defining project goals only by revenue/technical metrics, ignoring the 'Sharia-Governance' gate, making the project's Go-Live readiness unattainable.

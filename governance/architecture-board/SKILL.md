@@ -50,3 +50,24 @@ To prevent "info-sharing" sessions that avoid scrutiny and evade accountability,
 - [solution-review](../solution-review/SKILL.md)
 - [design-review](../design-review/SKILL.md)
 - [architecture-decision-records](../../architecture/architecture-decision-records/SKILL.md)
+
+### Banking Context & Examples
+
+#### (1) Credit Card Onboarding Example
+**Scenario:** Presenting a new third-party integration for digital credit card issuance.
+- **Architecture Lens Check:** Verification of `AECB` connectivity and `CBUAE` compliance on data processing by the third party.
+- **Sample Outcome:** "Decision: Approved contingent on `Data Processing Agreement` (DPA) reflecting UAE data-residency compliance."
+- **Common Pitfall:** Presenting the integration without showing how it isolates banking data from the provider’s broader dataset, failing the AGB's mandatory security/residency review.
+
+#### (2) Customer Profile Management Example
+**Scenario:** Approving a new cross-channel customer dashboard allowing profile updates.
+- **Architecture Lens Check:** Does the design handle `PDPL` compliance for cross-border access if customers update data while traveling?
+- **Sample Outcome:** "Decision: Reject design until `High-Assurance Identity Verification` (video-KYC) flow is integrated into mobile update channel."
+- **Common Pitfall:** Board approves the UI-level dashboard without reviewing the underlying integration path, bypassing the mandatory security/compliance check for KYC updates.
+
+#### (3) Lending/Loans Onboarding Example
+**Scenario:** Approving a new Sharia-compliant product workflow.
+- **Architecture Lens Check:** Does the workflow enforce `Sharia Board` notification for all product status changes?
+- **Sample Outcome:** "Decision: Approve architecture pending formal sign-off from `Internal Sharia Governance Board`."
+- **Common Pitfall:** AGB approves the technical workflow for modernizing a loan system, completely ignoring that the product itself must be Sharia-governed, leading to a build that lacks the regulatory "compliance-as-code" features required by board mandates.
+

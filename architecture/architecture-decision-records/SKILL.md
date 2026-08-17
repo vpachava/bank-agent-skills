@@ -109,3 +109,23 @@ We choose Option — **because** <rationale citing the drivers>.
 - Acceptance gate: <board/review link or date>
 - Supersedes / Amends: <ADR-nnnn if any>
 ```
+
+### Banking Context & Examples
+
+#### (1) Credit Card Onboarding Example
+**Scenario:** ADR for choosing a cloud provider for credit card origination.
+- **Architecture Lens Check:** Decision drivers MUST list `CBUAE` data-residency as a critical driver, not just a technical preference.
+- **Sample Outcome:** "Decision drivers: AECB mandated data-locality, CBUAE data-transit compliance, latency < 100ms."
+- **Common Pitfall:** Selecting a provider purely on "vendor-feature-set" while missing the primary driver ("data-residency"), leading to an ADR that cannot defend the choice when regulators challenge the cloud-setup.
+
+#### (2) Customer Profile Management Example
+**Scenario:** ADR for profile-synchronization pattern (synchronous vs asynchronous).
+- **Architecture Lens Check:** Consequences block MUST discuss the risk of `PDPL` audit gaps with delayed-synchronization.
+- **Sample Outcome:** "Consequences: Asynchronous sync reduces core-load but increases residency-audit complexity due to event-log storage."
+- **Common Pitfall:** Recommending asynchronous synchronization without analyzing the regulatory consequence (e.g., how to prove data privacy at the moment of update), which makes the architectural choice defenseless in a DPB/PDPL audit.
+
+#### (3) Lending/Loans Onboarding Example
+**Scenario:** ADR for Sharia-compliant ledger implementation.
+- **Architecture Lens Check:** Evaluates 'Build-Sharia-Module-on-Core' vs 'External-Sharia-Engine'.
+- **Sample Outcome:** "Decision: Choose 'External-Sharia-Engine' because it isolates product-certification from core-binary updates, easing audit."
+- **Common Pitfall:** Choosing an integrated solution because it is 'fast-to-build', ignoring the high cost of re-certifying the *entire* core binary every time Sharia-product rules change, which is a major long-term maintenance penalty."

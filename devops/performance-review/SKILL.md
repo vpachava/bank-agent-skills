@@ -55,3 +55,43 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - [nfr-checklist](../../architecture/nfr-checklist/SKILL.md)
 - [observability](../observability/SKILL.md)
 - [hld-generator](../../architecture/hld-generator/SKILL.md)
+
+### Banking Context & Examples
+
+#### (1) Retail Payment Flow Performance Example
+**Scenario:** Performance testing for high-volume retail payment processing.
+- **Architecture Lens Check:** Simulation of realistic locking contention on the shared ledger database during peak `UAEFTS` operational hours.
+- **Sample Outcome:** "Performance-Evaluation Report: p99 latency increased to 450ms at 2x peak load due to row-level locking on the `Transaction_Ledger` table."
+- **Common Pitfall:** Testing against a 'clean' development database. This fails to surface the locking/concurrency issues that arise in the production ledger when 50+ services attempt simultaneous payment-record commits.
+
+#### (2) AECB Credit Query Load Example
+**Scenario:** Performance review for a real-time credit card origination service.
+- **Architecture Lens Check:** Validating system response times when an `AECB` inquiry latency spikes to >5 seconds.
+- **Sample Outcome:** "Capacity & Bottleneck-Map: Service relies on synchronous `AECB` call; 5s spike causes thread-pool exhaustion."
+- **Common Pitfall:** Assuming `AECB` API is always fast. Performance reviews must explicitly test (and handle) third-party provider latency spikes, or the mobile banking app stops responding for all users.
+
+#### (3) Sharia-Compliant Amortization Calculation Example
+**Scenario:** Stress testing for a new Sharia loan product origination.
+- **Architecture Lens Check:** Evaluating the performance of the complex `Amortization Schedule` logic during batch processing.
+- **Sample Outcome:** "Performance-Evaluation Report: Calculation engine scales linearly (CPU-bound) for 10k concurrent loan origination requests."
+- **Common Pitfall:** Underestimating the computational load of Sharia-compliant financial calculations (often iterative `Profit-Calculation-Algorithms`) in batch, leading to missed execution-windows in core processing hours.
+
+### Banking Context & Examples
+
+#### (1) Retail Banking Scenario
+**Scenario:** Applying this skill in a retail bank core-modernization effort.
+- **Architecture Lens Check:** Verification of compliance with CBUAE data-residency rules (e.g. [[compliance]]).
+- **Sample Outcome:** "Design: Automated workflow integration; [[observability]] logs scrubbed of PII."
+- **Common Pitfall:** Ignoring the Sharia-governance impact on the product-schema.
+
+#### (2) Corporate Banking Scenario
+**Scenario:** Using this skill for a corporate digital-onboarding integration.
+- **Architecture Lens Check:** Alignment with AECB credit-reporting integration for legal-entity applicants.
+- **Sample Outcome:** "Design: Integration-seam validated for high-assurance KYC; [[api-design]] handles large payload-signatures."
+- **Common Pitfall:** Bypassing the mandatory legal-entity KYC check due to tight project timelines.
+
+#### (3) Islamic Banking Scenario
+**Scenario:** Utilizing this skill for Sharia-compliant loan product rollouts.
+- **Architecture Lens Check:** Sharia-Board approval workflow documented within the [[architecture-decision-records]].
+- **Sample Outcome:** "Design: Profit-distribution calculation encapsulated; [[api-design]] schema includes mandatory Sharia-compliance flag."
+- **Common Pitfall:** Applying standard interest-based loan models to Islamic products, violating compliance.

@@ -80,3 +80,22 @@ To prevent data lake swamps and untraceable pipelines, you MUST:
 - [compliance](../../security/compliance/SKILL.md) — the regulatory-reporting obligations the pipeline feeds.
 - [governance architecture-board](../../governance/architecture-board/SKILL.md) — the gate for a regulated-feed pipeline.
 - [performance-review](../../devops/performance-review/SKILL.md) — for the batch-window/bottleneck design.
+
+### Banking Context & Examples
+
+#### (1) Regulatory Reporting ETL Example
+**Scenario:** Building an ETL pipeline to aggregate transaction data for automated `CBUAE` regulatory reporting.
+- **Architecture Lens Check:** Pipeline MUST guarantee data integrity ensuring no transaction record is dropped, and preserve original `UAEFTS` transaction identifiers.
+- **Sample Outcome:** "Pipeline approved, supporting idempotent retry and mandatory audit-logging for all transformed records."
+- **Common Pitfall:** Dropping transaction metadata during transformation, failing to meet the `CBUAE` auditable-trace requirement.
+
+#### (2) AECB Batch Submission ETL Example
+**Scenario:** Transforming local loan records into `AECB` submission formatted files.
+- **Architecture Lens Check:** Validating PII data encryption and strictly enforcing the `AECB` schema definitions.
+- **Common Pitfall:** ETL process introducing schema-mapping errors that lead to AECB submission rejection, requiring manual data adjustment (a high-risk compliance action).
+
+#### (3) Sharia Product Amortization ETL Example
+**Scenario:** ETL job calculating and generating the amortization schedules for Sharia-compliant personal loans.
+- **Architecture Lens Check:** Sharia-compliance requires that amortization calculations use the bank's officially `Sharia-certified formula`.
+- **Sample Outcome:** "ETL transformation logic validated against `Sharia-Governance-Book`."
+- **Common Pitfall:** ETL pipeline applying a generic interest-accrual formula instead of the Sharia-compliant profit-rate formula, resulting in non-compliant customer repayment plans.

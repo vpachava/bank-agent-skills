@@ -80,3 +80,24 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - [compliance](../compliance/SKILL.md) — the obligations these findings may breach.
 - [observability](../../devops/observability/SKILL.md) — the telemetry-path leakage pitfall, owned here.
 - [production-readiness](../../governance/production-readiness/SKILL.md) — the gate that verifies findings closed before go-live.
+
+
+### Banking Context & Examples
+
+#### (1) Credit Card Onboarding Example
+**Scenario:** OWASP API review for a third-party credit card origination endpoint.
+- **Architecture Lens Check:** Focused evaluation on `BOPLA` (Broken Object-Level Authorization) allowing one user to query another user's credit application status and ensuring `AECB` data snippets are not leaked in error messages.
+- **Sample Outcome:** "Findings: IDOR vulnerability detected on `/applications/{id}` endpoint; remediate by enforcing per-request owner-check against the authenticated `UAE Pass` session."
+- **Common Pitfall:** Assuming that because an endpoint is `OAuth2` protected, per-object authorization check is redundant; this leads to broken object-level authorization (BOPLA) gaps.
+
+#### (2) Customer Profile Management Example
+**Scenario:** Security review for an AI-native profile management bot.
+- **Architecture Lens Check:** Stress-testing against `Prompt Injection` trying to exfiltrate customer bank account details via PII leakage and checks for `Insecure Output Handling` when displaying data fetched from legacy core.
+- **Sample Outcome:** "LLM Findings: Critical - injection path detected allowing bot to reveal account masking patterns. Remediation: Implement strict response-validation regex for customer account displays."
+- **Common Pitfall:** Trusting raw AI responses from legacy data-fetching tools without sanitizing the output, which allows LLM hallucination-led data disclosure.
+
+#### (3) Lending/Loans Onboarding Example
+**Scenario:** Security review for Sharia-compliant loan origination API.
+- **Architecture Lens Check:** Validating `FAPI2` compliance for Open Banking API access and ensuring business logic (i.e., loan modification) checks comply with `Sharia Board` rules via transactional signature enforcement.
+- **Sample Outcome:** "API Security: Verified FAPI2 compliance. Finding: Missing per-operation sender-constraint on `/loan/modify` endpoint."
+- **Common Pitfall:** Applying generic API security templates that lack sender-constraint, thus failing open-banking API standards (FAPI2) required for regulated financial integrations.

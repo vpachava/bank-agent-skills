@@ -61,3 +61,22 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - [aws-review](../aws-review/SKILL.md)
 - [azure-review](../azure-review/SKILL.md)
 - [gcp-review](../gcp-review/SKILL.md)
+
+### Banking Context & Examples
+
+#### (1) Pod Security Standards (PSS) Example
+**Scenario:** Deploying a service processing sensitive payment messages.
+- **Architecture Lens Check:** Verification that the Pod Security Admission (PSA) enforces the "restricted" profile, forbidding privileged mode and high-risk hostPath volumes.
+- **Sample Outcome:** "Namespace `payments` verified for Restricted PSS; pods are prevented from escalating privileges, mitigating container breakout risks."
+- **Common Pitfall:** Using "privileged" containers just to easily install debugging tools in staging; it’s too easy to accidentally carry this configuration over to production, creating a massive security vulnerability.
+
+#### (2) Flat Networking Segregation Example
+**Scenario:** Running high-risk `KYC-Management` and low-risk `Marketing-Content` microservices on the same cluster.
+- **Architecture Lens Check:** Enforcing `NetworkPolicies` to deny pod-to-pod traffic between `KYC` and `Marketing` namespaces by default.
+- **Common Pitfall:** Assuming internal cluster traffic is inherently "trusted"; if the marketing service is compromised, a lack of `NetworkPolicies` allows the attacker to move laterally and scrape KYC customer data.
+
+#### (3) Sharia Product Aggregator Egress Example
+**Scenario:** Limiting egress from an aggregator pod to specifically approved third-party rate-providers.
+- **Architecture Lens Check:** Using an `Egress-Gateway` to whitelist only authorized APIs, preventing data-exfiltration.
+- **Sample Outcome:** "Egress Compliance: Pod traffic limited via Egress-Gateway to API-whitelisted domains only."
+- **Common Pitfall:** Allowing `0.0.0.0/0` egress to the public internet. A compromised container can then exfiltrate sensitive data or reach a command-and-control server without being blocked by the cluster’s network configuration.

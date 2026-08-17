@@ -56,3 +56,24 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - [hld-generator](../../architecture/hld-generator/SKILL.md)
 - [security-architecture-review](../../security/security-architecture-review/SKILL.md)
 - [nfr-checklist](../../architecture/nfr-checklist/SKILL.md)
+
+
+### Banking Context & Examples
+
+#### (1) Credit Card Onboarding Example
+**Scenario:** Drafting a technical design document (TDD) for new credit card issuance.
+- **Architecture Lens Check:** Data-flow diagram must explicitly depict `AECB` request/response payloads with PII-masking controls and residency-compliant data transit.
+- **Sample Outcome:** "C4 Model (Container): Origination-Service communicates pii-data via secure, TLS-encrypted API to AECB-gateway; logs specifically exclude sensitive-PII as per CBUAE."
+- **Common Pitfall:** Drawing data flows to `AECB` without noting the transit security or the necessity of clearing PII from logs, leading to immediate compliance failure.
+
+#### (2) Customer Profile Management Example
+**Scenario:** TDD for a customer dashboard cross-zone update service.
+- **Architecture Lens Check:** Defining data-sync patterns for profile changes, with explicit `PDPL` data-residency compliance checks at the data-layer/persistence boundary.
+- **Sample Outcome:** "Design Component: Profile-Storage-Service enforces hard-boundary at data layer; partition residency-restricted data into isolated UAE-resident database schemas."
+- **Common Pitfall:** Ignoring the persistence boundary (database schema) in the design doc, allowing profile data to be replicated blindly across data centers, which violates PDPL data-residency rules.
+
+#### (3) Lending/Loans Onboarding Example
+**Scenario:** TDD for Sharia-compliant loan workflow engine.
+- **Architecture Lens Check:** Detailing the `Sharia-Certification-Gate` within the automated loan origination workflow, modeling it as a deterministic gate in the C4 model.
+- **Sample Outcome:** "Integration Pattern: Workflow transitions paused at `Sharia-Cert` gate, requiring non-repudiable biometric-signature to resume."
+- **Common Pitfall:** Modeling Sharia certification as a 'soft-gate' (optional) or 'notification-task' (event-driven) rather than a deterministic business-rule gate, which fails the audit check for Sharia compliance.

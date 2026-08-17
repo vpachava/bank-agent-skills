@@ -76,3 +76,26 @@ To prevent solution-masked requirements and omitted constraints, you MUST:
 - [gap-analysis](../gap-analysis/SKILL.md) — consumes the requirements baseline against current-state capabilities.
 - [nfr-checklist](../../architecture/nfr-checklist/SKILL.md) — takes the NFR framing to completion.
 - [raid-log](../../documentation/raid-log/SKILL.md) — where the open questions & assumptions live as the initiative runs.
+
+### Banking Context & Examples
+
+#### (1) Credit Card Onboarding Example
+**Scenario:** Gathering requirements for a retail bank's new "Instant Credit Card" product.
+- **Sample Input (Requirement):** `Instant Approval` and `Virtual Card Issuance`.
+- **UAE Context (Regulatory Constraint):** Must comply with `CBUAE` regulations on `Maximum Debt Burden Ratio (DBR)` and `AECB` credit score minimums *in the requirement framing* as hard "Must" criteria.
+- **Sample Output (Requirements Baseline):** 
+  - Req #1 [Credit Check]: Must verify AECB score >650 before instant virtual card issuance.
+  - Req #2 [Compliance]: Must collect electronic signature in compliance with `Federal Decree Law No 46 of 2021` on Electronic Transactions.
+- **Common Pitfall:** Listing "Instant Issuance" as a functional requirement while treating `AECB` check as a "future" or "post-issuance" task.
+
+#### (2) Customer Profile Management Example
+**Scenario:** Requirements gathering for a "Global Customer Dashboard" allowing customers to manage their profile.
+- **Sample Input:** User needs to update `personal data` and `contact info`.
+- **UAE Context:** Must adhere to `PDPL` (Data Residency) and `CBUAE` guidelines on `KYC` updates requiring in-person or high-assurance video verification for residency changes.
+- **Common Pitfall:** Omitting the regulatory requirement for high-assurance KYC verification for profile data changes, leading to a system design that is too permissive (security and compliance failure).
+
+#### (3) Lending/Loans Onboarding Example
+**Scenario:** Requirements for a Sharia-compliant "Auto Finance" loan origination project.
+- **Sample Input:** `Loan structure`, `Repayment terms`, `Amortization`.
+- **UAE Context:** Product description, `Sharia Board Approval`, and `Takaful Insurance` inclusion are non-negotiable functional requirements.
+- **Common Pitfall:** Defining loan requirements as a standard Interest-based product. Missing the mandatory `Sharia Governance` and `Takaful` components makes the product impossible to certify compliant.

@@ -87,3 +87,24 @@ To prevent anti-patterns masquerading as "enterprise integration," you MUST:
 - [etl](../etl/SKILL.md) — batch / reporting seams.
 - [application-migration](../../migration/application-migration/SKILL.md) — strangler-figging the curated legacy seam.
 - [hld-generator](../../architecture/hld-generator/SKILL.md) — the seam choices embed in the HLD.
+
+### Banking Context & Examples
+
+#### (1) Legacy Core Integration Pattern Example
+**Scenario:** Modernizing the customer-facing `Mobile-App` by modernizing access to the `Legacy-Core-Banking-System`.
+- **Integration Choice:** [Façade + ACL (Anti-Corruption Layer) + Strangler-Fig]. 
+- **Rationale:** Protects the new mobile architecture from the legacy core's inconsistent schema (ACL), provides a unified entry point (Façade), and allows iterative migration (Strangler).
+- **Reject Alternative:** [Direct-Database-Connect]. Rejected because it bypasses legacy business rules and creates unacceptable operational risk.
+- **Trap Avoided:** Tightly coupling the new portal to legacy table structures, which would require re-modernization later.
+
+#### (2) Sharia Payment Processing Pattern Example
+**Scenario:** Coordinating a multi-step `Sharia-Compliant Payment` journey across payment, accounting, and Sharia-certification services.
+- **Integration Choice:** [Orchestrated-Saga].
+- **Rationale:** The journey requires strict consistency (Sharia-compliance checks + fund movement). An orchestrator holds the state and manages mandatory compensating actions if Sharia-certification fails.
+- **Trap Avoided:** Choreographed saga (event-driven) which might struggle to provide the *guaranteed* finality status of the Sharia-compliant product, increasing compliance audit overhead.
+
+#### (3) AECB Reporting Integration Pattern Example
+**Scenario:** Sending transaction data for AECB reporting every 24 hours.
+- **Integration Choice:** [Outbox-Pattern + ETL-Batch].
+- **Rationale:** Ensures transaction atomicity by writing to an 'outbox' in the local database as part of the transaction, which is later securely harvested for batch ETL submission. This satisfies both transactional integrity (banking requirement) and batch-submission (AECB requirement).
+- **Common Pitfall:** Using direct synchronous REST calls for the AECB submission, creating unnecessary latency and coupling to the availability of the AECB endpoint.

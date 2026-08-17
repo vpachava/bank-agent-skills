@@ -56,3 +56,43 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - [observability](../observability/SKILL.md)
 - [release-readiness](../release-readiness/SKILL.md)
 - [operational-readiness](../../governance/operational-readiness/SKILL.md)
+
+### Banking Context & Examples
+
+#### (1) Error Budget and Feature Freeze Example
+**Scenario:** Managing the error budget for a high-traffic retail payment service.
+- **Architecture Lens Check:** Verification that the service entered a formal `Feature-Freeze` once the `Error-Budget` hit 0% following a `CBUAE` reporting incident.
+- **Sample Outcome:** "Error-Budget Compliance-Assessment: Budget exhausted during incident #INC-2026-PAY-88. Formal `Feature-Freeze` initiated 2026-08-15."
+- **Common Pitfall:** Treating 'Error-Budget' as advisory. In banking, if you don't enforce the `Feature-Freeze` when the budget is spent, you are prioritizing 'new features' over the 'operational stability' mandated by regulators as part of the bank's license to operate.
+
+#### (2) Post-Incident Governance Example
+**Scenario:** Conducting a Post-Incident Review (PIR) for an unexpected service outage on the digital banking portal.
+- **Architecture Lens Check:** Documentation of the incident in compliance with internal `Operational-Resiliency` governance and `CBUAE` reporting requirements.
+- **Sample Outcome:** "PIR Documentation: Incident #INC-2026-MOB-12. Root-cause verified; `Regulator-Reporting-Required`=True; `Regulatory-Report-Ref`: #CB/2026/08/INC-MOB-12."
+- **Common Pitfall:** Sanitizing incident reports to hide the truth from the 'business' or 'regulators'. Banking incidents require *full audit trails*. If you don't formally record the root cause and the regulatory reporting status in your SRE tool, the bank is exposed to major fines for non-disclosure.
+
+#### (3) Toil Reduction in Reconciliation Example
+**Scenario:** Reducing operational toil in the end-of-day treasury reconciliation service.
+- **Architecture Lens Check:** Prioritization of SRE engineering work (automating recons) over manual data-patching.
+- **Sample Outcome:** "Toil-Reduction Strategy-Map: Priority #1: Automated reconciler for `UAEFTS` clearing data (estimated saving: 30 hours/week of manual toil)."
+- **Common Pitfall:** Accepting manual toil (e.g., Ops staff manually patching reconciliation files every night) as a 'standard procedure'. This scale-bottleneck is a major reliability risk; if the manual staff gets it wrong, the ledger becomes unbalanced—unacceptable for any banking institution.
+
+### Banking Context & Examples
+
+#### (1) Retail Banking Scenario
+**Scenario:** Applying this skill in a retail bank core-modernization effort.
+- **Architecture Lens Check:** Verification of compliance with CBUAE data-residency rules (e.g. [[compliance]]).
+- **Sample Outcome:** "Design: Automated workflow integration; [[observability]] logs scrubbed of PII."
+- **Common Pitfall:** Ignoring the Sharia-governance impact on the product-schema.
+
+#### (2) Corporate Banking Scenario
+**Scenario:** Using this skill for a corporate digital-onboarding integration.
+- **Architecture Lens Check:** Alignment with AECB credit-reporting integration for legal-entity applicants.
+- **Sample Outcome:** "Design: Integration-seam validated for high-assurance KYC; [[api-design]] handles large payload-signatures."
+- **Common Pitfall:** Bypassing the mandatory legal-entity KYC check due to tight project timelines.
+
+#### (3) Islamic Banking Scenario
+**Scenario:** Utilizing this skill for Sharia-compliant loan product rollouts.
+- **Architecture Lens Check:** Sharia-Board approval workflow documented within the [[architecture-decision-records]].
+- **Sample Outcome:** "Design: Profit-distribution calculation encapsulated; [[api-design]] schema includes mandatory Sharia-compliance flag."
+- **Common Pitfall:** Applying standard interest-based loan models to Islamic products, violating compliance.

@@ -40,3 +40,24 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 3. **No Unjustified Exemptions:** Any deviation from the standard architecture patterns MUST be explicitly documented as a critical risk and formally accepted.
 
 **Violating these rules invalidates the compliance process.**
+
+
+### Banking Context & Examples
+
+#### (1) Credit Card Onboarding Example
+**Scenario:** Compliance review for a new digital-only credit card issuance service.
+- **Architecture Lens Check:** Verification of `AECB` data-sharing regulatory compliance and `CBUAE` Consumer Protection requirements.
+- **Sample Outcome:** "Compliance Control Map: Verified AECB consent management workflows; AML monitoring enabled for initial credit card limit adjustment."
+- **Common Pitfall:** Assuming `AECB` reporting is automatically handled by the core bank system without ensuring the new digital service correctly feeds the reporting pipeline.
+
+#### (2) Customer Profile Management Example
+**Scenario:** Compliance check for a cross-border customer dashboard.
+- **Architecture Lens Check:** Review against `PDPL` (Personal Data Protection Law) data-residency requirements specifically ensuring non-UAE PII is isolated according to established residency rules.
+- **Sample Outcome:** "Verification: Implemented data access controls to strictly isolate residency-restricted data sets as per CBUAE and PDPL directives."
+- **Common Pitfall:** Failing to verify that customer data accessed outside of the UAE via the mobile dashboard is compliant with valid data transfer mechanisms (BCR/SCCs).
+
+#### (3) Lending/Loans Onboarding Example
+**Scenario:** Compliance review for a Sharia-compliant loan origination process.
+- **Architecture Lens Check:** Compliance validation for `Sharia-Compliant Loan Structuring` and `AML` screening protocols.
+- **Sample Outcome:** "Governance: Validated product structure against Internal Sharia Governance Board standards and confirmed automated AML screening integration."
+- **Common Pitfall:** Ignoring the regulatory requirement to validate the *Sharia* appropriateness of the loan product structure, focusing solely on technical KYC compliance.

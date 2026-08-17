@@ -56,3 +56,24 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - [risk-register](../risk-register/SKILL.md)
 - [project-charter](../project-charter/SKILL.md)
 - [release-readiness](../../devops/release-readiness/SKILL.md)
+
+
+### Banking Context & Examples
+
+#### (1) Credit Card Onboarding Example
+**Scenario:** RAID tracking for a digital credit card issuance project.
+- **Architecture Lens Check:** High-severity risk if `AECB` connectivity API is not validated by the agreed-upon regulatory deadline.
+- **Sample Outcome:** "Risk [R-001]: Failure to meet AECB reporting integration deadline. Impact: 5. Residual Risk: High. Mitigation: Proactive vendor engagement for AECB API schema validation."
+- **Common Pitfall:** Listing `AECB` integration as an 'Assumption' (that it will be ready) instead of tracking it as a high-risk 'Dependency'.
+
+#### (2) Customer Profile Management Example
+**Scenario:** RAID entry for cross-zone customer data management.
+- **Architecture Lens Check:** Risk of non-compliance with `PDPL` data residency during cross-border dashboard updates.
+- **Sample Outcome:** "Issue [I-005]: Unclear data-residency mapping for mobile-dashboard accessed from overseas. Resolution: Immediate review via architecture board for temporary PII masking solution."
+- **Common Pitfall:** Treating data residency compliance as an 'Assumption' rather than an 'Issue' that requires immediate mitigation, leading to surprise regulatory non-compliance.
+
+#### (3) Lending/Loans Onboarding Example
+**Scenario:** RAID tracking for Sharia-compliant product workflow.
+- **Architecture Lens Check:** Dependency on `Internal Sharia Governance Board` sign-off for product architecture updates.
+- **Sample Outcome:** "Dependency [D-002]: Sign-off from Sharia Board on product structure. Blocker: Workflow remains uncertified. Owner: Product Compliance lead."
+- **Common Pitfall:** Failing to link the Sharia Board sign-off as a `Critical Dependency`, thereby failing to realize the project cannot go to production without it.

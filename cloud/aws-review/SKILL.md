@@ -59,3 +59,23 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - [cloud-migration](../../migration/cloud-migration/SKILL.md)
 - [security-architecture-review](../../security/security-architecture-review/SKILL.md)
 - [compliance](../../security/compliance/SKILL.md)
+
+### Banking Context & Examples
+
+#### (1) Core-Banking Read-Replica Deployment
+**Scenario:** Deploying a read-replica of the legacy core database in AWS.
+- **Architecture Lens Check:** Verification that the replica is strictly within the `me-central-1` (UAE) region and follows `PII` data-masking rules.
+- **Sample Outcome:** "Review Approved: Region `me-central-1` confirmed; replica encrypted with Customer Managed Key (CMK) in compliance with CBUAE guidelines."
+- **Common Pitfall:** Creating a replica in `us-east-1` for performance testing, creating a cross-border regulatory breach if PII data is replicated there.
+
+#### (2) Payment-Hub API Deployment
+**Scenario:** Deploying a containerized payment hub on AWS EKS.
+- **Architecture Lens Check:** Usage of `IAM OIDC` for pod-to-AWS authentication and strictly disabling public EKS-endpoint access.
+- **Sample Outcome:** "Security Review Passed: No IAM user credentials used; identity fabric uses IAM Roles for Service Accounts (IRSA)."
+- **Common Pitfall:** Using static AWS access keys inside the container image, which would be flagged immediately as a critical security risk by the bank's automated compliance scanners.
+
+#### (3) Sharia Product Aggregator Deployment
+**Scenario:** Deployment of a product aggregator API accessing product rates.
+- **Architecture Lens Check:** Ensuring logs from `CloudWatch` are forwarded to the centralized SOC/SIEM (e.g., Azure Sentinel or on-prem SIEM used by the bank).
+- **Sample Outcome:** "Governance Check Passed: Log-forwarding to internal SIEM enabled; audit compliance maintained."
+- **Common Pitfall:** Deploying the API without configuring centralized log-forwarding; logs remain isolated in AWS, creating a "Cloud-Audit-Blindness" that prevents the security team from investigating unauthorized access to sensitive Sharia product rate APIs.

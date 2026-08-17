@@ -77,3 +77,23 @@ To prevent endless refactoring without business value, you MUST:
 - [rollback-plan](../../migration/rollback-plan/SKILL.md) — per-step reversal.
 - [release-readiness](../../devops/release-readiness/SKILL.md) — the gate each cut passes.
 - [technical-debt](../technical-debt/SKILL.md) — refactoring pays down the debt register.
+
+### Banking Context & Examples
+
+#### (1) Core Banking API Strangler Example
+**Scenario:** Moving customer account services from the `Mainframe-Core` to `Microservices-Pod`.
+- **Architecture Lens Check:** Verification that the strangler-fig pattern maintains `Sharia-Compliance` of profit-calculations during the transition.
+- **Sample Outcome:** "Refactoring Step 1 (Wedge): Route balance-inquiry to Microservice, but keep ledger-balancing on Mainframe. Dual-run verification confirms Sharia-rate equivalence before full cut-over."
+- **Common Pitfall:** Skipping "dual-run" verification on profit-rate calculations; a discrepancy during the migration results in incorrect customer statements, a major `CBUAE` compliance violation and PR nightmare.
+
+#### (2) Payment-Hub Transformation Example
+**Scenario:** Replacing an aged payment hub.
+- **Architecture Lens Check:** Ensuring `UAEFTS` connectivity is not interrupted during any strangler cut-over step.
+- **Sample Outcome:** "Refactoring Step 3: Shift outbound-payment traffic to new Hub, while maintaining inbound-routing on legacy system. Step tied to post-salary-run release window."
+- **Common Pitfall:** Scheduling the cut-over during the "salary-run" window; any failure here stalls all salary payments in the bank, violating service-level agreements and creating significant regulatory pressure.
+
+#### (3) Sharia Product Migration Refactor Example
+**Scenario:** Refactoring Sharia ledger integration from a monolith to a specialized `Sharia-Ledger-Service`.
+- **Architecture Lens Check:** Maintaining mandatory `Sharia Governance` audit trails across the move.
+- **Sample Outcome:** "Step: Dual-publish ledger entries to both monolithic-Sharia-ledger and new-Sharia-Service. Retirement of legacy ledger permitted only after 3 full months of audit-data alignment verified by Sharia Governance."
+- **Common Pitfall:** Not setting a hard retirement date for the legacy ledger path; the bank ends up maintaining two conflicting ledgers indefinitely, destroying the auditability required by Sharia Board standards.

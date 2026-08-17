@@ -59,3 +59,43 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - [sre-review](../sre-review/SKILL.md)
 - [security-architecture-review](../../security/security-architecture-review/SKILL.md)
 - [compliance](../../security/compliance/SKILL.md)
+
+### Banking Context & Examples
+
+#### (1) Cross-Border Payment Tracing Example
+**Scenario:** Implementing observability for tracking cross-border `UAEFTS` payment flows.
+- **Architecture Lens Check:** Verification that distributed traces include the unique `UETR` (Unique End-to-End Transaction Reference) for auditability.
+- **Sample Outcome:** "Trace Design: OpenTelemetry headers propagate `UETR` across legacy/SaaS boundaries; logs correlated in ELK for end-to-end reconciliation."
+- **Common Pitfall:** Tracing stops at the boundary of the legacy core-banking system; this creates a "dark hole" in the audit trail, preventing the bank from proving compliance when cross-border payments stall.
+
+#### (2) Customer Data Access Auditing Example
+**Scenario:** Observability for a service accessing residency-sensitive PII.
+- **Architecture Lens Check:** Scrubbing of all `Emirates ID` and PII fields from telemetry logs *before* ingestion into the central observability tool (`Datadog`/`Splunk`).
+- **Sample Outcome:** "Telemetry Strategy: All PII masked by `LoggingInterceptors` using regex `[a-zA-Z]{3}-\d{9}`; SIEM alerts on any unmasked pattern detection."
+- **Common Pitfall:** Relying on 'security-by-configuration' in the observability tool instead of 'PII-scrubbing-at-source'. If a developer adds a new logging statement with PII, it hits the telemetry-hub before the masking rules trigger, immediately invalidating the bank's `PDPL` compliance posture.
+
+#### (3) High-Frequency Trading Performance Example
+**Scenario:** SLO/SLI definition for a high-frequency banking interface.
+- **Architecture Lens Check:** Definition of `P99` latency SLOs for critical payment-approval endpoints, aligned with `CBUAE` operational targets.
+- **Sample Outcome:** "SLO: 99.9% of payment-approval requests must complete within 200ms under peak load."
+- **Common Pitfall:** Setting only 'Average' latency SLOs. In banking tech, P50 (average) latency often hides the P99 performance 'hiccups' that occur during peak `UAEFTS` hours, leading to silent service degradation for the highest-value transactions.
+
+### Banking Context & Examples
+
+#### (1) Retail Banking Scenario
+**Scenario:** Applying this skill in a retail bank core-modernization effort.
+- **Architecture Lens Check:** Verification of compliance with CBUAE data-residency rules (e.g. [[compliance]]).
+- **Sample Outcome:** "Design: Automated workflow integration; [[observability]] logs scrubbed of PII."
+- **Common Pitfall:** Ignoring the Sharia-governance impact on the product-schema.
+
+#### (2) Corporate Banking Scenario
+**Scenario:** Using this skill for a corporate digital-onboarding integration.
+- **Architecture Lens Check:** Alignment with AECB credit-reporting integration for legal-entity applicants.
+- **Sample Outcome:** "Design: Integration-seam validated for high-assurance KYC; [[api-design]] handles large payload-signatures."
+- **Common Pitfall:** Bypassing the mandatory legal-entity KYC check due to tight project timelines.
+
+#### (3) Islamic Banking Scenario
+**Scenario:** Utilizing this skill for Sharia-compliant loan product rollouts.
+- **Architecture Lens Check:** Sharia-Board approval workflow documented within the [[architecture-decision-records]].
+- **Sample Outcome:** "Design: Profit-distribution calculation encapsulated; [[api-design]] schema includes mandatory Sharia-compliance flag."
+- **Common Pitfall:** Applying standard interest-based loan models to Islamic products, violating compliance.

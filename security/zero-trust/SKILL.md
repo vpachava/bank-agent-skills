@@ -80,3 +80,24 @@ To prevent implicit trust from compromising the network, you MUST:
 - [compliance](../compliance/SKILL.md) — the UAE/CBUAE rules the cross-zone posture honors.
 - [api-design](../../integration/api-design/SKILL.md) — the authn/z contract surface.
 - [kubernetes](../../cloud/kubernetes/SKILL.md) / [terraform](../../cloud/terraform/SKILL.md) — where workload identity + policy-as-code ship.
+
+
+### Banking Context & Examples
+
+#### (1) Credit Card Onboarding Example
+**Scenario:** Zero-trust design for a digital credit card issuance platform.
+- **Architecture Lens Check:** Implementation of mutual-TLS (mTLS) for all service-to-service communication between the `Origination-Service` and the `AECB-Interface`, explicitly rejecting identity inheritance from network segment.
+- **Sample Outcome:** "Zero-Trust Design: Identity-anchored perimeter; each service-to-service call consumes per-transaction workload identity tokens."
+- **Common Pitfall:** Relying on network-level IP allow-listing (e.g., firewall policy) instead of workload identity (SPIFFE) to authorize service-to-service calls.
+
+#### (2) Customer Profile Management Example
+**Scenario:** Trust posture for cross-zone (onshore ↔ DIFC) profile dashboard updates.
+- **Architecture Lens Check:** Enforcing separate identity per-zone with SCC-logged transfer basis for identity assertions moving across the `Onshore` and `DIFC` boundaries.
+- **Sample Outcome:** "Policy-as-code: Enforcing strict per-zone identity validation for profile-update request from mobile dashboard."
+- **Common Pitfall:** Treating the bank's entire environment (DIFC + Onshore) as a single flat internal network, enabling unauthorized cross-zone data movement without provenance logs.
+
+#### (3) Lending/Loans Onboarding Example
+**Scenario:** Trust design for Sharia-compliant loan workflow and its `Internal Sharia Board` verification.
+- **Architecture Lens Check:** Micro-segmentation around the `Loan Origination Service` ensuring the `Sharia-Governance-Engine` acts as a separate, policy-controlled trust domain.
+- **Sample Outcome:** "Policy-as-code: Decision point at boundary gate ensuring all amendment requests carry valid crypto-signature from authorized Sharia Board members."
+- **Common Pitfall:** Allowing the `Origination Service` to access or modify loan-structure business rules directly without traversing the required policy-gateway (Trust Anchor) check.

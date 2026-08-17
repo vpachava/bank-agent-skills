@@ -74,3 +74,23 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - [design-review](../../governance/design-review/SKILL.md) — the gate that consumes the impact analysis.
 - [event-driven](../../integration/event-driven/SKILL.md) — for async ripples.
 - [legacy-assessment](../legacy-assessment/SKILL.md) — the verdict whose impact this sizes.
+
+### Banking Context & Examples
+
+#### (1) Core Banking Schema Change Example
+**Scenario:** Adding a mandatory field `New-PII-Consent-Flag` to the `Customer-Profile` table in the legacy core.
+- **Architecture Lens Check:** Verification of impact on `PDPL` compliance reporting and `downstream` synchronization ETLs.
+- **Sample Outcome:** "Impact Analysis: Major. Schema change ripples to `KYC-Reporting-Engine` (broken transformation) and `Mobile-App` (Profile API validation breakage). Action: Co-deploy with ETL version-upgrade."
+- **Common Pitfall:** Assessing only the immediate service dependency; missing the downstream ETL job that breaks silently because it expects a fixed schema, leading to broken regulatory reports.
+
+#### (2) Sharia Lending API Refactor Example
+**Scenario:** Changing the calculation logic for `Sharia-Compliant` profit rates in a loan-service.
+- **Architecture Lens Check:** Evaluating impact on the ledger-posting service which records Sharia transactions.
+- **Sample Outcome:** "Impact Analysis: Major. Change impacts ledger-posting service; must be audited to ensure calculations adhere to `Sharia-Governance-Book`."
+- **Common Pitfall:** Scoring the change as "Minor" due to few code changes; missing the fact that any change here invalidates previous regulatory audits, requiring re-certification by the Sharia Board.
+
+#### (3) AECB Reporting Pipeline Impact Example
+**Scenario:** Withdrawing an event from the legacy data-pipeline that once fed AECB reporting.
+- **Architecture Lens Check:** Compliance impact on bank's ability to submit accurate data to the bureau.
+- **Sample Outcome:** "Impact Analysis: Critical. Withdrawal invalidates AECB submission. Action: Cannot proceed until AECB-submission logic is migrated to a new stable event-sink."
+- **Common Pitfall:** Assuming the event is "unused" by the legacy system, missing its crucial business role in generating regulatory data, inevitably leading to a regulatory breach.

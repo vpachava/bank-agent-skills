@@ -48,3 +48,23 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - [release-readiness](../release-readiness/SKILL.md)
 - [production-readiness](../../governance/production-readiness/SKILL.md)
 - [compliance](../../security/compliance/SKILL.md)
+
+### Banking Context & Examples
+
+#### (1) Regulatory Pipeline Approval Example
+**Scenario:** A deployment pipeline for a payment engine.
+- **Architecture Lens Check:** Verification that the pipeline captures the UIDs of the two-person approval process in a tamper-proof audit log, required by `CBUAE` for payment-engine updates.
+- **Sample Outcome:** "CI/CD Review: Pipeline passes; approval audit-trail captures UIDs of both approvers in internal Jira-integrated ticket, satisfying CBUAE audit requirement."
+- **Common Pitfall:** Using a single-person approval gate for payment-engine releases. The pipeline technically "works" but is regulatory-non-compliant for high-risk systems.
+
+#### (2) Software Supply Chain Security Example
+**Scenario:** Artifact promotion for a core-banking module.
+- **Architecture Lens Check:** Enforcing binary signed artifacts during the build process, preventing unsigned code from entering the registry.
+- **Sample Outcome:** "Pipeline Hardening: Container images are automatically digitally signed post-build; Kubernetes Admission Controllers reject unsigned images."
+- **Common Pitfall:** Using an unsigned container registry for production releases; an attacker could push a malicious image to the registry, and the cluster would automatically pull and deploy it since there are no verification checks.
+
+#### (3) Sharia-Compliant Pipeline Gate Example
+**Scenario:** Deployment pipeline for a Sharia product ledger.
+- **Architecture Lens Check:** Injecting a pipeline gate requiring formal `Sharia-Compliant-Certificate` metadata ingestion before promotion to UAT.
+- **Sample Outcome:** "Pipeline Gate: Gate-check requires valid `Sharia-Certificate-ID`. Deployment blocked if metadata is absent."
+- **Common Pitfall:** Overlooking product-specific audit requirements in the pipeline. If the pipeline implicitly promotes all "successful builds" without verifying their compliance metadata, a non-Sharia-certified branch might accidentally be promoted, causing a major compliance breach.

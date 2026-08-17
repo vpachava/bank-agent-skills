@@ -80,3 +80,43 @@ To prevent async chaotic messaging that loses financial events, you MUST:
 - [integration-patterns](../integration-patterns/SKILL.md) — picks the surrounding integration pattern.
 - [application-migration](../../migration/application-migration/SKILL.md) — for strangler-fig the event seam out of the core.
 - [observability](../../devops/observability/SKILL.md) — distributed tracing across the event chain.
+
+### Banking Context & Examples
+
+#### (1) Credit Card Onboarding Example
+**Scenario:** Event-driven design for an "Instant Credit Card" fulfillment.
+- **Architecture Lens Check:** Separation of \`Domain-Event\` (\`CardApprovalRequested\`) from \`CDC-Event\` (table-row change in \`Origination-Core\`).
+- **Sample Outcome:** \"Event Design: \`CardApprovalRequested\` emitted by Service; \`Core-Ledger-Update\` emitted by separate CDC-process.\"
+- **Common Pitfall:** Emitting row-changes from the \`Origination-Core\` database directly to the \`Email-Service\` consumer; this couples the consumer permanently to the database schema, which will break instantly when the core system upgrades.
+
+#### (2) Customer Profile Management Example
+**Scenario:** Reacting to customer profile updates.
+- **Architecture Lens Check:** Choreography-with-an-orchestrator spine for sensitive data changes to ensure \`PDPL\` compliance audit logging.
+- **Sample Outcome:** \"Backbone Topology: Orchestrator captures \`ProfileChanged\` domain-event, triggers sync-event to residency-zone-databases with provenance headers for audit.\"
+- **Common Pitfall:** Using pure event-choreography for PII updates, allowing profile changes to flow unchecked through distributed systems without accountable orchestration, making \`PDPL\` compliance audits impossible.
+
+#### (3) Lending/Loans Onboarding Example
+**Scenario:** Event backbone for Sharia-compliant loan activation.
+- **Architecture Lens Check:** Enforcing \`Idempotency\` via consumer-side deduplication for the \`ShariaLoanActivated\` domain event.
+- **Sample Outcome:** \"Reliability Model: Consumer implements \`event-id\` based dedupe; only processes first \`ShariaLoanActivated\` fact.\"
+- **Common Pitfall:** Assuming event-broker's \`at-least-once\` delivery is sufficient for ledger updates. Network-retry causes consumers to double-process activate events, resulting in loan funds being double-charged or double-activated."
+
+### Banking Context & Examples
+
+#### (1) Credit Card Onboarding Example
+**Scenario:** Event-driven design for an "Instant Credit Card" fulfillment.
+- **Architecture Lens Check:** Separation of `Domain-Event` (`CardApprovalRequested`) from `CDC-Event` (table-row change in `Origination-Core`).
+- **Sample Outcome:** "Event Design: `CardApprovalRequested` emitted by Service; `Core-Ledger-Update` emitted by separate CDC-process."
+- **Common Pitfall:** Emitting row-changes from the `Origination-Core` database directly to the `Email-Service` consumer; this couples the consumer permanently to the database schema, which will break instantly when the core system upgrades.
+
+#### (2) Customer Profile Management Example
+**Scenario:** Reacting to customer profile updates.
+- **Architecture Lens Check:** Choreography-with-an-orchestrator spine for sensitive data changes to ensure `PDPL` compliance audit logging.
+- **Sample Outcome:** "Backbone Topology: Orchestrator captures `ProfileChanged` domain-event, triggers sync-event to residency-zone-databases with provenance headers for audit."
+- **Common Pitfall:** Using pure event-choreography for PII updates, allowing profile changes to flow unchecked through distributed systems without accountable orchestration, making `PDPL` compliance audits impossible.
+
+#### (3) Lending/Loans Onboarding Example
+**Scenario:** Event backbone for Sharia-compliant loan activation.
+- **Architecture Lens Check:** Enforcing `Idempotency` via consumer-side deduplication for the `ShariaLoanActivated` domain event.
+- **Sample Outcome:** "Reliability Model: Consumer implements `event-id` based dedupe; only processes first `ShariaLoanActivated` fact."
+- **Common Pitfall:** Assuming event-broker's `at-least-once` delivery is sufficient for ledger updates. Network-retry causes consumers to double-process activate events, resulting in loan funds being double-charged or double-activated."

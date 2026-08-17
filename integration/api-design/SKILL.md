@@ -51,3 +51,23 @@ To prevent leaky API boundaries that skip banking requirements, you MUST:
 - **Regulated Data Tagging map**.
 
 
+
+### Banking Context & Examples
+
+#### (1) Credit Card Onboarding Example
+**Scenario:** Designing the API for "Credit Card Origination".
+- **Architecture Lens Check:** Implementation of mandatory `idempotency-key` for all balance-modifying API calls to avoid double-processing AECB checks.
+- **Sample Outcome:** "API Contract: `POST /v1/applications` accepts `idempotency-key` (UUID); returns HTTP 409 if idempotent-collision detected."
+- **Common Pitfall:** Forgetting the idempotency-key on payment/origination APIs; network-retries cause duplicate applications or AECB queries, violating CBUAE consumer protection expectations.
+
+#### (2) Customer Profile Management Example
+**Scenario:** API design for a cross-zone customer profile update service.
+- **Architecture Lens Check:** Explicit tagging of PII in the schema to ensure data residency compliance under `PDPL`.
+- **Sample Outcome:** "Schema: `{ "fullname": "...", "emirates_id": "... (Tag: PII/Regulated)" }`."
+- **Common Pitfall:** Exposing a monolithic profile API that returns all customer attributes without per-field tagging, violating residency limits when PII (e.g., Emirates ID) is accidentally retrieved in a restricted zone.
+
+#### (3) Lending/Loans Onboarding Example
+**Scenario:** Event-driven API for Sharia-compliant loan status updates.
+- **Architecture Lens Check:** Ensuring `event-id` based deduplication for all loan-status changes triggered by Sharia governance events.
+- **Sample Outcome:** "AsyncAPI: Sharia-status-update event includes `event-id`; consumer deduplicates to prevent re-issuing duplicate financial instructions."
+- **Common Pitfall:** Building async event consumers that re-trigger Sharia-compliant status updates on every network retry; the system must deduplicate to ensure a loan instruction is never applied to the core ledger twice."

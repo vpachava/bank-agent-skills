@@ -59,3 +59,23 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - [cloud-migration](../../migration/cloud-migration/SKILL.md)
 - [security-architecture-review](../../security/security-architecture-review/SKILL.md)
 - [compliance](../../security/compliance/SKILL.md)
+
+### Banking Context & Examples
+
+#### (1) Core-Banking Read-Replica Deployment
+**Scenario:** Deploying a Cloud Spanner read-replica for a legacy core.
+- **Architecture Lens Check:** Verification that the replica is strictly within approved UAE-serving regions and uses `CMEK` (Customer Managed Encryption Key) in Cloud KMS.
+- **Sample Outcome:** "Review Approved: Region-restriction enforced via GCP Org Policy; Cloud Spanner encrypted with project CMK."
+- **Common Pitfall:** Allowing the Spanner instance to span multi-region groups that include non-UAE centers, triggering a regulatory residency violation for PII stored within the records.
+
+#### (2) Payment-Hub API Deployment
+**Scenario:** Deploying a containerized payment hub on `GKE` (Google Kubernetes Engine).
+- **Architecture Lens Check:** Usage of `Workload Identity` for pod-to-GCP authentication and disabling public IP exposure for service endpoints.
+- **Sample Outcome:** "Security Review Passed: GKE uses Workload Identity for all service accounts; VPC-SC (VPC Service Controls) enabled to perimeter-fence the project."
+- **Common Pitfall:** Using static "Service Account Keys" JSON files inside container images; Google's scanners will quickly identify this as a critical vulnerability.
+
+#### (3) Sharia Product Aggregator Deployment
+**Scenario:** Deployment of an aggregator API accessing Sharia product rates.
+- **Architecture Lens Check:** Ensuring `Cloud Logging` and `SCC` (Security Command Center) alerts are synced to the enterprise SOC/SIEM.
+- **Sample Outcome:** "Governance Check Passed: Cloud Logging integrated with internal SOC; anomaly detection alerts forwarded to central security-operations."
+- **Common Pitfall:** Letting logs die in Cloud Logging dashboard. If the security team isn't ingesting these logs into their primary toolchain (like Sentinel), they are functionally blind to attacks on the production API.

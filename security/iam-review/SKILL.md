@@ -82,3 +82,24 @@ To prevent systemic privilege escalation vectors, you MUST:
 - [security-architecture-review](../security-architecture-review/SKILL.md) — the broader review that gates IAM findings.
 - [landing-zone-review](../../cloud/landing-zone-review/SKILL.md) — where cloud IAM policies physically live.
 - [owasp-review](../owasp-review/SKILL.md) — BOPLA/broken-auth findings pair with IAM review.
+
+
+### Banking Context & Examples
+
+#### (1) Credit Card Onboarding Example
+**Scenario:** IAM review for a new digital-only credit card issuance service integration.
+- **Architecture Lens Check:** Verification of identity token scope-down when accessing `AECB` data services and ensuring service-account-to-service-account authentication uses mutual-TLS, not just static API keys.
+- **Sample Outcome:** "IAM Gap: High-severity finding - service-account used to call AECB has broad-read access; remediation must scope to read-only for specific endpoint."
+- **Common Pitfall:** Using a cross-application 'Super-API' identity for every onboarding subprocess instead of issuing granular, time-bound service-identities per transaction type.
+
+#### (2) Customer Profile Management Example
+**Scenario:** Integration review for UAE Pass authentication in a customer profile dashboard.
+- **Architecture Lens Check:** Ensuring the `UAE Pass` assertion is consumed as a per-transaction identity proof and not used to generate a long-lived, over-permissive session token.
+- **Sample Outcome:** "Identity Fabric: Verified UAE Pass integration boundary handles assertion validation and triggers session regeneration per profile change event."
+- **Common Pitfall:** Relying solely on the presence of a `UAE Pass` session cookie for authorization, failing to cross-check authorization rights at each sensitive data-access step.
+
+#### (3) Lending/Loans Onboarding Example
+**Scenario:** Access controls review for Sharia-compliant product workflow management.
+- **Architecture Lens Check:** Validating separation of duties for `Internal Sharia Governance Board` members and operational staff within the loan origination system.
+- **Sample Outcome:** "RBAC Audit: Validated least-privilege enforcement - only certified Sharia board members have ability to approve loan structure changes."
+- **Common Pitfall:** Granting broad `Loan Origination Admin` roles to all staff, which allows non-Sharia-certified staff to modify loan structures and triggers compliance violations.

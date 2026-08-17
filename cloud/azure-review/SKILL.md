@@ -59,3 +59,23 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - [cloud-migration](../../migration/cloud-migration/SKILL.md)
 - [security-architecture-review](../../security/security-architecture-review/SKILL.md)
 - [compliance](../../security/compliance/SKILL.md)
+
+### Banking Context & Examples
+
+#### (1) Core-Banking Read-Replica Deployment
+**Scenario:** Deploying a read-replica of the legacy core database in Azure Sql.
+- **Architecture Lens Check:** Verification that the replica is strictly within `uaenorth` and adheres to `CMK` (Customer Managed Key) encryption requirements.
+- **Sample Outcome:** "Review Approved: Resources scoped to `uaenorth` subscription. Azure SQL encrypted with Key-vault CMK."
+- **Common Pitfall:** Deploying read-replicas in `northeurope` for test workloads. This is a direct `PDPL` residency violation if those databases contain customer PII.
+
+#### (2) Payment-Hub API Deployment
+**Scenario:** Deploying a containerized payment hub on `Azure Kubernetes Service` (AKS).
+- **Architecture Lens Check:** Usage of `Entra-ID` managed identities for pod authentication and strictly disabling public IP exposure for service endpoints.
+- **Sample Outcome:** "Security Review Passed: AKS nodes utilize Private Endpoint networking; authentication locked to Entra-ID federation."
+- **Common Pitfall:** Leaving AKS public API endpoints enabled for easier vendor debugging, exposing the internal payment-hub to public scanner attacks.
+
+#### (3) Sharia Product Aggregator Deployment
+**Scenario:** Deployment of an aggregator API accessing Sharia product rates.
+- **Architecture Lens Check:** Ensuring `Azure Defender for Cloud` alerts are forwarded to the bank's central SOC SIEM.
+- **Sample Outcome:** "Governance Check Passed: Defender for Cloud integrated with central SIEM; audit logs secured."
+- **Common Pitfall:** Treating Defender as a standalone portal; if alerts are not pushed to the enterprise SOC, security analysts may miss targeted attacks on the rates-API, bypassing the bank's central security-operations capability.

@@ -77,3 +77,23 @@ To prevent message drops and duplicate processing catastrophes, you MUST:
 - [etl](../etl/SKILL.md) — batch/stream data movement over the bus.
 - [api-design](../api-design/SKILL.md) — the Async-API command/event cousin.
 - [observability](../../devops/observability/SKILL.md) — trace id propagation across the bus.
+
+### Banking Context & Examples
+
+#### (1) Credit Card Onboarding Example
+**Scenario:** Message transport for "Credit Card Approval" fan-out.
+- **Architecture Lens Check:** Using a \`topic\` (not queue) with \`Exactly-Once-in-Broker\` delivery for notifying multiple channels (Mobile-App, Email-Service, Core-Banking-Ledger) of approval.
+- **Sample Outcome:** \"Messaging Topology: Topic \`credit-card-approval-v1\` with four consumer subscriptions. Producer partition key: \`Application-ID\` to guarantee order.\"
+- **Common Pitfall:** Using a competing-consumer \`queue\` for notification fan-out, causing only one consumer (e.g., only Mobile-App) to receive and process the approval, leaving other channels uninformed of the card status.
+
+#### (2) Customer Profile Management Example
+**Scenario:** Messaging for cross-zone (onshore ↔ DIFC) data synchronization.
+- **Architecture Lens Check:** Transport must comply with \`PDPL\` residency for all messages crossing the onshore/free-zone boundary, requiring a logged \`SCC/BCR\` transfer basis.
+- **Sample Outcome:** \"Envelope Design: Topic \`onshore-to-difc-sync\` configured in UAE-region VPC; message envelope includes \`SCC-Transfer-ID\` for auditability.\"
+- **Common Pitfall:** Transporting unmasked Emirates IDs across residency zones (e.g., onshore↔DIFC) without provenance logging, failing the mandatory data residency audit trails.
+
+#### (3) Lending/Loans Onboarding Example
+**Scenario:** Message transport for Sharia-compliant loan status updates.
+- **Architecture Lens Check:** Enforcing \`At-Least-Once\` delivery with idempotent consumers for status updates to ensure that even on retry, business rules for Sharia-conformant loan activation (the event) are executed only once.
+- **Sample Outcome:** \"Consumer Obligation: Every status-update processor MUST verify \`event-id\` against a deduplication-table before ledger-record writing.\"
+- **Common Pitfall:** Relying on broker \`At-Least-Once\` guarantees as a substitute for consumer deduplication, allowing network-retries to double-trigger the Sharia-compliant loan activation, corrupting the ledger."

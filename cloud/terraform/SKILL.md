@@ -53,3 +53,23 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - [aws-review](../aws-review/SKILL.md)
 - [azure-review](../azure-review/SKILL.md)
 - [security-architecture-review](../../security/security-architecture-review/SKILL.md)
+
+### Banking Context & Examples
+
+#### (1) Terraform State Security
+**Scenario:** Storing state files for core banking infrastructure.
+- **Architecture Lens Check:** Verification that state-file buckets have `Versioned=true`, `Encryption=AES-256`, and `Access=Private`.
+- **Sample Outcome:** "State Management: Verified backend remote-state uses dedicated, encrypted, and private S3 bucket with versioning."
+- **Common Pitfall:** Saving state files in a generic unencrypted bucket. If a developer accidentally logs the raw state to a log file, the entire cloud infrastructure's internal structure (including secret references) is exposed.
+
+#### (2) Compliance-as-Code Enforced
+**Scenario:** Defining S3/Blob storage in Terraform.
+- **Architecture Lens Check:** Terraform snippet must override provider defaults to explicitly enforce `Encryption=true`.
+- **Sample Outcome:** "Terraform Scan: Confirmed bucket `encryption_configuration` blocks unencrypted uploads."
+- **Common Pitfall:** Relying on provider/module defaults; many modules default to *unencrypted* storage for backwards compatibility, resulting in an automated deployment of non-compliant infrastructure.
+
+#### (3) Sharia Product IaC Audit
+**Scenario:** Creating IaC modules for Sharia ledger environments.
+- **Architecture Lens Check:** Ensuring infrastructure tags enforce `Sharia-Compliant-Status` for audit compliance.
+- **Sample Outcome:** "IaC Standard: Verified that all ledger modules inject `Sharia-Compliant-Status` tag into all resources."
+- **Common Pitfall:** Neglecting to inject regulatory tags in IaC modules. As the infrastructure scales, the bank loses the ability to distinguish Sharia assets from conventional ones at an infrastructure level, failing external regulatory/Sharia Governance audits.

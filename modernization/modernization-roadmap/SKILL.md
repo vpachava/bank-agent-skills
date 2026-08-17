@@ -78,3 +78,23 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - [production-readiness](../../governance/production-readiness/SKILL.md) — the gate each wave exits through.
 - [cloud-migration](../../migration/cloud-migration/SKILL.md) — the cloud-ward waves' detail.
 - [risk-register](../../documentation/risk-register/SKILL.md) — risks surfaced across the arc.
+
+### Banking Context & Examples
+
+#### (1) Core Banking Modernization Roadmap Example
+**Scenario:** Multi-year modernization of `Core-Banking-System`.
+- **Architecture Lens Check:** Verification of `Data-Residency` and `Audit` continuity across phased waves.
+- **Sample Outcome:** "Wave 1: Migrate read-only AECB reporting data to cloud-sink. Wave 2: Strangler-fig account balance queries behind Facade, preserving legacy ledger. Wave 3: Migrate transaction-engine, ensuring Sharia-Governance certification end-to-end."
+- **Common Pitfall:** Sequencing waves by "team-capacity" instead of by "regulatory-foundation"; attempting the transaction engine (Wave 3) before establishing the AECB/residency anchor (Wave 1) results in un-compliant production paths.
+
+#### (2) Digital Banking Expansion Roadmap Example
+**Scenario:** Roadmap for expanding digital services into a new foreign branch.
+- **Architecture Lens Check:** Cross-referencing `PDPL` residency constraints per jurisdiction in phased delivery.
+- **Sample Outcome:** "Roadmap Phase A: Onboard UAE-resident customers on onshore-cloud. Phase B: Onboard foreign-branch customers on local-sovereign-cloud, segregating data-flows to maintain residency-compliance."
+- **Common Pitfall:** Assuming a single unified cloud-roadmap works for all market expansions; failure to map `PDPL` residency constraints onto the roadmap waves leads to unlawful cross-border data transfers until caught.
+
+#### (3) Sharia Product Modernization Example
+**Scenario:** Modernizing the ledger systems for Sharia-compliant product offerings.
+- **Architecture Lens Check:** Ensuring roadmap phases for legacy decommissioning do *not* disrupt the `Sharia-Compliant` audit-trail requirements.
+- **Sample Outcome:** "Roadmap Wave-X: Migration of Sharia ledger to target-architecture, following formal `Sharia-Governance-Board` sign-off and ledger-parallel-run."
+- **Common Pitfall:** Inadvertently introducing a temporary "interest-based ledger" path during a modernization wave; this would disqualify the bank from Sharia-certification compliance for all affected accounts, a permanent regulatory error.

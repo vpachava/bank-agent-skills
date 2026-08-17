@@ -77,3 +77,22 @@ To prevent silent data corruption and residency violations, you MUST:
 - [etl](../etl/SKILL.md) — the heavier-batch sibling.
 - [observability](../../devops/observability/SKILL.md) — drift detection + alerting.
 - [sre-review](../../devops/sre-review/SKILL.md) — owns the SLO that the freshness latency shapes.
+
+### Banking Context & Examples
+
+#### (1) Customer Master Data Sync Example
+**Scenario:** Synchronizing customer data between the legacy `Core-Banking-System` and a new `Digital-Onboarding-Portal`.
+- **Architecture Lens Check:** Verification of `PDPL` compliance regarding data-masking during the sync, and `UAE-Data-Residency` requirements for the destination database.
+- **Sample Outcome:** "Sync architecture approved with requirements for 128-bit encryption at rest and automated PII masking in non-production environments."
+- **Common Pitfall:** Syncing PII data from the legacy core *without* identifying the residency perimeter, resulting in an unauthorized off-shore data leak.
+
+#### (2) AECB Credit Report Sync Example
+**Scenario:** Batch processing of credit reports from `AECB` (Al Etihad Credit Bureau) into the Credit Risk modeling engine.
+- **Architecture Lens Check:** AECB mandates secure, point-to-point transfer protocols and specific file handling. 
+- **Common Pitfall:** Ignoring AECB data-handling requirements, leading to potential regulatory fines due to insecure file handling in the staging area.
+
+#### (3) Sharia Product Master Data Sync Example
+**Scenario:** Syncing Sharia-product data, including `Markup-Profit` rates, to external financial aggregators.
+- **Architecture Lens Check:** Sharia-governance requires proof that the transmitted rate data matches the certified-Sharia rate calculation for that product.
+- **Sample Outcome:** "Sync validated with `Integrity-Checksum` ensuring distributed product-data matches the `Internal-Sharia-Governance-Book`."
+- **Common Pitfall:** Exposing raw "Interest-Rate" fields for Sharia products, creating compliance violations with Sharia Board product definitions.

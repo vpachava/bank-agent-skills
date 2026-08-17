@@ -82,3 +82,24 @@ To prevent threat models from becoming compliance theater, you MUST:
 - [compliance](../compliance/SKILL.md) — the UAE/CBUAE obligations that bound this model.
 - [risk-register](../../documentation/risk-register/SKILL.md) — where findings & residual risk land.
 - [landing-zone-review](../../cloud/landing-zone-review/SKILL.md) — where the residency/cross-zone boundary physically lives.
+
+
+### Banking Context & Examples
+
+#### (1) Credit Card Onboarding Example
+**Scenario:** Threat modeling a new digital credit-card issuance service.
+- **Architecture Lens Check:** Model the trust boundary between the mobile banking app (Public/Partner) and the `Credit-Card-Origination` service (Regulated).
+- **Sample Outcome:** "STRIDE Threat: [Tampering] - malicious actor could inject fake credit-limit request into the API gateway. Mitigation: Implement mTLS and per-request AECB score verification."
+- **Common Pitfall:** Modeling the public-facing API endpoint as a secure boundary without accounting for the `UAE Pass` assertion being hijacked at the mobile-client-to-gateway layer.
+
+#### (2) Customer Profile Management Example
+**Scenario:** Threat modeling the profile management dashboard.
+- **Architecture Lens Check:** Identify threats to PII as it traverses the trust boundary between onshore mobile and offshore data-analytics zones.
+- **Sample Outcome:** "Information Disclosure Threat: [Data Residency] - PII leakage into non-resident logs during profile updates. Mitigation: PII masking pipeline enabled for telemetry across cross-zone boundaries."
+- **Common Pitfall:** Treating data movement across free-zone boundaries (e.g., Onshore to DIFC) as simple intra-network flow, ignoring the mandatory SCC/BCR transfer audit requirements.
+
+#### (3) Lending/Loans Onboarding Example
+**Scenario:** Threat modeling a Sharia-compliant loan origination process.
+- **Architecture Lens Check:** Identify spoofing/tampering threats affecting the `Internal Sharia Governance Board` workflow sign-off, which relies on a deterministic internal ledger.
+- **Sample Outcome:** "Spoofing Threat: [Repudiation] - Sharia Board signature spoofed via service-account compromise. Remediation: Implement dual-sign-off mandate using non-repudiable biometric signing from Sharia Board members."
+- **Common Pitfall:** Assuming internal Service Account identities for Sharia Board sign-off are structurally secure, thereby failing to model the elevation of privilege risk when those accounts are compromised.

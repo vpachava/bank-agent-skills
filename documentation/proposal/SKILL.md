@@ -56,3 +56,49 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - [executive-summary](../executive-summary/SKILL.md)
 - [project-charter](../project-charter/SKILL.md)
 - [hld-generator](../../architecture/hld-generator/SKILL.md)
+
+
+### Banking Context & Examples
+
+#### (1) Credit Card Onboarding Example
+**Scenario:** Proposing a new digital credit card initiative to the executive board.
+- **Architecture Lens Check:** Value proposition must clearly highlight regulatory-Gating (CBUAE/AECB) as a necessary precondition, not a 'soft-constraint'.
+- **Sample Outcome:** "Strategy: Leveraging cloud-native components with sovereign-cloud residency, subject to CBUAE data-sovereign audits."
+- **Common Pitfall:** Ignoring the regulatory 'sovereign-cloud' requirement in OOM (Order of Magnitude) costing, which leads to budget mid-project shortfall when infrastructure is correctly scoped.
+
+#### (2) Customer Profile Management Example
+**Scenario:** Proposal for dashboard rationalization project.
+- **Architecture Lens Check:** Highlighting `PDPL` compliance as a key business benefit (brand trust) rather than just an unavoidable regulatory burden.
+- **Sample Outcome:** "Business Value: 20
+
+### Banking Context & Examples
+
+#### (1) Credit Card Onboarding Example
+**Scenario:** Proposing a new digital credit card initiative to the executive board.
+- **Architecture Lens Check:** Value proposition must clearly highlight regulatory-Gating (CBUAE/AECB) as a necessary precondition, not a 'soft-constraint'.
+- **Sample Outcome:** "Strategy: Leveraging cloud-native components with sovereign-cloud residency, subject to CBUAE data-sovereign audits."
+- **Common Pitfall:** Ignoring the regulatory 'sovereign-cloud' requirement in OOM (Order of Magnitude) costing, which leads to budget mid-project shortfall when infrastructure is correctly scoped.
+
+#### (2) Customer Profile Management Example
+**Scenario:** Proposal for dashboard rationalization project.
+- **Architecture Lens Check:** Highlighting `PDPL` compliance as a key business benefit (brand trust) rather than just an unavoidable regulatory burden.
+- **Sample Outcome:** "Business Value: 20
+### Banking Context & Examples
+
+#### (1) Credit Card Onboarding Example
+**Scenario:** Proposing a new digital credit card initiative to the executive board.
+- **Architecture Lens Check:** Value proposition must clearly highlight regulatory-Gating (CBUAE/AECB) as a necessary precondition, not a 'soft-constraint'.
+- **Sample Outcome:** "Strategy: Leveraging cloud-native components with sovereign-cloud residency, subject to CBUAE data-sovereign audits."
+- **Common Pitfall:** Ignoring the regulatory 'sovereign-cloud' requirement in OOM (Order of Magnitude) costing, which leads to budget mid-project shortfall when infrastructure is correctly scoped.
+
+#### (2) Customer Profile Management Example
+**Scenario:** Proposal for dashboard rationalization project.
+- **Architecture Lens Check:** Highlighting `PDPL` compliance as a key business benefit (brand trust) rather than just an unavoidable regulatory burden.
+- **Sample Outcome:** "Business Value: 20% reduction in profile management support calls, while strengthening customer trust through PDPL-aligned data privacy controls."
+- **Common Pitfall:** Failing to pitch the 'security/residency' aspects of the design as a value-add, thus reducing the project to a 'cost-center' rather than 'trusted-platform' strategy.
+
+#### (3) Lending/Loans Onboarding Example
+**Scenario:** Pitching Sharia-compliant product workflow modernization.
+- **Architecture Lens Check:** Project alignment with bank's Sharia-governance strategy. 
+- **Sample Outcome:** "Strategic Alignment: Directly supports Sharia-product expansion mandate through automated Sharia-governance gates in the loan-origination API."
+- **Common Pitfall:** Proposing technical efficiency (faster loan turnaround) without mentioning the `Sharia-Governance` alignment; the board might see the technical speed as secondary to the product-compliance mandate.

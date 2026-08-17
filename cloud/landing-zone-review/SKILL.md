@@ -55,3 +55,23 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - [aws-review](../aws-review/SKILL.md)
 - [azure-review](../azure-review/SKILL.md)
 - [compliance](../../security/compliance/SKILL.md)
+
+### Banking Context & Examples
+
+#### (1) Multi-Region Landing Zone Structure
+**Scenario:** Establishing a multi-account AWS/Azure LZ for a bank with UAE onshore and regional offices.
+- **Architecture Lens Check:** Verification of `Data-Residency` via strict SCPs/Policies preventing deployment to non-authorized regions outside the UAE.
+- **Sample Outcome:** "Governance Check: LZ policies lock all resources to `uaenorth`/`me-central-1`."
+- **Common Pitfall:** A "global" LZ setup that allows developers to spin up resources in any region. This is an immediate, catastrophic regulatory failure for banking data.
+
+#### (2) Hub-and-Spoke Network Design
+**Scenario:** Network design for a bank-wide landing zone.
+- **Architecture Lens Check:** Centralized firewall/ingress-filtering and explicit segmentation between `Internal-Banking` subnets and `External-Payment-Gateway` subnets using a Transit-Gateway/Firewall-Hub.
+- **Sample Outcome:** "Network Design: Verified isolation between internal core-banking flows and external internet-facing traffic via centralized egress."
+- **Common Pitfall:** A "Flat-VPC" network design for the sake of simplicity. This allows lateral movement if a single public-facing workload is compromised, exposing the core banking systems immediately.
+
+#### (3) Sharia-Governance Audit Tags
+**Scenario:** Implementing tag-policies in the landing zone to support Sharia-compliance audits.
+- **Architecture Lens Check:** Mandatory tagging of all infrastructure resources with `Sharia-Compliant-Status`.
+- **Sample Outcome:** "Governance Policy: All `Finance` resources must have `Sharia-Compliant-Status` tag enforced by Landing Zone policy."
+- **Common Pitfall:** Failing to enforce tagging at the Foundation level; auditors cannot determine if resources form part of a Sharia-compliant product-line or not, making "compliance-as-code" impossible for Sharia audits."

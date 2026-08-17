@@ -56,3 +56,24 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - [raid-log](../raid-log/SKILL.md)
 - [security-architecture-review](../../security/security-architecture-review/SKILL.md)
 - [compliance](../../security/compliance/SKILL.md)
+
+
+### Banking Context & Examples
+
+#### (1) Credit Card Onboarding Example
+**Scenario:** Risk register for a new digital credit-card product.
+- **Architecture Lens Check:** High-severity regulatory risk if the credit-scoring engine fails to feed `AECB` data accurately.
+- **Sample Outcome:** "Risk [R-001]: Failure to report AECB data leads to CBUAE regulatory fine. Impact: 5. Mitigation: Automated reconciliation between origination-core and AECB-reporting engine. Owner: Origination-Lead."
+- **Common Pitfall:** Rating AECB-integration failures as 'Operational' risk rather than 'Compliance-Regulatory' risk, thus missing the CBUAE-mandated escalation path.
+
+#### (2) Customer Profile Management Example
+**Scenario:** Risk registry for profile dashboard PII exposure.
+- **Architecture Lens Check:** Risk of unauthorized access to PII due to logic-errors in cross-border profile dashboard updates (PDPL violation).
+- **Sample Outcome:** "Risk [R-005]: Unintended PII disclosure to non-resident-zone dashboard users. Mitigation: Hard separation of residency-restricted data-stores. Owner: Security-Lead."
+- **Common Pitfall:** Listing profile data leakage as 'Minor' because the customer has 'already provided data', ignoring the legal severity of a `PDPL` data-sovereignty breach.
+
+#### (3) Lending/Loans Onboarding Example
+**Scenario:** Risk register for a Sharia-compliant loan project.
+- **Architecture Lens Check:** Operational risk of using a non-`Sharia` compliant amortization logic.
+- **Sample Outcome:** "Risk [R-009]: Use of interest-based amortization logic in Sharia product. Impact: 5. Mitigation: Formal Sharia Governance Board certification for product-workflow logic. Owner: Product-Owner."
+- **Common Pitfall:** Rating 'Sharia-non-compliance' risk as 'Technical Debt' which allows it to be deferred, instead of 'Major Regulatory Breach' which requires immediate production-stop.

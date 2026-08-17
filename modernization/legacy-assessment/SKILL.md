@@ -72,3 +72,23 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - [impact-analysis](../impact-analysis/SKILL.md) — the change-blast view of the verdict's consequences.
 - [architecture-decision-records](../../architecture/architecture-decision-records/SKILL.md) — durable record of the verdict.
 - [technical-debt](../technical-debt/SKILL.md) — the code/skills debt surfaced by the assessment.
+
+### Banking Context & Examples
+
+#### (1) Core Banking Replacement Example
+**Scenario:** Assessing the 20-year-old `CORE-X` system for replacement.
+- **Architecture Lens Check:** Verification of `AECB` reporting compliance dependencies and data-residency obligations of the storage data.
+- **Sample Outcome:** "Verdict: Wrap. Rationale: System holds critical `KYC-Verdict` logic, making a direct Replace high-risk. Propose ACL-facade wrapper to safely strangler-fig."
+- **Common Pitfall:** Proposing a direct "Replace" without accounting for the fact that `CORE-X` serves as the primary data-store for PII/regulated data, failing the `CBUAE` residency compliance audit.
+
+#### (2) Payment Hub Replacement Example
+**Scenario:** Assessing the enterprise `Payment-Hub` modernization.
+- **Architecture Lens Check:** Modeling coupling density for `UAEFTS` connectivity and `Sharia-Compliant` ledger posting.
+- **Sample Outcome:** "Verdict: Replace. Rationale: Moderate coupling; critical modernization needed to meet new `UAEFTS` ISO20022 mandates."
+- **Common Pitfall:** Assessing health based on "uptime" rather than "maintainability." The system stays up, but code-agility to implement ISO20022 is zero, making an "Replace" verdict essential for regulatory compliance.
+
+#### (3) Sharia Loan Ledger Assessment Example
+**Scenario:** Assessing a legacy ledger system containing both Conventional and Sharia loan records.
+- **Architecture Lens Check:** Evaluating the impact of "Retail-Banking" Ledger segregation required by `Sharia-Governance` board.
+- **Sample Outcome:** "Verdict: Wrap + Refactor. Rationale: System cannot easily segregate Conventional and Sharia funds at the DB level, requiring a wrapper to enforce Sharia-compliant isolation and audit trail."
+- **Common Pitfall:** Ignoring the `Sharia Board` requirements for segregation; assessing the system as "Replace" without recognizing the need for logical separation from Conventional products leads to non-compliant Sharia auditing.
