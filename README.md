@@ -1,118 +1,130 @@
-# bank-agent-skills
+# UAE Retail-Bank Solution-Architect Skills Library
 
-Welcome to **bank-agent-skills** � a comprehensive, production-hardened collection of 68 agentic skills designed for solution architecture in complex enterprise banking environments. These skills empower AI agents to assist with architecture assessments, design, security reviews, governance, and modernization, all while adhering to strict banking standards.
+Welcome to the comprehensive skills library for UAE retail-bank solution architecture. This repository contains **invoke-and-act** Claude Code skills covering the complete solution-architecture lifecycle — from initial discovery through operational readiness.
 
-## 1. Overview
-The library provides domain-specific knowledge packaged as actionable, agent-invocable skills, covering the complete lifecycle of a solution. It is organized into 13 core domains:
+## What is this library?
 
-- **Architecture:** Foundation models (C4, Deployment, HLD/LLD)
-- **Cloud:** Provider-specific reviews and infrastructure-as-code
-- **DevOps:** CI/CD, FinOps, SRE, Performance
-- **Discovery:** Business capabilities, stakeholder alignment, requirements
-- **Documentation:** Project artifacts, charters, RAID logs
-- **Governance:** AI/ML governance, design reviews, production readiness
-- **Greenfield:** Technology evaluation, roadmap development
-- **Integration:** API design, events, messaging, data sync
-- **Migration:** Application and database cutover, wave planning
-- **Modernization:** Legacy assessment, debt management, refactoring
-- **Security:** Compliance, IAM, Threat Modeling, Zero Trust
-- **Wayfinder:** Meta-orchestrator for initiative scoping
-- **Utilities:** Supporting tools for agentic productivity
+This library is a collection of 64+ concrete, executable skills. Unlike static reference documentation, these are **active processes**. Each skill is invoked as a slash command (e.g., `/threat-model`) which triggers an interactive assessment or generation process.
 
-## 2. Installation
+Each skill features:
+- **Embedded Checklists & Pitfalls:** Banking-specific and UAE-specific constraints, common anti-patterns, and step-by-step checklists.
+- **Industry-framework Grounding:** Inline and actionable alignment with BIAN, TOGAF, C4, AWS Well-Architected, Azure CAF, OWASP, NIST, SRE, and ITIL 4 frameworks.
+- **Concrete Deliverables:** Every skill produces an explicit artifact (e.g., a high-level design document, a risk register, a platform evaluation report).
 
-You can install and use these skills in a few different ways depending on your workflow.
+## How to Use
 
-### Via 
-px skills add (Recommended for Cursor/Copilot)
-If you are using the skills CLI tool:
-\\\ash
-npx skills add github.com/username/bank-agent-skills
-\\\
+Skills are designed to be invoked sequentially through the structural lifecycle phases of architecture. You can invoke them using their short, unprefixed names (e.g., `/solution-options`).
 
-### Via Git Clone
-Clone the repository directly into your local agent's skill directory:
-\\\ash
-git clone https://github.com/username/bank-agent-skills.git ~/.claude/skills/bank-agent-skills
-\\\
-*(Adjust the path based on your specific IDE or agent configuration).*
+**The Lifecycle Throughline:**
+1. **Discovery & Assessment (`discovery/`, `modernization/`, `greenfield/`)** -> Understand the landscape. Map capabilities, assess legacy tech debt, and evaluate candidate target platforms.
+2. **Planning & Strategy (`migration/`, `architecture/`)** -> Establish the blueprints and transition roadmaps. Map high-level/low-level designs, target non-functional requirements (NFRs), and sequence migration waves.
+3. **Secure & Integrate Early (`security/`, `integration/`)** -> Front-load risk. Enforce enterprise zero-trust, IAM best practices, API designs, and messaging models before any coding happens.
+4. **Platform & Validation (`cloud/`, `devops/`)** -> Ensure continuous quality and readiness. Verify well-architected cloud footprint, CI/CD checks, and release gates.
+5. **Governance Gates & Tracking (`governance/`, `documentation/`)** -> Manage lifecycle status. Present to architecture boards, gate production releases, and continuously maintain RAID logs and risk registers.
 
-### Manual Copy
-Simply download the ZIP or copy the specific domain folders you need directly into your project's .claude/skills directory or your IDE's custom instructions path.
+## Catalogue
 
-## 3. Invocation
+### Discovery
+- **[business-capability-map](discovery/business-capability-map/SKILL.md)** — `No description provided.` Invoke with: `/business-capability-map`
+- **[gap-analysis](discovery/gap-analysis/SKILL.md)** — `No description provided.` Invoke with: `/gap-analysis`
+- **[requirements-analysis](discovery/requirements-analysis/SKILL.md)** — `No description provided.` Invoke with: `/requirements-analysis`
+- **[solution-options](discovery/solution-options/SKILL.md)** — `No description provided.` Invoke with: `/solution-options`
+- **[stakeholder-workshop](discovery/stakeholder-workshop/SKILL.md)** — `No description provided.` Invoke with: `/stakeholder-workshop`
 
-Once installed, you can invoke these skills within your AI assistant.
+### Architecture
+- **[architecture-decision-records](architecture/architecture-decision-records/SKILL.md)** — `No description provided.` Invoke with: `/architecture-decision-records`
+- **[architecture-review](architecture/architecture-review/SKILL.md)** — `No description provided.` Invoke with: `/architecture-review`
+- **[c4-model](architecture/c4-model/SKILL.md)** — `No description provided.` Invoke with: `/c4-model`
+- **[database-design](architecture/database-design/SKILL.md)** — `No description provided.` Invoke with: `/database-design`
+- **[deployment-diagrams](architecture/deployment-diagrams/SKILL.md)** — `No description provided.` Invoke with: `/deployment-diagrams`
+- **[hld-generator](architecture/hld-generator/SKILL.md)** — `No description provided.` Invoke with: `/hld-generator`
+- **[lld-generator](architecture/lld-generator/SKILL.md)** — `No description provided.` Invoke with: `/lld-generator`
+- **[nfr-checklist](architecture/nfr-checklist/SKILL.md)** — `No description provided.` Invoke with: `/nfr-checklist`
+- **[sequence-diagrams](architecture/sequence-diagrams/SKILL.md)** — `No description provided.` Invoke with: `/sequence-diagrams`
 
-### Claude Code
-Type the skill name with a forward slash:
-\\\	ext
-/orchestrator
-/security-architecture-review
-\\\
+### Greenfield
+- **[platform-selection](greenfield/platform-selection/SKILL.md)** — `No description provided.` Invoke with: `/platform-selection`
+- **[poc-planning](greenfield/poc-planning/SKILL.md)** — `No description provided.` Invoke with: `/poc-planning`
+- **[reference-architecture](greenfield/reference-architecture/SKILL.md)** — `No description provided.` Invoke with: `/reference-architecture`
+- **[roadmap](greenfield/roadmap/SKILL.md)** — `No description provided.` Invoke with: `/roadmap`
+- **[technology-evaluation](greenfield/technology-evaluation/SKILL.md)** — `No description provided.` Invoke with: `/technology-evaluation`
 
-### Cursor
-Reference the specific skill file using the @ symbol:
-\\\	ext
-@skills/security/security-architecture-review/SKILL.md Help me review this implementation.
-\\\
+### Modernization
+- **[impact-analysis](modernization/impact-analysis/SKILL.md)** — `No description provided.` Invoke with: `/impact-analysis`
+- **[legacy-assessment](modernization/legacy-assessment/SKILL.md)** — `No description provided.` Invoke with: `/legacy-assessment`
+- **[modernization-roadmap](modernization/modernization-roadmap/SKILL.md)** — `No description provided.` Invoke with: `/modernization-roadmap`
+- **[refactoring-plan](modernization/refactoring-plan/SKILL.md)** — `No description provided.` Invoke with: `/refactoring-plan`
+- **[technical-debt](modernization/technical-debt/SKILL.md)** — `No description provided.` Invoke with: `/technical-debt`
 
-### GitHub Copilot Workspace / CLI
-Include the skill context in your prompt or use configured slash commands if your environment supports them:
-\\\	ext
-#consult skills/architecture/api-design Draft the OpenAPI spec for our new payments endpoint.
-\\\
+### Migration
+- **[application-migration](migration/application-migration/SKILL.md)** — `No description provided.` Invoke with: `/application-migration`
+- **[cloud-migration](migration/cloud-migration/SKILL.md)** — `No description provided.` Invoke with: `/cloud-migration`
+- **[cutover-plan](migration/cutover-plan/SKILL.md)** — `No description provided.` Invoke with: `/cutover-plan`
+- **[database-migration](migration/database-migration/SKILL.md)** — `No description provided.` Invoke with: `/database-migration`
+- **[migration-wave-planning](migration/migration-wave-planning/SKILL.md)** — `No description provided.` Invoke with: `/migration-wave-planning`
+- **[rollback-plan](migration/rollback-plan/SKILL.md)** — `No description provided.` Invoke with: `/rollback-plan`
 
-## 4. Quick Start: 5 Common Scenarios
+### Integration
+- **[api-design](integration/api-design/SKILL.md)** — `No description provided.` Invoke with: `/api-design`
+- **[data-sync](integration/data-sync/SKILL.md)** — `No description provided.` Invoke with: `/data-sync`
+- **[etl](integration/etl/SKILL.md)** — `No description provided.` Invoke with: `/etl`
+- **[event-driven](integration/event-driven/SKILL.md)** — `No description provided.` Invoke with: `/event-driven`
+- **[idempotent-api](integration/idempotent-api/SKILL.md)** — `No description provided.` Invoke with: `/idempotent-api`
+- **[integration-patterns](integration/integration-patterns/SKILL.md)** — `No description provided.` Invoke with: `/integration-patterns`
+- **[messaging](integration/messaging/SKILL.md)** — `No description provided.` Invoke with: `/messaging`
 
-Here are exactly how to run 5 common scenarios using these skills.
+### Security
+- **[compliance](security/compliance/SKILL.md)** — `No description provided.` Invoke with: `/compliance`
+- **[iam-review](security/iam-review/SKILL.md)** — `No description provided.` Invoke with: `/iam-review`
+- **[owasp-review](security/owasp-review/SKILL.md)** — `No description provided.` Invoke with: `/owasp-review`
+- **[security-architecture-review](security/security-architecture-review/SKILL.md)** — `No description provided.` Invoke with: `/security-architecture-review`
+- **[threat-model](security/threat-model/SKILL.md)** — `No description provided.` Invoke with: `/threat-model`
+- **[zero-trust](security/zero-trust/SKILL.md)** — `No description provided.` Invoke with: `/zero-trust`
 
-### Scenario 1: Greenfield Project Initiation
-Start a brand new project right by establishing the foundation and security baseline early.
-**Commands:**
-1. \/orchestrator\ - *Map the initiative and required skills.*
-2. \/reference-architecture\ - *Establish the base patterns.*
-3. \/api-design\ - *Draft the initial API contracts.*
-4. \/security-architecture-review\ - *Ensure the initial design meets banking constraints.*
+### Cloud
+- **[aws-review](cloud/aws-review/SKILL.md)** — `No description provided.` Invoke with: `/aws-review`
+- **[azure-review](cloud/azure-review/SKILL.md)** — `No description provided.` Invoke with: `/azure-review`
+- **[gcp-review](cloud/gcp-review/SKILL.md)** — `No description provided.` Invoke with: `/gcp-review`
+- **[kubernetes](cloud/kubernetes/SKILL.md)** — `No description provided.` Invoke with: `/kubernetes`
+- **[landing-zone-review](cloud/landing-zone-review/SKILL.md)** — `No description provided.` Invoke with: `/landing-zone-review`
+- **[terraform](cloud/terraform/SKILL.md)** — `No description provided.` Invoke with: `/terraform`
 
-### Scenario 2: Legacy Modernization
-Assess and plan the modernization of a legacy banking core or system.
-**Commands:**
-1. \/legacy-assessment\ - *Analyze the current debt and coupling.*
-2. \/impact-analysis\ - *Determine the blast radius of changes.*
-3. \/integration-patterns\ - *Design the anti-corruption layers.*
-4. \/modernization-roadmap\ - *Generate the phased execution plan.*
+### DevOps
+- **[cicd-review](devops/cicd-review/SKILL.md)** — `No description provided.` Invoke with: `/cicd-review`
+- **[finops-strategy](devops/finops-strategy/SKILL.md)** — `No description provided.` Invoke with: `/finops-strategy`
+- **[observability](devops/observability/SKILL.md)** — `No description provided.` Invoke with: `/observability`
+- **[performance-review](devops/performance-review/SKILL.md)** — `No description provided.` Invoke with: `/performance-review`
+- **[release-readiness](devops/release-readiness/SKILL.md)** — `No description provided.` Invoke with: `/release-readiness`
+- **[sre-review](devops/sre-review/SKILL.md)** — `No description provided.` Invoke with: `/sre-review`
 
-### Scenario 3: Cloud Migration
-Plan a compliance-heavy move to the cloud.
-**Commands:**
-1. \/cloud-migration\ - *Assess general cloud readiness.*
-2. \/landing-zone-review\ - *Validate the target cloud environment.*
-3. \/database-migration\ - *Plan data transfer ensuring sovereignty rules.*
-4. \/cutover-plan\ - *Detail the weekend cutover events.*
+### Documentation
+- **[design-document](documentation/design-document/SKILL.md)** — `No description provided.` Invoke with: `/design-document`
+- **[executive-summary](documentation/executive-summary/SKILL.md)** — `No description provided.` Invoke with: `/executive-summary`
+- **[project-charter](documentation/project-charter/SKILL.md)** — `No description provided.` Invoke with: `/project-charter`
+- **[proposal](documentation/proposal/SKILL.md)** — `No description provided.` Invoke with: `/proposal`
+- **[raid-log](documentation/raid-log/SKILL.md)** — `No description provided.` Invoke with: `/raid-log`
+- **[risk-register](documentation/risk-register/SKILL.md)** — `No description provided.` Invoke with: `/risk-register`
 
-### Scenario 4: API Design & Validation
-Design a new enterprise API.
-**Commands:**
-1. \/api-design\ - *Structure the endpoints, payloads, and idempotency.*
-2. \/security-architecture-review\ - *Validate authz/authn layers.*
-3. \/compliance\ - *Check data exposure against PDPL/GDPR.*
+### Governance
+- **[ai-governance](governance/ai-governance/SKILL.md)** — `No description provided.` Invoke with: `/ai-governance`
+- **[ai-model-governance](governance/ai-model-governance/SKILL.md)** — `No description provided.` Invoke with: `/ai-model-governance`
+- **[architecture-board](governance/architecture-board/SKILL.md)** — `No description provided.` Invoke with: `/architecture-board`
+- **[design-review](governance/design-review/SKILL.md)** — `No description provided.` Invoke with: `/design-review`
+- **[dr-review](governance/dr-review/SKILL.md)** — `No description provided.` Invoke with: `/dr-review`
+- **[operational-readiness](governance/operational-readiness/SKILL.md)** — `No description provided.` Invoke with: `/operational-readiness`
+- **[production-readiness](governance/production-readiness/SKILL.md)** — `No description provided.` Invoke with: `/production-readiness`
+- **[security-nfr-baseline-check](governance/security-nfr-baseline-check/SKILL.md)** — `No description provided.` Invoke with: `/security-nfr-baseline-check`
+- **[solution-review](governance/solution-review/SKILL.md)** — `No description provided.` Invoke with: `/solution-review`
 
-### Scenario 5: Security & CI/CD Review
-Perform a full audit before production promotion.
-**Commands:**
-1. \/threat-modeling\ - *Identify potential attack vectors.*
-2. \/cicd-review\ - *Validate software supply chain integrity and gates.*
-3. \/compliance\ - *Final check against banking regulations.*
+### Wayfinder (Orchestration)
+- **[orchestrator](wayfinder/orchestrator/SKILL.md)** — `No description provided.` Invoke with: `/orchestrator`
 
-## 5. Troubleshooting FAQ
+### Tooling & CI/CD
+- **[tdd-documentation](.claude/tdd-documentation/SKILL.md)** — `Use when authoring or refactoring skills (SKILL.md) to ensure disciplined, TDD-based construction.` Invoke with: `/tdd-documentation`
 
-* **Q: The agent isn't loading the skill.**
-    * **A:** Ensure the library root directory is correctly added to your agent's configuration (.claude/CLAUDE.md or equivalent IDE settings).
-* **Q: The output doesn't comply with banking standards.**
-    * **A:** Ensure you run the security-architecture-review AND compliance skills as high-priority gates early in your process.
-* **Q: Skill output feels generic.**
-    * **A:** Increase the context by providing local ADR (Architecture Decision Records) or NFR documentation to the agent before invoking the skill.
+## Cross-Link Navigation
 
-## 6. License
-MIT License. See [LICENSE](LICENSE) for details.
+Each `.md` document includes a "Related Skills" or "Inputs/Outputs" section in its frontmatter metadata enabling navigation across the graph. 
+For example, you might flow from `/gap-analysis` -> `/solution-options` -> `/architecture-board`.
+
+**Core Orchestration:** Use `/orchestrator` located in `wayfinder/` to orchestrate agents automatically executing these sequences.
