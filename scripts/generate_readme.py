@@ -65,7 +65,7 @@ readme_lines = [
     "",
     "## What is this library?",
     "",
-    "This library is a collection of 64+ concrete, executable skills. Unlike static reference documentation, these are **active processes**. Each skill is invoked as a slash command (e.g., `/threat-model`) which triggers an interactive assessment or generation process.",
+    "This library is a collection of 72 concrete, executable skills. Unlike static reference documentation, these are **active processes**. Each skill is invoked as a slash command (e.g., `/threat-model`) which triggers an interactive assessment or generation process.",
     "",
     "Each skill features:",
     "- **Embedded Checklists & Pitfalls:** Banking-specific and UAE-specific constraints, common anti-patterns, and step-by-step checklists.",

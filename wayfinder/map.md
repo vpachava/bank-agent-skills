@@ -2,12 +2,12 @@
 id: map
 title: "UAE Retail-Bank Solution-Architect Skills Library"
 label: wayfinder:map
-status: open
+status: closed
 ---
 
 ## Destination
 
-A working library of **64 invoke-and-act Claude Code skills + a root README** written into this `skills/` repo, covering the full solution-architecture lifecycle for a **large retail bank in the UAE** — from discovery through operational readiness. Each skill is a triggered process (its own slash command) that produces a concrete deliverable, with banking/UAE-specific checklists and pitfalls embedded as the steps and industry-framework grounding (BIAN, TOGAF, C4, AWS Well-Architected, Azure CAF, OWASP, NIST, SRE, ITIL 4) inline and actionable. The library is practical for immediate project work, not just a reference catalogue. The map is done when all 64 skills + the README exist, are consistent with the locked archetype, and their grounding research is folded in.
+A working library of **72 invoke-and-act Claude Code skills + a root README** written into this `skills/` repo, covering the full solution-architecture lifecycle for a **large retail bank in the UAE** — from discovery through operational readiness. Each skill is a triggered process (its own slash command) that produces a concrete deliverable, with banking/UAE-specific checklists and pitfalls embedded as the steps and industry-framework grounding (BIAN, TOGAF, C4, AWS Well-Architected, Azure CAF, OWASP, NIST, SRE, ITIL 4) inline and actionable. The library is practical for immediate project work, not just a reference catalogue. The map is done when all 72 skills + the README exist, are consistent with the locked archetype, and their grounding research is folded in.
 
 > **Execution is carried into the map** (a `## Notes` override): category-batched **task** tickets write the actual `SKILL.md` files. Research tickets (AFK) settle the banking/UAE-specific content first; each category ships once its grounding decisions are firm. This overrides wayfinder's default "plan, don't do."
 
@@ -15,11 +15,11 @@ A working library of **64 invoke-and-act Claude Code skills + a root README** wr
 
 **Standing decisions that shape every ticket (locked in the charting grilling — do not re-litigate):**
 
-1. **Destination** — build the 64 skills + README *into this repo*, not a spec for them. Execution carried into the map; tickets write files.
+1. **Destination** — build the 72 skills + README *into this repo*, not a spec for them. Execution carried into the map; tickets write files.
 2. **Skill type — invoke-and-act hybrid.** Each skill is triggerable (e.g. `/threat-model`) and runs a process producing a deliverable (the threat model, the ADR, the risk register). Checklists & pitfalls are the *steps*, not a reference appendix; framework grounding is inline and actionable.
 3. **Shared section template (canonized by ticket 01 — the archetype):** frontmatter (name, description, + metadata: owner, version, last-reviewed, required-inputs, expected-deliverables) · Purpose & when-to-apply · Inputs/process as embedded checklists · Banking-specific pitfalls · Outputs · Related skills (cross-linked via folder-relative paths). **Depth — flex to fit:** target ~200–400 lines, heavier where the domain earns it (cloud/security), lighter for discovery/workshop skills; heavy reference material lives in a per-skill `references/` folder where the skill earns it.
-4. **Naming — short, unprefixed.** Each `name` is its own slash command; the **category folder** groups the catalogue, not the name. Folders (11): `discovery/`, `architecture/`, `greenfield/`, `modernization/`, `migration/`, `integration/`, `security/`, `cloud/`, `devops/`, `documentation/`, `governance/`. (The summary said "12 categories"; the skill table lists 11 — the table is authoritative; all 64 fit the 11 folders.)
-5. **Scope — MVP first.** Destination = 64 skills + root README + per-skill metadata frontmatter. **Phase 2** (parked in *Not yet specified*, graduates once skills exist and their shape is visible): bank-specific templates, worked examples, Mermaid/draw.io diagram templates, maturity ratings (foundational/intermediate/advanced), and the BIAN/TOGAF/Well-Architected/NIST/OWASP/SRE/ITIL framework index.
+4. **Naming — short, unprefixed.** Each `name` is its own slash command; the **category folder** groups the catalogue, not the name. Folders (11): `discovery/`, `architecture/`, `greenfield/`, `modernization/`, `migration/`, `integration/`, `security/`, `cloud/`, `devops/`, `documentation/`, `governance/`. (The summary said "12 categories"; the skill table lists 11 — the table is authoritative; all 72 fit the 11 folders.)
+5. **Scope — MVP first.** Destination = 72 skills + root README + per-skill metadata frontmatter. **Phase 2** (parked in *Not yet specified*, graduates once skills exist and their shape is visible): bank-specific templates, worked examples, Mermaid/draw.io diagram templates, maturity ratings (foundational/intermediate/advanced), and the BIAN/TOGAF/Well-Architected/NIST/OWASP/SRE/ITIL framework index.
 6. **Build batching — category-batched.** ~11 build tickets (one per category, building that category's skills in a session on the locked archetype), each preceded by a grounding `research` ticket where the category needs external UAE/banking facts.
 
 **Skill counts per category (the catalogue to build):**
@@ -59,9 +59,11 @@ A working library of **64 invoke-and-act Claude Code skills + a root README** wr
 - [Build the documentation/ skills (6)](tickets/documentation-skills.md) — **Built.**
 - [Build the governance/ skills (6)](tickets/governance-skills.md) — **Built.**
 
+- [Write the root README catalogue + usage guide](tickets/17-root-readme.md) — The README.md has been generated successfully and points to all 72 skills.
+
 ## Not yet specified
 
-<!-- Phase 2 — parked until the 64 skills exist and their shape is visible; each graduates into ticket(s) -->
+<!-- Phase 2 — parked until the 72 skills exist and their shape is visible; each graduates into ticket(s) -->
 - **Bank-specific templates**
 - **Worked examples**
 - **Mermaid & draw.io diagram templates**
@@ -70,7 +72,7 @@ A working library of **64 invoke-and-act Claude Code skills + a root README** wr
 
 ## Out of scope
 
-- **Skills beyond the 64 in the catalogue**
+- **Skills beyond the 72 in the catalogue**
 - **Implementation / consulting engagements**
 - **A bank-specific live environment**
 - **Tooling/scripts beyond SKILL.md + references/**
