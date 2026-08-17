@@ -1,0 +1,9 @@
+name: Microservices Decomposition
+description: Assess monolithic system and break down into microservices and event-driven patterns.
+sequence:
+  - skill_id: modernization/impact-analysis
+    inputs: [Requirements_Baseline]
+    outputs: [Architecture_Vision]
+  - skill_id: integration/event-driven
+    inputs: [Architecture_Vision]
+    outputs: [HLD]

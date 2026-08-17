@@ -1,0 +1,9 @@
+name: Legacy Modernization
+description: Assess a legacy component and produce modernization roadmap and high level design.
+sequence:
+  - skill_id: modernization/legacy-assessment
+    inputs: [Requirements_Baseline]
+    outputs: [Migration_Plan]
+  - skill_id: architecture/hld-generator
+    inputs: [Migration_Plan]
+    outputs: [HLD]

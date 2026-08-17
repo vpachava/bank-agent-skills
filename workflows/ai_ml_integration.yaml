@@ -1,0 +1,9 @@
+name: AI/ML Integration
+description: Introduce ML pipelines and operational governance checks.
+sequence:
+  - skill_id: governance/ai-model-governance
+    inputs: [Requirements_Baseline]
+    outputs: [Security_Compliance_Pack]
+  - skill_id: governance/ai-governance
+    inputs: [Security_Compliance_Pack]
+    outputs: [HLD]

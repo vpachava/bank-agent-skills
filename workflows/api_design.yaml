@@ -1,0 +1,9 @@
+name: API Design
+description: Architect high performance and idempotent APIs with strong design patterns.
+sequence:
+  - skill_id: integration/api-design
+    inputs: [Requirements_Baseline]
+    outputs: [API_Contract]
+  - skill_id: integration/idempotent-api
+    inputs: [API_Contract]
+    outputs: [HLD]

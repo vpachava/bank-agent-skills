@@ -1,0 +1,9 @@
+name: Multi-cloud Strategy
+description: Configure target infrastructure across several cloud environments.
+sequence:
+  - skill_id: cloud/landing-zone-review
+    inputs: [Requirements_Baseline]
+    outputs: [Deployment_Diagram]
+  - skill_id: cloud/terraform
+    inputs: [Deployment_Diagram]
+    outputs: [HLD]

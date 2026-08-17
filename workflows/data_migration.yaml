@@ -1,0 +1,9 @@
+name: Data Migration
+description: Process and migrate core data between datastores safely.
+sequence:
+  - skill_id: migration/database-migration
+    inputs: [Requirements_Baseline]
+    outputs: [Data_Mapping_Schema]
+  - skill_id: integration/etl
+    inputs: [Data_Mapping_Schema]
+    outputs: [Migration_Plan]

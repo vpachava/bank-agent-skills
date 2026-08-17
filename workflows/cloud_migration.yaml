@@ -1,0 +1,9 @@
+name: Cloud Migration
+description: Plan wave-based migration of resources to hyperscaler and design deployment zones.
+sequence:
+  - skill_id: migration/cloud-migration
+    inputs: [Requirements_Baseline]
+    outputs: [Migration_Plan]
+  - skill_id: architecture/deployment-diagrams
+    inputs: [Migration_Plan]
+    outputs: [Deployment_Diagram]

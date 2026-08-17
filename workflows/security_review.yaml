@@ -1,0 +1,9 @@
+name: Security Review
+description: Audit architecture for compliance and threats.
+sequence:
+  - skill_id: security/threat-model
+    inputs: [Requirements_Baseline]
+    outputs: [Security_Compliance_Pack]
+  - skill_id: security/compliance
+    inputs: [Security_Compliance_Pack]
+    outputs: [HLD]
