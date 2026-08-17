@@ -110,4 +110,13 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Focusing exclusively on external threats while ignoring insider threats (Zero Trust violation)**
+  - **Consequence:** A compromised internal developer laptop or malicious employee easily pivots across the flat internal network to steal critical database records.
+  - **Correct Approach:** Implement Zero Trust principles; mandate strict micro-segmentation and authentication between all internal services and databases.
+- **Reviewing the architecture diagram without inspecting the actual deployed configurations**
+  - **Consequence:** The architecture diagram depicts secure boundaries, but the Terraform code accidentally leaves port 22 open to the world.
+  - **Correct Approach:** Base reviews on Infrastructure as Code (IaC) configurations and runtime CSPM scans, not just static Visio/Draw.io diagrams.
+- **Approving architectures that lack centralized logging or security event alerting mechanisms**
+  - **Consequence:** The bank discovers a data breach through the media or a third party months after it occurred.
+  - **Correct Approach:** Enforce mandatory integration of all components with a centralized SIEM, configuring real-time alerts for anomalous behaviors.

@@ -109,4 +109,13 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Relying entirely on perimeter firewalls (WAF) instead of fixing underlying code vulnerabilities**
+  - **Consequence:** Sophisticated attackers bypass the WAF (e.g., via specialized SQL injection strings) and gain full control of the application backend.
+  - **Correct Approach:** Implement defense-in-depth by fixing code vulnerabilities directly using parameterized queries and input sanitization libraries.
+- **Using outdated, manual penetration testing as the primary method to find OWASP Top 10 vulnerabilities**
+  - **Consequence:** Security feedback is too slow, and critical vulnerabilities are released to production between annual penetration tests.
+  - **Correct Approach:** Integrate automated Static (SAST), Dynamic (DAST), and Software Composition Analysis (SCA) directly into the CI/CD pipeline.
+- **Implementing "roll-your-own" cryptography, hashing, or session management logic**
+  - **Consequence:** Introduction of subtle cryptographic flaws (e.g., weak salts, timing attacks) that attackers readily exploit.
+  - **Correct Approach:** Mandate the use of well-vetted, standard industry libraries (e.g., Argon2 for hashing, robust JWT libraries) and never author custom crypto.

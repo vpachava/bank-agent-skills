@@ -71,3 +71,13 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
+## Anti-patterns
+- **Skipping test failures to write more code**
+  - **Consequence:** Accumulated bugs, regression loops, and unreliable codebases.
+  - **Correct Approach:** Treat any test failure as a blocking event; stop and fix it before implementing new features.
+- **Writing tests post-hoc to match existing implementation**
+  - **Consequence:** Confirmatory bias, poor design modularity, and missing edge cases.
+  - **Correct Approach:** Practice strict red-green-refactor by writing the test assertion first, watching it fail, and then implementing the minimal code to pass.
+- **Isolating tests from business functional logic**
+  - **Consequence:** Green tests that pass technical constraints but fail actual user stories.
+  - **Correct Approach:** Align test cases directly with business acceptance criteria and functional specifications.

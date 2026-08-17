@@ -85,4 +85,13 @@ To prevent skewed analysis masking pre-ordained choices, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Recommending a single solution without presenting alternative options**
+  - **Consequence:** Confirmatory bias, lack of objective evaluation, and poor engineering decisions.
+  - **Correct Approach:** Present at least 2 distinct alternative options alongside the "Do Nothing" baseline.
+- **Structuring evaluation criteria around vendor biases rather than requirements**
+  - **Consequence:** Vendor lock-in and high platform cost for features that are never used.
+  - **Correct Approach:** Base criteria scoring on objective NFRs, business goals, and cost metrics.
+- **Underestimating overall cost of ownership (TCO) and skill requirements**
+  - **Consequence:** Projects run out of budget midway or rely on costly external consulting resource indefinitely.
+  - **Correct Approach:** Include licensing, compute, operations, training, and maintenance costs in the TCO evaluation.

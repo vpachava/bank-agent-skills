@@ -102,4 +102,13 @@ To prevent tech debt tracking from becoming a graveyard of ignored tickets, you 
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Defining technical debt subjectively as "code I don't like" or "old frameworks"**
+  - **Consequence:** Engineers waste time rewriting perfectly functional systems while ignoring security vulnerabilities that actually pose business risk.
+  - **Correct Approach:** Quantify debt using metrics like incident frequency, slow PR merge times, or specific framework End of Life (EOL) dates.
+- **Hiding technical debt completely from product owners and business stakeholders**
+  - **Consequence:** The business continues piling on feature requests until the system becomes totally unmaintainable and velocity crashes to zero.
+  - **Correct Approach:** Surface technical debt as explicit backlog items, sized and prioritized alongside features in sprint planning.
+- **Treating technical debt clean-up as an annual one-off 'hackathon' effort**
+  - **Consequence:** Debt accrues rapidly for 11 months, creating a toxic codebase that demoralizes developers and causes outages.
+  - **Correct Approach:** Enforce a continuous "Boy Scout Rule" (leave code cleaner than you found it) and allocate ~20% of every sprint to remediation.

@@ -64,4 +64,13 @@ def process_request(idempotency_key, payload):
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Using application-level client details (like UserID) as the idempotency key**
+  - **Consequence:** Subsequent distinct transactions by the same user are falsely duplicate-rejected, blocking payments.
+  - **Correct Approach:** Have clients generate and pass a unique transaction correlation token (UUID) specifically for each distinct operation.
+- **Relying solely on database unique constraints for idempotency rather than checking state**
+  - **Consequence:** Clients receive a generic 500 or 409 error on retries instead of the original success response object.
+  - **Correct Approach:** Store the response of successful operations against the idempotency key and return that cached response on retries.
+- **Assuming network retries are rare and skipping robust idempotency checks entirely**
+  - **Consequence:** Double-charging customers when mobile networks drop connections during the acknowledgement phase.
+  - **Correct Approach:** Mandate idempotency keys on all POST, PUT, and PATCH endpoints that execute financial or state-altering logic.

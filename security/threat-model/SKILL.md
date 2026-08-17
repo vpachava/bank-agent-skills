@@ -111,4 +111,13 @@ To prevent threat models from becoming compliance theater, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Conducting threat modeling exercises at the very end of the software development lifecycle**
+  - **Consequence:** Discovered flaws (like a lack of encryption on a legacy link) require tearing down the codebase and delaying the launch by months.
+  - **Correct Approach:** Model threats during the initial design phase before writing code, using frameworks like STRIDE or PASTA.
+- **Modeling threats using generic components rather than accurate system boundaries and data flows**
+  - **Consequence:** Missing critical spoofing or tampering threats because specific network hops and data payload trust boundaries were omitted.
+  - **Correct Approach:** Build the threat model exclusively on top of a detailed L3 C4 Container diagram mapping precise data flow Trust Boundaries.
+- **Detailing exhaustive lists of theoretical threats without realistic, actionable mitigation plans**
+  - **Consequence:** The threat model becomes empty paperwork; developers ignore it and deploy the vulnerabilities anyway.
+  - **Correct Approach:** Tie every identified threat to a specific, tracked engineering task (e.g., "Implement TLS 1.3 on API edge") in the backlog.

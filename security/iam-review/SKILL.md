@@ -111,4 +111,13 @@ To prevent systemic privilege escalation vectors, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Granting broad standing privileges (e.g., permanent Admin) rather than Just-In-Time access**
+  - **Consequence:** Compromised developer credentials result in massive blast radiuses, including data exfiltration or full infrastructure deletion.
+  - **Correct Approach:** Implement automated Just-In-Time (JIT) access requests that expire after 2-4 hours, bound by Principle of Least Privilege.
+- **Relying on a single common IAM pattern without enforcing Multi-Factor Authentication (MFA)**
+  - **Consequence:** Susceptibility to widespread phishing, credential stuffing, and brute force attacks on high-value accounts.
+  - **Correct Approach:** Enforce mandatory MFA (preferably hardware tokens like FIDO2) for all console access and highly privileged API endpoints.
+- **Failing to implement automated lifecycle management for machine (service) identities**
+  - **Consequence:** Abandoned service accounts with high privileges remain active, creating silent backdoors for attackers.
+  - **Correct Approach:** Tie machine identities to automated rotation schedules and use native IAM roles (IRSA, Managed Identities) to avoid static keys.

@@ -85,4 +85,13 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Scheduling cutovers without predefined execution timeboxes and checkpoint gates**
+  - **Consequence:** Operations teams run out of time and attempt to rush critical steps, resulting in botched deployments and data loss.
+  - **Correct Approach:** Write a minute-by-minute runbook with strict "Go/No-Go" decision checkpoints based on time limits.
+- **Failing to define explicit criteria and commands for executing a rollback**
+  - **Consequence:** The team realizes the migration is failing but has no practiced script for restoring the legacy system state safely.
+  - **Correct Approach:** Document, script, and test specific rollback procedures and database restoration commands before the cutover begins.
+- **Undercommunicating with business owners during the cutover window**
+  - **Consequence:** Business operations are stalled in confusion, and the helpdesk is overwhelmed with identical problem reports.
+  - **Correct Approach:** Establish a dedicated communication bridge and issue periodic status updates to a predefined stakeholder list.

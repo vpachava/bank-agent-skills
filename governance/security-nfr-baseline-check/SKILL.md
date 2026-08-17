@@ -56,4 +56,13 @@ Mandatory, first-step gate before any design assessment (discovery, greenfield, 
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Skipping validation checks on non-production environments**
+  - **Consequence:** Security bugs are discovered late, wasting developer remediation resources.
+  - **Correct Approach:** Deploy the security configuration checks in DEV and STAGING pipelines.
+- **Treating security NFR checks as independent of business logic**
+  - **Consequence:** Secure infrastructure holds logic configurations that leak customer data.
+  - **Correct Approach:** Map security checks to functional data flows and verify that PII is masked.
+- **Using a single baseline config for all environments**
+  - **Consequence:** Development environments are locked down, reducing developer velocity.
+  - **Correct Approach:** Define clear baseline splits for Dev, Staging, and Prod configurations.

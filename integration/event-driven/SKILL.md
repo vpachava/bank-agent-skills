@@ -129,4 +129,13 @@ To prevent async chaotic messaging that loses financial events, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Treating event streams like RPC queues by waiting synchronously for responses**
+  - **Consequence:** Defeats the coupling advantages of event-driven architectures, resulting in slow, blocking distributed monoliths.
+  - **Correct Approach:** Embrace true asynchronous choreography with fire-and-forget topologies or sagas.
+- **Publishing events with bloated payloads containing unnecessary PII**
+  - **Consequence:** Violation of data privacy. All consuming services suddenly store and risk leaking sensitive regulated data.
+  - **Correct Approach:** Publish "thin" notification events (Event Notification pattern) carrying just the entity ID, requiring secure callbacks.
+- **Omitting schema registries for event payload structures**
+  - **Consequence:** Producers change event structures, silently breaking downstream consumer parsing logic and corrupting data.
+  - **Correct Approach:** Enforce a centralized schema registry (e.g., Avro/Protobuf) to manage payload contracts and version evolution.

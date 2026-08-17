@@ -106,4 +106,13 @@ To prevent endless refactoring without business value, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Refactoring code structure without having an automated test suite baseline in place**
+  - **Consequence:** Unintended logic changes introduced regression bugs that were caught by customers rather than developers.
+  - **Correct Approach:** Mandate writing a harness of integration and unit tests to ensure functional equivalence before any code is modified.
+- **Tying refactoring to major functional feature additions**
+  - **Consequence:** It becomes impossible to isolate whether a bug was caused by the refactor or the new feature logic.
+  - **Correct Approach:** Separate refactoring and feature work into distinct commits and deployment pipelines (refactor first, feature second).
+- **Attempting whole-system architectural rewrites acting as a single refactoring branch**
+  - **Consequence:** The branch lives too long ("merge hell"), drifts from main, and becomes impossible to safely deploy.
+  - **Correct Approach:** Use iterative, small-batch refactoring techniques pushing continuously to the main branch behind feature flags.

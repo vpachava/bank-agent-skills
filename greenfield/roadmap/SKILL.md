@@ -70,4 +70,13 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Plotting long-term roadmaps packed with rigid, unmovable delivery dates**
+  - **Consequence:** Failure to adapt to shifting business priorities, leading to missed deadlines and rushed, buggy code.
+  - **Correct Approach:** Use horizon planning (Now, Next, Later) with flexible outcomes based on continuous dependency discovery.
+- **Sequencing infrastructure delivery after application development**
+  - **Consequence:** Developers finish features but are blocked from testing or releasing because target environments do not exist.
+  - **Correct Approach:** Prioritize Landing Zone, CI/CD, and core database provisioning as "Phase 0" before functional sprints begin.
+- **Silencing risk and architectural debt remediation out of the roadmap**
+  - **Consequence:** Slower velocity over time as accumulated technical debt collapses the system's ability to safely change.
+  - **Correct Approach:** Dedicate 20% of every roadmap phase explicitly to refactoring, security patching, and technical debt reduction.

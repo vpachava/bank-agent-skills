@@ -87,4 +87,13 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Grouping applications into waves without mapping upstream integration dependencies**
+  - **Consequence:** Breaking critical APIs when an upstream legacy application remains on-prem while its dependent moves to cloud.
+  - **Correct Approach:** Use automated discovery tools (e.g. AppDynamics/Dynatrace) to map inter-service chattiness and group cohesive units.
+- **Scheduling the most complex, mission-critical application in Wave 1**
+  - **Consequence:** High risk of severe failure before the migration team has established processes and cloud foundations.
+  - **Correct Approach:** Select low-risk, internal-facing applications for Wave 1 to test the Landing Zone and refine the runbook.
+- **Running waves continuously without pausing for retrospective learnings**
+  - **Consequence:** The team repeats the same manual mistakes across hundreds of migrations, wasting time and resources.
+  - **Correct Approach:** Enforce a hardening sprint between early waves to automate scripts and fix gaps discovered in the process.

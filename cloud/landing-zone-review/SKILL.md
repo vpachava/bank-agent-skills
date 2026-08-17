@@ -84,4 +84,13 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Setting up isolated subscriptions/projects without central network hub routing**
+  - **Consequence:** High cost, complex point-to-point network tunnels, and lack of firewall visibility across zones.
+  - **Correct Approach:** Deploy a Hub-and-Spoke topology with centralized Azure Firewall or AWS Network Firewall.
+- **Relying on manual provisioning of environments inside landing zone folders**
+  - **Consequence:** Configuration drift, auditing failures, and inconsistent security practices across tenants.
+  - **Correct Approach:** Enforce Landing Zone deployment via IaC and orchestrate subscriptions using GitOps.
+- **Missing centralized syslog and activity log forwarding**
+  - **Consequence:** Inability to perform compliance forensically or trace user actions during a security incident.
+  - **Correct Approach:** Auto-integrate Centralized Logging (SIEM/SOC integration) for all landing zone accounts from day one.

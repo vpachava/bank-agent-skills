@@ -100,4 +100,13 @@ To prevent leaky LLDs that ignore idempotency, error states, and data residence 
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Failing to specify precise data models and parameter types**
+  - **Consequence:** Miscommunication between contract designers and developers, leading to coding bugs and integration mismatches.
+  - **Correct Approach:** Define interfaces, parameters, and return types using schema standards (OpenAPI, JSON Schema, Protobuf).
+- **Ignoring exception and boundary state handling in sequence and component flows**
+  - **Consequence:** Cascading failures and incomplete logging during edge-case errors in live setups.
+  - **Correct Approach:** Model alternate, exception, and rollback paths for all primary workflow paths.
+- **Designing specifications that ignore concurrency, locking, and race conditions**
+  - **Consequence:** Intermittent database deadlock errors or race conditions when scaling beyond a single thread.
+  - **Correct Approach:** Explicitly document synchronization locks, transactional boundaries, and thread safety mechanisms.

@@ -138,4 +138,13 @@ We choose Option â€” **because** <rationale citing the drivers>.
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Treating ADRs as post-facto documentation rather than decision-making tools**
+  - **Consequence:** Lack of real options analysis, architectural drift, and inability to justify choices to regulators or audit teams.
+  - **Correct Approach:** Author ADRs during the design phase to align stakeholders before writing any production code.
+- **Failing to record "Do Nothing" or alternative options considered**
+  - **Consequence:** Future team members re-evaluate the same options or do not understand why the obvious alternative lost.
+  - **Correct Approach:** Always document at least two active alternatives plus the 'Do Nothing' option with clear technical and financial costs.
+- **Omitting negative consequences or reversibility costs**
+  - **Consequence:** Unanticipated lock-in, resource debt, and system failure when reversing are required.
+  - **Correct Approach:** Explicitly state negative consequences, run-cost implications, skill-set debt, and the steps/costs to reverse the decision.

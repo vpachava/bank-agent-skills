@@ -103,4 +103,13 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Analyzing downstream dependencies while ignoring upstream consuming systems**
+  - **Consequence:** Modernizing an API breaks critical legacy consumers that rely on the old protocol or payload structure.
+  - **Correct Approach:** Create a comprehensive 360-degree dependency tree, incorporating both the systems it calls and the systems calling it.
+- **Failing to quantify the operational impact on IT support structure workflows**
+  - **Consequence:** Support teams are overwhelmed because they lack tools (or access) to monitor the new modernized architecture.
+  - **Correct Approach:** Explicitly include the impact on SOC, Level 1/2 Support observability, and runbook updates in the initial analysis.
+- **Using static documentation to perform the dependency impact assessment**
+  - **Consequence:** Static architecture diagrams are often hopelessly out of date, omitting shadow IT or point-to-point workarounds.
+  - **Correct Approach:** Leverage dynamic APM telemetry (network traffic analysis) to identify actual dependencies executing in production.

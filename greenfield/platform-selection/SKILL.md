@@ -77,4 +77,13 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Selecting platforms based on vendor hype or familiarity without evaluating NFRs**
+  - **Consequence:** Expensive platform lock-in that fails to meet target latency or scalability requirements.
+  - **Correct Approach:** Use a balanced scorecard evaluating NFRs, Total Cost of Ownership (TCO), and engineering skill availability.
+- **Ignoring integration capabilities with existing legacy systems**
+  - **Consequence:** Massive custom ETL or bridge coding required to make the new platform work with core banking systems.
+  - **Correct Approach:** Prioritize platforms with robust API ecosystems and out-of-the-box connectors for enterprise legacy systems.
+- **Failing to validate data residency and compliance certifications**
+  - **Consequence:** Sudden project blocks when security audits find the chosen platform cannot host data within UAE boundaries legally.
+  - **Correct Approach:** Verify ISO, SOC2, and specific UAE CBUAE/PDPL compliance as a mandatory first gate in selection.

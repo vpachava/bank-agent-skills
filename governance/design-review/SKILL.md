@@ -79,4 +79,13 @@ To prevent superficial box-ticking masquerading as a Design Review, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Focusing reviews on detailed code implementations instead of components**
+  - **Consequence:** Reviews take too long, missing high-level integration issues and missing timelines.
+  - **Correct Approach:** Scope the review on APIs, database patterns, data flows, and isolation boundaries.
+- **Reviewing component design without evaluating scaling limits**
+  - **Consequence:** System bottleneck failures under peak production transaction throughputs.
+  - **Correct Approach:** Require the design package to include latency profiles, thread limits, and cache plans.
+- **Failing to track design review feedback in issue tracking tickets**
+  - **Consequence:** Developers skip recommended design fixes, leading to non-compliant production releases.
+  - **Correct Approach:** Log feedback as tickets inside the tracking board and verify block closures before code merges.

@@ -77,4 +77,13 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Hardcoding secrets and environment configurations in build scripts**
+  - **Consequence:** Leakage of production keys in repository history, compromising security.
+  - **Correct Approach:** Store configurations and credentials in secure vault systems and inject them dynamically via environment variables during runners runtime.
+- **Lacking automated compliance and vulnerability scanning in the pipeline**
+  - **Consequence:** Insecure packages, critical vulnerabilities, and audit compliance gate failures in production.
+  - **Correct Approach:** Integrate SAST, DAST, and dependency scanning checkpoints as mandatory steps before code merges.
+- **Running pipeline executors with root or unrestricted system privileges**
+  - **Consequence:** Escalated control plane risks where a compromised dependency allows full runner host access.
+  - **Correct Approach:** Run executors on isolated virtual environments with min privileges needed for execution.

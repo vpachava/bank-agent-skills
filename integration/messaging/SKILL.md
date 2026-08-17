@@ -106,4 +106,13 @@ To prevent message drops and duplicate processing catastrophes, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Using messaging queues as a persistent database store**
+  - **Consequence:** Queue sizes explode, degrading message broker performance, and analytics queries become impossible.
+  - **Correct Approach:** Extract and route messages to permanent sink storage (like S3 or databases) if long-term persistence is needed.
+- **Designing consumers that cannot handle out-of-order message delivery**
+  - **Consequence:** Incorrect state application because message 2 (update) arrives before message 1 (create) due to network routing.
+  - **Correct Approach:** Design consumers to handle idempotent out-of-order arrivals, using version timestamps or state state-machine checks.
+- **Ignoring poison message handling (lack of Dead Letter Queues)**
+  - **Consequence:** The consumer crashes parsing a bad message, the broker requeues it, and the system enters an infinite error loop.
+  - **Correct Approach:** Enforce retry limits and route perpetually failing messages explicitly into isolated Dead Letter Queues.

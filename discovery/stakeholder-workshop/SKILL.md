@@ -79,4 +79,13 @@ To prevent decisions without accountability and architectural drifting in a silo
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Running workshops without a designated and empowered decision owner**
+  - **Consequence:** Endless debates that finish without consensus, delaying project progress.
+  - **Correct Approach:** Identify the final decision maker before the workshop, and design exercises to align choices.
+- **Proceeding with solutions before aligning on underlying problems**
+  - **Consequence:** Building elegant solutions to the wrong problems, wasting time and resources.
+  - **Correct Approach:** Dedicate the first half of the workshop to mapping pain points and journey constraints.
+- **Excluding critical Risk, Compliance, and Security roles from initial workshops**
+  - **Consequence:** Designed solutions are rejected at the board gate, requiring complete rework.
+  - **Correct Approach:** Ensure representation from Risk, Compliance, and Security as key contributors in design sessions.

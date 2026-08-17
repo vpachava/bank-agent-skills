@@ -120,4 +120,13 @@ To prevent Architecture reviews from becoming ceremonial overviews, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Conducting the review as an end-of-project gate**
+  - **Consequence:** Discovered architectural flaws are too costly to fix, leading to exceptions, compromises, and launch delays.
+  - **Correct Approach:** Schedule lightweight checkpoint reviews at major design and implementation milestones throughout the lifecycle.
+- **Focusing on technical purity over business value and constraints**
+  - **Consequence:** High cost, complex designs that fail to deliver the core business capability on time.
+  - **Correct Approach:** Evaluate designs against business requirements, NFR metrics, and compliance limits rather than theoretical ideals.
+- **Reviewing systems without simulating peak production-like throughputs**
+  - **Consequence:** Performance degradation and sudden system failure under live consumer load.
+  - **Correct Approach:** Require load-test results and stress-simulation reports as part of the architecture review materials.

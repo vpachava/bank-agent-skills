@@ -80,4 +80,13 @@ To prevent leaky API boundaries that skip banking requirements, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Designing APIs directly matching the internal database schema (CRUD exposure)**
+  - **Consequence:** Tight coupling between clients and the database. Changing the database breaks all external clients.
+  - **Correct Approach:** Design APIs based on business aggregate boundaries and client usage scenarios, abstracting internal data models.
+- **Failing to implement aggressive pagination, filtering, and rate limiting by default**
+  - **Consequence:** Massive data queries crash the API gateway or database, leading to denial of service outages.
+  - **Correct Approach:** Enforce mandatory pagination limits, payload size caps, and API gateway rate limits on all endpoints.
+- **Releasing breaking API changes without explicit versioning**
+  - **Consequence:** Sudden crashes for consumers when payload structures or URL paths change unexpectedly.
+  - **Correct Approach:** Implement clear, semantic versioning (e.g., via URI path `/v1/` or headers) and maintain backwards compatibility.

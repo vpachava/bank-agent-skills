@@ -85,4 +85,13 @@ To prevent migration chaos causing downtime, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Attempting "Big Bang" cutovers for large monolithic application portfolios**
+  - **Consequence:** High risk of total failure, massive rollbacks, and multi-day business outages when unexpected bugs occur.
+  - **Correct Approach:** Use the Strangler Fig pattern or phased canary rollouts to migrate traffic progressively by function or user group.
+- **Lifting and shifting legacy tech debt directly into modern cloud platforms**
+  - **Consequence:** Cloud hosting costs spiral out of control while performance metrics remain exactly as poor as on-premises.
+  - **Correct Approach:** Execute a basic platformization step to containerize and right-size resources prior to or during the migration wave.
+- **Failing to secure proper business sign-off on the target state application SLA**
+  - **Consequence:** Business users reject the migrated application because it performs slightly differently than the legacy monolith.
+  - **Correct Approach:** Align business, IT, and stakeholders on expected target state NFRs before migration begins, using clear baselines.

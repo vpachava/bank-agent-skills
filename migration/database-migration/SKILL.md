@@ -87,4 +87,13 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Neglecting to validate data checksums and row counts immediately post-migration**
+  - **Consequence:** Silent data corruption or missing records that are only discovered weeks later by angry customers.
+  - **Correct Approach:** Run automated reconciliation scripts comparing source and target aggregates before green-lighting application traffic.
+- **Failing to test query execution plans on the new target database engine**
+  - **Consequence:** Queries that took 2 seconds on-premises suddenly take 5 minutes in the cloud, breaking the application.
+  - **Correct Approach:** Capture a representative query workload, replay it on the target environment, and update indices accordingly.
+- **Executing schema conversions and heavy ETL during the strict cutover downtime window**
+  - **Consequence:** The transformation process overflows the maintenance window, causing an extended banking service outage.
+  - **Correct Approach:** Replicate data asynchronously over days, run transformations continuously, and cut over the final delta instantly.

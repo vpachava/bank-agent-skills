@@ -67,4 +67,13 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Treating a Proof of Concept (POC) as an attempt to build MVP production code**
+  - **Consequence:** Project gets bogged down in edge cases and security hardening, taking months instead of weeks.
+  - **Correct Approach:** Timebox the POC and strictly target only the highest-risk technical assumptions or integration points.
+- **Starting a POC without predefined quantitative success metrics**
+  - **Consequence:** The POC finishes but stakeholders cannot objectively decide whether the technology passed or failed.
+  - **Correct Approach:** Define clear, boolean completion gates (e.g., "throughput > 1000 TPS", "latency < 50ms") before starting.
+- **Failing to document architecture decisions and trade-offs discovered during the POC**
+  - **Consequence:** Lessons learned are lost when the team pivots to production, leading to repeated mistakes.
+  - **Correct Approach:** Conclude the POC with an ADR recording what worked, what failed, and what architectural limits were hit.

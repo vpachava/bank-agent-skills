@@ -105,4 +105,13 @@ To prevent Sequence Diagrams from being happy-path fantasies, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Neglecting to map retry logic and timeout scenarios on external steps**
+  - **Consequence:** Cascading timeouts and thread pool exhaustion when an upstream dependency experiences latency.
+  - **Correct Approach:** Model circuit breakers, retry counts, fallback APIs, and timeout limits on all external network call arrows.
+- **Overloading a single diagram with detailed branch logic and loops**
+  - **Consequence:** Visual clutter that makes the sequence flow illegible to business stakeholders and developers.
+  - **Correct Approach:** Keep diagrams focused on primary architectural pathways and split complex scenarios into separate documents.
+- **Assuming instantaneous message delivery across distributed systems**
+  - **Consequence:** Design gaps that lead to inconsistencies, out-of-order execution, or message drops.
+  - **Correct Approach:** Model asynchronous queues, ACK/NACK behaviors, and out-of-order handling explicitly.

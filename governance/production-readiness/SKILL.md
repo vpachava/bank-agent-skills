@@ -84,4 +84,13 @@ To prevent unstable rollouts breaching regulatory thresholds, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Running the review checklist as a last-minute box-ticking exercise**
+  - **Consequence:** Finding critical gaps (e.g. no backup, missing audit logs) when it is too late to postpone the release.
+  - **Correct Approach:** Run production readiness checks continuously across environment stages.
+- **Releasing products without testing system recovery scenarios**
+  - **Consequence:** Support teams cannot resolve production lockouts, extending outage times.
+  - **Correct Approach:** Enforce a check requiring manual failover tests before the production gate is passed.
+- **Validating system compliance checklists manually**
+  - **Consequence:** Human errors lead to non-compliant deployments and security risks.
+  - **Correct Approach:** Automate validation rules within the CI/CD pipeline using policy-as-code tools.

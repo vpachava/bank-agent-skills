@@ -117,4 +117,13 @@ To prevent anti-patterns masquerading as "enterprise integration," you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Adopting a sprawling 'spaghetti' architecture of pure point-to-point API connections**
+  - **Consequence:** Maintenance nightmares, extreme fragility during upgrades, and inability to trace transaction flows.
+  - **Correct Approach:** Implement Hub & Spoke patterns, API Gateways, or Event Brokers to centralize routing, security, and logging.
+- **Applying pattern architectures like Enterprise Service Buses (ESB) where simple APIs suffice**
+  - **Consequence:** Over-engineering that creates a deployment bottleneck and slows developer velocity significantly.
+  - **Correct Approach:** Use lightweight API Gateways or direct GraphQL aggregators instead of heavyweight middleware routing engines.
+- **Failing to implement circuit breakers on synchronous downstream integrations**
+  - **Consequence:** Complete cascading failure where a slow downstream partner crashes the entire internal ecosystem.
+  - **Correct Approach:** Wrap synchronous calls in Circuit Breaker patterns to fast-fail when thresholds are breached.

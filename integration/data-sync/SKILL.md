@@ -105,4 +105,13 @@ To prevent silent data corruption and residency violations, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Relying on synchronous point-to-point calls to sync data between macro-services**
+  - **Consequence:** Cascading timeouts and total system failure if the receiving data service goes offline.
+  - **Correct Approach:** Use asynchronous messaging or event streaming (e.g., Kafka) to buffer sync events and decouple services.
+- **Lacking a defined master source of truth for synced entities**
+  - **Consequence:** Multi-directional data overwrites ("split-brain") leading to deeply corrupted customer records.
+  - **Correct Approach:** Define a single system of record for every entity and enforce one-way (uni-directional) master-to-replica syncs.
+- **Failing to implement error/dead-letter queues for failed synchronization events**
+  - **Consequence:** Transient network errors cause permanent data drift between systems, and administrators have no visibility.
+  - **Correct Approach:** Route failed sync attempts to a Dead Letter Queue (DLQ) with automated retry rules and manual intervention dashboards.

@@ -88,4 +88,13 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Exposing Azure SQL database or Storage services directly using public endpoints**
+  - **Consequence:** Security vulnerabilities and exposure to brute force attacks on database credentials.
+  - **Correct Approach:** Enforce Azure Private Endpoints (Private Link) to route data traffic strictly over internal VNets.
+- **Granting broad Owner/Contributor permissions at subscription level instead of custom RBAC**
+  - **Consequence:** Operational mistakes, accidental deletion of resource groups, and security compromise.
+  - **Correct Approach:** Implement the principle of least privilege using Azure Active Directory (Entra ID) and custom RBAC scopes.
+- **Ignoring Azure cross-region PII data movement boundaries**
+  - **Consequence:** Unintentional storage of customer records in European/American datacenters, violating UAE data privacy laws.
+  - **Correct Approach:** Restrict Azure Policy to enforce resources and geo-redundancies to reside exclusively within UAE North.

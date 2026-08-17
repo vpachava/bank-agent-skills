@@ -108,4 +108,13 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Logging raw or unmasked customer PII data in trace files**
+  - **Consequence:** Violation of PDPL regulations and CBUAE compliance rules concerning data protection.
+  - **Correct Approach:** Enforce a strict log-cleansing framework at the application layer to automatically redact credit card numbers, passwords, and IDs.
+- **Setting up redundant or generic alerts, causing critical alerts to be missed**
+  - **Consequence:** operational alert fatigue causing real incidents to be ignored.
+  - **Correct Approach:** Define alert triggers based on customer impact metrics (SLOs) rather than generic CPU/Memory limits.
+- **Lacking distributed trace identifiers across microservice boundaries**
+  - **Consequence:** Extremely slow incident troubleshooting because requests cannot be traced across system boundaries.
+  - **Correct Approach:** Implement trace headers correlation IDs (e.g. W3C Trace Context) in all API calls.

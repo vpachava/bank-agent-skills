@@ -65,4 +65,13 @@ Any FinOps ADR MUST include:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Provisioning resources without strict owner tagging or environmental labels**
+  - **Consequence:** Untraceable cloud spend, making it impossible to identify which department or product is driving costs.
+  - **Correct Approach:** Use global policy restrictions to block deployment of any resource missing mandatory environment, owner, and cost-center tags.
+- **Leaving staging and development resources running 24/7 without usage checks**
+  - **Consequence:** Significant resource waste and massive cloud bills for non-production environments.
+  - **Correct Approach:** Implement automated shutdown scripts for idle DEV/TEST servers outside of banking working hours.
+- **Budgeting without configuring real-time anomaly alerts and cost ceilings**
+  - **Consequence:** Cost spikes go unnoticed until the end-of-month invoice, exceeding budgets.
+  - **Correct Approach:** Configure real-time budget threshold alerts and automatic notification integrations with operations channels.

@@ -85,4 +85,13 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Understating risk severity or probability to avoid project scrutiny**
+  - **Consequence:** Sudden project failures occur when unmitigated risks impact delivery.
+  - **Correct Approach:** Score risks objectively using standard frameworks based on financial, security, and timeline impact.
+- **Defining risks too broadly without identifying specific scenarios**
+  - **Consequence:** Generic mitigation plans that fail to protect the system during actual failures.
+  - **Correct Approach:** Frame risks as "If Event X occurs, then Consequence Y will happen, leading to Impact Z".
+- **Failing to monitor risk status changes and update mitigation plans**
+  - **Consequence:** Mitigation plans are obsolete and fail to address the current environment.
+  - **Correct Approach:** Conduct weekly risk reviews and adjust scores as constraints change.

@@ -85,4 +85,13 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Committing to fix dates and budgets before scoping dependencies**
+  - **Consequence:** Missed deadlines, developer burnout, and project failure.
+  - **Correct Approach:** Use range-based estimates and conditional milestones that change when dependencies fail.
+- **Vague project governance models with overlapping roles**
+  - **Consequence:** Conflicted decisions, duplicated efforts, and lack of accountability when issues occur.
+  - **Correct Approach:** Define a clear RACI matrix mapping roles to decisions and project actions.
+- **Setting subjective or unquantifiable success metrics**
+  - **Consequence:** Inability to measure whether the project met its goals upon completion.
+  - **Correct Approach:** Base success criteria on KPIs such as performance speed, cost reduction, or adoption metrics.

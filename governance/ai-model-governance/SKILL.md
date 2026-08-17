@@ -58,4 +58,13 @@ Any ADR referencing a model governed by this skill MUST include:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Validating models in static test environments only**
+  - **Consequence:** Models degrade in accuracy and fail to handle real-world user questions.
+  - **Correct Approach:** Set up automated pipelines to test models against active, changing user data datasets.
+- **Skipping continuous model drift and accuracy checks**
+  - **Consequence:** Silent cost increases and performance penalties as models drift over time.
+  - **Correct Approach:** Instrument models to track prediction probability metrics and write alerts on data drift.
+- **Storing custom model weights and architectures in insecure storages**
+  - **Consequence:** Theft of IP and risk of model modification by unauthorized users.
+  - **Correct Approach:** Restrict access to model binary assets using RBAC roles in secure cloud storage.

@@ -78,4 +78,13 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Designing massive "ivory tower" reference architectures with no implementation paths**
+  - **Consequence:** Developers ignore the architecture entirely because it is too abstract to map to their daily code.
+  - **Correct Approach:** Tie reference architectures to concrete patterns, code boilerplates, and deployable Terraform modules.
+- **Failing to include operational concerns like logging, tracing, and metrics**
+  - **Consequence:** Teams build functional components but operations teams cannot support or monitor them in production.
+  - **Correct Approach:** Bake observability tools and incident diagnostic endpoints directly into the core reference layers.
+- **Mandating a "one size fits all" technology stack without context options**
+  - **Consequence:** Teams use heavyweight frameworks for simple microservices, increasing compute costs and maintenance.
+  - **Correct Approach:** Provide distinct architectural profiles (e.g., small function vs. large monolith) targeting different service scales.

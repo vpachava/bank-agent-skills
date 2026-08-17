@@ -101,4 +101,13 @@ To prevent unreadable diagrams and the omission of critical banking context, you
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Mixing abstractions across different C4 levels**
+  - **Consequence:** Confusing diagrams that show specific class implementations next to high-level context blocks, reducing readability.
+  - **Correct Approach:** Keep visual boundaries separated into distinct Context (L1), Container (L2), Component (L3), and Code (L4) diagrams.
+- **Omitting communication protocols and technologies on links**
+  - **Consequence:** Ambiguous diagrams where the implementation details of integration paths are completely hidden.
+  - **Correct Approach:** Annotate every connection line with the technology (e.g., HTTPS, gRPC, AMQP) and interaction style (e.g., Sync, Async).
+- **Letting diagrams drift from codebase reality**
+  - **Consequence:** Outdated diagrams mislead architects during incident resolution or design iterations.
+  - **Correct Approach:** Embed diagram generation in documentation repositories and update them alongside any code changes.

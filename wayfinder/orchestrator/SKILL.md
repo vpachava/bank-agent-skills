@@ -64,4 +64,13 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Commanding agents without clearly defined success criteria or bounded domains**
+  - **Consequence:** Agents drift into endless conversational loops, hallucinate tasks, or execute infinite web searches without yielding actionable artifacts.
+  - **Correct Approach:** Define sharp, boolean completion gates ("Produce a 500-word markdown ADR", "Find the IP range") before delegating a subtask.
+- **Failing to maintain conversational memory or artifact context across sequential agent handoffs**
+  - **Consequence:** Each newly spawned agent starts from scratch, forcing the user to repeat instructions and resulting in disjointed, conflicting solutions.
+  - **Correct Approach:** Utilize structured summary blocks, shared memory files, or centralized context repositories explicitly passed between orchestration steps.
+- **Executing destructive code changes (e.g., Git pushes, database drops) without Human-In-The-Loop review**
+  - **Consequence:** Agents autonomously overwrite critical production configurations based on hallucinated confidence, causing major system outages.
+  - **Correct Approach:** Implement hard-stop validation gates for any mutable action, requiring manual human approval before execution algorithms proceed.

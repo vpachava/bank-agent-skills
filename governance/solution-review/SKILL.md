@@ -84,4 +84,13 @@ To prevent broken architectures from being forced into production, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Approving solutions without verifying the core team's capability**
+  - **Consequence:** Development teams fail to build or support the solution due to lack of skills.
+  - **Correct Approach:** Include resourcing, skills assessment, and training plans in the solution review criteria.
+- **Selecting vendor software without analyzing version upgrade strategies**
+  - **Consequence:** The bank runs legacy, unsupported versions, incurring high upgrade maintenance costs.
+  - **Correct Approach:** Score vendor proposals based on their ease of deployment, backward compatibility, and upgrade support.
+- **Failing to align vendor solutions with regional regulations**
+  - **Consequence:** Deployment blocks due to data residency violations or audit gaps inside the package.
+  - **Correct Approach:** Assess solution architecture for residency isolation and CBUAE compliance first.

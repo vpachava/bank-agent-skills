@@ -80,4 +80,13 @@ To prevent "info-sharing" sessions that avoid scrutiny and evade accountability,
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Presenting solutions to the board before aligning with security and compliance**
+  - **Consequence:** Presentations are rejected by the board, delaying approvals and project schedules.
+  - **Correct Approach:** Complete pre-reviews with security, compliance, and infrastructure gatekeepers before the board review.
+- **Reviewing designs that lack a clear business sponsor or funding**
+  - **Consequence:** Wasting architecture board capacity on proposals that will never run.
+  - **Correct Approach:** Verify that a business case exists and that budget is allocated before board presentations.
+- **Approving exceptions without setting a firm expiration date or refactoring plan**
+  - **Consequence:** Temporary architectural waivers become permanent technical debt that is never fixed.
+  - **Correct Approach:** Write exceptions into ADRs with a defined expiration date and a planned task to migrate to standards.

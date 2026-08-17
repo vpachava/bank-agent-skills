@@ -85,4 +85,13 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Assuming code rollbacks automatically handle data structure rollbacks**
+  - **Consequence:** The older code version is restored but cannot read the newly migrated database schema, leaving the system hard-down.
+  - **Correct Approach:** Provide distinct, decoupled rollback plans for application binaries, environment configs, and database schema states.
+- **Relying on full backup restorations as the primary rollback mechanism for large active databases**
+  - **Consequence:** Restoring a multi-terabyte database takes 10 hours, violently blowing past the recovery time objective (RTO).
+  - **Correct Approach:** Design bi-directional data synchronization or employ fast storage snapshots/clones for instant rollback capability.
+- **Testing the rollback plan for the first time during the actual live crisis**
+  - **Consequence:** Command line syntax errors or missing access permissions prevent the emergency rollback from executing.
+  - **Correct Approach:** Execute mandatory 'game day' fire drills where the rollback scripts are run in Staging environments to verify them.

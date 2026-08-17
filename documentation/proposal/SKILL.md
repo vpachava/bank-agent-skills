@@ -111,4 +111,13 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Presenting technology stacks before identifying business outcomes**
+  - **Consequence:** Business sponsors reject the proposal as a costly technical exercise with no ROI.
+  - **Correct Approach:** Focus first slide on current customer pain points and how the solution meets those needs.
+- **Ignoring migration, transition, and legacy system compatibility**
+  - **Consequence:** Unplanned system downtime or unexpected modernization cost to bridge old and new layers.
+  - **Correct Approach:** Include a clear transition roadmap showing legacy migration waves and fallback steps.
+- **Understating the operational effort and ongoing maintenance costs**
+  - **Consequence:** The system becomes shelf-ware because the bank cannot afford the operational run costs.
+  - **Correct Approach:** Detail licensing, compute costs, SRE support teams, and yearly training budgets in the TCO section.

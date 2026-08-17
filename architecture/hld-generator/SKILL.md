@@ -99,4 +99,13 @@ To prevent Greenfield Amnesia, vague NFRs, and LLD creep, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Including low-level implementation details and specific code snippets**
+  - **Consequence:** Fast obsolescence of the High-Level Design (HLD) document and developer micro-management.
+  - **Correct Approach:** Focus on container boundaries, integration patterns, data schemas, and non-functional requirements.
+- **Designing the system without linking to specific NFRs (RTO/RPO)**
+  - **Consequence:** Failure to achieve business SLA metrics when disaster recovery is executed in production.
+  - **Correct Approach:** Include dedicated sections mapping structural design choices directly to RTO, RPO, and security metrics.
+- **Oversimplifying the integration boundary between legacy systems and new cloud systems**
+  - **Consequence:** Underestimating sync requirements, resulting in data inconsistency, lag, or API exhaustion.
+  - **Correct Approach:** Detail data format mappings, sync/async styles, latency boundaries, and failover pathways for all legacy links.

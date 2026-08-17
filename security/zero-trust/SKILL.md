@@ -109,4 +109,13 @@ To prevent implicit trust from compromising the network, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Assuming the corporate VPN creates a fully trusted "safe zone" for the internal network**
+  - **Consequence:** An attacker breaching one VPN endpoint can laterally move unchallenged to compromise core banking mainframes.
+  - **Correct Approach:** Deny default trust; enforce continuous authentication and authorization for every component interaction regardless of network location.
+- **Defining access control policies based entirely on static IP ranges**
+  - **Consequence:** Inability to secure dynamic, ephemeral cloud environments (like Kubernetes) where IPs change constantly, causing false positives.
+  - **Correct Approach:** Shift to identity-based segmentation (e.g., mTLS between services, IAM roles) decoupled from physical network topology.
+- **Ignoring the health, patching, or compliance status of the requesting device/workload**
+  - **Consequence:** A user with legitimate credentials logs in from an unpatched, malware-infected personal device, compromising the enterprise network.
+  - **Correct Approach:** Mandate conditional access policies that evaluate device posture, geographic location, and risk scores before granting access.

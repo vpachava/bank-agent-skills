@@ -86,4 +86,13 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Treating cloud migration solely as an infrastructure lift-and-shift project**
+  - **Consequence:** Security vulnerabilities from exposing old architectures to cloud networks, and missing cost optimization benefits.
+  - **Correct Approach:** Re-architect security boundaries, implement cloud-native IAM, and refactor heavy batch workloads to utilize PaaS.
+- **Ignoring data gravity when staging migration waves**
+  - **Consequence:** Severe application latency because the application layer is migrated to the cloud while the database remains on-premise.
+  - **Correct Approach:** Map application-to-database dependency chains deeply and migrate closely coupled components in the same wave.
+- **Transferring large data volumes over standard corporate internet pipes**
+  - **Consequence:** Data migrations take weeks instead of days, stalling testing and exceeding deployment windows.
+  - **Correct Approach:** Provision dedicated ExpressRoute/Direct Connect lines or use physical data transfer appliances (e.g., AWS Snowball).

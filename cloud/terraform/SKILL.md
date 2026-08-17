@@ -82,4 +82,13 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Committing local terraform.tfstate files or sensitive secrets to git**
+  - **Consequence:** Credentials exposure, state locking issues, and resource overwrites during parallel executions.
+  - **Correct Approach:** Store terraform state in a secure remote backend (e.g., S3/GCS) with DynamoDB/Firestore locking.
+- **Hardcoding cloud resource variables inside Terraform modules**
+  - **Consequence:** Code repetition, lack of reusability, and deployment errors across environments (dev/prod).
+  - **Correct Approach:** Use tfvars files and modularize code to accept input parameters dynamically.
+- **Skipping strict static analysis or validation tools (tflint, tfsec, checkov) in pipeline**
+  - **Consequence:** Deployment of insecure infrastructure (e.g., open security groups, unencrypted databases).
+  - **Correct Approach:** Integrate automated compliance check gates inside CI/CD linting phases before applying Terraform plans.

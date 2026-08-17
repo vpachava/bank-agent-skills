@@ -105,4 +105,13 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Releasing updates without automated canary or rollback procedures**
+  - **Consequence:** Defective deployments immediately affect 100% of users, leading to service disruption and brand damage.
+  - **Correct Approach:** Route traffic gradually via canary releases and configure auto-rollback triggers on error-rate spikes.
+- **Proceeding with code deployments without formal QA and Security approvals**
+  - **Consequence:** Introduction of regression bugs and serious security loopholes into production.
+  - **Correct Approach:** Integrate electronic signature checks or automated pipeline gates checking for signed security/QA test passes.
+- **Deploying application changes without updating internal runbooks**
+  - **Consequence:** Operations teams struggle to triage incidents, increasing mean time to resolution (MTTR).
+  - **Correct Approach:** Require audit check logs confirming documentation (runbook, configuration changes) is updated with each release.

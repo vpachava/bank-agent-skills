@@ -85,4 +85,13 @@ To prevent theoretical Disaster Recovery architectures that collapse in producti
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Conducting Disaster Recovery (DR) reviews without mock simulations**
+  - **Consequence:** The DR plan fails during actual system outages, causing extended downtime.
+  - **Correct Approach:** Enforce mandatory scheduled failover drills in staging/production environments.
+- **Assuming data backup is equivalent to complete system recovery**
+  - **Consequence:** Data exists but the bank cannot run the application because service configs are missing.
+  - **Correct Approach:** Verify and test compute provisioning, security settings, DNS routing, and database sync.
+- **Neglecting to measure cross-region network performance under full write loads**
+  - **Consequence:** System replication queues lag during load, violating strict RPO limits.
+  - **Correct Approach:** Monitor replication latency profiles during load tests and adjust write speeds to match.

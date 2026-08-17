@@ -69,4 +69,13 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Treating compliance as a final phase checklist before deploying to production**
+  - **Consequence:** Finding deep architectural violations (e.g., cross-border data routing) that require months to redesign.
+  - **Correct Approach:** Implement compliance-as-code policies in the Landing Zone and validate them in the early design phases (Shift-Left).
+- **Assuming cloud provider compliance automatically guarantees application compliance**
+  - **Consequence:** Auditors fail the bank because while AWS is SOC2 compliant, the bank's application configuration leaves S3 buckets publicly readable.
+  - **Correct Approach:** Utilize a shared responsibility model, documenting exact configurations required by the bank on top of cloud managed services.
+- **Relying on manual screenshots and spreadsheets for compliance auditing**
+  - **Consequence:** Audits are inaccurate, time-consuming, and fail to reflect the dynamic nature of cloud infrastructure scaling.
+  - **Correct Approach:** Automate evidence collection using CSPM (Cloud Security Posture Management) tools linked to compliance frameworks (e.g. NIST, CBUAE).

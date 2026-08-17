@@ -88,4 +88,13 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Deploying a flat cloud VPC without clear subnet boundary isolations**
+  - **Consequence:** Compromised application instances expose secure database instances directly to public network traffic.
+  - **Correct Approach:** Segment infrastructure into public, private, and isolated data subnets with strict security groups.
+- **Using IAM users with long-lived access keys instead of IAM Roles/STS**
+  - **Consequence:** Hardcoded keys in source control, credential leakage, and high risk of unauthorized cloud manipulation.
+  - **Correct Approach:** Authenticate services using AWS IAM Roles for Service Accounts (IRSA) or instance profiles.
+- **Ignoring UAE-specific AWS data residency boundaries**
+  - **Consequence:** Violation of CBUAE or PDPL data hosting regulations by routing PII out of country.
+  - **Correct Approach:** Pin deployment resources to the UAE region and run local audits to block any cross-region data transit.

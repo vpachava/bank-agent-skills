@@ -109,4 +109,13 @@ To prevent abstracted topology masking systemic fragility, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Conflating logical container interfaces with physical network paths**
+  - **Consequence:** Vulnerabilities from exposing backend APIs to insecure network segments without perimeter firewalls or API gateways.
+  - **Correct Approach:** Explicitly map physical networks, subnet boundaries, firewall rules, and API gateway routing.
+- **Failing to show regional and availability zone boundaries**
+  - **Consequence:** Single-point-of-failure architectures that cannot meet resilience or data residency constraints (e.g. UAE data laws).
+  - **Correct Approach:** Structure diagrams to show replication, failover, and active-active setups across distinct zones/regions.
+- **Omitting deployment/management components like CI/CD runners or jump boxes**
+  - **Consequence:** Hidden attack vectors and unmonitored access points to production database/compute nodes.
+  - **Correct Approach:** Document the management and control plane boundary alongside the runtime application architecture.

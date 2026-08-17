@@ -104,4 +104,13 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Running performance tests using simple, hot mock databases**
+  - **Consequence:** Under-predicting latency by ignoring database locks and disk IO barriers.
+  - **Correct Approach:** Test using realistic data distributions, mock latency on dependencies, and actual production scale databases.
+- **Testing transaction performance purely at 100% capacity without spike simulation**
+  - **Consequence:** Server crashes during unpredictable traffic spikes.
+  - **Correct Approach:** Run stress tests, endurance runs, and sudden step-up spike workloads to identify bottleneck points.
+- **Ignoring performance metrics and thread locks on legacy integration points**
+  - **Consequence:** System failure because legacy systems freeze under load.
+  - **Correct Approach:** Put down strict thread limits, queues, and connection timeouts on legacy system integrations.

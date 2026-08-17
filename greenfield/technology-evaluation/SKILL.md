@@ -75,4 +75,13 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Evaluating tools based completely on "Hello World" or optimal-path demos**
+  - **Consequence:** The tool collapses under the weight of real-world complexities, legacy integrations, or complex security rules.
+  - **Correct Approach:** Evaluate tools using your organization's specific complex scenarios, including failure recovery.
+- **Ignoring the health, community size, and release cadence of open-source projects**
+  - **Consequence:** Adopting an abandoned project, leaving the organization with unpatchable security flaws.
+  - **Correct Approach:** Check GitHub stars, recent commit activity, issue resolution speed, and corporate backing before selection.
+- **Underestimating the organizational learning curve and training costs**
+  - **Consequence:** Tool is purchased but remains unused or misused because engineers do not know how to leverage it.
+  - **Correct Approach:** Factor ramp-up time, paid training needs, and available hiring pool into the evaluation scorecard.

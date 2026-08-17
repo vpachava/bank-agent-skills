@@ -85,4 +85,13 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Documenting low-level implementation details that drift daily**
+  - **Consequence:** High maintenance overhead; developers ignore the design doc because it is always out of date.
+  - **Correct Approach:** Focus the design document on boundaries, interface contracts, data schemas, and key design patterns.
+- **Neglecting to include security and regulatory compliance sections**
+  - **Consequence:** Security flaws are discovered during production reviews, forcing complete code redesigns.
+  - **Correct Approach:** Dedicate specific sections to data encryption at rest/in transit, IAM controls, and data localization compliance.
+- **Omitting disaster recovery, backup, and failover design details**
+  - **Consequence:** System outages occur without clear processes to restore database and service instances.
+  - **Correct Approach:** Detail recovery steps, define RTO/RPO limits, and describe database backup policies explicitly.

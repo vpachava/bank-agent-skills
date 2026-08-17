@@ -108,4 +108,13 @@ To prevent vague Non-Functional Requirements that engineers cannot test against,
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Targeting NFR metrics without identifying corresponding measurement tools**
+  - **Consequence:** Unverifiable performance claims that lead to conflicts during deployment and operational validation.
+  - **Correct Approach:** Define each NFR with a measurable metric, target threshold, and the tool/script used to monitor it.
+- **Setting excessive/unnecessary NFR targets (e.g., 99.999% uptime) without budget alignment**
+  - **Consequence:** Disproportionately high infrastructure architecture costs and extended delivery timelines.
+  - **Correct Approach:** Balance engineering uptime targets against the financial impact of downtime and actual business budget.
+- **Treating NFR checklist validation as a post-implementation compliance phase**
+  - **Consequence:** Discovery of structural failures (e.g., bad RTO replication) late, requiring costly retrofitting work.
+  - **Correct Approach:** Evaluate and mock-test NFR achievements continuously during design spikes and integration sprints.

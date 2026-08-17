@@ -89,4 +89,16 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Running containers with privileged flags or hostPath directory access**
+  - **Consequence:** Host node compromises, privilege escalation vulnerabilities, and compliance gate failures.
+  - **Correct Approach:** Apply Pod Security Standards (restricted) and run containers strictly as non-root users.
+- **Deploying a flat namespace cluster without network interface policies**
+  - **Consequence:** Undetected pod-to-pod communication across different namespaces/security zones, violating isolation rules.
+  - **Correct Approach:** Implement deny-all network policies by default and explicitly white-list required ports and targets.
+- **Storing API keys and database credentials in standard base64 Kubernetes Secrets**
+  - **Consequence:** Secrets are saved in plain text in etcd, allowing host-level users or backups to compromise them.
+  - **Correct Approach:** Use external Secrets Store CSI Driver integration (e.g. AWS Secrets Manager/Azure Key Vault) to inject secrets dynamically.
+- **Exposing the Kubernetes API server directly to the public internet**
+  - **Consequence:** High exposure to zero-day K8s API exploits and brute force access attempts.
+  - **Correct Approach:** Bind the API server to private endpoints, load balancers, or enforce strict authorized IP listings.

@@ -105,4 +105,13 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Defining service level agreements (SLAs) without real SLI metrics**
+  - **Consequence:** Outage events happen but dashboards continue to report green (false compliance).
+  - **Correct Approach:** Link target SLOs to reliable, quantifiable metrics (e.g., successful request rates) at the entry gateway.
+- **Treating post-incident reviews as a process of finding someone to blame**
+  - **Consequence:** Teams hide mistakes, leading to repeated incidents and lack of learning.
+  - **Correct Approach:** Conduct blameless post-mortem reviews focused on system improvements and process failures.
+- **Running manual operational tasks repeatedly without work automation plans**
+  - **Consequence:** High engineering overhead, burnout, and frequent human-error incidents.
+  - **Correct Approach:** Track toil hours and dedicate engineering cycles to automate repeated tasks.

@@ -107,4 +107,13 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Planning monolithic, multi-year rewrites without intermediate valuable deliverables**
+  - **Consequence:** Stakeholders cancel funding in Year 2 because no tangible business improvements have reached customers.
+  - **Correct Approach:** Structure the roadmap around iterative, incremental releases (Strangler Fig pattern) that deliver slice-by-slice value.
+- **Failing to budget for the "dual-run" cost phase during transition**
+  - **Consequence:** Budgets are destroyed when the organization realizes it must pay for both the old mainframe and the new cloud footprint simultaneously.
+  - **Correct Approach:** Explicitly forecast overlapping infrastructure, licensing, and operational support costs in the roadmap financial model.
+- **Attempting to modernize technology stacks while keeping old siloed organizational structures**
+  - **Consequence:** The new cloud-native microservices function like a distributed monolith due to Conway's Law organizational constraints.
+  - **Correct Approach:** Build organizational change management (shifting to DevOps or product-aligned squads) directly into the roadmap timeline.

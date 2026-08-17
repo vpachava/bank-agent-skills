@@ -88,4 +88,13 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Using the default VPC network and its automatic subnet IP allocations**
+  - **Consequence:** Overlapping IP ranges with corporate networks block on-prem VPN access, and public IP footprints are larger than needed.
+  - **Correct Approach:** Create custom VPCs and define explicit subnet IP allocations with private Google Access enabled.
+- **Saving GCP Service Account keys in local JSON files or repository code**
+  - **Consequence:** Security leakage risks, lack of key rotation, and potential privilege escalation.
+  - **Correct Approach:** Leverage Workload Identity Federation to authenticate workloads without requiring long-lived key files.
+- **Running Google Cloud storage buckets without configuring uniform bucket-level access**
+  - **Consequence:** Public exposure of critical banking objects due to granular ACL misconfigurations.
+  - **Correct Approach:** Enforce Uniform Bucket-Level Access and run regular IAM reviews in GCP Security Command Center.

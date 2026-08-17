@@ -106,4 +106,13 @@ To prevent abstract map-generation and detached capability siloing without measu
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Conflating technical components or systems with business capabilities**
+  - **Consequence:** Inability to align IT investments with business outcomes, leading to system redundancy.
+  - **Correct Approach:** Define capabilities as "what" the business does (e.g., Deposit Taking) rather than "how" it does it.
+- **Developing the capability map inside a silo without business stake validation**
+  - **Consequence:** Low adoption rate of the map, and inaccurate representing of real processes.
+  - **Correct Approach:** Design the map in collaborative workshops with business unit leaders and analysts.
+- **Failing to link capability definitions with regulatory controls**
+  - **Consequence:** System gaps that violate compliance rules.
+  - **Correct Approach:** Map regulatory requirements (CBUAE, PDPL) directly to affected capabilities in the taxonomy.

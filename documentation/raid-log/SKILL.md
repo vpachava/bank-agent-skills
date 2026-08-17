@@ -85,4 +85,13 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Treating the RAID log as static documentation to be updated before meetings**
+  - **Consequence:** Issues remain unresolved, risks escalate, and dependencies dry up.
+  - **Correct Approach:** Keep the RAID document active, updating status, owner updates, and milestones continuously.
+- **Documenting risks and issues without specific mitigation plans or owners**
+  - **Consequence:** Risks inevitably become actual issues, and issues linger without resolution.
+  - **Correct Approach:** Assign a single owner to each entry and record actionable mitigation steps with clear target dates.
+- **Closing entries without capturing lessons learned or post-mortems**
+  - **Consequence:** Teams repeat the same mistakes in subsequent sprints and phases.
+  - **Correct Approach:** Record a summary of why the risk was closed, what mitigated it, and what needs to be changed next.

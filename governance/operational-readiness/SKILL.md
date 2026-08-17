@@ -85,4 +85,13 @@ To prevent systems from crashing without a recovery path on Day 2, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Transitioning systems to support teams without setting up metrics**
+  - **Consequence:** System issues are first reported by customer complaints rather than support tools.
+  - **Correct Approach:** Establish dashboard monitoring and set up alerts for system latency and database errors.
+- **Deploying systems without automated rollback capabilities**
+  - **Consequence:** Release errors require lengthy troubleshooting sessions, increasing outage downtime.
+  - **Correct Approach:** Automate release rollbacks when health metrics fall below thresholds.
+- **Neglecting to run post-oncall handover reporting**
+  - **Consequence:** Persistent bugs and technical debts are ignored, leading to repeat issues.
+  - **Correct Approach:** Require a handoff report documenting major incident causes and operational gaps.

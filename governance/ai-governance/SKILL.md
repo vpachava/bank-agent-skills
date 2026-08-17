@@ -87,4 +87,13 @@ To prevent compliance breaches and unchecked data exfiltration via LLMs, you MUS
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Operating customer-facing AI services without safety and bias guards**
+  - **Consequence:** Generative AI services output toxic or unaligned advice, resulting in brand damage.
+  - **Correct Approach:** Deploy input/output filters and guardrails to monitor and intercept unsafe models.
+- **Deploying model outputs without audit pathways and explainability**
+  - **Consequence:** Auditing failures when compliance asks why a credit decision was made by an LLM.
+  - **Correct Approach:** Save execution traces, prompt templates, and scoring variables in immutable audit databases.
+- **Sending sensitive customer PII to external public AI endpoints**
+  - **Consequence:** Data leakages and serious compliance failures under UAE data privacy regulations.
+  - **Correct Approach:** Run models inside local tenant environments and redact user details before passing inputs.

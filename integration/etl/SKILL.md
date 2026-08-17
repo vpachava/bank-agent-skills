@@ -108,4 +108,13 @@ To prevent data lake swamps and untraceable pipelines, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Pulling entire tables daily (full loads) instead of incremental delta updates**
+  - **Consequence:** Hours-long batch windows that eventually exceed the overnight SLA as data volume grows, locking the source DB.
+  - **Correct Approach:** Implement Change Data Capture (CDC) or high-water-mark timestamps to extract only changed records.
+- **Coupling data extraction logic directly with complex data transformation scripts**
+  - **Consequence:** High fragility. If a complex transformation fails, the extraction has to restart from the beginning.
+  - **Correct Approach:** Decouple phases using the ELT (Extract, Load, Transform) pattern to land raw data staging before heavy compute.
+- **Running ad-hoc ETL jobs without central orchestration and dependency mapping**
+  - **Consequence:** Jobs run out of sequence, producing incorrect reports based on partially stale data.
+  - **Correct Approach:** Use robust DAG orchestrators (e.g., Apache Airflow, Dagster) to manage retries, dependencies, and execution state.

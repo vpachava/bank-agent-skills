@@ -82,4 +82,13 @@ To prevent cosmetic gap classification and effort-bias planning, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Recommending solutions without clarifying the current state baseline**
+  - **Consequence:** Inaccurate migration estimates, underestimating complexity, and project failure.
+  - **Correct Approach:** Document the current architectural state, including active constraints and legacy tech debt.
+- **Failing to prioritize identified capability gaps based on business impact**
+  - **Consequence:** Wasted efforts on low-value gaps while critical business gaps remain unresolved.
+  - **Correct Approach:** Score gaps by regulatory risk, business value, and implementation complexity.
+- **Proposing architectural solutions that ignore organizational skill sets**
+  - **Consequence:** Deploying technology that target teams cannot support or maintain.
+  - **Correct Approach:** Identify training gaps as part of the analysis and plan resource training.

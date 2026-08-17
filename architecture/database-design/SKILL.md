@@ -62,4 +62,13 @@ Any ADR referencing a database design MUST include:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Hardcoding schemas without AI or vector indexing paths where RAG is expected**
+  - **Consequence:** Inability to scale semantic search or contextual integration for banking AI bots, creating a modernization bottleneck.
+  - **Correct Approach:** Design databases with modular vector extensions or hybrid search schemas from the start.
+- **Relying entirely on application/client-side logic for data integrity**
+  - **Consequence:** Corrupt or inconsistent data in database tables due to bypass scripts, multiple clients, or concurrent writes.
+  - **Correct Approach:** Enforce foreign keys, unique constraints, and check constraints directly at the database engine schema layer.
+- **Failing to plan database schema migrations under active live write-load**
+  - **Consequence:** Severe database locking, timeouts, and transaction failures during application updates.
+  - **Correct Approach:** Adopt online, zero-downtime migration patterns like Expanding and Contracting (Blue-Green database schema changes).

@@ -108,4 +108,13 @@ To prevent solution-masked requirements and omitted constraints, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Eliciting functional features while neglecting non-functional requirements**
+  - **Consequence:** Systems that meet functionality specs but fail under volume or scale.
+  - **Correct Approach:** Require the specification of NFR limits (throughput, latency, RTO/RPO) for every requirement.
+- **Accepting requirement changes without formal impact analysis**
+  - **Consequence:** Scope creep, missed deadlines, and budget overruns.
+  - **Correct Approach:** Put changes through an architectural gate to evaluate their impact on integration, security, and timeline.
+- **Failing to trace requirements back to business case justifications**
+  - **Consequence:** Implementation of custom features that add zero value to product success.
+  - **Correct Approach:** Trace every technical requirement to business cases and compliance outcomes.

@@ -101,4 +101,13 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Assuming "legacy" automatically means "needs to be rewritten"**
+  - **Consequence:** Wasting millions of dollars rebuilding a stable, unchanging core system instead of just wrapping it in an API.
+  - **Correct Approach:** Use the TIME framework (Tolerate, Invest, Migrate, Eliminate) to objectively score modernization strategies based on business value versus technical limits.
+- **Focusing on code age rather than maintainability and vendor support risk**
+  - **Consequence:** Targeting the wrong systems while ignoring modern systems with toxic technical debt and severe security vulnerabilities.
+  - **Correct Approach:** Score legacy systems by measuring engineering velocity, deployment frequency, and critical vendor EOL status.
+- **Conducting the assessment purely through IT metrics without business alignment**
+  - **Consequence:** Producing a modernization roadmap that the business refuses to fund because it solves zero customer pain points.
+  - **Correct Approach:** Align legacy pain points directly to business outcomes (e.g., "Cannot launch new deposit product due to mainframe lock").

@@ -64,4 +64,13 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
 3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-
+## Anti-patterns
+- **Overloading the summary with deep technical jargon and acronyms**
+  - **Consequence:** Non-technical executives miss the core value proposition and delay final approvals.
+  - **Correct Approach:** Use plain Business-focused language and visually map technical architecture to business workflows.
+- **Omitting financial estimates, resources, and critical milestones**
+  - **Consequence:** Decision-makers reject proposals because the total cost and path are unclear.
+  - **Correct Approach:** Detail total cost of ownership (TCO), resource constraints, and key delivery dates on the main page.
+- **Hiding critical risks, trade-offs, and negative consequences**
+  - **Consequence:** The business sponsor is blindsided when issues surface during implementation stages.
+  - **Correct Approach:** Explicitly state the top three risks and how the architecture intends to mitigate them.
