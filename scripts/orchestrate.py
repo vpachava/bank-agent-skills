@@ -1,45 +1,33 @@
 import sys
-import os
-import re
 from pathlib import Path
-from core_parser import parse_frontmatter, format_skill_content
-from lineage_validator import load_taxonomy_artifacts, validate_workflow_lineage
+from workspace import Workspace
 
 def cmd_validate():
     """Validates all skills frontmatter and workflow composition lineages."""
     success = True
-    taxonomy = load_taxonomy_artifacts()
+    workspace = Workspace(".")
+    taxonomy = workspace.load_taxonomy()
 
     # 1. Validate all 72 skills SKILL.md frontmatters
-    skills_root = Path(".")
     print("Validating architectural skills...")
-    for parent, _, filenames in os.walk(skills_root):
-        # Ignore sandbox and temporary git directories
-        if ".claude" in parent or ".scratch" in parent or "graphify-out" in parent:
-            continue
-        if "SKILL.md" in filenames:
-            skill_id = Path(parent).relative_to(skills_root).as_posix()
-            skill_path = Path(parent) / "SKILL.md"
-            content = skill_path.read_text(encoding="utf-8")
-            meta, errors = parse_frontmatter(content)
-
-            if errors:
-                print(f"Error in Skill metadata '{skill_id}':")
-                for err in errors:
-                    print(f"  - {err}")
-                success = False
+    skills = workspace.list_skills()
+    for skill_id, skill in skills.items():
+        if skill.errors:
+            print(f"Error in Skill metadata '{skill_id}':")
+            for err in skill.errors:
+                print(f"  - {err}")
+            success = False
 
     # 2. Validate all workflows in workflows/
-    workflows_root = Path("workflows")
     print("Validating workflows...")
-    if workflows_root.exists():
-        for wf_file in workflows_root.glob("*.yaml"):
-            errors = validate_workflow_lineage(wf_file, taxonomy)
-            if errors:
-                print(f"Error in Workflow '{wf_file.name}':")
-                for err in errors:
-                    print(f"  - {err}")
-                success = False
+    workflows = workspace.list_workflows()
+    for wf_name, wf in workflows.items():
+        errors = wf.validate_lineage(taxonomy, skill_resolver=workspace.get_skill)
+        if errors:
+            print(f"Error in Workflow '{wf_name}':")
+            for err in errors:
+                print(f"  - {err}")
+            success = False
 
     if success:
         print("Success: All skills and workflows verified successfully against frameworks schemas.")
@@ -52,54 +40,48 @@ def cmd_report():
     report += "| Skill | TOGAF Phase | TOGAF Artifact | BIAN Service Domain |\n"
     report += "|-------|-------------|----------------|---------------------|\n"
 
-    skills_root = Path(".")
+    workspace = Workspace(".")
+    skills = workspace.list_skills()
     skills_found = False
 
-    # Safely scan directories
-    for parent, _, filenames in os.walk(skills_root):
-        if ".claude" in parent or ".scratch" in parent or "graphify-out" in parent:
-            continue
-        if "SKILL.md" in filenames:
-            skill_name = Path(parent).name
-            skill_path = Path(parent) / "SKILL.md"
-            content = skill_path.read_text(encoding="utf-8")
-            meta, _ = parse_frontmatter(content)
+    for skill_id, skill in skills.items():
+        skill_name = Path(skill_id).name
+        phases = ", ".join(skill.metadata.get("togaf-phases", [])) or "N/A"
+        artifacts = ", ".join(skill.metadata.get("togaf-artifacts", [])) or "N/A"
+        domains = ", ".join(skill.metadata.get("bian-service-domains", [])) or "N/A"
 
-            phases = ", ".join(meta.get("togaf-phases", [])) or "N/A"
-            artifacts = ", ".join(meta.get("togaf-artifacts", [])) or "N/A"
-            domains = ", ".join(meta.get("bian-service-domains", [])) or "N/A"
-
-            report += f"| {skill_name} | {phases} | {artifacts} | {domains} |\n"
-            skills_found = True
+        report += f"| {skill_name} | {phases} | {artifacts} | {domains} |\n"
+        skills_found = True
 
     if not skills_found:
         print("Warning: No skills found for coverage mapping.")
 
-    Path("TOGAF-BIAN-Coverage.md").write_text(report, encoding="utf-8")
+    # Write report
+    report_file = Path("TOGAF-BIAN-Coverage.md")
+    report_file.write_text(report, encoding="utf-8")
     print("Report written successfully to TOGAF-BIAN-Coverage.md")
     return True
 
 def cmd_format():
     """Formats all frontmatters for skills in the project."""
     print("Formatting and resolving metadata for skills...")
-    skills_root = Path(".")
+    workspace = Workspace(".")
     success = True
     formatted_count = 0
-    for parent, _, filenames in os.walk(skills_root):
-        if ".claude" in parent or ".scratch" in parent or "graphify-out" in parent:
-            continue
-        if "SKILL.md" in filenames:
-            skill_path = Path(parent) / "SKILL.md"
-            try:
-                content = skill_path.read_text(encoding="utf-8")
-                new_content, modified = format_skill_content(content, str(skill_path.resolve()))
-                if modified:
-                    skill_path.write_text(new_content, encoding="utf-8")
-                    print(f"Formatted and updated metadata in: {skill_path}")
-                    formatted_count += 1
-            except Exception as e:
-                print(f"Error formatting {skill_path}: {e}")
-                success = False
+    skills = workspace.list_skills()
+
+    for skill_id, skill in skills.items():
+        try:
+            new_content, modified = skill.format_content()
+            if modified:
+                workspace.write_skill(skill_id, new_content)
+                skill_path = Path(skill_id) / "SKILL.md"
+                print(f"Formatted and updated metadata in: {skill_path}")
+                formatted_count += 1
+        except Exception as e:
+            skill_path = Path(skill_id) / "SKILL.md"
+            print(f"Error formatting {skill_path}: {e}")
+            success = False
 
     print(f"Metadata format operation finished. Updated {formatted_count} files.")
     return success
