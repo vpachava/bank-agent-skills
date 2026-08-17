@@ -1,4 +1,4 @@
-﻿# TOGAF and BIAN Coverage Mapping Report
+# TOGAF and BIAN Coverage Mapping Report
 
 | Skill | TOGAF Phase | TOGAF Artifact | BIAN Service Domain |
 |-------|-------------|----------------|---------------------|
@@ -73,4 +73,3 @@
 | threat-model | Phase D | Security Baseline | Security.Auth |
 | zero-trust | Phase D | Security Baseline | Security.Auth |
 | orchestrator | Phase A | Architecture Vision | Customer Account.Origination |
-
