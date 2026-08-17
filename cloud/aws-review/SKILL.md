@@ -79,3 +79,9 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - **Architecture Lens Check:** Ensuring logs from `CloudWatch` are forwarded to the centralized SOC/SIEM (e.g., Azure Sentinel or on-prem SIEM used by the bank).
 - **Sample Outcome:** "Governance Check Passed: Log-forwarding to internal SIEM enabled; audit compliance maintained."
 - **Common Pitfall:** Deploying the API without configuring centralized log-forwarding; logs remain isolated in AWS, creating a "Cloud-Audit-Blindness" that prevents the security team from investigating unauthorized access to sensitive Sharia product rate APIs.
+
+### Regulatory References
+1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
+2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
+3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+

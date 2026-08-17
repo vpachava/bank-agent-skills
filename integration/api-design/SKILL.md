@@ -71,3 +71,9 @@ To prevent leaky API boundaries that skip banking requirements, you MUST:
 - **Architecture Lens Check:** Ensuring `event-id` based deduplication for all loan-status changes triggered by Sharia governance events.
 - **Sample Outcome:** "AsyncAPI: Sharia-status-update event includes `event-id`; consumer deduplicates to prevent re-issuing duplicate financial instructions."
 - **Common Pitfall:** Building async event consumers that re-trigger Sharia-compliant status updates on every network retry; the system must deduplicate to ensure a loan instruction is never applied to the core ledger twice."
+
+### Regulatory References
+1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
+2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
+3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+

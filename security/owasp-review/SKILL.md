@@ -101,3 +101,8 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - **Architecture Lens Check:** Validating `FAPI2` compliance for Open Banking API access and ensuring business logic (i.e., loan modification) checks comply with `Sharia Board` rules via transactional signature enforcement.
 - **Sample Outcome:** "API Security: Verified FAPI2 compliance. Finding: Missing per-operation sender-constraint on `/loan/modify` endpoint."
 - **Common Pitfall:** Applying generic API security templates that lack sender-constraint, thus failing open-banking API standards (FAPI2) required for regulated financial integrations.
+### Regulatory References
+1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
+2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
+3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+

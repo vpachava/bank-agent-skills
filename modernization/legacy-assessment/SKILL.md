@@ -92,3 +92,9 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - **Architecture Lens Check:** Evaluating the impact of "Retail-Banking" Ledger segregation required by `Sharia-Governance` board.
 - **Sample Outcome:** "Verdict: Wrap + Refactor. Rationale: System cannot easily segregate Conventional and Sharia funds at the DB level, requiring a wrapper to enforce Sharia-compliant isolation and audit trail."
 - **Common Pitfall:** Ignoring the `Sharia Board` requirements for segregation; assessing the system as "Replace" without recognizing the need for logical separation from Conventional products leads to non-compliant Sharia auditing.
+
+### Regulatory References
+1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
+2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
+3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+

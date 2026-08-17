@@ -98,3 +98,9 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - **Architecture Lens Check:** Ensuring roadmap phases for legacy decommissioning do *not* disrupt the `Sharia-Compliant` audit-trail requirements.
 - **Sample Outcome:** "Roadmap Wave-X: Migration of Sharia ledger to target-architecture, following formal `Sharia-Governance-Board` sign-off and ledger-parallel-run."
 - **Common Pitfall:** Inadvertently introducing a temporary "interest-based ledger" path during a modernization wave; this would disqualify the bank from Sharia-certification compliance for all affected accounts, a permanent regulatory error.
+
+### Regulatory References
+1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
+2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
+3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+

@@ -77,3 +77,8 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - **Architecture Lens Check:** Dependency on `Internal Sharia Governance Board` sign-off for product architecture updates.
 - **Sample Outcome:** "Dependency [D-002]: Sign-off from Sharia Board on product structure. Blocker: Workflow remains uncertified. Owner: Product Compliance lead."
 - **Common Pitfall:** Failing to link the Sharia Board sign-off as a `Critical Dependency`, thereby failing to realize the project cannot go to production without it.
+### Regulatory References
+1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
+2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
+3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+

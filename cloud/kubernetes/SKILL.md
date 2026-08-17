@@ -80,3 +80,9 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - **Architecture Lens Check:** Using an `Egress-Gateway` to whitelist only authorized APIs, preventing data-exfiltration.
 - **Sample Outcome:** "Egress Compliance: Pod traffic limited via Egress-Gateway to API-whitelisted domains only."
 - **Common Pitfall:** Allowing `0.0.0.0/0` egress to the public internet. A compromised container can then exfiltrate sensitive data or reach a command-and-control server without being blocked by the cluster’s network configuration.
+
+### Regulatory References
+1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
+2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
+3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+

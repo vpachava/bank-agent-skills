@@ -68,3 +68,9 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - [reference-architecture](../reference-architecture/SKILL.md) — where the selected platform is anchored.
 - [compliance](../../security/compliance/SKILL.md) — residency and transfer basis constraints.
 - [modernization-roadmap](../../modernization/modernization-roadmap/SKILL.md) — sequencing dependencies on the platform.
+
+### Regulatory References
+1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
+2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
+3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+

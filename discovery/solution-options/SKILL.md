@@ -76,3 +76,9 @@ To prevent skewed analysis masking pre-ordained choices, you MUST:
 - [architecture-board](../../governance/architecture-board/SKILL.md) — the forum that often owns the call.
 - [technology-evaluation](../../greenfield/technology-evaluation/SKILL.md) — for an option that needs a deeper single-tech eval.
 - [risk-register](../../documentation/risk-register/SKILL.md) — the per-option risks land here as the initiative proceeds.
+
+### Regulatory References
+1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
+2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
+3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+

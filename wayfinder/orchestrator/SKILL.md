@@ -55,3 +55,9 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 
 ## Automated Reinforcement
 - The orchestrator now performs a mandatory `/security-architecture-review` baseline as the first sub-step in any modernization trigger.
+
+### Regulatory References
+1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
+2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
+3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+

@@ -129,3 +129,9 @@ We choose Option — **because** <rationale citing the drivers>.
 - **Architecture Lens Check:** Evaluates 'Build-Sharia-Module-on-Core' vs 'External-Sharia-Engine'.
 - **Sample Outcome:** "Decision: Choose 'External-Sharia-Engine' because it isolates product-certification from core-binary updates, easing audit."
 - **Common Pitfall:** Choosing an integrated solution because it is 'fast-to-build', ignoring the high cost of re-certifying the *entire* core binary every time Sharia-product rules change, which is a major long-term maintenance penalty."
+
+### Regulatory References
+1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
+2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
+3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+

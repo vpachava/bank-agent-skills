@@ -55,3 +55,9 @@ def process_request(idempotency_key, payload):
 **Scenario:** Fetching an AECB credit report via API.
 - **Architecture Lens Check:** Using an `idempotency-key` to avoid double-charging the bank's account for repeated AECB credit report fetches when a network error occurs.
 - **Common Pitfall:** Treating the read-operation as non-idempotent; retrying the fetch incurs redundant costs for the bank and risks triggering AECB-side throttling due to excessive request rates on the same customer.
+
+### Regulatory References
+1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
+2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
+3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+

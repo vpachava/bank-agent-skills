@@ -71,3 +71,9 @@ To prevent "info-sharing" sessions that avoid scrutiny and evade accountability,
 - **Sample Outcome:** "Decision: Approve architecture pending formal sign-off from `Internal Sharia Governance Board`."
 - **Common Pitfall:** AGB approves the technical workflow for modernizing a loan system, completely ignoring that the product itself must be Sharia-governed, leading to a build that lacks the regulatory "compliance-as-code" features required by board mandates.
 
+
+### Regulatory References
+1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
+2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
+3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+

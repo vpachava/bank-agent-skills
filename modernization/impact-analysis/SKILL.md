@@ -94,3 +94,9 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - **Architecture Lens Check:** Compliance impact on bank's ability to submit accurate data to the bureau.
 - **Sample Outcome:** "Impact Analysis: Critical. Withdrawal invalidates AECB submission. Action: Cannot proceed until AECB-submission logic is migrated to a new stable event-sink."
 - **Common Pitfall:** Assuming the event is "unused" by the legacy system, missing its crucial business role in generating regulatory data, inevitably leading to a regulatory breach.
+
+### Regulatory References
+1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
+2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
+3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+

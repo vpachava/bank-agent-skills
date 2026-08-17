@@ -79,3 +79,9 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - **Architecture Lens Check:** Ensuring `Cloud Logging` and `SCC` (Security Command Center) alerts are synced to the enterprise SOC/SIEM.
 - **Sample Outcome:** "Governance Check Passed: Cloud Logging integrated with internal SOC; anomaly detection alerts forwarded to central security-operations."
 - **Common Pitfall:** Letting logs die in Cloud Logging dashboard. If the security team isn't ingesting these logs into their primary toolchain (like Sentinel), they are functionally blind to attacks on the production API.
+
+### Regulatory References
+1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
+2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
+3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+

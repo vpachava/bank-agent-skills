@@ -97,3 +97,9 @@ To prevent abstract map-generation and detached capability siloing without measu
 - **Sample Input:** `Retail Banking` -> `Lending` -> `Sharia-Compliant Loan Origination`
 - **UAE Context:** Requires integration with a `Sharia Governance Board` service domain for product certification.
 - **Common Pitfall:** Treating Sharia-compliant lending as a generic loan process. It differs significantly in the `Amortization Schedule` and `Interest-Equivalent Calculation` capabilities.
+
+### Regulatory References
+1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
+2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
+3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+

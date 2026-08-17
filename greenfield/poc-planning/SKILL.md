@@ -58,3 +58,9 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - [technology-evaluation](../technology-evaluation/SKILL.md) — where the PoC results feed heavily.
 - [roadmap](../roadmap/SKILL.md) — where the Post-PoC decision feeds.
 - [reference-architecture](../reference-architecture/SKILL.md) — the candidate solution architecture tested by the PoC.
+
+### Regulatory References
+1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
+2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
+3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+

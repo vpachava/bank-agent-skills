@@ -61,3 +61,8 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - **Architecture Lens Check:** Compliance validation for `Sharia-Compliant Loan Structuring` and `AML` screening protocols.
 - **Sample Outcome:** "Governance: Validated product structure against Internal Sharia Governance Board standards and confirmed automated AML screening integration."
 - **Common Pitfall:** Ignoring the regulatory requirement to validate the *Sharia* appropriateness of the loan product structure, focusing solely on technical KYC compliance.
+### Regulatory References
+1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
+2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
+3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+

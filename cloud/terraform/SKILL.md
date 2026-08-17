@@ -73,3 +73,9 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - **Architecture Lens Check:** Ensuring infrastructure tags enforce `Sharia-Compliant-Status` for audit compliance.
 - **Sample Outcome:** "IaC Standard: Verified that all ledger modules inject `Sharia-Compliant-Status` tag into all resources."
 - **Common Pitfall:** Neglecting to inject regulatory tags in IaC modules. As the infrastructure scales, the bank loses the ability to distinguish Sharia assets from conventional ones at an infrastructure level, failing external regulatory/Sharia Governance audits.
+
+### Regulatory References
+1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
+2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
+3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+

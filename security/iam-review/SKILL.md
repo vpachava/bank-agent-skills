@@ -103,3 +103,8 @@ To prevent systemic privilege escalation vectors, you MUST:
 - **Architecture Lens Check:** Validating separation of duties for `Internal Sharia Governance Board` members and operational staff within the loan origination system.
 - **Sample Outcome:** "RBAC Audit: Validated least-privilege enforcement - only certified Sharia board members have ability to approve loan structure changes."
 - **Common Pitfall:** Granting broad `Loan Origination Admin` roles to all staff, which allows non-Sharia-certified staff to modify loan structures and triggers compliance violations.
+### Regulatory References
+1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
+2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
+3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+

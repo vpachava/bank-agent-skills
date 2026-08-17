@@ -75,3 +75,9 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - **Architecture Lens Check:** Mandatory tagging of all infrastructure resources with `Sharia-Compliant-Status`.
 - **Sample Outcome:** "Governance Policy: All `Finance` resources must have `Sharia-Compliant-Status` tag enforced by Landing Zone policy."
 - **Common Pitfall:** Failing to enforce tagging at the Foundation level; auditors cannot determine if resources form part of a Sharia-compliant product-line or not, making "compliance-as-code" impossible for Sharia audits."
+
+### Regulatory References
+1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
+2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
+3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+

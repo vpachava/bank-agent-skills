@@ -77,3 +77,8 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - **Architecture Lens Check:** Operational risk of using a non-`Sharia` compliant amortization logic.
 - **Sample Outcome:** "Risk [R-009]: Use of interest-based amortization logic in Sharia product. Impact: 5. Mitigation: Formal Sharia Governance Board certification for product-workflow logic. Owner: Product-Owner."
 - **Common Pitfall:** Rating 'Sharia-non-compliance' risk as 'Technical Debt' which allows it to be deferred, instead of 'Major Regulatory Breach' which requires immediate production-stop.
+### Regulatory References
+1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
+2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
+3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+

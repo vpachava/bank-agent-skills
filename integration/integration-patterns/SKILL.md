@@ -108,3 +108,9 @@ To prevent anti-patterns masquerading as "enterprise integration," you MUST:
 - **Integration Choice:** [Outbox-Pattern + ETL-Batch].
 - **Rationale:** Ensures transaction atomicity by writing to an 'outbox' in the local database as part of the transaction, which is later securely harvested for batch ETL submission. This satisfies both transactional integrity (banking requirement) and batch-submission (AECB requirement).
 - **Common Pitfall:** Using direct synchronous REST calls for the AECB submission, creating unnecessary latency and coupling to the availability of the AECB endpoint.
+
+### Regulatory References
+1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
+2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
+3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+

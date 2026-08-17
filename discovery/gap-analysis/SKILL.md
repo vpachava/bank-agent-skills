@@ -73,3 +73,9 @@ To prevent cosmetic gap classification and effort-bias planning, you MUST:
 - [requirements-analysis](../requirements-analysis/SKILL.md) — the target requirements side of the comparison.
 - [roadmap](../../greenfield/roadmap/SKILL.md) — turns the priority view into a phased plan.
 - [legacy-assessment](../../modernization/legacy-assessment/SKILL.md) — for gaps on legacy-core capabilities.
+
+### Regulatory References
+1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
+2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
+3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+

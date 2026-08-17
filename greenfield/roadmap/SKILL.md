@@ -61,3 +61,9 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - [modernization-roadmap](../../modernization/modernization-roadmap/SKILL.md) — where this roadmap inherits its sequencing context.
 - [security-architecture-review](../../security/security-architecture-review/SKILL.md) — the capstone gate this roadmap tracks.
 - [production-readiness](../../governance/production-readiness/SKILL.md) — the milestone this roadmap ultimately targets.
+
+### Regulatory References
+1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
+2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
+3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+

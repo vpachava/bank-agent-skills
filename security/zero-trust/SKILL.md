@@ -101,3 +101,8 @@ To prevent implicit trust from compromising the network, you MUST:
 - **Architecture Lens Check:** Micro-segmentation around the `Loan Origination Service` ensuring the `Sharia-Governance-Engine` acts as a separate, policy-controlled trust domain.
 - **Sample Outcome:** "Policy-as-code: Decision point at boundary gate ensuring all amendment requests carry valid crypto-signature from authorized Sharia Board members."
 - **Common Pitfall:** Allowing the `Origination Service` to access or modify loan-structure business rules directly without traversing the required policy-gateway (Trust Anchor) check.
+### Regulatory References
+1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
+2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
+3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+

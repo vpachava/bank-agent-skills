@@ -96,3 +96,9 @@ To prevent silent data corruption and residency violations, you MUST:
 - **Architecture Lens Check:** Sharia-governance requires proof that the transmitted rate data matches the certified-Sharia rate calculation for that product.
 - **Sample Outcome:** "Sync validated with `Integrity-Checksum` ensuring distributed product-data matches the `Internal-Sharia-Governance-Book`."
 - **Common Pitfall:** Exposing raw "Interest-Rate" fields for Sharia products, creating compliance violations with Sharia Board product definitions.
+
+### Regulatory References
+1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
+2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
+3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+

@@ -76,3 +76,9 @@ To prevent systems from crashing without a recovery path on Day 2, you MUST:
 - **Architecture Lens Check:** Sharia-Board approval workflow documented within the [[architecture-decision-records]].
 - **Sample Outcome:** "Design: Profit-distribution calculation encapsulated; [[api-design]] schema includes mandatory Sharia-compliance flag."
 - **Common Pitfall:** Applying standard interest-based loan models to Islamic products, violating compliance.
+
+### Regulatory References
+1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
+2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
+3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+

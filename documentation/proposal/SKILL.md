@@ -102,3 +102,9 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - **Architecture Lens Check:** Project alignment with bank's Sharia-governance strategy. 
 - **Sample Outcome:** "Strategic Alignment: Directly supports Sharia-product expansion mandate through automated Sharia-governance gates in the loan-origination API."
 - **Common Pitfall:** Proposing technical efficiency (faster loan turnaround) without mentioning the `Sharia-Governance` alignment; the board might see the technical speed as secondary to the product-compliance mandate.
+
+### Regulatory References
+1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
+2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
+3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+

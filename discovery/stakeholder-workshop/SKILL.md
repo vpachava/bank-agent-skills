@@ -70,3 +70,9 @@ To prevent decisions without accountability and architectural drifting in a silo
 - [solution-options](../solution-options/SKILL.md) — when the workshop's job is to evaluate 2–4 options.
 - [gap-analysis](../gap-analysis/SKILL.md) — when the workshop surfaces current-state capability gaps.
 - [raid-log](../../documentation/raid-log/SKILL.md) — where the workshop's open threads live as the initiative runs.
+
+### Regulatory References
+1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
+2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
+3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+

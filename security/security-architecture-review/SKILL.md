@@ -101,3 +101,9 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - [architecture-board](../../governance/architecture-board/SKILL.md) — where the verdict is presented.
 - [risk-register](../../documentation/risk-register/SKILL.md) — where residual risks land.
 - [architecture-review](../../architecture/architecture-review/SKILL.md) — the broader architecture review; this is the security-specific complement.
+
+### Regulatory References
+1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
+2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
+3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+

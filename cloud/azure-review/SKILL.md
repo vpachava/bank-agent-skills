@@ -79,3 +79,9 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - **Architecture Lens Check:** Ensuring `Azure Defender for Cloud` alerts are forwarded to the bank's central SOC SIEM.
 - **Sample Outcome:** "Governance Check Passed: Defender for Cloud integrated with central SIEM; audit logs secured."
 - **Common Pitfall:** Treating Defender as a standalone portal; if alerts are not pushed to the enterprise SOC, security analysts may miss targeted attacks on the rates-API, bypassing the bank's central security-operations capability.
+
+### Regulatory References
+1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
+2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
+3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+

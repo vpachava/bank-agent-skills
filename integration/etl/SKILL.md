@@ -99,3 +99,9 @@ To prevent data lake swamps and untraceable pipelines, you MUST:
 - **Architecture Lens Check:** Sharia-compliance requires that amortization calculations use the bank's officially `Sharia-certified formula`.
 - **Sample Outcome:** "ETL transformation logic validated against `Sharia-Governance-Book`."
 - **Common Pitfall:** ETL pipeline applying a generic interest-accrual formula instead of the Sharia-compliant profit-rate formula, resulting in non-compliant customer repayment plans.
+
+### Regulatory References
+1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
+2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
+3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+

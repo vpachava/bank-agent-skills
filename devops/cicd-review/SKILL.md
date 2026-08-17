@@ -68,3 +68,9 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - **Architecture Lens Check:** Injecting a pipeline gate requiring formal `Sharia-Compliant-Certificate` metadata ingestion before promotion to UAT.
 - **Sample Outcome:** "Pipeline Gate: Gate-check requires valid `Sharia-Certificate-ID`. Deployment blocked if metadata is absent."
 - **Common Pitfall:** Overlooking product-specific audit requirements in the pipeline. If the pipeline implicitly promotes all "successful builds" without verifying their compliance metadata, a non-Sharia-certified branch might accidentally be promoted, causing a major compliance breach.
+
+### Regulatory References
+1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
+2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
+3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+

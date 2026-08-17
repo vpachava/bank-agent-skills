@@ -97,3 +97,9 @@ To prevent message drops and duplicate processing catastrophes, you MUST:
 - **Architecture Lens Check:** Enforcing \`At-Least-Once\` delivery with idempotent consumers for status updates to ensure that even on retry, business rules for Sharia-conformant loan activation (the event) are executed only once.
 - **Sample Outcome:** \"Consumer Obligation: Every status-update processor MUST verify \`event-id\` against a deduplication-table before ledger-record writing.\"
 - **Common Pitfall:** Relying on broker \`At-Least-Once\` guarantees as a substitute for consumer deduplication, allowing network-retries to double-trigger the Sharia-compliant loan activation, corrupting the ledger."
+
+### Regulatory References
+1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
+2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
+3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+

@@ -66,3 +66,9 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - [reference-architecture](../reference-architecture/SKILL.md) — where the vetted technology lands.
 - [platform-selection](../platform-selection/SKILL.md) — higher-level decision than a single component.
 - [technical-debt](../../modernization/technical-debt/SKILL.md) — how to manage the lifecycle of technologies after they are introduced.
+
+### Regulatory References
+1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
+2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
+3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+

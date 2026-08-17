@@ -120,3 +120,9 @@ To prevent async chaotic messaging that loses financial events, you MUST:
 - **Architecture Lens Check:** Enforcing `Idempotency` via consumer-side deduplication for the `ShariaLoanActivated` domain event.
 - **Sample Outcome:** "Reliability Model: Consumer implements `event-id` based dedupe; only processes first `ShariaLoanActivated` fact."
 - **Common Pitfall:** Assuming event-broker's `at-least-once` delivery is sufficient for ledger updates. Network-retry causes consumers to double-process activate events, resulting in loan funds being double-charged or double-activated."
+
+### Regulatory References
+1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
+2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
+3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+

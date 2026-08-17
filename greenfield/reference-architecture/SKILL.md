@@ -69,3 +69,9 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - [deployment-diagrams](../../architecture/deployment-diagrams/SKILL.md) — the deployment view of the RA.
 - [compliance](../../security/compliance/SKILL.md) — residency/compliance as the design's constraints.
 - [modernization-roadmap](../../modernization/modernization-roadmap/SKILL.md) — how to reach this blueprint from the current state.
+
+### Regulatory References
+1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
+2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
+3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+
