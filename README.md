@@ -97,6 +97,7 @@ Skills are designed to be invoked sequentially through the structural lifecycle 
 - **[cross-domain-impact-assessment](governance/cross-domain-impact-assessment/SKILL.md)** — `Evaluates proposed architectural changes across business, data, application, and technology domains to identify cascading dependencies and risks.` Invoke with: `/cross-domain-impact-assessment`
 - **[design-review](governance/design-review/SKILL.md)** — `No description provided.` Invoke with: `/design-review`
 - **[dr-review](governance/dr-review/SKILL.md)** — `No description provided.` Invoke with: `/dr-review`
+- **[evidence-gate](governance/evidence-gate/SKILL.md)** — `Tests architectural claims against real project repository state to ensure compliance and prevent hallucination.` Invoke with: `/evidence-gate`
 - **[operational-readiness](governance/operational-readiness/SKILL.md)** — `No description provided.` Invoke with: `/operational-readiness`
 - **[production-readiness](governance/production-readiness/SKILL.md)** — `No description provided.` Invoke with: `/production-readiness`
 - **[security-nfr-baseline-check](governance/security-nfr-baseline-check/SKILL.md)** — `Security Nfr Baseline Check skill` Invoke with: `/security-nfr-baseline-check`
@@ -137,6 +138,7 @@ Skills are designed to be invoked sequentially through the structural lifecycle 
 - **[technical-debt](modernization/technical-debt/SKILL.md)** — `No description provided.` Invoke with: `/technical-debt`
 
 ### Security
+- **[adversarial-compliance](security/adversarial-compliance/SKILL.md)** — `Red-teaming test suite that attempts to bypass data-residency and compliance guardrails.` Invoke with: `/adversarial-compliance`
 - **[compliance](security/compliance/SKILL.md)** — `Compliance skill` Invoke with: `/compliance`
 - **[iam-review](security/iam-review/SKILL.md)** — `No description provided.` Invoke with: `/iam-review`
 - **[owasp-review](security/owasp-review/SKILL.md)** — `No description provided.` Invoke with: `/owasp-review`

@@ -1,0 +1,16 @@
+{
+  "name": "bank-agent-skills",
+  "version": "1.0.0",
+  "description": "Production-Grade Architectural Governance Engine for Retail Banking.",
+  "author": "Enterprise Architecture Team",
+  "entry_point": "skills/solution-arch-orchestrator/SKILL.md",
+  "capabilities": [
+    "solution-architecture",
+    "cbuae-compliance",
+    "evidence-gating",
+    "automated-raid-logging"
+  ],
+  "dependencies": {
+    "claude-cli": ">=0.2.0"
+  }
+}
