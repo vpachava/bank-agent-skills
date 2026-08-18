@@ -1,0 +1,11 @@
+site_name: Bank Agent Skills
+theme:
+  name: material
+plugins:
+  - search
+  - gen-files:
+      scripts:
+        - gen_nav.py
+  - literate-nav:
+      nav_file: SUMMARY.md
+  - section-index
