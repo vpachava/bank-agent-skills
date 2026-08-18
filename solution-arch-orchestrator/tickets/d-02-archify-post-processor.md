@@ -11,4 +11,7 @@ blocked_by: ["d-01-canonical-mermaid"]
 Create the `/archify` skill that takes raw `design.json` (from any other skill) and maps it to standardized templates established in earlier steps. Ensure diagram generation incorporates the mandatory `artifact_id` linking back to the precise generator skill and version.
 
 ## Resolution
-
+Implemented `.claude/skills/archify` toolset.
+- Created `archify.sh` wrapper to process `design.json` into Mermaid diagrams using defined templates and mandatory metadata injection.
+- Defined `SKILL.md` for CLI triggering.
+status: closed
