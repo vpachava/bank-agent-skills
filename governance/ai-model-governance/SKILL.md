@@ -1,70 +1,40 @@
-﻿---
+---
 name: ai-model-governance
-description: Use when designing or deploying AI models that require tracking for drift, bias, and regulatory compliance.
-togaf-phases: [Phase G]
-togaf-artifacts: [Compliance Checklist]
-bian-service-domains: [Security.Auth]
+description: Ai Model Governance skill
+owner: enterprise-arch
+version: 1.0.0
+last-reviewed: 2026-08-18
+togaf-phases: [B, C]
+bian-domains: [Architecture]
+related-skills:
+  - solution-review
 ---
 
-# /ai-model-governance
+## When to apply
+When focusing on ai model governance.
 
-## Overview
-Provides a framework for governing AI/ML models in a banking context, focusing on operational performance (drift), fairness (bias), and adherence to regional regulatory standards (CBUAE/PDPL/AECB).
+## Inputs
+- Relevant domain-specific documentation.
+- Project constraints and requirements.
 
-## When to Use
-- Designing new AI models for credit decisioning, fraud detection, or customer insights.
-- Transitioning models from PoC to production.
-- Regular review of production AI models.
+## Process
+1. Discover current constraints.
+2. Analyze domain gaps.
+3. Propose target design.
 
-## Core Process
-1. **Model Inventory:** Register all AI models with metadata (version, purpose, data sensitivity).
-2. **Bias Assessment:** Define and track fairness metrics appropriate for the banking domain.
-3. **Drift Monitoring:** Establish baselines and set alerting thresholds for performance decay/data drift.
-4. **Explainability Audit:** Ensure model decisions are explainable according to regulatory requirements (e.g., adverse action notices).
-5. **Regulatory Mapping:** Document compliance with regional standards (PDPL for PII, CBUAE for credit models).
+## Outputs
+- Standardized architectural artifact.
 
-## Mandatory Compliance Block
-Any ADR referencing a model governed by this skill MUST include: 
-- **Model Bias Risk:** [None/Low/Med/High]
-- **Regulatory Jurisdiction:** [CBUAE/PDPL/Other]
-- **Drift Mitigation Strategy:** [e.g., Retraining frequency, Monitoring tool]
-
-## Related Skills
-- [threat-model](../../security/threat-model/SKILL.md) (for adversarial AI threats)
-- [Data Governance - Concepts](../solution-review/SKILL.md) (for model input/output data)
-
-### Banking Context & Examples
-
-#### (1) Retail Banking Scenario
-**Scenario:** Applying this skill in a retail bank core-modernization effort.
-- **Architecture Lens Check:** Verification of compliance with CBUAE data-residency rules (e.g. [[compliance]]).
-- **Sample Outcome:** "Design: Automated workflow integration; [[observability]] logs scrubbed of PII."
-- **Common Pitfall:** Ignoring the Sharia-governance impact on the product-schema.
-
-#### (2) Corporate Banking Scenario
-**Scenario:** Using this skill for a corporate digital-onboarding integration.
-- **Architecture Lens Check:** Alignment with AECB credit-reporting integration for legal-entity applicants.
-- **Sample Outcome:** "Design: Integration-seam validated for high-assurance KYC; [[api-design]] handles large payload-signatures."
-- **Common Pitfall:** Bypassing the mandatory legal-entity KYC check due to tight project timelines.
-
-#### (3) Islamic Banking Scenario
-**Scenario:** Utilizing this skill for Sharia-compliant loan product rollouts.
-- **Architecture Lens Check:** Sharia-Board approval workflow documented within the [[architecture-decision-records]].
-- **Sample Outcome:** "Design: Profit-distribution calculation encapsulated; [[api-design]] schema includes mandatory Sharia-compliance flag."
-- **Common Pitfall:** Applying standard interest-based loan models to Islamic products, violating compliance.
-
-### Regulatory References
-1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
-2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
-3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+## Related skills
+- [[solution-review]]
 
 ## Anti-patterns
-- **Validating models in static test environments only**
-  - **Consequence:** Models degrade in accuracy and fail to handle real-world user questions.
-  - **Correct Approach:** Set up automated pipelines to test models against active, changing user data datasets.
-- **Skipping continuous model drift and accuracy checks**
-  - **Consequence:** Silent cost increases and performance penalties as models drift over time.
-  - **Correct Approach:** Instrument models to track prediction probability metrics and write alerts on data drift.
-- **Storing custom model weights and architectures in insecure storages**
-  - **Consequence:** Theft of IP and risk of model modification by unauthorized users.
-  - **Correct Approach:** Restrict access to model binary assets using RBAC roles in secure cloud storage.
+- Ignoring UAE regulatory context.
+- Over-engineering for low-impact workloads.
+
+## Bulletproofing
+- UAE Banking regulatory standards (CBUAE/PDPL/PCI-DSS where applicable).
+
+## Banking Examples
+- Credit risk assessment improvement.
+- Core banking data migration.

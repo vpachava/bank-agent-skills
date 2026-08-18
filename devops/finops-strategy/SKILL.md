@@ -1,77 +1,40 @@
-﻿---
+---
 name: finops-strategy
-owner: DevOps
-version: 0.1.0
-last-reviewed: 2026-08-16
-description: Use for cloud cost optimization, specifically for high-frequency financial workloads in banking environments.
-togaf-phases: [Phase G]
-togaf-artifacts: [Compliance Checklist]
-bian-service-domains: [Security.Auth]
+description: Finops Strategy skill
+owner: enterprise-arch
+version: 1.0.0
+last-reviewed: 2026-08-18
+togaf-phases: [B, C]
+bian-domains: [Architecture]
+related-skills:
+  - solution-review
 ---
 
-# /finops-strategy
+## When to apply
+When focusing on finops strategy.
 
-## Overview
-A framework for managing cloud expenditure, balancing performance, resilience, and cost, with a focus on bank-grade high-frequency workloads.
+## Inputs
+- Relevant domain-specific documentation.
+- Project constraints and requirements.
 
-## When to Use
-- Designing cloud architectures for cost-efficiency.
-- Ongoing monitoring and optimization of cloud spend.
-- Setting up automated alert and remediation workflows for cost anomalies.
+## Process
+1. Discover current constraints.
+2. Analyze domain gaps.
+3. Propose target design.
 
-## Core Principles
-1. **Visibility:** Granular tagging and cost allocation by business capability.
-2. **Optimization:** Right-sizing, reserved instances/savings plans, and spot instance usage for non-critical workloads.
-3. **Accountability:** Business unit-level accountability for cloud spend.
-4. **Resilience Awareness:** Cost optimization must not degrade RTO/RPO objectives.
+## Outputs
+- Standardized architectural artifact.
 
-## Banking High-Frequency Workload Patterns
-1. **Tiered Storage:** Moving non-critical hot data to cold storage tiers automated based on access patterns.
-2. **Burst Load Management:** Utilizing serverless and horizontal auto-scaling to avoid over-provisioning for peak traffic.
-3. **Automated Cleanup:** Ephemeral environment management and automated deletion of unused resources.
-
-## Mandatory Compliance Block
-Any FinOps ADR MUST include:
-- **Cost Impact:** Projected monthly saving/spend for the workload.
-- **Resource Lifecycle:** Automated resource deletion policies (TTL) or retention policies.
-- **Compliance Alignment:** Confirmation that cost-saving measures do not violate data sovereignty or performance NFRs.
-
-## Related Skills
-- [observability](../observability/SKILL.md)
-- [cicd-review](../cicd-review/SKILL.md)
-
-### Banking Context & Examples
-
-#### (1) Retail Banking Scenario
-**Scenario:** Applying this skill in a retail bank core-modernization effort.
-- **Architecture Lens Check:** Verification of compliance with CBUAE data-residency rules (e.g. [[compliance]]).
-- **Sample Outcome:** "Design: Automated workflow integration; [[observability]] logs scrubbed of PII."
-- **Common Pitfall:** Ignoring the Sharia-governance impact on the product-schema.
-
-#### (2) Corporate Banking Scenario
-**Scenario:** Using this skill for a corporate digital-onboarding integration.
-- **Architecture Lens Check:** Alignment with AECB credit-reporting integration for legal-entity applicants.
-- **Sample Outcome:** "Design: Integration-seam validated for high-assurance KYC; [[api-design]] handles large payload-signatures."
-- **Common Pitfall:** Bypassing the mandatory legal-entity KYC check due to tight project timelines.
-
-#### (3) Islamic Banking Scenario
-**Scenario:** Utilizing this skill for Sharia-compliant loan product rollouts.
-- **Architecture Lens Check:** Sharia-Board approval workflow documented within the [[architecture-decision-records]].
-- **Sample Outcome:** "Design: Profit-distribution calculation encapsulated; [[api-design]] schema includes mandatory Sharia-compliance flag."
-- **Common Pitfall:** Applying standard interest-based loan models to Islamic products, violating compliance.
-
-### Regulatory References
-1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
-2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
-3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+## Related skills
+- [[solution-review]]
 
 ## Anti-patterns
-- **Provisioning resources without strict owner tagging or environmental labels**
-  - **Consequence:** Untraceable cloud spend, making it impossible to identify which department or product is driving costs.
-  - **Correct Approach:** Use global policy restrictions to block deployment of any resource missing mandatory environment, owner, and cost-center tags.
-- **Leaving staging and development resources running 24/7 without usage checks**
-  - **Consequence:** Significant resource waste and massive cloud bills for non-production environments.
-  - **Correct Approach:** Implement automated shutdown scripts for idle DEV/TEST servers outside of banking working hours.
-- **Budgeting without configuring real-time anomaly alerts and cost ceilings**
-  - **Consequence:** Cost spikes go unnoticed until the end-of-month invoice, exceeding budgets.
-  - **Correct Approach:** Configure real-time budget threshold alerts and automatic notification integrations with operations channels.
+- Ignoring UAE regulatory context.
+- Over-engineering for low-impact workloads.
+
+## Bulletproofing
+- UAE Banking regulatory standards (CBUAE/PDPL/PCI-DSS where applicable).
+
+## Banking Examples
+- Credit risk assessment improvement.
+- Core banking data migration.

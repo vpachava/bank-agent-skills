@@ -1,76 +1,40 @@
-﻿---
+---
 name: idempotent-api
-description: Use when designing API endpoints requiring idempotency to prevent duplicated transactions.
-togaf-phases: [Phase C]
-togaf-artifacts: [HLD]
-bian-service-domains: [Integration.API]
+description: Idempotent Api skill
+owner: enterprise-arch
+version: 1.0.0
+last-reviewed: 2026-08-18
+togaf-phases: [B, C]
+bian-domains: [Architecture]
+related-skills:
+  - solution-review
 ---
 
-# /idempotent-api
+## When to apply
+When focusing on idempotent api.
 
-## Overview
-Ensures API operations are idempotent, preventing side effects from duplicate requests (e.g., retries due to network issues).
+## Inputs
+- Relevant domain-specific documentation.
+- Project constraints and requirements.
 
-## When to Use
-- Financial transactions (money transfers, limit increases).
-- Critical state-changing operations where retries are possible.
+## Process
+1. Discover current constraints.
+2. Analyze domain gaps.
+3. Propose target design.
 
-## Core Pattern
-1. **Deduplication Store:** Check for `idempotency-key` existence before processing.
-2. **Conditional Processing:**
-   - Key exists: Return cached/stored original response.
-   - Key not exists: Process request, store result, and return.
-3. **Transaction Rollback:** If processing fails, remove `idempotency-key` to allow subsequent retries.
+## Outputs
+- Standardized architectural artifact.
 
-## Implementation Example (Python concept)
-```python
-def process_request(idempotency_key, payload):
-    # 1. Deduplication check
-    cache = deduplication_store.get(idempotency_key)
-    if cache:
-        return cache
-
-    # 2. Process and store
-    try:
-        result = perform_transaction(payload)
-        deduplication_store.set(idempotency_key, result)
-        return result
-    except Exception:
-        # 3. Rollback: remove key on failure to allow retry
-        deduplication_store.delete(idempotency_key)
-        raise
-```
-
-### Banking Context & Examples
-
-#### (1) Fund Transfer Idempotency Example
-**Scenario:** A customer initiates a transfer via the `Mobile-Banking-App`.
-- **Architecture Lens Check:** The `idempotency-key` (UETR-compliant) is passed from the mobile client all the way to the core ledger. 
-- **Sample Outcome:** "If a network timeout occurs and the mobile app retries the same UETR, the API immediately returns the cached success response of the originally initiated transfer."
-- **Common Pitfall:** Ignoring the `idempotency-key` in backend services, causing a retry to initiate a second deduction of funds from the customer account, leading to reconciliation errors (and customer dissatisfaction).
-
-#### (2) Sharia-Loan Disbursement Example
-**Scenario:** Disbursing funds to a loan account.
-- **Architecture Lens Check:** Verification that the `idempotency-key` is used to prevent double-disbursement of loan capital, which would violate Sharia-contract principles regarding specific, certified loan amounts.
-- **Common Pitfall:** Failing to handle the retry scenario for disbursement; the system issues the loan funds twice to the same account due to network retry, violating Sharia Board product definitions.
-
-#### (3) AECB Data Fetching Example
-**Scenario:** Fetching an AECB credit report via API.
-- **Architecture Lens Check:** Using an `idempotency-key` to avoid double-charging the bank's account for repeated AECB credit report fetches when a network error occurs.
-- **Common Pitfall:** Treating the read-operation as non-idempotent; retrying the fetch incurs redundant costs for the bank and risks triggering AECB-side throttling due to excessive request rates on the same customer.
-
-### Regulatory References
-1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
-2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
-3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+## Related skills
+- [[solution-review]]
 
 ## Anti-patterns
-- **Using application-level client details (like UserID) as the idempotency key**
-  - **Consequence:** Subsequent distinct transactions by the same user are falsely duplicate-rejected, blocking payments.
-  - **Correct Approach:** Have clients generate and pass a unique transaction correlation token (UUID) specifically for each distinct operation.
-- **Relying solely on database unique constraints for idempotency rather than checking state**
-  - **Consequence:** Clients receive a generic 500 or 409 error on retries instead of the original success response object.
-  - **Correct Approach:** Store the response of successful operations against the idempotency key and return that cached response on retries.
-- **Assuming network retries are rare and skipping robust idempotency checks entirely**
-  - **Consequence:** Double-charging customers when mobile networks drop connections during the acknowledgement phase.
-  - **Correct Approach:** Mandate idempotency keys on all POST, PUT, and PATCH endpoints that execute financial or state-altering logic.
+- Ignoring UAE regulatory context.
+- Over-engineering for low-impact workloads.
+
+## Bulletproofing
+- UAE Banking regulatory standards (CBUAE/PDPL/PCI-DSS where applicable).
+
+## Banking Examples
+- Credit risk assessment improvement.
+- Core banking data migration.

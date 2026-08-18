@@ -12,17 +12,25 @@ Skills must follow the **RED-GREEN-REFACTOR** cycle. Without failing pressure sc
 ## When to apply
 Use for training, refactoring, or authoring skill-files when disciplined, TDD-based documentation is required.
 
+## Inputs
+- Failing subagent transcripts.
+- Business acceptance criteria.
+
 ## Process
-1. **Define RED Scenario**: Identify the pressure scenario subagent that reproduces the baseline failure.
-2. **Execute RED**: Observe the violation.
-3. **Draft SKILL.md**: Codify the rule that plugs the failure.
-4. **Execute GREEN**: Observe subagent success.
-5. **Refactor**: Strengthen bulletproofing until rationalization is eliminated.
+1. Define RED Scenario (failing pressure).
+2. Execute RED (observe violation).
+3. Draft SKILL.md (codify rule).
+4. Execute GREEN (observe success).
+5. Refactor (harden/refine).
 
 ## Outputs
-- **Reproducible RED scenario** (log/transcript).
-- **Hardened SKILL.md** (compliant with TDD discipline).
-- **Verified GREEN result** (subagent output).
+- Reproducible RED scenario (log/transcript).
+- Hardened SKILL.md.
+- Verified GREEN result (subagent output).
+
+## Related skills
+- [[orchestrator]]
+- [[design-review]]
 
 ## Core Principle
 **NO SKILL WITHOUT A FAILING TEST FIRST.**

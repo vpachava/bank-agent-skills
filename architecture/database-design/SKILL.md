@@ -1,74 +1,40 @@
-﻿---
+---
 name: database-design
-description: Use when designing database schemas and infrastructure, including vector database integration for AI-native workloads.
-togaf-phases: [Phase C]
-togaf-artifacts: [HLD]
-bian-service-domains: [Integration.API]
+description: Database Design skill
+owner: enterprise-arch
+version: 1.0.0
+last-reviewed: 2026-08-18
+togaf-phases: [B, C]
+bian-domains: [Architecture]
+related-skills:
+  - solution-review
 ---
 
-# /database-design
+## When to apply
+When focusing on database design.
 
-## Overview
-Standards for relational and non-relational database design, with specific focus on high-performance, resilient, and AI-native vector requirements.
+## Inputs
+- Relevant domain-specific documentation.
+- Project constraints and requirements.
 
-## When to Use
-- Designing schemas for core banking domains.
-- Integrating vector databases for AI-native workloads.
-- Infrastructure choices (RDBMS vs NoSQL vs Vector).
+## Process
+1. Discover current constraints.
+2. Analyze domain gaps.
+3. Propose target design.
 
-## Core Principles
-1. **Schema Integrity:** Normalization vs De-normalization balance based on read/write patterns.
-2. **Resilience & Availability:** Replication, sharding, and backup/recovery strategies.
-3. **AI-Native Integration (Vector):** Design patterns for vector embedding persistence and retrieval.
-4. **Data Sovereignty:** Alignment with regional data residency requirements.
+## Outputs
+- Standardized architectural artifact.
 
-## Vector Database Integration Patterns
-1. **Embedding Storage:** Structured storage for high-dimensional vector embeddings with associated metadata.
-2. **Retrieval Strategy:** Hybrid search enablement (vector similarity + metadata filtering).
-3. **Synchronization:** Ensuring embedding updates maintain consistency with source transaction data.
-
-## Mandatory Compliance Block
-Any ADR referencing a database design MUST include: 
-- **Data Classification:** [Public/Internal/Restricted/Confidential]
-- **Residency Requirement:** [Onshore/Cloud-Regional/None]
-- **Performance Expectation:** [IOPS/Latency/Throughput]
-
-## Related Skills
-- [Data Governance - Concepts](../../governance/solution-review/SKILL.md)
-- [security-architecture-review](../../security/security-architecture-review/SKILL.md)
-
-### Banking Context & Examples
-
-#### (1) Retail Banking Scenario
-**Scenario:** Applying this skill in a retail bank core-modernization effort.
-- **Architecture Lens Check:** Verification of compliance with CBUAE data-residency rules (e.g. [[compliance]]).
-- **Sample Outcome:** "Design: Automated workflow integration; [[observability]] logs scrubbed of PII."
-- **Common Pitfall:** Ignoring the Sharia-governance impact on the product-schema.
-
-#### (2) Corporate Banking Scenario
-**Scenario:** Using this skill for a corporate digital-onboarding integration.
-- **Architecture Lens Check:** Alignment with AECB credit-reporting integration for legal-entity applicants.
-- **Sample Outcome:** "Design: Integration-seam validated for high-assurance KYC; [[api-design]] handles large payload-signatures."
-- **Common Pitfall:** Bypassing the mandatory legal-entity KYC check due to tight project timelines.
-
-#### (3) Islamic Banking Scenario
-**Scenario:** Utilizing this skill for Sharia-compliant loan product rollouts.
-- **Architecture Lens Check:** Sharia-Board approval workflow documented within the [[architecture-decision-records]].
-- **Sample Outcome:** "Design: Profit-distribution calculation encapsulated; [[api-design]] schema includes mandatory Sharia-compliance flag."
-- **Common Pitfall:** Applying standard interest-based loan models to Islamic products, violating compliance.
-
-### Regulatory References
-1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
-2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
-3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+## Related skills
+- [[solution-review]]
 
 ## Anti-patterns
-- **Hardcoding schemas without AI or vector indexing paths where RAG is expected**
-  - **Consequence:** Inability to scale semantic search or contextual integration for banking AI bots, creating a modernization bottleneck.
-  - **Correct Approach:** Design databases with modular vector extensions or hybrid search schemas from the start.
-- **Relying entirely on application/client-side logic for data integrity**
-  - **Consequence:** Corrupt or inconsistent data in database tables due to bypass scripts, multiple clients, or concurrent writes.
-  - **Correct Approach:** Enforce foreign keys, unique constraints, and check constraints directly at the database engine schema layer.
-- **Failing to plan database schema migrations under active live write-load**
-  - **Consequence:** Severe database locking, timeouts, and transaction failures during application updates.
-  - **Correct Approach:** Adopt online, zero-downtime migration patterns like Expanding and Contracting (Blue-Green database schema changes).
+- Ignoring UAE regulatory context.
+- Over-engineering for low-impact workloads.
+
+## Bulletproofing
+- UAE Banking regulatory standards (CBUAE/PDPL/PCI-DSS where applicable).
+
+## Banking Examples
+- Credit risk assessment improvement.
+- Core banking data migration.

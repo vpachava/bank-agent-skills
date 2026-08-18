@@ -1,68 +1,40 @@
-﻿---
+---
 name: security-nfr-baseline-check
-description: Use as the mandatory first step before any architecture or design assessment to verify essential security and regulatory NFRs.
-togaf-phases: [Phase D]
-togaf-artifacts: [Security Baseline]
-bian-service-domains: [Security.Auth]
+description: Security Nfr Baseline Check skill
+owner: enterprise-arch
+version: 1.0.0
+last-reviewed: 2026-08-18
+togaf-phases: [B, C]
+bian-domains: [Architecture]
+related-skills:
+  - solution-review
 ---
 
-# /security-nfr-baseline-check
-
-## Overview
-A mandatory checklist-based verification to be performed before any design assessment begins, ensuring essential non-functional requirements (NFRs) are defined, acknowledged, and feasible within the proposed architecture.
-
 ## When to apply
-Mandatory, first-step gate before any design assessment (discovery, greenfield, modernization).
+When focusing on security nfr baseline check.
 
-## Checklist
-- [ ] **Data Residency:** Confirmed mapping of all PII/regulated data to required geographic/zone residency (CBUAE/PDPL/AECB compliant).
-- [ ] **Encryption Strategy:** Confirmed at-rest and in-transit encryption standards compliant with bank policy.
-- [ ] **Availability NFRs:** RTO/RPO objectives defined and baseline feasibly met by deployment topology.
-- [ ] **PII/Regulated Data Identification:** All PII/regulated data paths tagged with classification level.
-- [ ] **AuthN/AuthZ Baseline:** Initial alignment on identity provider fabric (e.g., UAE Pass, IAM) and zero-trust boundary strategy.
+## Inputs
+- Relevant domain-specific documentation.
+- Project constraints and requirements.
 
 ## Process
-1. **Verification:** Review the raw requirement against the checklist.
-2. **Identification:** Flag any missing, ambiguous, or violated NFRs as immediate blockers.
-3. **Escalation:** If a blocker is identified, escalate to Architecture Board immediately; proceed only when resolved.
-4. **Documentation:** Produce a `NFR-Baseline-Verdict.md` artifact.
+1. Discover current constraints.
+2. Analyze domain gaps.
+3. Propose target design.
 
 ## Outputs
-- **NFR Baseline Verdict (artifact)**
-- **Blocker Registry** (if any)
+- Standardized architectural artifact.
 
-### Banking Context & Examples
-
-#### (1) Retail Banking Scenario
-**Scenario:** Applying this skill in a retail bank core-modernization effort.
-- **Architecture Lens Check:** Verification of compliance with CBUAE data-residency rules (e.g. [[compliance]]).
-- **Sample Outcome:** "Design: Automated workflow integration; [[observability]] logs scrubbed of PII."
-- **Common Pitfall:** Ignoring the Sharia-governance impact on the product-schema.
-
-#### (2) Corporate Banking Scenario
-**Scenario:** Using this skill for a corporate digital-onboarding integration.
-- **Architecture Lens Check:** Alignment with AECB credit-reporting integration for legal-entity applicants.
-- **Sample Outcome:** "Design: Integration-seam validated for high-assurance KYC; [[api-design]] handles large payload-signatures."
-- **Common Pitfall:** Bypassing the mandatory legal-entity KYC check due to tight project timelines.
-
-#### (3) Islamic Banking Scenario
-**Scenario:** Utilizing this skill for Sharia-compliant loan product rollouts.
-- **Architecture Lens Check:** Sharia-Board approval workflow documented within the [[architecture-decision-records]].
-- **Sample Outcome:** "Design: Profit-distribution calculation encapsulated; [[api-design]] schema includes mandatory Sharia-compliance flag."
-- **Common Pitfall:** Applying standard interest-based loan models to Islamic products, violating compliance.
-
-### Regulatory References
-1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
-2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
-3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+## Related skills
+- [[solution-review]]
 
 ## Anti-patterns
-- **Skipping validation checks on non-production environments**
-  - **Consequence:** Security bugs are discovered late, wasting developer remediation resources.
-  - **Correct Approach:** Deploy the security configuration checks in DEV and STAGING pipelines.
-- **Treating security NFR checks as independent of business logic**
-  - **Consequence:** Secure infrastructure holds logic configurations that leak customer data.
-  - **Correct Approach:** Map security checks to functional data flows and verify that PII is masked.
-- **Using a single baseline config for all environments**
-  - **Consequence:** Development environments are locked down, reducing developer velocity.
-  - **Correct Approach:** Define clear baseline splits for Dev, Staging, and Prod configurations.
+- Ignoring UAE regulatory context.
+- Over-engineering for low-impact workloads.
+
+## Bulletproofing
+- UAE Banking regulatory standards (CBUAE/PDPL/PCI-DSS where applicable).
+
+## Banking Examples
+- Credit risk assessment improvement.
+- Core banking data migration.
