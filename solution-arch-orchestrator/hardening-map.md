@@ -20,12 +20,12 @@ Transform the current POC banking architecture library into a production-grade '
 - [Automate Banking RAID Registry](tickets/h-03-banking-raid.md) - Defined raid-log-schema.json.
 - [Adversarial Compliance Testing](tickets/h-04-adversarial-compliance.md) - Wrote adversarial red-team skill.
 - [Packaging for Enterprise Consumption](tickets/h-05-packaging.md) - Scaffolded manifest and installer.
+- [Canonical Mermaid Definitions](tickets/d-01-canonical-mermaid.md) - Established template system.
+- [Archify Post-Processor](tickets/d-02-archify-post-processor.md) - Created archify tool.
+- [Template Repository Creation](tickets/d-03-template-repository.md) - Populated diagram-templates/.
+- [Pipeline Integration](tickets/d-04-pipeline-integration.md) - Enforced governance in CI.
 
 ## Not yet specified
 
 ## Out of scope
 - Implementation of the actual banking software; this effort is limited to the *architectural governance tooling itself*.
-- [Initialize Diagram-as-Code Engine: Canonical Mermaid Definitions](tickets/d-01-canonical-mermaid.md) - Open
-- [Initialize Diagram-as-Code Engine: Archify Post-Processor Implementation](tickets/d-02-archify-post-processor.md) - Open
-- [Initialize Diagram-as-Code Engine: Template Repository Creation](tickets/d-03-template-repository.md) - Open
-- [Initialize Diagram-as-Code Engine: Pipeline Integration](tickets/d-04-pipeline-integration.md) - Open
