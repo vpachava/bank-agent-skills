@@ -910,6 +910,90 @@
     "usage-count": 0
   },
   {
+    "name": "ai-ethics-review",
+    "category": "ai-ml-architecture",
+    "description": "ai-ethics-review skill",
+    "tags": [
+      "ai",
+      "ml"
+    ],
+    "togaf-phases": [],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "feature-store-design",
+    "category": "ai-ml-architecture",
+    "description": "feature-store-design skill",
+    "tags": [
+      "ai",
+      "ml"
+    ],
+    "togaf-phases": [],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "ml-ops-design",
+    "category": "ai-ml-architecture",
+    "description": "ml-ops-design skill",
+    "tags": [
+      "ai",
+      "ml"
+    ],
+    "togaf-phases": [],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "ml-pipeline-architecture",
+    "category": "ai-ml-architecture",
+    "description": "ml-pipeline-architecture skill",
+    "tags": [
+      "ai",
+      "ml"
+    ],
+    "togaf-phases": [],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "model-governance",
+    "category": "ai-ml-architecture",
+    "description": "model-governance skill",
+    "tags": [
+      "ai",
+      "ml"
+    ],
+    "togaf-phases": [],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "rag-patterns",
+    "category": "ai-ml-architecture",
+    "description": "rag-patterns skill",
+    "tags": [
+      "ai",
+      "ml"
+    ],
+    "togaf-phases": [],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
     "name": "data-governance",
     "category": "data-architecture",
     "description": "data-governance skill",
