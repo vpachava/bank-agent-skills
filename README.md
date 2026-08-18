@@ -4,7 +4,7 @@ Welcome to the comprehensive skills library for UAE retail-bank solution archite
 
 ## What is this library?
 
-This library is a collection of 72 concrete, executable skills. Unlike static reference documentation, these are **active processes**. Each skill is invoked as a slash command (e.g., `/threat-model`) which triggers an interactive assessment or generation process.
+This library is a collection of 90 concrete, executable skills. Unlike static reference documentation, these are **active processes**. Each skill is invoked as a slash command (e.g., `/threat-model`) which triggers an interactive assessment or generation process.
 
 Each skill features:
 - **Embedded Checklists & Pitfalls:** Banking-specific and UAE-specific constraints, common anti-patterns, and step-by-step checklists.
@@ -119,8 +119,29 @@ Skills are designed to be invoked sequentially through the structural lifecycle 
 ### Wayfinder (Orchestration)
 - **[orchestrator](wayfinder/orchestrator/SKILL.md)** — `No description provided.` Invoke with: `/orchestrator`
 
-### Tooling & CI/CD
-- **[tdd-documentation](.claude/tdd-documentation/SKILL.md)** — `Use when authoring or refactoring skills (SKILL.md) to ensure disciplined, TDD-based construction.` Invoke with: `/tdd-documentation`
+### Business Architecture
+- **[business-case-development](skills/business-architecture/business-case-development/SKILL.md)** — `No description provided.` Invoke with: `/business-case-development`
+- **[business-process-modeling](skills/business-architecture/business-process-modeling/SKILL.md)** — `No description provided.` Invoke with: `/business-process-modeling`
+- **[capability-mapping](skills/business-architecture/capability-mapping/SKILL.md)** — `No description provided.` Invoke with: `/capability-mapping`
+- **[org-design](skills/business-architecture/org-design/SKILL.md)** — `No description provided.` Invoke with: `/org-design`
+- **[stakeholder-analysis](skills/business-architecture/stakeholder-analysis/SKILL.md)** — `No description provided.` Invoke with: `/stakeholder-analysis`
+- **[value-stream-design](skills/business-architecture/value-stream-design/SKILL.md)** — `No description provided.` Invoke with: `/value-stream-design`
+
+### Data Architecture
+- **[data-governance](skills/data-architecture/data-governance/SKILL.md)** — `No description provided.` Invoke with: `/data-governance`
+- **[data-lineage](skills/data-architecture/data-lineage/SKILL.md)** — `No description provided.` Invoke with: `/data-lineage`
+- **[data-modeling](skills/data-architecture/data-modeling/SKILL.md)** — `No description provided.` Invoke with: `/data-modeling`
+- **[data-privacy-assessment](skills/data-architecture/data-privacy-assessment/SKILL.md)** — `No description provided.` Invoke with: `/data-privacy-assessment`
+- **[data-quality](skills/data-architecture/data-quality/SKILL.md)** — `No description provided.` Invoke with: `/data-quality`
+- **[master-data-management](skills/data-architecture/master-data-management/SKILL.md)** — `No description provided.` Invoke with: `/master-data-management`
+
+### AI & ML Architecture
+- **[ai-ethics-review](skills/ai-ml-architecture/ai-ethics-review/SKILL.md)** — `No description provided.` Invoke with: `/ai-ethics-review`
+- **[feature-store-design](skills/ai-ml-architecture/feature-store-design/SKILL.md)** — `No description provided.` Invoke with: `/feature-store-design`
+- **[ml-ops-design](skills/ai-ml-architecture/ml-ops-design/SKILL.md)** — `No description provided.` Invoke with: `/ml-ops-design`
+- **[ml-pipeline-architecture](skills/ai-ml-architecture/ml-pipeline-architecture/SKILL.md)** — `No description provided.` Invoke with: `/ml-pipeline-architecture`
+- **[model-governance](skills/ai-ml-architecture/model-governance/SKILL.md)** — `No description provided.` Invoke with: `/model-governance`
+- **[rag-patterns](skills/ai-ml-architecture/rag-patterns/SKILL.md)** — `No description provided.` Invoke with: `/rag-patterns`
 
 ## Cross-Link Navigation
 
