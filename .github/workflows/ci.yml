@@ -21,6 +21,14 @@ jobs:
         run: python3 scripts/skills_lint.py .
       - name: Run Link Lint
         run: python3 scripts/links_lint.py
+      - name: Run Diagram Validation
+        run: |
+          # Simple validation: search for generated diagrams in docs/ or diagrams/
+          # Ensure they contain the artifact_id pattern
+          if find . -name "*.md" -exec grep -l "metadata:" {} + | xargs grep -L "artifact_id:" | grep -q .; then
+             echo "Error: Some diagrams missing artifact_id metadata"
+             exit 1
+          fi
 
   deploy-docs:
     runs-on: ubuntu-latest
