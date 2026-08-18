@@ -2,7 +2,7 @@
 id: hardening-map
 title: "Production-Grade Hardening for Architecture-Skills Library"
 label: wayfinder:map
-status: closed
+status: open
 ---
 
 ## Destination
@@ -25,3 +25,7 @@ Transform the current POC banking architecture library into a production-grade '
 
 ## Out of scope
 - Implementation of the actual banking software; this effort is limited to the *architectural governance tooling itself*.
+- [Initialize Diagram-as-Code Engine: Canonical Mermaid Definitions](tickets/d-01-canonical-mermaid.md) - Open
+- [Initialize Diagram-as-Code Engine: Archify Post-Processor Implementation](tickets/d-02-archify-post-processor.md) - Open
+- [Initialize Diagram-as-Code Engine: Template Repository Creation](tickets/d-03-template-repository.md) - Open
+- [Initialize Diagram-as-Code Engine: Pipeline Integration](tickets/d-04-pipeline-integration.md) - Open
