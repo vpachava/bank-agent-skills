@@ -1,0 +1,16 @@
+# Draft API Schema for Credit Limit Increase
+
+## Request
+{
+  "card_id": "string",
+  "requested_limit": "number",
+  "reason": "string"
+}
+
+## Response
+{
+  "card_id": "string",
+  "status": "string",
+  "approved_limit": "number",
+  "decision_reference": "string"
+}
