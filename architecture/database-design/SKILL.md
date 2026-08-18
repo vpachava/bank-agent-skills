@@ -34,7 +34,7 @@ Any ADR referencing a database design MUST include:
 - **Performance Expectation:** [IOPS/Latency/Throughput]
 
 ## Related Skills
-- [data-governance](../../governance/data-governance/SKILL.md)
+- [Data Governance - Concepts](../../governance/solution-review/SKILL.md)
 - [security-architecture-review](../../security/security-architecture-review/SKILL.md)
 
 ### Banking Context & Examples

@@ -1,0 +1,19 @@
+.\MEMORY.md: Broken link to tdd-documentation/SKILL.md
+.\architecture\database-design\SKILL.md: Broken link to ../../governance/data-governance/SKILL.md
+.\docs\superpowers\specs\2026-08-18-ci-cd-pipeline-design.md: Broken link to file.md
+.\governance\ai-model-governance\SKILL.md: Broken link to ../../governance/data-governance/SKILL.md
+.\migration\application-migration\SKILL.md: Broken link to ../../modernization/research/integration-seams.md
+.\migration\application-migration\SKILL.md: Broken link to ../../modernization/research/integration-seams.md
+.\migration\cloud-migration\SKILL.md: Broken link to ../../research/cloud-well-architected-banking.md
+.\migration\database-migration\SKILL.md: Broken link to ../../modernization/research/integration-seams.md
+.\migration\database-migration\SKILL.md: Broken link to ../../modernization/research/integration-seams.md
+.\wayfinder\map.md: Broken link to tickets/documentation-skills.md
+.\wayfinder\map.md: Broken link to tickets/governance-skills.md
+.\wayfinder\skill-archetype.md: Broken link to ./other-skill/SKILL.md
+.\wayfinder\skill-archetype.md: Broken link to ./other-skill/SKILL.md
+.\wayfinder\skill-archetype.md: Broken link to ./owasp-review/SKILL.md
+.\wayfinder\skill-archetype.md: Broken link to ./zero-trust/SKILL.md
+.\wayfinder\skill-archetype.md: Broken link to ./iam-review/SKILL.md
+.\wayfinder\skill-archetype.md: Broken link to ./security-architecture-review/SKILL.md
+.\wayfinder\skill-archetype.md: Broken link to <folder-relative path>/SKILL.md
+.\wayfinder\skill-archetype.md: Broken link to ../<category>/<name>/SKILL.md

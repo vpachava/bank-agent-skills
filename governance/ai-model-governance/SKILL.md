@@ -31,7 +31,7 @@ Any ADR referencing a model governed by this skill MUST include:
 
 ## Related Skills
 - [threat-model](../../security/threat-model/SKILL.md) (for adversarial AI threats)
-- [data-governance](../../governance/data-governance/SKILL.md) (for model input/output data)
+- [Data Governance - Concepts](../solution-review/SKILL.md) (for model input/output data)
 
 ### Banking Context & Examples
 

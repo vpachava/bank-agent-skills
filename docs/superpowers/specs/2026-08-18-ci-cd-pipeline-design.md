@@ -26,4 +26,4 @@ A fully autonomous GitHub Actions pipeline (`.github/workflows/ci.yml`) that val
   5. `Validate Internal Links`: Custom Python `scripts/links_lint.py`.
 
 ## Technical Trade-offs
-- Using a custom script for internal link validation (`scripts/links_lint.py`) provides maximum control over the internal structure of this repo's references (`[[name]]` vs `[text](file.md)`), avoiding over-generalized Action configuration issues.
+- Using a custom script for internal link validation (`scripts/links_lint.py`) provides maximum control over the internal structure of this repo's references (`[[name]]` vs `[text](internal-link-target.md)`), avoiding over-generalized Action configuration issues.

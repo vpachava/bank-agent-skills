@@ -1,1 +1,1 @@
-- [TDD Documentation](tdd-documentation/SKILL.md) — disciplined, TDD-based skill construction
+- [TDD Documentation](./.claude/tdd-documentation/SKILL.md) — disciplined, TDD-based skill construction
