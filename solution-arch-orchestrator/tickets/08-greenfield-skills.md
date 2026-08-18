@@ -2,7 +2,7 @@
 id: "08"
 slug: greenfield-skills
 title: "Build the greenfield/ skills (5)"
-map: wayfinder/map.md
+map: solution-arch-orchestrator/map.md
 label: wayfinder:task
 type: task
 status: open

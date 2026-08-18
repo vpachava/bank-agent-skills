@@ -77,7 +77,7 @@ These are the top-level groupings a capability map should expect to populate. Ea
 5. **Deposits / Current & Savings Accounts** — account servicing, term deposits, interest accrual.
 6. **Investment & Portfolios** — investment products, portfolio management, order routing (lighter in retail).
 7. **Channels & Access** — branch, contact centre, mobile/web, ATM — the access/interaction layer.
-8. **Reference Data & Master Data Management** — reference and standing data shared across service domains (this is often the integrator's crosslink). Cross-link: see `wayfinder/research/banking-integration-patterns.md` §reference-data.
+8. **Reference Data & Master Data Management** — reference and standing data shared across service domains (this is often the integrator's crosslink). Cross-link: see `solution-arch-orchestrator/research/banking-integration-patterns.md` §reference-data.
 9. **Risk Management & Compliance** — credit/market/operational risk, regulatory reporting, AML/sanctions.
 10. **Security / Access Control (Procedure)** — access, security administration, fraud controls (also handed off to `security-architecture-review` skill).
 11. **Finance / Accounting & Financial Information** — general ledger, product P&L, finance reporting.
@@ -109,7 +109,7 @@ A BIAN Service Domain is the finest architectural partition; it owns a single **
 
 ### How Service Domains interact
 - **Synchronous request/response** between Service Domains (the dominant operational pattern).
-- **Publish/subscribe / event** for cross-domain notifications and decoupling — the foundation that connects BIAN to event-driven integration. Cross-link to `wayfinder/research/banking-integration-patterns.md` (event-driven & messaging sections).
+- **Publish/subscribe / event** for cross-domain notifications and decoupling — the foundation that connects BIAN to event-driven integration. Cross-link to `solution-arch-orchestrator/research/banking-integration-patterns.md` (event-driven & messaging sections).
 - Each Service Operation is described semantically with input/output **Control Records** and **Business Information** payloads — BIAN deliberately separates *semantic* API contracts from *implementation* (REST/gRPC/Kafka are transports, not the model).
 - **~250 Semantic APIs** are published as OpenAPI/Swagger artifacts in the BIAN Portal, generated from the Service Operation model — this is the canonical contract surface. **HIGH** (BIAN.org home / deliverables).
 
@@ -235,7 +235,7 @@ Concrete checkboxes each downstream skill should include (map-level, not aspirat
 - BIAN Portal (catalog, login-gated) — https://portal.bian.org/
 - Wikipedia — Banking Industry Architecture Network — https://en.wikipedia.org/wiki/Banking_Industry_Architecture_Network *(reproduces BIAN's published metamodel description: Business Area → Business Domain → Service Domain; Service Domain as "elemental building blocks"; "layout can be varied depending on use"; ISO 20022 metamodel alignment; IFX Forum implementation partnership; retail/private/corporate scope; standards partners: OMG, The Open Group, IFX Forum, ISO 20022)*
 - The Open Group TOGAF — https://www.opengroup.org/forum/togaf , https://www.opengroup.org/togaf *(TOGAF 10th Ed.: Fundamental Content + Series Guides; general-purpose EA methodology; no banking capability content)*
-- Cross-reference — `wayfinder/research/banking-integration-patterns.md` *(ISO 20022 message families; UAE rails: Aani/Al Etihad Payments, CBUAE; anti-fraud/FAPI security)*
+- Cross-reference — `solution-arch-orchestrator/research/banking-integration-patterns.md` *(ISO 20022 message families; UAE rails: Aani/Al Etihad Payments, CBUAE; anti-fraud/FAPI security)*
 
 ---
 

@@ -29,7 +29,7 @@ Use for training, refactoring, or authoring skill-files when disciplined, TDD-ba
 - Verified GREEN result (subagent output).
 
 ## Related skills
-- [[orchestrator]]
+- [[solution-arch-orchestrator]]
 - [[design-review]]
 
 ## Core Principle

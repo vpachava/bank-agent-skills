@@ -20,8 +20,8 @@ Primary sources referenced (canonical, stable-URL):
 - AWS Docs — AWS Well-Architected Framework (publication date Nov 6, 2024) — https://docs.aws.amazon.com/wellarchitected/latest/framework/welcome.html , https://docs.aws.amazon.com/wellarchitected/latest/framework/the-pillars-of-the-framework.html *(pages fetched 2026-08-09)*
 - Microsoft Learn — Cloud Adoption Framework: "What is an Azure landing zone?" — https://learn.microsoft.com/en-us/azure/cloud-adoption-framework/ready/landing-zone/ *(ms.date 2025-07-24, page fetched 2026-08-09)*
 - Google Cloud — Cloud Architecture Framework — https://cloud.google.com/architecture/framework *(redirects to `docs.cloud.google.com/architecture/framework`; redirect target returned 404 + network-verification failure this session — re-verify the current page before embedding pillar names)*
-- Cross-reference — `wayfinder/research/uae-compliance-posture.md` (§1 CBUAE in-country residency rule for payment/card/SVF data + §2/§3 DIFC/ADGM Third-Country transfer treatment)
-- Cross-reference — `wayfinder/research/banking-integration-patterns.md` (Open Finance + ISO 20022 grounding)
+- Cross-reference — `solution-arch-orchestrator/research/uae-compliance-posture.md` (§1 CBUAE in-country residency rule for payment/card/SVF data + §2/§3 DIFC/ADGM Third-Country transfer treatment)
+- Cross-reference — `solution-arch-orchestrator/research/banking-integration-patterns.md` (Open Finance + ISO 20022 grounding)
 
 ---
 
@@ -328,8 +328,8 @@ A `cloud-migration` and `migration-wave-planning` skill must surface a fixed set
 - Google Cloud — Cloud Architecture Framework — https://cloud.google.com/architecture/framework *(redirected to `docs.cloud.google.com/architecture/framework`; redirect target returned 404 + network-verification failure this session — re-verify the current pillar/topic list before embedding)*
 - Oracle Cloud — Oracle Cloud Regions page — https://www.oracle.com/cloud/regions/ *(returned 403 this session — re-pin `me-abudhabi-1` / `me-dubai-1` codes + sovereignty flavour availability)*
 - AWS — Landing Zone Accelerator solution pages, prescriptive-guidance landing zone doc — *(returned network-verification-failure / 404 this session — re-pin LZA's current solution title + Financial Services config pack)*
-- Cross-reference — `wayfinder/research/uae-compliance-posture.md` — §0 federal PDPL cross-border restriction (Decree-Law 45/2021), §1 CBUAE in-country residency rules + "separate location" backup for payment/card/SVF data, §2/§3 DIFC + ADGM Third-Country transfer treatment (SCC/BCR mechanisms + 72h breach clock), §9 CBUAE operational-resilience supervisory expectations.
-- Cross-reference — `wayfinder/research/banking-integration-patterns.md` — §1 ISO 20022 canonical message families (pacs/pain/camt) + UETR — used in the Oracle-core ACL contract tie-in (§3.1); §2 event-driven/Kafka tier used in §3.2 CDC bridge; §5 Open Finance + Aani referenced for cross-link.
+- Cross-reference — `solution-arch-orchestrator/research/uae-compliance-posture.md` — §0 federal PDPL cross-border restriction (Decree-Law 45/2021), §1 CBUAE in-country residency rules + "separate location" backup for payment/card/SVF data, §2/§3 DIFC + ADGM Third-Country transfer treatment (SCC/BCR mechanisms + 72h breach clock), §9 CBUAE operational-resilience supervisory expectations.
+- Cross-reference — `solution-arch-orchestrator/research/banking-integration-patterns.md` — §1 ISO 20022 canonical message families (pacs/pain/camt) + UETR — used in the Oracle-core ACL contract tie-in (§3.1); §2 event-driven/Kafka tier used in §3.2 CDC bridge; §5 Open Finance + Aani referenced for cross-link.
 
 ---
 

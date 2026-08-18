@@ -2,7 +2,7 @@
 id: "11"
 slug: integration-skills
 title: "Build the integration/ skills (6)"
-map: wayfinder/map.md
+map: solution-arch-orchestrator/map.md
 label: wayfinder:task
 type: task
 status: closed

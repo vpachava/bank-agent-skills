@@ -2,7 +2,7 @@
 id: "14"
 slug: devops-skills
 title: "Build the devops/ skills (5)"
-map: wayfinder/map.md
+map: solution-arch-orchestrator/map.md
 label: wayfinder:task
 type: task
 status: open

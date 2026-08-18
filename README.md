@@ -144,9 +144,6 @@ Skills are designed to be invoked sequentially through the structural lifecycle 
 - **[threat-model](security/threat-model/SKILL.md)** — `No description provided.` Invoke with: `/threat-model`
 - **[zero-trust](security/zero-trust/SKILL.md)** — `No description provided.` Invoke with: `/zero-trust`
 
-### Wayfinder (Orchestration)
-- **[orchestrator](wayfinder/orchestrator/SKILL.md)** — `No description provided.` Invoke with: `/orchestrator`
-
 ## Cross-Link Navigation
 
 Each `.md` document includes a "Related Skills" or "Inputs/Outputs" section in its frontmatter metadata enabling navigation across the graph.

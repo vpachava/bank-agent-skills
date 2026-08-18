@@ -2,7 +2,7 @@
 id: "09"
 slug: modernization-skills
 title: "Build the modernization/ skills (5)"
-map: wayfinder/map.md
+map: solution-arch-orchestrator/map.md
 label: wayfinder:task
 type: task
 status: closed

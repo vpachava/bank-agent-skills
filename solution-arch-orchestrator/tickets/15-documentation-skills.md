@@ -2,7 +2,7 @@
 id: "15"
 slug: documentation-skills
 title: "Build the documentation/ skills (6)"
-map: wayfinder/map.md
+map: solution-arch-orchestrator/map.md
 label: wayfinder:task
 type: task
 status: open

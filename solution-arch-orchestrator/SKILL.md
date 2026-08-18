@@ -1,5 +1,5 @@
 ﻿---
-name: orchestrator
+name: solution-arch-orchestrator
 owner: Architectural Governance
 version: 0.1.1
 last-reviewed: 2026-08-16
@@ -15,10 +15,10 @@ togaf-artifacts: [Architecture Vision]
 bian-service-domains: [Customer Account.Origination]
 ---
 
-# /orchestrator
+# /solution-arch-orchestrator
 
 ## When to apply
-Use as the entry point for *any* new initiative. It acts as the "Wayfinder" for the 72-skill library, taking the cognitive load of selecting the right subset of skills away from you and structuring the project lifecycle.
+Use as the entry point for *any* new initiative. It acts as the "Solution Architect Orchestrator" for the 72-skill library, taking the cognitive load of selecting the right subset of skills away from you and structuring the project lifecycle.
 
 ## Inputs
 - Raw business requirement
@@ -42,11 +42,11 @@ Use as the entry point for *any* new initiative. It acts as the "Wayfinder" for 
 
 
 ## Banking pitfalls
-- **Over-orchestration:** Mapping *too many* skills. The orchestrator must filter, not accumulate.
+- **Over-orchestration:** Mapping *too many* skills. The solution-arch-orchestrator must filter, not accumulate.
 - **Ignoring non-optional governance:** Always injecting `/security-architecture-review` or `/production-readiness` for regulated paths, even if the user didn't ask.
 
 ## Automated Reinforcement
-- The orchestrator now performs a mandatory `/security-architecture-review` baseline as the first sub-step in any modernization trigger.
+- The solution-arch-orchestrator now performs a mandatory `/security-architecture-review` baseline as the first sub-step in any modernization trigger.
 
 ### Regulatory References
 1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/

@@ -130,7 +130,7 @@ A bank operating across the onshore UAE footprint **and** a DIFC and/or ADGM ent
 - **Shared services tension.** Putting a single IAM/KYC/data-warehouse in onshore UAE and serving DIFC + ADGM entities from it forces an outbound transfer **out of each freezone** each time. The skills must flag this as a design choice (either: keep a per-zone copy + minimal cross-zone SCC-governed flow, or centralise and route every access through a transfer mechanism — both are real trade-offs).
 - **AI-specific processing (DIFC 2023 DPR update).** A bank running model training/inference on DIFC-held personal data must also satisfy DIFC's AI-processing regulations — verify the current text of the 2023 DPR AI amendments before embedding AI-workload controls in `security-architecture-review`.
 
-**Cross-link:** `wayfinder/research/banking-integration-patterns.md` §5 (open banking / Open Finance) already cites CBUAE Open Finance + Aani as the UAE-specific surface; the data flows behind it inherit the cross-zone overlay above.
+**Cross-link:** `solution-arch-orchestrator/research/banking-integration-patterns.md` §5 (open banking / Open Finance) already cites CBUAE Open Finance + Aani as the UAE-specific surface; the data flows behind it inherit the cross-zone overlay above.
 
 ---
 
@@ -276,8 +276,8 @@ WebFetch worked well against **DLA Piper's Data Protection Laws of the World** s
 - Dubai Electronic Security Center (DESC) — https://www.desc.gov.ae/ *(agency page; returned 403 this session — re-pull for charter/ISR/strategy before embedding)*
 - UAE Cybersecurity Council / National Electronic Security Authority (NESA) — *(NESA's `www.nesa.gov.ae` returned DNS NXDOMAIN this session; the federal Cybersecurity Council is the contemporary authority — pin current publication)*
 - CBUAE — https://www.centralbank.ae/ *(agency page; returned 403 across retries this session — re-pull the current cyber-security standard + operational-resilience notices before embedding)*
-- Cross-reference — `wayfinder/research/banking-integration-patterns.md` §5 *(Open Banking / Open Finance — global FAPI 2.0 / OAuth2 / SCA / sender-constrained-token posture HIGH; UAE CBUAE Open Finance + Aani specifics MEDIUM)*
-- Cross-reference — `wayfinder/research/bian-capability-landscape.md` *(map-level banking capability reference; not load-bearing for this ticket aside from the architecture-review-vs-compliance split)*
+- Cross-reference — `solution-arch-orchestrator/research/banking-integration-patterns.md` §5 *(Open Banking / Open Finance — global FAPI 2.0 / OAuth2 / SCA / sender-constrained-token posture HIGH; UAE CBUAE Open Finance + Aani specifics MEDIUM)*
+- Cross-reference — `solution-arch-orchestrator/research/bian-capability-landscape.md` *(map-level banking capability reference; not load-bearing for this ticket aside from the architecture-review-vs-compliance split)*
 
 ---
 

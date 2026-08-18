@@ -87,4 +87,4 @@
 ./security/security-architecture-review/SKILL.md
 ./security/threat-model/SKILL.md
 ./security/zero-trust/SKILL.md
-./wayfinder/orchestrator/SKILL.md
+./solution-arch-orchestrator/orchestrator/SKILL.md

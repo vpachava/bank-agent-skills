@@ -2,7 +2,7 @@
 id: "06"
 slug: discovery-skills
 title: "Build the discovery/ skills (5)"
-map: wayfinder/map.md
+map: solution-arch-orchestrator/map.md
 label: wayfinder:task
 type: task
 status: closed

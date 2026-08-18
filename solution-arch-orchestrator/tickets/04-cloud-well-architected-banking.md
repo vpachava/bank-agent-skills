@@ -2,7 +2,7 @@
 id: "04"
 slug: cloud-well-architected-banking
 title: "Cloud Well-Architected × banking + multi-cloud landing zones"
-map: wayfinder/map.md
+map: solution-arch-orchestrator/map.md
 label: wayfinder:research
 type: research
 status: closed
@@ -21,8 +21,8 @@ Gather the cloud-framework grounding that the **cloud**, **migration**, and **gr
 4. **Kubernetes & Terraform posture for banking** — the control-plane conventions (multi-tenant cluster topology, secret/secret-mgr, GitOps drift, Terraform module/landing-zone patterns, state & policy guardrails) the `kubernetes` / `terraform` skills embed.
 5. **Well-Architected → migration sequencing tie-in** — which landing-zone & pillar decisions a cloud-migration or wave-planning skill must surface early (cross-links ticket 05 and the modernization track).
 
-Capture findings to `wayfinder/research/cloud-well-architected-banking.md`. Feeds `aws-review`, `azure-review`, `gcp-review`, `kubernetes`, `terraform`, `landing-zone-review`, `cloud-migration`, `migration-wave-planning`, and `reference-architecture`.
+Capture findings to `solution-arch-orchestrator/research/cloud-well-architected-banking.md`. Feeds `aws-review`, `azure-review`, `gcp-review`, `kubernetes`, `terraform`, `landing-zone-review`, `cloud-migration`, `migration-wave-planning`, and `reference-architecture`.
 
 ## Resolution
 
-**Research complete.** Findings synthesized to `wayfinder/research/cloud-well-architected-banking.md`. Covers: AWS/Azure/GCP Well-Architected pillars with banking overlays per UAE-residency; landing-zone anatomy (AWS Control Tower + Azure CAF + Oracle/private); oracle-core + cloud-native coexistence via strangler-fig/CDC/event-mesh; Kubernetes + Terraform posture for banking (state, drift, security, compliant secrets); and landing-zone pre-flight gates for migration sequencing. HIGH-confidence on all load-bearing UAE-residency/region-selection + primary-vendor fact patterns; LOW/MEDIUM flags for specific product-name currency (AWS/LZA/accelerator/region-dates) — re-pin from live docs per the follow-up list before checklist-freezing. Unblocks 08, 10, 13.
+**Research complete.** Findings synthesized to `solution-arch-orchestrator/research/cloud-well-architected-banking.md`. Covers: AWS/Azure/GCP Well-Architected pillars with banking overlays per UAE-residency; landing-zone anatomy (AWS Control Tower + Azure CAF + Oracle/private); oracle-core + cloud-native coexistence via strangler-fig/CDC/event-mesh; Kubernetes + Terraform posture for banking (state, drift, security, compliant secrets); and landing-zone pre-flight gates for migration sequencing. HIGH-confidence on all load-bearing UAE-residency/region-selection + primary-vendor fact patterns; LOW/MEDIUM flags for specific product-name currency (AWS/LZA/accelerator/region-dates) — re-pin from live docs per the follow-up list before checklist-freezing. Unblocks 08, 10, 13.

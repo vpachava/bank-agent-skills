@@ -17,7 +17,7 @@
 | ai-ml-architecture | 6 |
 | business-architecture | 6 |
 | data-architecture | 6 |
-| wayfinder/orchestrator | 1 |
+| solution-arch-orchestrator | 1 |
 | tdd-tools | 0 (Check .claude/tdd-documentation/SKILL.md) |
 | **Grand Total** | **90** |
 

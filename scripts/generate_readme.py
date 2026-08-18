@@ -113,7 +113,7 @@ readme_lines.extend([
     "Each `.md` document includes a \"Related Skills\" or \"Inputs/Outputs\" section in its frontmatter metadata enabling navigation across the graph. ",
     "For example, you might flow from `/gap-analysis` -> `/solution-options` -> `/architecture-board`.",
     "",
-    "**Core Orchestration:** Use `/orchestrator` located in `wayfinder/` to orchestrate agents automatically executing these sequences.",
+    "**Core Orchestration:** Use `/orchestrator` located in `solution-arch-orchestrator/` to orchestrate agents automatically executing these sequences.",
     ""
 ])
 

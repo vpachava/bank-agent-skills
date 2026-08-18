@@ -2,7 +2,7 @@
 id: "17"
 slug: root-readme
 title: "Write the root README catalogue + usage guide"
-map: wayfinder/map.md
+map: solution-arch-orchestrator/map.md
 label: wayfinder:task
 type: task
 status: closed

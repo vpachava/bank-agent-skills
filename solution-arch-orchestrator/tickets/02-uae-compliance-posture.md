@@ -2,7 +2,7 @@
 id: "02"
 slug: uae-compliance-posture
 title: "UAE/CBUAE regulatory, compliance & data-residency posture for a retail bank"
-map: wayfinder/map.md
+map: solution-arch-orchestrator/map.md
 label: wayfinder:research
 type: research
 status: closed
@@ -21,11 +21,11 @@ Gather the external facts that the **security**, **cloud**, and **governance** s
 4. **Key compliance frameworks/standards** architects cite in a UAE bank — UAE NESA / Dubai Electronic Security, CBUAE cyber-security & resilience standards, and how they map to NIST CSF / ISO 27001 / OWASP for skill grounding.
 5. **Identity & KYC ecosystem context** (already integrated at most large UAE banks — Emirates Face Recognition, UAE KYC/eKYC, UAE Pass) — just enough so security/IAM skills reference the real identity fabric, not to re-research integration.
 
-Capture findings to `wayfinder/research/uae-compliance-posture.md`. These facts feed the `compliance`, `security-architecture-review`, `zero-trust`, `iam-review`, `landing-zone-review`, and `production-readiness` / `operational-readiness` skills.
+Capture findings to `solution-arch-orchestrator/research/uae-compliance-posture.md`. These facts feed the `compliance`, `security-architecture-review`, `zero-trust`, `iam-review`, `landing-zone-review`, and `production-readiness` / `operational-readiness` skills.
 
 ## Resolution
 
-**Resolved 2026-08-08. Findings at `wayfinder/research/uae-compliance-posture.md` (284 lines).** HIGH-confidence primary-verified (WebFetch on DLA Piper federal/DIFC/ADGM, u.ae, Wikipedia for CBUAE/TDRA charters):
+**Resolved 2026-08-08. Findings at `solution-arch-orchestrator/research/uae-compliance-posture.md` (284 lines).** HIGH-confidence primary-verified (WebFetch on DLA Piper federal/DIFC/ADGM, u.ae, Wikipedia for CBUAE/TDRA charters):
 - **Federal PDPL** = Federal Decree-Law No. 45 of 2021 (cross-border restricted, adequacy TBD), backstopped by **Cybercrime Law 34/2021 Art. 13**.
 - **CBUAE sectoral data-residency** — SVF Regulation (30 Sep 2020) Art. 10 + Retail-Payment-Services/Card-Schemes Regulation (6 Jun 2021) Art. 18: **in-country residency, 72-hour breach reporting, ~5-yr retention**; Consumer Protection Notices 444/1158 of 2021.
 - **DIFC DPL** Law No. 5 of 2020 (2023 AI DPR update; Art. 27(4) hybrid-transfer flexibility; "as soon as practicable" breach clock; USD 10K–100K fines).

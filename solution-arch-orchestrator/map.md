@@ -40,13 +40,13 @@ A working library of **72 invoke-and-act Claude Code skills + a root README** wr
 
 **Skills every session should consult:** `/grilling` + `/domain-modeling` for the archetype grilling ticket (01); `/research` for research tickets (02–05); the locked archetype from ticket 01 before writing any skill; `/prototype` only if a ticket shifts to "how should it look/behave".
 
-**Tracker:** local-markdown (no issue tracker / no git here). Map: `wayfinder/map.md`. Tickets: `wayfinder/tickets/NN-slug.md`. Blocking via `blocked_by` / `blocks` in frontmatter (no native dependency relationship). The **frontier** = open tickets whose `blocked_by` list is entirely closed. **Research** tickets (02–05) are AFK and fire in parallel during charting (already dispatched).
+**Tracker:** local-markdown (no issue tracker / no git here). Map: `solution-arch-orchestrator/map.md`. Tickets: `solution-arch-orchestrator/tickets/NN-slug.md`. Blocking via `blocked_by` / `blocks` in frontmatter (no native dependency relationship). The **frontier** = open tickets whose `blocked_by` list is entirely closed. **Research** tickets (02–05) are AFK and fire in parallel during charting (already dispatched).
 
 **Effort start: 2026-08-06** *(date carried to 2026-08-07 mid-charter)*.
 
 ## Decisions so far
 
-- [Pin the SKILL.md section template & metadata frontmatter (the archetype)](tickets/01-skill-archetype.md) — Archetype pinned at `wayfinder/skill-archetype.md`.
+- [Pin the SKILL.md section template & metadata frontmatter (the archetype)](tickets/01-skill-archetype.md) — Archetype pinned at `solution-arch-orchestrator/skill-archetype.md`.
 - [Banking integration standards & event patterns](tickets/05-banking-integration-patterns.md)
 - [BIAN service-domain & capability landscape for retail banking](tickets/03-bian-capability-landscape.md)
 - [UAE/CBUAE regulatory, compliance & data-residency posture](tickets/02-uae-compliance-posture.md)

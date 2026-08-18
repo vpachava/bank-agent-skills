@@ -2,7 +2,7 @@
 id: "07"
 slug: architecture-skills
 title: "Build the architecture/ skills (8)"
-map: wayfinder/map.md
+map: solution-arch-orchestrator/map.md
 label: wayfinder:task
 type: task
 status: closed
