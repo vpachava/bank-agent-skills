@@ -910,6 +910,84 @@
     "usage-count": 0
   },
   {
+    "name": "data-governance",
+    "category": "data-architecture",
+    "description": "data-governance skill",
+    "tags": [
+      "data"
+    ],
+    "togaf-phases": [],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "data-lineage",
+    "category": "data-architecture",
+    "description": "data-lineage skill",
+    "tags": [
+      "data"
+    ],
+    "togaf-phases": [],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "data-modeling",
+    "category": "data-architecture",
+    "description": "data-modeling skill",
+    "tags": [
+      "data"
+    ],
+    "togaf-phases": [],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "data-privacy-assessment",
+    "category": "data-architecture",
+    "description": "data-privacy-assessment skill",
+    "tags": [
+      "data"
+    ],
+    "togaf-phases": [],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "data-quality",
+    "category": "data-architecture",
+    "description": "data-quality skill",
+    "tags": [
+      "data"
+    ],
+    "togaf-phases": [],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "master-data-management",
+    "category": "data-architecture",
+    "description": "master-data-management skill",
+    "tags": [
+      "data"
+    ],
+    "togaf-phases": [],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
     "name": "orchestrator",
     "category": "Uncategorized",
     "description": "Meta-skill: Receives a raw requirement, maps it to the necessary subset of 72 architectural skills, and generates an actionable dependency roadmap (workflow).",

@@ -1,3 +1,9 @@
+---
+name: data-lineage
+category: data-architecture
+description: data-lineage skill
+tags: ["data"]
+---
+
 # Skill: Data Lineage
-- Purpose: Map data flow from source to target.
-- Compliance: Regulatory provenance tracking.
+- Purpose: data-lineage utility.

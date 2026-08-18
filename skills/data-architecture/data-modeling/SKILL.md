@@ -1,3 +1,9 @@
+---
+name: data-modeling
+category: data-architecture
+description: data-modeling skill
+tags: ["data"]
+---
+
 # Skill: Data Modeling
-- Purpose: Logical and physical data model creation.
-- Framework: Use TDD for model constraints.
+- Purpose: data-modeling utility.

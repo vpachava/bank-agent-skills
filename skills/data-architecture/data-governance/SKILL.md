@@ -1,3 +1,9 @@
+---
+name: data-governance
+category: data-architecture
+description: data-governance skill
+tags: ["data"]
+---
+
 # Skill: Data Governance
-- Purpose: Define policies, glossary, and data ownership.
-- Compliance: Ensure auditability for all policy changes.
+- Purpose: data-governance utility.
