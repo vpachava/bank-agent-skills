@@ -7,12 +7,12 @@ Establish a robust validation framework for `bank-agent-skills` by executing 3 p
 
 ## Decisions so far
 - [Validation Plan Approved](docs/validation-plan.md) — Framework for pilot projects and metrics defined.
+- [Telemetry Infrastructure Implemented](scripts/validation/telemetry.py) — Metrics collection ready.
+- [Greenfield Pilot Brief Defined](docs/validation/greenfield-brief.md) — Credit limit increase pilot scope.
+- [Modernization Pilot Brief Defined](docs/validation/modernization-brief.md) — Card management modernization scope.
+- [Migration Pilot Brief Defined](docs/validation/migration-brief.md) — Database migration scope.
 
 ## Not yet specified
-- Task: Setup Feedback & Metrics Infrastructure (Tracking, Survey mechanism)
-- Research: Define Greenfield Pilot Execution Brief (Credit limit increase)
-- Research: Define Modernization Pilot Execution Brief (Card service monolith -> microservice)
-- Research: Define Migration Pilot Execution Brief (Legacy DB -> RDS Postgres)
 - Task: Final Retrospective & Case Studies Compilation
 
 ## Out of scope
