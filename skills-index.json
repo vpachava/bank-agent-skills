@@ -1,0 +1,925 @@
+[
+  {
+    "name": "architecture-decision-records",
+    "category": "Uncategorized",
+    "description": "Use when a banking decision needs a durable, reversible-with-cost record \u00e2\u20ac\u201d produces a versioned ADR (context, options, decision, consequences) that survives team turnover and the architecture board.",
+    "tags": [],
+    "togaf-phases": [
+      "Phase C"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "architecture-review",
+    "category": "Uncategorized",
+    "description": "Use when a banking design needs review against standards & lenses \u00e2\u20ac\u201d produces an architecture review report (BIAN/TOGAF fit, NFRs, integration/security, risks) with findings, severity, and owners.",
+    "tags": [],
+    "togaf-phases": [
+      "Phase C"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "c4-model",
+    "category": "Uncategorized",
+    "description": "Use when a banking solution needs visual structure \u00e2\u20ac\u201d produces the C4 views (context/container/component) as explorable diagrams via /archify, banking-conventions applied (legacy-core band, residency perimeter, regulated gates).",
+    "tags": [],
+    "togaf-phases": [
+      "Phase C"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "database-design",
+    "category": "Uncategorized",
+    "description": "Use when designing database schemas and infrastructure, including vector database integration for AI-native workloads.",
+    "tags": [],
+    "togaf-phases": [
+      "Phase C"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "deployment-diagrams",
+    "category": "Uncategorized",
+    "description": "Use when a banking solution needs its deployment/topology committed \u00e2\u20ac\u201d produces deployment diagrams (via /archify) with regions, HA/DR pairing, landing-zone topology, and the UAE residency perimeter.",
+    "tags": [],
+    "togaf-phases": [
+      "Phase C"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "hld-generator",
+    "category": "Uncategorized",
+    "description": "Use when a banking initiative needs a High-Level Design \u00e2\u20ac\u201d produces an HLD (context, containers, key flows, headline NFRs, risks) at the altitude a sponsor and architecture board can review.",
+    "tags": [],
+    "togaf-phases": [
+      "Phase C"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "lld-generator",
+    "category": "Uncategorized",
+    "description": "Use when an HLD is approved and the build needs detail \u00e2\u20ac\u201d produces a Low-Level Design (component APIs, data, sequences, deployment) that an engineering team can implement against.",
+    "tags": [],
+    "togaf-phases": [
+      "Phase C"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "nfr-checklist",
+    "category": "Uncategorized",
+    "description": "Use when a banking design needs its non-functional requirements enumerated and committed \u00e2\u20ac\u201d produces an NFR baseline (perf, scale, availability, security, compliance, residency) with measurable targets and a trace-to-design map.",
+    "tags": [],
+    "togaf-phases": [
+      "Phase C"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "sequence-diagrams",
+    "category": "Uncategorized",
+    "description": "Use when you need to show how a banking flow behaves end-to-end \u00e2\u20ac\u201d produces sequence diagrams (via /archify) covering happy path + exception/escalation/retake paths, with regulated gates and legacy-core seams marked.",
+    "tags": [],
+    "togaf-phases": [
+      "Phase C"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "aws-review",
+    "category": "Uncategorized",
+    "description": "Use when reviewing AWS-based banking architectures \u00e2\u20ac\u201d produces an AWS-review report (well-architected alignment, UAE-residency, security).",
+    "tags": [],
+    "togaf-phases": [
+      "Phase D"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "azure-review",
+    "category": "Uncategorized",
+    "description": "Use when reviewing Azure-based banking architectures \u00e2\u20ac\u201d produces an Azure-review report (well-architected alignment, UAE-residency, security).",
+    "tags": [],
+    "togaf-phases": [
+      "Phase D"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "gcp-review",
+    "category": "Uncategorized",
+    "description": "Use when reviewing GCP-based banking architectures \u00e2\u20ac\u201d produces a GCP-review report (well-architected alignment, UAE-residency, security).",
+    "tags": [],
+    "togaf-phases": [
+      "Phase D"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "kubernetes",
+    "category": "Uncategorized",
+    "description": "Use when reviewing or planning banking Kubernetes clusters (AKS/EKS/GKE) \u00e2\u20ac\u201d produces a K8s-review (pod-security, networking, ingress, residency).",
+    "tags": [],
+    "togaf-phases": [
+      "Phase D"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "landing-zone-review",
+    "category": "Uncategorized",
+    "description": "Use when reviewing banking Landing-Zones \u00e2\u20ac\u201d produces a Landing-Zone review (governance, policy, network, security) against the banking foundation.",
+    "tags": [],
+    "togaf-phases": [
+      "Phase D"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "terraform",
+    "category": "Uncategorized",
+    "description": "Use when reviewing banking Terraform/IaC codebase \u00e2\u20ac\u201d produces an IaC-review (threats, state-mgt, drift, modularization, secrets).",
+    "tags": [],
+    "togaf-phases": [
+      "Phase D"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "cicd-review",
+    "category": "Uncategorized",
+    "description": "Use when reviewing a banking CI/CD pipeline \u00e2\u20ac\u201d produces a review report (gates, build-integrity, artifact-security, promotion, audit-trail, and automated readiness).",
+    "tags": [],
+    "togaf-phases": [
+      "Phase G"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "finops-strategy",
+    "category": "Uncategorized",
+    "description": "Use for cloud cost optimization, specifically for high-frequency financial workloads in banking environments.",
+    "tags": [],
+    "togaf-phases": [
+      "Phase G"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "observability",
+    "category": "Uncategorized",
+    "description": "Use when designing/reviewing observability for a banking solution \u00e2\u20ac\u201d produces an observability design/review (metrics, logs, traces, OTel).",
+    "tags": [],
+    "togaf-phases": [
+      "Phase G"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "performance-review",
+    "category": "Uncategorized",
+    "description": "Use when designing/running a banking performance review \u00e2\u20ac\u201d produces a performance-report (load, capacity,\u00e7\u201c\u00b6\u00e9\u00a2\u02c6, NFR-anchored).",
+    "tags": [],
+    "togaf-phases": [
+      "Phase G"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "release-readiness",
+    "category": "Uncategorized",
+    "description": "Use when gating a release for go/no-go \u00e2\u20ac\u201d produces a release-readiness checklist/verdict (change-advisory, test-evidence, rollback-plan, compliance).",
+    "tags": [],
+    "togaf-phases": [
+      "Phase G"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "sre-review",
+    "category": "Uncategorized",
+    "description": "Use when running an SRE review for a banking service \u00e2\u20ac\u201d produces an SRE review report (SLOs/SLIs, error-budgets, toil, incident-mgmt).",
+    "tags": [],
+    "togaf-phases": [
+      "Phase G"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "business-capability-map",
+    "category": "Uncategorized",
+    "description": "Use when you need to map a retail bank's business capabilities \u00e2\u20ac\u201d produces a BIAN-aligned capability map (Business Area \u00e2\u2020\u2019 Domain \u00e2\u2020\u2019 Service Domain) with a heat-map of maturity, duplication, and investment focus.",
+    "tags": [],
+    "togaf-phases": [
+      "Phase A"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "gap-analysis",
+    "category": "Uncategorized",
+    "description": "Use when comparing the bank's current capabilities or systems against a target \u00e2\u20ac\u201d produces a gap register (missing / under-invested / duplicated capabilities) with severity and initiative linkage.",
+    "tags": [],
+    "togaf-phases": [
+      "Phase A"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "requirements-analysis",
+    "category": "Uncategorized",
+    "description": "Use when starting a banking initiative and the requirements are still loose \u00e2\u20ac\u201d produces a requirements baseline (functional + non-functional) with sources, priorities, and the regulatory constraints that bind them.",
+    "tags": [],
+    "togaf-phases": [
+      "Phase A"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "solution-options",
+    "category": "Uncategorized",
+    "description": "Use when a banking decision needs 2\u00e2\u20ac\u201c4 candidate solutions surfaced and compared \u00e2\u20ac\u201d produces an options matrix with weighted scoring, risks, and a recommendation (including 'do nothing').",
+    "tags": [],
+    "togaf-phases": [
+      "Phase A"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "stakeholder-workshop",
+    "category": "Uncategorized",
+    "description": "Use when eliciting requirements or decisions from a banking initiative's stakeholders \u00e2\u20ac\u201d produces a workshop design (agenda, exercises) and a structured outcomes/decisions log with owners.",
+    "tags": [],
+    "togaf-phases": [
+      "Phase A"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "design-document",
+    "category": "Uncategorized",
+    "description": "Use when drafting a technical design document (TDD/Design-Spec) for a banking solution \u00e2\u20ac\u201d produces a design-spec (architecture, data-flow, integration, security).",
+    "tags": [],
+    "togaf-phases": [
+      "Phase A"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "executive-summary",
+    "category": "Uncategorized",
+    "description": "Use when drafting an executive summary for a banking initiative \u00e2\u20ac\u201d produces an exec summary (business-case, outcomes, risk-headlines).",
+    "tags": [],
+    "togaf-phases": [
+      "Phase A"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "project-charter",
+    "category": "Uncategorized",
+    "description": "Use when creating a project charter for a banking project \u00e2\u20ac\u201d produces a project-charter (purpose, scope, authority, key-roles).",
+    "tags": [],
+    "togaf-phases": [
+      "Phase A"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "proposal",
+    "category": "Uncategorized",
+    "description": "Use when drafting a project proposal for a banking initiative \u00e2\u20ac\u201d produces a proposal (value-prop, strategy, budget, timeline).",
+    "tags": [],
+    "togaf-phases": [
+      "Phase A"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "raid-log",
+    "category": "Uncategorized",
+    "description": "Use when maintaining a project RAID log \u00e2\u20ac\u201d (Risks, Assumptions, Issues, Dependencies) for banking projects.",
+    "tags": [],
+    "togaf-phases": [
+      "Phase A"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "risk-register",
+    "category": "Uncategorized",
+    "description": "Use when drafting a risk register for a banking initiative \u00e2\u20ac\u201d produces a risk-register (severity-scores, mitigation, regulatory-impact).",
+    "tags": [],
+    "togaf-phases": [
+      "Phase A"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "ai-governance",
+    "category": "Uncategorized",
+    "description": "Use when evaluating an architecture implementing LLMs or predictive models to enforce CBUAE boundary constraints, prompt security, and fallback rules.",
+    "tags": [],
+    "togaf-phases": [
+      "Phase G"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "ai-model-governance",
+    "category": "Uncategorized",
+    "description": "Use when designing or deploying AI models that require tracking for drift, bias, and regulatory compliance.",
+    "tags": [],
+    "togaf-phases": [
+      "Phase G"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "architecture-board",
+    "category": "Uncategorized",
+    "description": "Use when running or presenting to an Architectural Governance Board \u00e2\u20ac\u201d produces an board-review artifact (agenda, decisions, risks, board-governance).",
+    "tags": [],
+    "togaf-phases": [
+      "Phase C"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "design-review",
+    "category": "Uncategorized",
+    "description": "Use when performing a detailed technical-design review (TDD/Design-Spec) \u00e2\u20ac\u201d produces a design-review report (clash-detection, implementation-path, security-controls, performance-suitability).",
+    "tags": [],
+    "togaf-phases": [
+      "Phase G"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "dr-review",
+    "category": "Uncategorized",
+    "description": "Use when performing a disaster-recovery (DR) architectural-review \u00e2\u20ac\u201d produces a DR-assessment (RPO/RTO, failover-mechanisms, validation-strategy).",
+    "tags": [],
+    "togaf-phases": [
+      "Phase G"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "operational-readiness",
+    "category": "Uncategorized",
+    "description": "Use when evaluating a team's operational readiness to support a banking service \u00e2\u20ac\u201d produces an operational-readiness report (runbooks, on-call, training, org-alignment).",
+    "tags": [],
+    "togaf-phases": [
+      "Phase G"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "production-readiness",
+    "category": "Uncategorized",
+    "description": "Use when assessing if a service is ready for the production-banking environment \u00e2\u20ac\u201d produces a production-readiness artifact (readiness-scorecard, operational-resiliency-audit, supportability-verdict).",
+    "tags": [],
+    "togaf-phases": [
+      "Phase G"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "security-nfr-baseline-check",
+    "category": "Uncategorized",
+    "description": "Use as the mandatory first step before any architecture or design assessment to verify essential security and regulatory NFRs.",
+    "tags": [],
+    "togaf-phases": [
+      "Phase D"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "solution-review",
+    "category": "Uncategorized",
+    "description": "Use when performing a formal solution-architecture review \u00e2\u20ac\u201d produces a review-report (lens-compliance, architectural-fit, integration-risk).",
+    "tags": [],
+    "togaf-phases": [
+      "Phase G"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "platform-selection",
+    "category": "Uncategorized",
+    "description": "Use when evaluating cloud/provider/runtime platform options for a new banking banking initiative \u00e2\u20ac\u201d produces a platform-selection decision (weighted score & risk-profile).",
+    "tags": [],
+    "togaf-phases": [
+      "Phase A"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "poc-planning",
+    "category": "Uncategorized",
+    "description": "Use when scoping a proof-of-concept for a potential banking technology investment \u00e2\u20ac\u201d produces a PoC plan (hypothesis, success criteria, timeline, deliverables).",
+    "tags": [],
+    "togaf-phases": [
+      "Phase A"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "reference-architecture",
+    "category": "Uncategorized",
+    "description": "Use when authoring a reference architecture for a banking domain \u00e2\u20ac\u201d produces a BIAN-grounded C4-aligned reference architecture document.",
+    "tags": [],
+    "togaf-phases": [
+      "Phase C"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "roadmap",
+    "category": "Uncategorized",
+    "description": "Use when creating a delivery roadmap for a banking initiative \u00e2\u20ac\u201d produces a roadmap (phases, milestones, dependencies, banking gates) grounded in the modernization-roadmap.",
+    "tags": [],
+    "togaf-phases": [
+      "Phase A"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "technology-evaluation",
+    "category": "Uncategorized",
+    "description": "Use when evaluating a specific tech/component for a banking initiative \u00e2\u20ac\u201d produces an evaluation report (build/buy/use, fit, risk, support) and architectural verdict.",
+    "tags": [],
+    "togaf-phases": [
+      "Phase A"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "api-design",
+    "category": "Uncategorized",
+    "description": "Use when designing a new API component\u00e2\u20ac\u201dinternal, channel, or partner\u00e2\u20ac\u201dto ensure banking-grade contract boundaries and standard vocabulary.",
+    "tags": [],
+    "togaf-phases": [
+      "Phase C"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "data-sync",
+    "category": "Uncategorized",
+    "description": "Use when data must be synchronized between bank systems without a full ETL rebuild \u00e2\u20ac\u201d produces a data-sync design (CDC vs event-driven vs dual-write-avoidance, reconciliation, idempotency) keeping the systems honest.",
+    "tags": [],
+    "togaf-phases": [
+      "Phase C"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "etl",
+    "category": "Uncategorized",
+    "description": "Use when building a repeatable data movement & transformation pipeline for banking data \u00e2\u20ac\u201d produces an ETL/ELT design (extract, load, transform, scheduling, lineage, reconciliation) that is auditable and idempotent.",
+    "tags": [],
+    "togaf-phases": [
+      "Phase C"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "event-driven",
+    "category": "Uncategorized",
+    "description": "Use when designing an event-driven flow over a legacy core \u00e2\u20ac\u201d produces an event design (domain events vs CDC, choreography vs orchestration, the backbone topology) with idempotency, ordering, and replay handled.",
+    "tags": [],
+    "togaf-phases": [
+      "Phase C"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "idempotent-api",
+    "category": "Uncategorized",
+    "description": "Use when designing API endpoints requiring idempotency to prevent duplicated transactions.",
+    "tags": [],
+    "togaf-phases": [
+      "Phase C"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "integration-patterns",
+    "category": "Uncategorized",
+    "description": "Use when a banking scenario needs the right integration pattern chosen \u00e2\u20ac\u201d produces a scoped integration-patterns selection (gateway / ACL / strangler / saga / sync-async / idempotency) with rationale per integration seam.",
+    "tags": [],
+    "togaf-phases": [
+      "Phase C"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "messaging",
+    "category": "Uncategorized",
+    "description": "Use when designing the message transport for a banking flow \u00e2\u20ac\u201d produces a messaging design (queues/topics, delivery semantics, SLAs, payload standards) with idempotency and ordering handled at the transport.",
+    "tags": [],
+    "togaf-phases": [
+      "Phase C"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "application-migration",
+    "category": "Uncategorized",
+    "description": "Use when planning application migration (rehost/refactor/replatform) \u00e2\u20ac\u201d produces an app-migration plan focusing on integration-seams.",
+    "tags": [],
+    "togaf-phases": [
+      "Phase F"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "cloud-migration",
+    "category": "Uncategorized",
+    "description": "Use when planning a cloud migration (6Rs) for a banking workload \u00e2\u20ac\u201d produces a cloud-migration plan grounded in landing-zone constraints.",
+    "tags": [],
+    "togaf-phases": [
+      "Phase D"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "cutover-plan",
+    "category": "Uncategorized",
+    "description": "Use when authoring a cutover plan for a banking release/migration \u00e2\u20ac\u201d produces a cutover-runbook (pre-checks, freeze, go/no-go, hypercare).",
+    "tags": [],
+    "togaf-phases": [
+      "Phase F"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "database-migration",
+    "category": "Uncategorized",
+    "description": "Use when planning a banking database migration (schema, data, cutover, sync) \u00e2\u20ac\u201d produces a DB-migration plan including core-banking data constraints.",
+    "tags": [],
+    "togaf-phases": [
+      "Phase F"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "migration-wave-planning",
+    "category": "Uncategorized",
+    "description": "Use when sequencing banking workloads for migration \u00e2\u20ac\u201d produces a wave plan (dependencies, risk, banking gates).",
+    "tags": [],
+    "togaf-phases": [
+      "Phase F"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "rollback-plan",
+    "category": "Uncategorized",
+    "description": "Use when authoring a rollback plan for a banking release/migration \u00e2\u20ac\u201d produces a rollback-runbook (triggers, steps, data-consistency).",
+    "tags": [],
+    "togaf-phases": [
+      "Phase F"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "impact-analysis",
+    "category": "Uncategorized",
+    "description": "Use when a planned change may ripple across the bank's interdependent estate \u00e2\u20ac\u201d produces an impact-analysis report (blast radius, affected integrations/data/regulatory paths, severity) so the change is sized before it ships.",
+    "tags": [],
+    "togaf-phases": [
+      "Phase F"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "legacy-assessment",
+    "category": "Uncategorized",
+    "description": "Use when deciding the fate of a legacy system in a bank \u00e2\u20ac\u201d produces a legacy-assessment report (health, coupling, regulatory exposure, business value) with a reuse-wrap-replace-retire verdict and its rationale.",
+    "tags": [],
+    "togaf-phases": [
+      "Phase F"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "modernization-roadmap",
+    "category": "Uncategorized",
+    "description": "Use when modernization across the bank needs sequencing across waves \u00e2\u20ac\u201d produces a modernization roadmap (phases/waves, dependencies, value-per-wave) that honors reuse-over-rewrite and the bank's release calendar.",
+    "tags": [],
+    "togaf-phases": [
+      "Phase F"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "refactoring-plan",
+    "category": "Uncategorized",
+    "description": "Use when a legacy/wrapped system needs incremental restructuring, not a rewrite \u00e2\u20ac\u201d produces a refactoring plan (seams to cut, safe steps, the strangler-sequence) that keeps the bank running at every cut.",
+    "tags": [],
+    "togaf-phases": [
+      "Phase F"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "technical-debt",
+    "category": "Uncategorized",
+    "description": "Use when the bank's accumulated shortcuts & aging systems need surfacing \u00e2\u20ac\u201d produces a technical-debt register (debt items with type, interest, principal, risk) and a prioritization that funds the right paydown.",
+    "tags": [],
+    "togaf-phases": [
+      "Phase F"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "compliance",
+    "category": "Uncategorized",
+    "description": "Use when verifying an architecture against local rules, ensuring PCI-DSS, CBUAE, NESA, or GDPR regulations are strictly enforced.",
+    "tags": [],
+    "togaf-phases": [
+      "Phase D"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "iam-review",
+    "category": "Uncategorized",
+    "description": "Use when reviewing a banking solution's identity, roles, least-privilege, and federation posture \u00e2\u20ac\u201d produces an IAM review with findings, the UAE identity fabric (UAE Pass/EFR/UAEKYC) treatment, and remediation owners.",
+    "tags": [],
+    "togaf-phases": [
+      "Phase D"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "owasp-review",
+    "category": "Uncategorized",
+    "description": "Use when auditing a banking API or AI-native surface against known vulnerability categories \u00e2\u20ac\u201d produces an OWASP findings report (API Top 10 + LLM Top 10 for AI surfaces) with remediation owners and severity.",
+    "tags": [],
+    "togaf-phases": [
+      "Phase D"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "security-architecture-review",
+    "category": "Uncategorized",
+    "description": "Use when running an end-to-end security review across a banking solution \u00e2\u20ac\u201d produces a security architecture review report synthesizing threat model, OWASP, zero-trust, IAM, and compliance findings with severity, owners, and gate verdicts.",
+    "tags": [],
+    "togaf-phases": [
+      "Phase C"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "threat-model",
+    "category": "Uncategorized",
+    "description": "Use when designing or reviewing a banking component's security posture \u00e2\u20ac\u201d produces a threat model (STRIDE/PASTA, trust boundaries, data-flow) with findings, severities, and mitigation owners.",
+    "tags": [],
+    "togaf-phases": [
+      "Phase D"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "zero-trust",
+    "category": "Uncategorized",
+    "description": "Use when designing the trust posture for a banking estate that no perimeter can hold \u00e2\u20ac\u201d produces a zero-trust design (identity segmentation, mTLS, policy-as-code, micro-perimeters) with the UAE identity fabric and cross-zone posture addressed.",
+    "tags": [],
+    "togaf-phases": [
+      "Phase D"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  },
+  {
+    "name": "orchestrator",
+    "category": "Uncategorized",
+    "description": "Meta-skill: Receives a raw requirement, maps it to the necessary subset of 72 architectural skills, and generates an actionable dependency roadmap (workflow).",
+    "tags": [],
+    "togaf-phases": [
+      "Phase A"
+    ],
+    "bian-domains": [],
+    "regulatory-references": [],
+    "related-skills": [],
+    "usage-count": 0
+  }
+]
