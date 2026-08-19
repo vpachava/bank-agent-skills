@@ -137,6 +137,9 @@ Skills are designed to be invoked sequentially through the structural lifecycle 
 - **[refactoring-plan](modernization/refactoring-plan/SKILL.md)** — `No description provided.` Invoke with: `/refactoring-plan`
 - **[technical-debt](modernization/technical-debt/SKILL.md)** — `No description provided.` Invoke with: `/technical-debt`
 
+### Visual Understanding
+- **[architecture-overview](diagram-templates/project-overview.md)** — `High-level architecture overview`
+
 ### Security
 - **[adversarial-compliance](security/adversarial-compliance/SKILL.md)** — `Red-teaming test suite that attempts to bypass data-residency and compliance guardrails.` Invoke with: `/adversarial-compliance`
 - **[compliance](security/compliance/SKILL.md)** — `Compliance skill` Invoke with: `/compliance`
