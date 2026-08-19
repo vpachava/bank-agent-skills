@@ -30,3 +30,8 @@ classDef iam fill:#cff4fc,stroke:#055160,stroke-width:2px;
 classDef apiGateway fill:#fff3cd,stroke:#664d03,stroke-width:2px;
 classDef cbuaeZone fill:#f8d7da,stroke:#842029,stroke-width:3px,stroke-dasharray: 5 5;
 ```
+
+## Architecture Diagrams
+
+- **[Project Architecture](architecture-overview.svg)** — `High-level project architecture`
+

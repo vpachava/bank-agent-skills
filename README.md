@@ -22,7 +22,11 @@ Skills are designed to be invoked sequentially through the structural lifecycle 
 4. **Platform & Validation (`cloud/`, `devops/`)** -> Ensure continuous quality and readiness. Verify well-architected cloud footprint, CI/CD checks, and release gates.
 5. **Governance Gates & Tracking (`governance/`, `documentation/`)** -> Manage lifecycle status. Present to architecture boards, gate production releases, and continuously maintain RAID logs and risk registers.
 
-## Catalogue
+## Architecture Overview
+
+![Project Architecture](diagram-templates/architecture-overview.svg)
+
+For the detailed Mermaid specification, see [Project Architecture Overview](diagram-templates/project-overview.md).
 
 ### AI & ML Architecture
 - **[ai-ethics-review](ai-ml-architecture/ai-ethics-review/SKILL.md)** — `Ai Ethics Review skill` Invoke with: `/ai-ethics-review`

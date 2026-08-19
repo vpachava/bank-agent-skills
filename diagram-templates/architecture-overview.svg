@@ -1,0 +1,23 @@
+<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
+    <title id="arch-title">Project Architecture Overview</title>
+    <desc id="arch-desc">High-level architecture showing Customer, API Gateway, Payment Hub, Core Banking, CBUAE Clearing, and Security Zone.</desc>
+    <rect width="100%" height="100%" fill="#f5f5f5"/>
+    <!-- Boxes -->
+    <rect x="50" y="50" width="100" height="40" rx="6" fill="white" stroke="#333"/>
+    <text x="100" y="75" font-family="Geist, sans-serif" font-size="12" text-anchor="middle" font-weight="600">Customer</text>
+    
+    <rect x="200" y="50" width="120" height="40" rx="6" fill="#fbb" stroke="#333"/>
+    <text x="260" y="75" font-family="Geist, sans-serif" font-size="12" text-anchor="middle" font-weight="600">API Gateway</text>
+
+    <rect x="200" y="150" width="120" height="40" rx="6" fill="#bbf" stroke="#333"/>
+    <text x="260" y="175" font-family="Geist, sans-serif" font-size="12" text-anchor="middle" font-weight="600">Payment Hub</text>
+
+    <rect x="200" y="250" width="120" height="40" rx="6" fill="#f9f" stroke="#333"/>
+    <text x="260" y="275" font-family="Geist, sans-serif" font-size="12" text-anchor="middle" font-weight="600">Core Banking</text>
+
+    <rect x="400" y="150" width="120" height="40" rx="6" fill="white" stroke="#333"/>
+    <text x="460" y="175" font-family="Geist, sans-serif" font-size="12" text-anchor="middle" font-weight="600">CBUAE Clearing</text>
+
+    <rect x="50" y="150" width="100" height="140" rx="6" fill="#fbf" stroke="#333"/>
+    <text x="100" y="220" font-family="Geist, sans-serif" font-size="12" text-anchor="middle" font-weight="600">Governance</text>
+</svg>
