@@ -18,3 +18,4 @@ Human-Proof Architectural Governance: Architects physically prevented from bypas
 
 ## Not yet specified
 <!-- Fog of war -->
+- Enable diagram-design skill in architecture skills registry for automated visualization generation.
