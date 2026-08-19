@@ -29,6 +29,11 @@ jobs:
              echo "Error: Some diagrams missing artifact_id metadata"
              exit 1
           fi
+          # Ensure they contain the data_sovereignty pattern
+          if find diagram-templates -name "*.md" -exec grep -L "data_sovereignty:" {} + | grep -q .; then
+             echo "Error: Some diagrams missing data_sovereignty metadata"
+             exit 1
+          fi
 
   deploy-docs:
     runs-on: ubuntu-latest
