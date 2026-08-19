@@ -37,15 +37,15 @@ For the detailed Mermaid specification, see [Project Architecture Overview](diag
 - **[rag-patterns](ai-ml-architecture/rag-patterns/SKILL.md)** — `Rag Patterns skill` Invoke with: `/rag-patterns`
 
 ### Architecture
-- **[architecture-decision-records](architecture/architecture-decision-records/SKILL.md)** — `No description provided.` Invoke with: `/architecture-decision-records`
-- **[architecture-review](architecture/architecture-review/SKILL.md)** — `No description provided.` Invoke with: `/architecture-review`
-- **[c4-model](architecture/c4-model/SKILL.md)** — `No description provided.` Invoke with: `/c4-model`
+- **[architecture-decision-records](architecture/architecture-decision-records/SKILL.md)** — `Documents design decisions for retrospective understanding.` Invoke with: `/architecture-decision-records`
+- **[architecture-review](architecture/architecture-review/SKILL.md)** — `Facilitates technical critique of architectural patterns.` Invoke with: `/architecture-review`
+- **[c4-model](architecture/c4-model/SKILL.md)** — `Generates C4 model diagrams for context-level visual clarity.` Invoke with: `/c4-model`
 - **[database-design](architecture/database-design/SKILL.md)** — `Database Design skill` Invoke with: `/database-design`
-- **[deployment-diagrams](architecture/deployment-diagrams/SKILL.md)** — `No description provided.` Invoke with: `/deployment-diagrams`
-- **[hld-generator](architecture/hld-generator/SKILL.md)** — `No description provided.` Invoke with: `/hld-generator`
-- **[lld-generator](architecture/lld-generator/SKILL.md)** — `No description provided.` Invoke with: `/lld-generator`
-- **[nfr-checklist](architecture/nfr-checklist/SKILL.md)** — `No description provided.` Invoke with: `/nfr-checklist`
-- **[sequence-diagrams](architecture/sequence-diagrams/SKILL.md)** — `No description provided.` Invoke with: `/sequence-diagrams`
+- **[deployment-diagrams](architecture/deployment-diagrams/SKILL.md)** — `Visualizes system deployment and infrastructure topology.` Invoke with: `/deployment-diagrams`
+- **[hld-generator](architecture/hld-generator/SKILL.md)** — `Automates high-level design document generation.` Invoke with: `/hld-generator`
+- **[lld-generator](architecture/lld-generator/SKILL.md)** — `Automates low-level design document generation.` Invoke with: `/lld-generator`
+- **[nfr-checklist](architecture/nfr-checklist/SKILL.md)** — `Ensures non-functional requirements are captured.` Invoke with: `/nfr-checklist`
+- **[sequence-diagrams](architecture/sequence-diagrams/SKILL.md)** — `Generates standard ISO20022 and system sequence flows.` Invoke with: `/sequence-diagrams`
 
 ### Business Architecture
 - **[business-case-development](business-architecture/business-case-development/SKILL.md)** — `Business Case Development skill` Invoke with: `/business-case-development`
@@ -56,12 +56,12 @@ For the detailed Mermaid specification, see [Project Architecture Overview](diag
 - **[value-stream-design](business-architecture/value-stream-design/SKILL.md)** — `Value Stream Design skill` Invoke with: `/value-stream-design`
 
 ### Cloud
-- **[aws-review](cloud/aws-review/SKILL.md)** — `No description provided.` Invoke with: `/aws-review`
-- **[azure-review](cloud/azure-review/SKILL.md)** — `No description provided.` Invoke with: `/azure-review`
-- **[gcp-review](cloud/gcp-review/SKILL.md)** — `No description provided.` Invoke with: `/gcp-review`
-- **[kubernetes](cloud/kubernetes/SKILL.md)** — `No description provided.` Invoke with: `/kubernetes`
-- **[landing-zone-review](cloud/landing-zone-review/SKILL.md)** — `No description provided.` Invoke with: `/landing-zone-review`
-- **[terraform](cloud/terraform/SKILL.md)** — `No description provided.` Invoke with: `/terraform`
+- **[aws-review](cloud/aws-review/SKILL.md)** — `Evaluates AWS infrastructure against well-architected patterns.` Invoke with: `/aws-review`
+- **[azure-review](cloud/azure-review/SKILL.md)** — `Evaluates Azure infrastructure against cloud adoption framework.` Invoke with: `/azure-review`
+- **[gcp-review](cloud/gcp-review/SKILL.md)** — `Evaluates GCP infrastructure design.` Invoke with: `/gcp-review`
+- **[kubernetes](cloud/kubernetes/SKILL.md)** — `Analyzes K8s cluster configurations and manifest health.` Invoke with: `/kubernetes`
+- **[landing-zone-review](cloud/landing-zone-review/SKILL.md)** — `Assesses multi-account landing zone governance.` Invoke with: `/landing-zone-review`
+- **[terraform](cloud/terraform/SKILL.md)** — `Validates terraform modules and state configuration.` Invoke with: `/terraform`
 
 ### Data Architecture
 - **[data-governance](data-architecture/data-governance/SKILL.md)** — `Data Governance skill` Invoke with: `/data-governance`
@@ -72,56 +72,56 @@ For the detailed Mermaid specification, see [Project Architecture Overview](diag
 - **[master-data-management](data-architecture/master-data-management/SKILL.md)** — `Master Data Management skill` Invoke with: `/master-data-management`
 
 ### Devops
-- **[cicd-review](devops/cicd-review/SKILL.md)** — `No description provided.` Invoke with: `/cicd-review`
+- **[cicd-review](devops/cicd-review/SKILL.md)** — `Audits CI/CD pipeline security and deployment gates.` Invoke with: `/cicd-review`
 - **[finops-strategy](devops/finops-strategy/SKILL.md)** — `Finops Strategy skill` Invoke with: `/finops-strategy`
-- **[observability](devops/observability/SKILL.md)** — `No description provided.` Invoke with: `/observability`
-- **[performance-review](devops/performance-review/SKILL.md)** — `No description provided.` Invoke with: `/performance-review`
-- **[release-readiness](devops/release-readiness/SKILL.md)** — `No description provided.` Invoke with: `/release-readiness`
-- **[sre-review](devops/sre-review/SKILL.md)** — `No description provided.` Invoke with: `/sre-review`
+- **[observability](devops/observability/SKILL.md)** — `Analyzes telemetry collection and alerting thresholds.` Invoke with: `/observability`
+- **[performance-review](devops/performance-review/SKILL.md)** — `Validates capacity planning and latency budgets.` Invoke with: `/performance-review`
+- **[release-readiness](devops/release-readiness/SKILL.md)** — `Checks deployment checklists and stability metrics.` Invoke with: `/release-readiness`
+- **[sre-review](devops/sre-review/SKILL.md)** — `Evaluates site reliability engineering practices.` Invoke with: `/sre-review`
 
 ### Discovery
-- **[business-capability-map](discovery/business-capability-map/SKILL.md)** — `No description provided.` Invoke with: `/business-capability-map`
-- **[gap-analysis](discovery/gap-analysis/SKILL.md)** — `No description provided.` Invoke with: `/gap-analysis`
-- **[requirements-analysis](discovery/requirements-analysis/SKILL.md)** — `No description provided.` Invoke with: `/requirements-analysis`
-- **[solution-options](discovery/solution-options/SKILL.md)** — `No description provided.` Invoke with: `/solution-options`
-- **[stakeholder-workshop](discovery/stakeholder-workshop/SKILL.md)** — `No description provided.` Invoke with: `/stakeholder-workshop`
+- **[business-capability-map](discovery/business-capability-map/SKILL.md)** — `Maps business capabilities to support systems.` Invoke with: `/business-capability-map`
+- **[gap-analysis](discovery/gap-analysis/SKILL.md)** — `Identifies architectural disparities between current and future state.` Invoke with: `/gap-analysis`
+- **[requirements-analysis](discovery/requirements-analysis/SKILL.md)** — `Analyses functional and NFR documentation requirements.` Invoke with: `/requirements-analysis`
+- **[solution-options](discovery/solution-options/SKILL.md)** — `Evaluates competing architectural solution paths.` Invoke with: `/solution-options`
+- **[stakeholder-workshop](discovery/stakeholder-workshop/SKILL.md)** — `Facilitates requirements and vision gathering sessions.` Invoke with: `/stakeholder-workshop`
 
 ### Documentation
-- **[design-document](documentation/design-document/SKILL.md)** — `No description provided.` Invoke with: `/design-document`
-- **[executive-summary](documentation/executive-summary/SKILL.md)** — `No description provided.` Invoke with: `/executive-summary`
-- **[project-charter](documentation/project-charter/SKILL.md)** — `No description provided.` Invoke with: `/project-charter`
-- **[proposal](documentation/proposal/SKILL.md)** — `No description provided.` Invoke with: `/proposal`
-- **[raid-log](documentation/raid-log/SKILL.md)** — `No description provided.` Invoke with: `/raid-log`
-- **[risk-register](documentation/risk-register/SKILL.md)** — `No description provided.` Invoke with: `/risk-register`
+- **[design-document](documentation/design-document/SKILL.md)** — `Generates standard technical design docs.` Invoke with: `/design-document`
+- **[executive-summary](documentation/executive-summary/SKILL.md)** — `Drafts high-level summaries for executive leadership.` Invoke with: `/executive-summary`
+- **[project-charter](documentation/project-charter/SKILL.md)** — `Defines scope, objectives, and stakeholders.` Invoke with: `/project-charter`
+- **[proposal](documentation/proposal/SKILL.md)** — `Creates formal architectural proposal documents.` Invoke with: `/proposal`
+- **[raid-log](documentation/raid-log/SKILL.md)** — `Manages risks, assumptions, issues, and dependencies.` Invoke with: `/raid-log`
+- **[risk-register](documentation/risk-register/SKILL.md)** — `Tracks and maps architectural risks and mitigation.` Invoke with: `/risk-register`
 
 ### Governance
 - **[ai-governance](governance/ai-governance/SKILL.md)** — `Ai Governance skill` Invoke with: `/ai-governance`
 - **[ai-model-governance](governance/ai-model-governance/SKILL.md)** — `Ai Model Governance skill` Invoke with: `/ai-model-governance`
-- **[architecture-board](governance/architecture-board/SKILL.md)** — `No description provided.` Invoke with: `/architecture-board`
+- **[architecture-board](governance/architecture-board/SKILL.md)** — `Supports architecture board review preparation.` Invoke with: `/architecture-board`
 - **[cross-domain-impact-assessment](governance/cross-domain-impact-assessment/SKILL.md)** — `Evaluates proposed architectural changes across business, data, application, and technology domains to identify cascading dependencies and risks.` Invoke with: `/cross-domain-impact-assessment`
-- **[design-review](governance/design-review/SKILL.md)** — `No description provided.` Invoke with: `/design-review`
-- **[dr-review](governance/dr-review/SKILL.md)** — `No description provided.` Invoke with: `/dr-review`
+- **[design-review](governance/design-review/SKILL.md)** — `Performs structured design reviews.` Invoke with: `/design-review`
+- **[dr-review](governance/dr-review/SKILL.md)** — `Evaluates disaster recovery and business continuity plans.` Invoke with: `/dr-review`
 - **[evidence-gate](governance/evidence-gate/SKILL.md)** — `Tests architectural claims against real project repository state to ensure compliance and prevent hallucination.` Invoke with: `/evidence-gate`
-- **[operational-readiness](governance/operational-readiness/SKILL.md)** — `No description provided.` Invoke with: `/operational-readiness`
-- **[production-readiness](governance/production-readiness/SKILL.md)** — `No description provided.` Invoke with: `/production-readiness`
+- **[operational-readiness](governance/operational-readiness/SKILL.md)** — `Prepares systems for production stability.` Invoke with: `/operational-readiness`
+- **[production-readiness](governance/production-readiness/SKILL.md)** — `Gaurantees production release readiness gates.` Invoke with: `/production-readiness`
 - **[security-nfr-baseline-check](governance/security-nfr-baseline-check/SKILL.md)** — `Security Nfr Baseline Check skill` Invoke with: `/security-nfr-baseline-check`
-- **[solution-review](governance/solution-review/SKILL.md)** — `No description provided.` Invoke with: `/solution-review`
+- **[solution-review](governance/solution-review/SKILL.md)** — `Reviews proposed solutions against business needs.` Invoke with: `/solution-review`
 
 ### Greenfield
-- **[platform-selection](greenfield/platform-selection/SKILL.md)** — `No description provided.` Invoke with: `/platform-selection`
-- **[poc-planning](greenfield/poc-planning/SKILL.md)** — `No description provided.` Invoke with: `/poc-planning`
-- **[reference-architecture](greenfield/reference-architecture/SKILL.md)** — `No description provided.` Invoke with: `/reference-architecture`
-- **[roadmap](greenfield/roadmap/SKILL.md)** — `No description provided.` Invoke with: `/roadmap`
-- **[technology-evaluation](greenfield/technology-evaluation/SKILL.md)** — `No description provided.` Invoke with: `/technology-evaluation`
+- **[platform-selection](greenfield/platform-selection/SKILL.md)** — `Selects cloud platform foundations.` Invoke with: `/platform-selection`
+- **[poc-planning](greenfield/poc-planning/SKILL.md)** — `Designs proof-of-concept success criteria.` Invoke with: `/poc-planning`
+- **[reference-architecture](greenfield/reference-architecture/SKILL.md)** — `Defines standard reference architectures.` Invoke with: `/reference-architecture`
+- **[roadmap](greenfield/roadmap/SKILL.md)** — `Creates delivery roadmaps.` Invoke with: `/roadmap`
+- **[technology-evaluation](greenfield/technology-evaluation/SKILL.md)** — `Evaluates new technology stacks.` Invoke with: `/technology-evaluation`
 
 ### Integration
 - **[api-design](integration/api-design/SKILL.md)** — `Api Design skill` Invoke with: `/api-design`
-- **[data-sync](integration/data-sync/SKILL.md)** — `No description provided.` Invoke with: `/data-sync`
-- **[etl](integration/etl/SKILL.md)** — `No description provided.` Invoke with: `/etl`
-- **[event-driven](integration/event-driven/SKILL.md)** — `No description provided.` Invoke with: `/event-driven`
+- **[data-sync](integration/data-sync/SKILL.md)** — `Designs data synchronization patterns.` Invoke with: `/data-sync`
+- **[etl](integration/etl/SKILL.md)** — `Defines extract-transform-load strategies.` Invoke with: `/etl`
+- **[event-driven](integration/event-driven/SKILL.md)** — `Outlines event-driven messaging patterns.` Invoke with: `/event-driven`
 - **[idempotent-api](integration/idempotent-api/SKILL.md)** — `Idempotent Api skill` Invoke with: `/idempotent-api`
-- **[integration-patterns](integration/integration-patterns/SKILL.md)** — `No description provided.` Invoke with: `/integration-patterns`
-- **[messaging](integration/messaging/SKILL.md)** — `No description provided.` Invoke with: `/messaging`
+- **[integration-patterns](integration/integration-patterns/SKILL.md)** — `Specifies enterprise integration patterns.` Invoke with: `/integration-patterns`
+- **[messaging](integration/messaging/SKILL.md)** — `Designs reliable messaging infrastructure.` Invoke with: `/messaging`
 
 ### Internal Utilities
 - **[tdd-documentation](.claude/tdd-documentation/SKILL.md)** — `Use when authoring or refactoring skills (SKILL.md) to ensure disciplined, TDD-based construction.` Invoke with: `/tdd-documentation`
