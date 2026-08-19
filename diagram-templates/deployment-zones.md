@@ -43,3 +43,5 @@ flowchart LR
   Data:::cbuaeZone
   Governance:::cbuaeZone
 ```
+
+%% data_sovereignty: onshore %%

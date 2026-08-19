@@ -38,3 +38,5 @@ sequenceDiagram
     PH-->>GW: Payment Status: SUCCESS
     GW-->>Cust: Transfer Receipt
 ```
+
+%% data_sovereignty: onshore %%

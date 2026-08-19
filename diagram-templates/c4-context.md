@@ -31,3 +31,5 @@ C4Context
   Rel(payment_hub, core_banking, "Posts transactions", "Kafka/gRPC")
   Rel(payment_hub, cbuae, "Clears domestic transfers", "SFTP/ISO20022")
 ```
+
+%% data_sovereignty: onshore %%

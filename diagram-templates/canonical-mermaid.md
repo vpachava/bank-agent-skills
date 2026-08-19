@@ -20,3 +20,5 @@ flowchart TD
   I[IAM]:::iam
   A[API Gateway]:::apiGateway
 ```
+
+%% data_sovereignty: onshore %%
