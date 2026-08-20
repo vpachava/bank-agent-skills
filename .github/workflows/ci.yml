@@ -34,6 +34,9 @@ jobs:
              echo "Error: Some diagrams missing data_sovereignty metadata"
              exit 1
           fi
+      - name: Run Staleness Check
+        run: |
+          python3 governance/scripts/staleness-detector.py .
 
   deploy-docs:
     runs-on: ubuntu-latest
