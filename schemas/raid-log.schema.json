@@ -1,0 +1,24 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "artifact_id": { "type": "string" },
+    "raid_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "id": { "type": "string" },
+          "type": { "enum": ["R", "A", "I", "D"] },
+          "description": { "type": "string" },
+          "severity": { "type": "number" },
+          "owner": { "type": "string" },
+          "status": { "type": "string" },
+          "mitigation": { "type": "string" }
+        },
+        "required": ["id", "type", "description"]
+      }
+    }
+  },
+  "required": ["artifact_id", "raid_items"]
+}
