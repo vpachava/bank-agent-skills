@@ -4,7 +4,7 @@ Welcome to the comprehensive skills library for UAE retail-bank solution archite
 
 ## What is this library?
 
-This library is a collection of 91 concrete, executable skills. Unlike static reference documentation, these are **active processes**. Each skill is invoked as a slash command (e.g., `/threat-model`) which triggers an interactive assessment or generation process.
+This library is a collection of 92 concrete, executable skills. Unlike static reference documentation, these are **active processes**. Each skill is invoked as a slash command (e.g., `/threat-model`) which triggers an interactive assessment or generation process.
 
 Each skill features:
 - **Embedded Checklists & Pitfalls:** Banking-specific and UAE-specific constraints, common anti-patterns, and step-by-step checklists.
@@ -106,6 +106,7 @@ For the detailed Mermaid specification, see [Project Architecture Overview](diag
 - **[production-readiness](governance/production-readiness/SKILL.md)** — `Gaurantees production release readiness gates.` Invoke with: `/production-readiness`
 - **[security-nfr-baseline-check](governance/security-nfr-baseline-check/SKILL.md)** — `Security Nfr Baseline Check skill` Invoke with: `/security-nfr-baseline-check`
 - **[solution-review](governance/solution-review/SKILL.md)** — `Reviews proposed solutions against business needs.` Invoke with: `/solution-review`
+- **[staleness-detector](governance/staleness-detector/SKILL.md)** — `Detects aging architectural handoff artifacts.` Invoke with: `/staleness-detector`
 
 ### Greenfield
 - **[platform-selection](greenfield/platform-selection/SKILL.md)** — `Selects cloud platform foundations.` Invoke with: `/platform-selection`
