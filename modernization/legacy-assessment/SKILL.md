@@ -53,14 +53,8 @@ Use before any modernization decision â€” to decide a legacy system's fate 
 - **Retire overlooked** â€” systems kept alive because nobody dare question them; a "retire / fold elsewhere" verdict is sometimes the highest-value finding and easiest to miss.
 - **Verdict without rationale / owning ADR** â€” a Reuse/Wrap/Replace call with no rationale is reversed in six months because the reasoning left with the team.
 
-## Bulletproofing against Rationalization
-To prevent this skill from being applied as superficial box-ticking, you MUST:
-
-1. **Mandatory Explicit Verification:** You CANNOT assume compliance. You MUST explicitly verify that the output of legacy-assessment meets all regulatory, security, and enterprise standards.
-2. **Mandatory Accountability:** Every output artifact MUST clearly trace back to an identified business requirement, NFR, or technical constraint without ambiguity.
-3. **No Unjustified Exemptions:** Any deviation from the standard architecture patterns MUST be explicitly documented as a critical risk and formally accepted.
-
-**Violating these rules invalidates the legacy-assessment process.**
+## Bulletproofing
+- **Governance Policy:** Enforce [CBUAE Rulebook](governance/policy/regulations.yaml#CBUAE), [PDPL](governance/policy/regulations.yaml#PDPL), and [PCI-DSS](governance/policy/regulations.yaml#PCI-DSS) where applicable.
 
 ## Outputs
 - **Legacy-assessment report** â€” multi-axis health, coupling map, regulatory exposure, value & criticality, modernization-potential score.

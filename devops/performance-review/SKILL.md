@@ -40,14 +40,8 @@ Use to mathematically prove that a banking service can handle the required busin
 - **Capacity-forecasting-blindness** â€” Not modeling the *growth* over 12/24 months, leaving the platform prone to early-life performance-failures.
 - **Latency-as-average** â€” Optimizing for *average* performance while ignoring the p99-tails that cause poor user-experience for banking-customers.
 
-## Bulletproofing against Rationalization
-To prevent this skill from being applied as superficial box-ticking, you MUST:
-
-1. **Mandatory Explicit Verification:** You CANNOT assume compliance. You MUST explicitly verify that the output of performance-review meets all regulatory, security, and enterprise standards.
-2. **Mandatory Accountability:** Every output artifact MUST clearly trace back to an identified business requirement, NFR, or technical constraint without ambiguity.
-3. **No Unjustified Exemptions:** Any deviation from the standard architecture patterns MUST be explicitly documented as a critical risk and formally accepted.
-
-**Violating these rules invalidates the performance-review process.**
+## Bulletproofing
+- **Governance Policy:** Enforce [CBUAE Rulebook](governance/policy/regulations.yaml#CBUAE), [PDPL](governance/policy/regulations.yaml#PDPL), and [PCI-DSS](governance/policy/regulations.yaml#PCI-DSS) where applicable.
 
 ## Outputs
 - **Performance-evaluation report** â€” Analysis of load-results and test-setup.

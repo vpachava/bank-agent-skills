@@ -33,21 +33,11 @@ Use for the formal, peer-reviewed evaluation of a proposed banking solution *bef
 3. **Draft-Review-Report.** Document findings clearly, including mandatory-revisions.
 4. **Issue-Verdict.** Pass, Conditional-Pass, or Fail.
 
-## Bulletproofing against Rationalization
-- **Compliance-Blindness** â€” Analyzing *only* the technical-design (e.g. "Kubernetes-config") while ignoring that the *data-flow* violates CBUAE-data-residency-policy.
-- **"The-Integration-Black-Box"** â€” Reviewing a modern-app design while ignoring the *massive-integration-risk* into the legacy-core-mainframe.
-- **Omitting-NFRs** â€” Reviewing functionality while forgetting to ask: "Does this scale to the 300% peak-load required for Salary-Cycles?"
-- **Reviewer-Groupthink** â€” Not ensuring the review includes representatives from Security, Data-Governance, and Infrastructure, creating a false sense of architectural-soundness.
+## Bulletproofing
+- **Governance Policy:** Enforce [CBUAE Rulebook](governance/policy/regulations.yaml#CBUAE), [PDPL](governance/policy/regulations.yaml#PDPL), and [PCI-DSS](governance/policy/regulations.yaml#PCI-DSS) where applicable.
 
-## Bulletproofing against Rationalization
-To prevent broken architectures from being forced into production, you MUST:
-
-1. **Mandatory LLD vs Code Traversal:** A Solution Review doesn't evaluate if the solution "looks okay"; it strictly evaluates if the built code/configuration matches the approved LLD. Implementations that diverge from LLD without an ADR are failed.
-2. **NFR Completion Evidence:** You CANNOT accept "it passed testing" as proof for NFRs. Solutions MUST provide the actual performance/load reporting metrics matched against the initial NFR requirements.
-3. **Mandatory Security/Compliance Review Gate:** Solutions MUST possess explicit sign-off from InfoSec and Compliance before Solution Review concludes.
-4. **Defect Tolerance Limits:** "Go Live with Critical/High defects" is strictly forbidden unless authorized by formal executive risk acceptance.
-
-**Violating these rules invalidates the Solution Review.**
+## Bulletproofing
+- **Governance Policy:** Enforce [CBUAE Rulebook](governance/policy/regulations.yaml#CBUAE), [PDPL](governance/policy/regulations.yaml#PDPL), and [PCI-DSS](governance/policy/regulations.yaml#PCI-DSS) where applicable.
 
 ## Outputs
 - **Formal review-report (verdict-anchored)** â€” The "go/no-go" for the design.
@@ -79,10 +69,8 @@ To prevent broken architectures from being forced into production, you MUST:
 - **Sample Outcome:** "Design: Profit-distribution calculation encapsulated; [[api-design]] schema includes mandatory Sharia-compliance flag."
 - **Common Pitfall:** Applying standard interest-based loan models to Islamic products, violating compliance.
 
-### Regulatory References
-1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
-2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
-3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+## Bulletproofing
+- **Governance Policy:** Enforce [CBUAE Rulebook](governance/policy/regulations.yaml#CBUAE), [PDPL](governance/policy/regulations.yaml#PDPL), and [PCI-DSS](governance/policy/regulations.yaml#PCI-DSS) where applicable.
 
 ## Anti-patterns
 - **Approving solutions without verifying the core team's capability**

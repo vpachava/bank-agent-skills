@@ -1,8 +1,8 @@
 ﻿---
 name: c4-model
 owner: Solution Architecture
-version: 0.1.0
-last-reviewed: 2026-08-08
+version: 0.2.0
+last-reviewed: 2026-08-20
 description: "Use when a banking solution needs visual structure â€” produces the C4 views (context/container/component) as explorable diagrams via /archify, banking-conventions applied (legacy-core band, residency perimeter, regulated gates)."
 required-inputs:
   - System or component to model
@@ -13,6 +13,7 @@ expected-deliverables:
   - C4 context diagram
   - C4 container diagram (and component, if requested)
   - Banking annotations: legacy-core band, residency perimeter, regulated-gate markers
+  - Handoff Data: {"artifact_id": "...", "timestamp": "...", "skill_name": "c4-model", "evidence_links": [...] }
 togaf-phases: [Phase C]
 togaf-artifacts: [HLD]
 bian-service-domains: [Integration.API]
@@ -96,10 +97,8 @@ To prevent unreadable diagrams and the omission of critical banking context, you
 - **Sample Outcome:** "Design: Profit-distribution calculation encapsulated; [[api-design]] schema includes mandatory Sharia-compliance flag."
 - **Common Pitfall:** Applying standard interest-based loan models to Islamic products, violating compliance.
 
-### Regulatory References
-1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
-2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
-3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+## Bulletproofing
+- **Governance Policy:** Enforce [CBUAE Rulebook](governance/policy/regulations.yaml#CBUAE), [PDPL](governance/policy/regulations.yaml#PDPL), and [PCI-DSS](governance/policy/regulations.yaml#PCI-DSS) where applicable.
 
 ## Anti-patterns
 - **Mixing abstractions across different C4 levels**

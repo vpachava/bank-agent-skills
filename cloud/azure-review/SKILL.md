@@ -83,18 +83,6 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - **Sample Outcome:** "Governance Check Passed: Defender for Cloud integrated with central SIEM; audit logs secured."
 - **Common Pitfall:** Treating Defender as a standalone portal; if alerts are not pushed to the enterprise SOC, security analysts may miss targeted attacks on the rates-API, bypassing the bank's central security-operations capability.
 
-### Regulatory References
-1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
-2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
-3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
-## Anti-patterns
-- **Exposing Azure SQL database or Storage services directly using public endpoints**
-  - **Consequence:** Security vulnerabilities and exposure to brute force attacks on database credentials.
-  - **Correct Approach:** Enforce Azure Private Endpoints (Private Link) to route data traffic strictly over internal VNets.
-- **Granting broad Owner/Contributor permissions at subscription level instead of custom RBAC**
-  - **Consequence:** Operational mistakes, accidental deletion of resource groups, and security compromise.
-  - **Correct Approach:** Implement the principle of least privilege using Azure Active Directory (Entra ID) and custom RBAC scopes.
-- **Ignoring Azure cross-region PII data movement boundaries**
-  - **Consequence:** Unintentional storage of customer records in European/American datacenters, violating UAE data privacy laws.
-  - **Correct Approach:** Restrict Azure Policy to enforce resources and geo-redundancies to reside exclusively within UAE North.
+## Bulletproofing
+- **Governance Policy:** Enforce [CBUAE Rulebook](governance/policy/regulations.yaml#CBUAE), [PDPL](governance/policy/regulations.yaml#PDPL), and [PCI-DSS](governance/policy/regulations.yaml#PCI-DSS) where applicable.

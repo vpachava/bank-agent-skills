@@ -59,10 +59,8 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - [project-charter](../project-charter/SKILL.md)
 - [risk-register](../risk-register/SKILL.md)
 
-### Regulatory References
-1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
-2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
-3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+## Bulletproofing
+- **Governance Policy:** Enforce [CBUAE Rulebook](governance/policy/regulations.yaml#CBUAE), [PDPL](governance/policy/regulations.yaml#PDPL), and [PCI-DSS](governance/policy/regulations.yaml#PCI-DSS) where applicable.
 
 ## Anti-patterns
 - **Overloading the summary with deep technical jargon and acronyms**

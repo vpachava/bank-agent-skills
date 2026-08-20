@@ -41,14 +41,8 @@ Use when you have a nascent idea or mandated initiative and need to formally pit
 - **Regulatory blindness** â€” Proposing an initiative that is blocked by CBUAE/DIFC policy that isn't highlighted as a constraint.
 - **Underestimating integration-depth** â€” Assuming the "new" app integrates easily with 20-year-old mainframe legacy codebases.
 
-## Bulletproofing against Rationalization
-To prevent this skill from being applied as superficial box-ticking, you MUST:
-
-1. **Mandatory Explicit Verification:** You CANNOT assume compliance. You MUST explicitly verify that the output of proposal meets all regulatory, security, and enterprise standards.
-2. **Mandatory Accountability:** Every output artifact MUST clearly trace back to an identified business requirement, NFR, or technical constraint without ambiguity.
-3. **No Unjustified Exemptions:** Any deviation from the standard architecture patterns MUST be explicitly documented as a critical risk and formally accepted.
-
-**Violating these rules invalidates the proposal process.**
+## Bulletproofing
+- **Governance Policy:** Enforce [CBUAE Rulebook](governance/policy/regulations.yaml#CBUAE), [PDPL](governance/policy/regulations.yaml#PDPL), and [PCI-DSS](governance/policy/regulations.yaml#PCI-DSS) where applicable.
 
 ## Outputs
 - **Project proposal document** â€” The pitch-deck or document for executive-approval.

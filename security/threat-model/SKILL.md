@@ -106,10 +106,8 @@ To prevent threat models from becoming compliance theater, you MUST:
 - **Architecture Lens Check:** Identify spoofing/tampering threats affecting the `Internal Sharia Governance Board` workflow sign-off, which relies on a deterministic internal ledger.
 - **Sample Outcome:** "Spoofing Threat: [Repudiation] - Sharia Board signature spoofed via service-account compromise. Remediation: Implement dual-sign-off mandate using non-repudiable biometric signing from Sharia Board members."
 - **Common Pitfall:** Assuming internal Service Account identities for Sharia Board sign-off are structurally secure, thereby failing to model the elevation of privilege risk when those accounts are compromised.
-### Regulatory References
-1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
-2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
-3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+## Bulletproofing
+- **Governance Policy:** Enforce [CBUAE Rulebook](governance/policy/regulations.yaml#CBUAE), [PDPL](governance/policy/regulations.yaml#PDPL), and [PCI-DSS](governance/policy/regulations.yaml#PCI-DSS) where applicable.
 
 ## Anti-patterns
 - **Conducting threat modeling exercises at the very end of the software development lifecycle**

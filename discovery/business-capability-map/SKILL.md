@@ -48,15 +48,8 @@ Use when you need a shared, structured picture of *what the bank does* â€” 
 
 7. **Tie back to initiative scope & success.** Re-scope the map to the initiative; a full-bank map divorced from a decision is reference material, not a discovery artifact.
 
-## Bulletproofing against Rationalization
-To prevent abstract map-generation and detached capability siloing without measurable context, you MUST:
-
-1. **Mandatory System Realization Mapping:** A BIAN Service Domain plotted WITHOUT naming the legacy core module, SaaS, or microservice that currently realizes it is an invalid mapping. You must trace to execution.
-2. **Mandatory Disavowal of Theoretical Maturity:** The heat-map MUST score maturity based on operational reality, not theoretical platform potential. If the feature exists but operations cannot use it, maturity is Amber/Red.
-3. **Mandatory Depth Limitations:** Explicitly justify any mapping traversing beneath Area->Domain; mapping abstract capabilities below Domain without a targeted modernization or investment initiative is forbidden overhead.
-4. **Duplication Penalty Mandate:** Where multiple systems map to a singular Service Domain, it MUST trigger a duplication alert in the heatmap.
-
-**Violating these rules invalidates the Business Capability Map.**
+## Bulletproofing
+- **Governance Policy:** Enforce [CBUAE Rulebook](governance/policy/regulations.yaml#CBUAE), [PDPL](governance/policy/regulations.yaml#PDPL), and [PCI-DSS](governance/policy/regulations.yaml#PCI-DSS) where applicable.
 
 ## Banking pitfalls
 - **Aspirational BIAN compliance** â€” mapping all 322 service domains because the framework exists, when the bank only realistically decomposes a subset. Score fit-gap, not "BIAN compliance."
@@ -101,10 +94,8 @@ To prevent abstract map-generation and detached capability siloing without measu
 - **UAE Context:** Requires integration with a `Sharia Governance Board` service domain for product certification.
 - **Common Pitfall:** Treating Sharia-compliant lending as a generic loan process. It differs significantly in the `Amortization Schedule` and `Interest-Equivalent Calculation` capabilities.
 
-### Regulatory References
-1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
-2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
-3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+## Regulatory References
+- **Governance Policy:** Enforce [CBUAE Rulebook](governance/policy/regulations.yaml#CBUAE), [PDPL](governance/policy/regulations.yaml#PDPL), and [PCI-DSS](governance/policy/regulations.yaml#PCI-DSS) where applicable.
 
 ## Anti-patterns
 - **Conflating technical components or systems with business capabilities**
@@ -115,4 +106,4 @@ To prevent abstract map-generation and detached capability siloing without measu
   - **Correct Approach:** Design the map in collaborative workshops with business unit leaders and analysts.
 - **Failing to link capability definitions with regulatory controls**
   - **Consequence:** System gaps that violate compliance rules.
-  - **Correct Approach:** Map regulatory requirements (CBUAE, PDPL) directly to affected capabilities in the taxonomy.
+  - **Correct Approach:** Map regulatory requirements (CBUAE, PDPL, PCI-DSS) directly to affected capabilities in the taxonomy.

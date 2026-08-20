@@ -41,14 +41,8 @@ Use for the formal start of a project. The charter provides the PM/Sponsor autho
 - **Decision-Rights-Ambiguity** â€” Leaving it unclear if the "Architectural-Governing-Board" or the "Local-Product-Owner" has the final say on architectural-decisions.
 - **Assuming Authorization** â€” Believing the project is "authorized" just because a VP mentioned it in a meeting, without a signed charter for the PM.
 
-## Bulletproofing against Rationalization
-To prevent this skill from being applied as superficial box-ticking, you MUST:
-
-1. **Mandatory Explicit Verification:** You CANNOT assume compliance. You MUST explicitly verify that the output of project-charter meets all regulatory, security, and enterprise standards.
-2. **Mandatory Accountability:** Every output artifact MUST clearly trace back to an identified business requirement, NFR, or technical constraint without ambiguity.
-3. **No Unjustified Exemptions:** Any deviation from the standard architecture patterns MUST be explicitly documented as a critical risk and formally accepted.
-
-**Violating these rules invalidates the project-charter process.**
+## Bulletproofing
+- **Governance Policy:** Enforce [CBUAE Rulebook](governance/policy/regulations.yaml#CBUAE), [PDPL](governance/policy/regulations.yaml#PDPL), and [PCI-DSS](governance/policy/regulations.yaml#PCI-DSS) where applicable.
 
 ## Outputs
 - **Formal project-charter document** â€” The authorization-document.

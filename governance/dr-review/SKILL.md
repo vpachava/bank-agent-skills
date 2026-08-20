@@ -34,11 +34,8 @@ Use to validate the robustness of the bank's ability to survive catastrophic fai
 4. **Validation-Testing.** Review the *evidence* of the last formal-DR-test.
 5. **Issue-Report.** Clearly catalog gaps in resilience.
 
-## Bulletproofing against Rationalization
-- **RPO/RTO "Dreaming"** â€” Committing to an RTO of "seconds" for a mainframe-core that only supports daily-batch-sync (mathematically-impossible-goal).
-- **Silent-DR-Replication-Failures** â€” Relying on cross-region-replication that hasn't successfully-synced in days, without *alerting* the support-team of the drift.
-- **Failover-Authority-Confusion** â€” Having a service-failover that *can* be triggered by anyone, leading to accidental-triggers (operator-error), or conversely, requiring an executive-signoff-chain that makes the failover too-slow.
-- **Data-Residency-DR-Trap** â€” Failing over to a DR-site in a *different country/jurisdiction*, unknowingly violating PDPL or CBUAE-data-residency-compliance-policy.
+## Bulletproofing
+- **Governance Policy:** Enforce [CBUAE Rulebook](governance/policy/regulations.yaml#CBUAE), [PDPL](governance/policy/regulations.yaml#PDPL), and [PCI-DSS](governance/policy/regulations.yaml#PCI-DSS) where applicable.
 
 ## Bulletproofing against Rationalization
 To prevent theoretical Disaster Recovery architectures that collapse in production, you MUST:

@@ -56,17 +56,8 @@ Use when the message *transport* itself is the design question â€” queue vs
 - **Replay assumed safe** â€” re-delivering messages to side-effecting consumers duplicates the side-effect; only idempotent consumers are safely replayable, and that's a consumer-design constraint, not a transport one.
 - **Residency forgotten at the message level** â€” topic region not treated as compliance decision, PII ridden on a cross-region topic that violates residency; treat topic region + PII minimization as one design.
 
-## Bulletproofing against Rationalization
-To prevent message drops and duplicate processing catastrophes, you MUST:
-
-1. **Mandatory Delivery Guarantee Statement:** The design MUST explicitly commit to At-Least-Once, At-Most-Once, or Exactly-Once delivery semantics per queue.
-2. **Idempotent Consumer Requirement:** The consumer logic MUST:
-   a. Require an `idempotency-key` (UUID v4) on the message envelope.
-   b. Explicitly define conflict-resolution strategy (first-wins, last-wins, merge).
-   c. Include a documented rollback procedure for idempotency verification failure.
-3. **Mandatory Poison Pill Handling:** The design MUST document how bad messages are quarantined without blocking the entire queue.
-
-**Violating these rules invalidates the Messaging Design.**
+## Bulletproofing
+- **Governance Policy:** Enforce [CBUAE Rulebook](governance/policy/regulations.yaml#CBUAE), [PDPL](governance/policy/regulations.yaml#PDPL), and [PCI-DSS](governance/policy/regulations.yaml#PCI-DSS) where applicable.
 
 ## Outputs
 - **Messaging topology** â€” queues vs topics/streams, subscriptions, partitioning-per-flow with the ordering-invariant key.

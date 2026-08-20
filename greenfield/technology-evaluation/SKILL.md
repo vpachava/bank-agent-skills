@@ -51,14 +51,8 @@ Use when a delivery team wants to introduce a new technology, service, or compon
 - **Security-blind evaluation** â€” component is functional, but lacks the bank-appropriate IAM integration, auditability, or data-protection compliance.
 - **Skill-gap failure** â€” introducing a tech the bank ops/dev team cannot actually operate.
 
-## Bulletproofing against Rationalization
-To prevent this skill from being applied as superficial box-ticking, you MUST:
-
-1. **Mandatory Explicit Verification:** You CANNOT assume compliance. You MUST explicitly verify that the output of technology-evaluation meets all regulatory, security, and enterprise standards.
-2. **Mandatory Accountability:** Every output artifact MUST clearly trace back to an identified business requirement, NFR, or technical constraint without ambiguity.
-3. **No Unjustified Exemptions:** Any deviation from the standard architecture patterns MUST be explicitly documented as a critical risk and formally accepted.
-
-**Violating these rules invalidates the technology-evaluation process.**
+## Bulletproofing
+- **Governance Policy:** Enforce [CBUAE Rulebook](governance/policy/regulations.yaml#CBUAE), [PDPL](governance/policy/regulations.yaml#PDPL), and [PCI-DSS](governance/policy/regulations.yaml#PCI-DSS) where applicable.
 
 ## Outputs
 - **Technology evaluation report** â€” summary of the evaluation, candidate, decision rationale, risk-register items.
@@ -70,10 +64,8 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - [platform-selection](../platform-selection/SKILL.md) â€” higher-level decision than a single component.
 - [technical-debt](../../modernization/technical-debt/SKILL.md) â€” how to manage the lifecycle of technologies after they are introduced.
 
-### Regulatory References
-1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
-2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
-3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+## Regulatory References
+- See ## Bulletproofing.
 
 ## Anti-patterns
 - **Evaluating tools based completely on "Hello World" or optimal-path demos**

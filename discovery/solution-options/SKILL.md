@@ -80,10 +80,8 @@ To prevent skewed analysis masking pre-ordained choices, you MUST:
 - [technology-evaluation](../../greenfield/technology-evaluation/SKILL.md) â€” for an option that needs a deeper single-tech eval.
 - [risk-register](../../documentation/risk-register/SKILL.md) â€” the per-option risks land here as the initiative proceeds.
 
-### Regulatory References
-1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
-2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
-3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+## Bulletproofing
+- **Governance Policy:** Enforce [CBUAE Rulebook](governance/policy/regulations.yaml#CBUAE), [PDPL](governance/policy/regulations.yaml#PDPL), and [PCI-DSS](governance/policy/regulations.yaml#PCI-DSS) where applicable.
 
 ## Anti-patterns
 - **Recommending a single solution without presenting alternative options**

@@ -98,10 +98,8 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - **Sample Outcome:** "Impact Analysis: Critical. Withdrawal invalidates AECB submission. Action: Cannot proceed until AECB-submission logic is migrated to a new stable event-sink."
 - **Common Pitfall:** Assuming the event is "unused" by the legacy system, missing its crucial business role in generating regulatory data, inevitably leading to a regulatory breach.
 
-### Regulatory References
-1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
-2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
-3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+## Bulletproofing
+- **Governance Policy:** Enforce [CBUAE Rulebook](governance/policy/regulations.yaml#CBUAE), [PDPL](governance/policy/regulations.yaml#PDPL), and [PCI-DSS](governance/policy/regulations.yaml#PCI-DSS) where applicable.
 
 ## Anti-patterns
 - **Analyzing downstream dependencies while ignoring upstream consuming systems**

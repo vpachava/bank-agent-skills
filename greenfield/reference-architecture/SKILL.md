@@ -51,14 +51,8 @@ Use to establish the authoritative "blueprint" for a specific banking business d
 - **Ignoring the "Multi-cloud tax"** â€” presenting a multi-cloud design without accounting for the cost, management overhead, and skill-sprawl of running AWS/Azure/Oracle concurrently.
 - **Static blueprint** â€” Failing to include the evolutionary path for the design (e.g., how the Oracle core is strangled over time).
 
-## Bulletproofing against Rationalization
-To prevent this skill from being applied as superficial box-ticking, you MUST:
-
-1. **Mandatory Explicit Verification:** You CANNOT assume compliance. You MUST explicitly verify that the output of reference-architecture meets all regulatory, security, and enterprise standards.
-2. **Mandatory Accountability:** Every output artifact MUST clearly trace back to an identified business requirement, NFR, or technical constraint without ambiguity.
-3. **No Unjustified Exemptions:** Any deviation from the standard architecture patterns MUST be explicitly documented as a critical risk and formally accepted.
-
-**Violating these rules invalidates the reference-architecture process.**
+## Bulletproofing
+- **Governance Policy:** Enforce [CBUAE Rulebook](governance/policy/regulations.yaml#CBUAE), [PDPL](governance/policy/regulations.yaml#PDPL), and [PCI-DSS](governance/policy/regulations.yaml#PCI-DSS) where applicable.
 
 ## Outputs
 - **Reference architecture document** â€” the authoritative HLD.

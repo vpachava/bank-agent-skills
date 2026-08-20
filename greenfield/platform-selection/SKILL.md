@@ -53,14 +53,8 @@ Use during the greenfield initiative-scoping phase to rigorously evaluate potent
 - **Ignoring the integration-tax** â€” cost of integration with on-prem Oracle core or OCI-hosted Exadata Cloud at Customer is usually the dominant cost driver.
 - **Multi-cloud tax invisibility** â€” failing to account for the cost of maintaining multi-cloud security tooling, connectivity, and IAM sprawl.
 
-## Bulletproofing against Rationalization
-To prevent this skill from being applied as superficial box-ticking, you MUST:
-
-1. **Mandatory Explicit Verification:** You CANNOT assume compliance. You MUST explicitly verify that the output of platform-selection meets all regulatory, security, and enterprise standards.
-2. **Mandatory Accountability:** Every output artifact MUST clearly trace back to an identified business requirement, NFR, or technical constraint without ambiguity.
-3. **No Unjustified Exemptions:** Any deviation from the standard architecture patterns MUST be explicitly documented as a critical risk and formally accepted.
-
-**Violating these rules invalidates the platform-selection process.**
+## Bulletproofing
+- **Governance Policy:** Enforce [CBUAE Rulebook](governance/policy/regulations.yaml#CBUAE), [PDPL](governance/policy/regulations.yaml#PDPL), and [PCI-DSS](governance/policy/regulations.yaml#PCI-DSS) where applicable.
 
 ## Outputs
 - **Platform-selection decision document** â€” the verdict, criteria, and weighted decision-matrix.
@@ -73,9 +67,7 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - [modernization-roadmap](../../modernization/modernization-roadmap/SKILL.md) â€” sequencing dependencies on the platform.
 
 ### Regulatory References
-1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
-2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
-3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+None required.
 
 ## Anti-patterns
 - **Selecting platforms based on vendor hype or familiarity without evaluating NFRs**

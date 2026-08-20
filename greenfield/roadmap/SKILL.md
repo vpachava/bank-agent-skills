@@ -46,14 +46,8 @@ Use to define the delivery trajectory for complex banking initiatives, ensuring 
 - **"All-at-once" delivery** â€” attempting a massive transformation instead of the `modernization-roadmap` "wedge-first / strangler-fig" sequencing.
 - **Regulatory debt accumulation** â€” treating "we'll fix the compliance gap in the next phase" as a valid milestone, rather than declaring it as a **Residual Risk** in the RAAD-log and risk-register.
 
-## Bulletproofing against Rationalization
-To prevent this skill from being applied as superficial box-ticking, you MUST:
-
-1. **Mandatory Explicit Verification:** You CANNOT assume compliance. You MUST explicitly verify that the output of roadmap meets all regulatory, security, and enterprise standards.
-2. **Mandatory Accountability:** Every output artifact MUST clearly trace back to an identified business requirement, NFR, or technical constraint without ambiguity.
-3. **No Unjustified Exemptions:** Any deviation from the standard architecture patterns MUST be explicitly documented as a critical risk and formally accepted.
-
-**Violating these rules invalidates the roadmap process.**
+## Bulletproofing
+- **Governance Policy:** Enforce [CBUAE Rulebook](governance/policy/regulations.yaml#CBUAE), [PDPL](governance/policy/regulations.yaml#PDPL), and [PCI-DSS](governance/policy/regulations.yaml#PCI-DSS) where applicable.
 
 ## Outputs
 - **Delivery roadmap document** â€” the phased delivery plan, including banking-specific gates.
@@ -64,11 +58,6 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - [modernization-roadmap](../../modernization/modernization-roadmap/SKILL.md) â€” where this roadmap inherits its sequencing context.
 - [security-architecture-review](../../security/security-architecture-review/SKILL.md) â€” the capstone gate this roadmap tracks.
 - [production-readiness](../../governance/production-readiness/SKILL.md) â€” the milestone this roadmap ultimately targets.
-
-### Regulatory References
-1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
-2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
-3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
 ## Anti-patterns
 - **Plotting long-term roadmaps packed with rigid, unmovable delivery dates**

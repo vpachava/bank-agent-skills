@@ -101,10 +101,8 @@ To prevent endless refactoring without business value, you MUST:
 - **Sample Outcome:** "Step: Dual-publish ledger entries to both monolithic-Sharia-ledger and new-Sharia-Service. Retirement of legacy ledger permitted only after 3 full months of audit-data alignment verified by Sharia Governance."
 - **Common Pitfall:** Not setting a hard retirement date for the legacy ledger path; the bank ends up maintaining two conflicting ledgers indefinitely, destroying the auditability required by Sharia Board standards.
 
-### Regulatory References
-1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
-2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
-3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+## Bulletproofing
+- **Governance Policy:** Enforce [CBUAE Rulebook](governance/policy/regulations.yaml#CBUAE), [PDPL](governance/policy/regulations.yaml#PDPL), and [PCI-DSS](governance/policy/regulations.yaml#PCI-DSS) where applicable.
 
 ## Anti-patterns
 - **Refactoring code structure without having an automated test suite baseline in place**

@@ -80,10 +80,8 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - **Architecture Lens Check:** Detailing the `Sharia-Certification-Gate` within the automated loan origination workflow, modeling it as a deterministic gate in the C4 model.
 - **Sample Outcome:** "Integration Pattern: Workflow transitions paused at `Sharia-Cert` gate, requiring non-repudiable biometric-signature to resume."
 - **Common Pitfall:** Modeling Sharia certification as a 'soft-gate' (optional) or 'notification-task' (event-driven) rather than a deterministic business-rule gate, which fails the audit check for Sharia compliance.
-### Regulatory References
-1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
-2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
-3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+### Bulletproofing
+- **Governance Policy:** Enforce [CBUAE Rulebook](governance/policy/regulations.yaml#CBUAE), [PDPL](governance/policy/regulations.yaml#PDPL), and [PCI-DSS](governance/policy/regulations.yaml#PCI-DSS) where applicable.
 
 ## Anti-patterns
 - **Documenting low-level implementation details that drift daily**

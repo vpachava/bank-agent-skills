@@ -41,14 +41,8 @@ Use for the application-component level of migration, ensuring that functional b
 - **Ignoring "tracing gap"** â€” Application migrated to cloud but log/trace/audit data is missing from the bank's central observability-toolchain, potentially breaking compliance requirements.
 - **Partial cutover fragility** â€” Migration creates a distributed system that spans both legacy/cloud; failing to design for latency and failures in that intermediate hybrid-state.
 
-## Bulletproofing against Rationalization
-To prevent migration chaos causing downtime, you MUST:
-
-1. **Mandatory Cutover Reversibility:** The migration plan MUST contain a rollback script, with explicitly defined RTO limits for executing it.
-2. **Mandatory Dark Launching:** Customer-facing migrations MUST utilize feature flags or traffic shadowing before full cutover.
-3. **Data Parity Evidence:** The plan MUST explicitly define how the legacy and new systems will be mathematically reconciled during the transition.
-
-**Violating these rules invalidates the Application Migration plan.**
+## Bulletproofing
+- **Governance Policy:** Enforce [CBUAE Rulebook](governance/policy/regulations.yaml#CBUAE), [PDPL](governance/policy/regulations.yaml#PDPL), and [PCI-DSS](governance/policy/regulations.yaml#PCI-DSS) where applicable.
 
 ## Outputs
 - **Application migration plan** â€” Phased plan including transition-architecture.
@@ -83,7 +77,8 @@ To prevent migration chaos causing downtime, you MUST:
 ### Regulatory References
 1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
 2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
-3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+3. **PCI-DSS:** Payment Card Industry Data Security Standard
+4. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
 ## Anti-patterns
 - **Attempting "Big Bang" cutovers for large monolithic application portfolios**

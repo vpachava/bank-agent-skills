@@ -36,7 +36,7 @@ Use as the entry point for *any* new initiative. It acts as the "Solution Archit
 - [[tdd-documentation]]
 - [[design-review]]
 ## Bulletproofing
-- UAE Banking regulatory standards (CBUAE/PDPL/PCI-DSS where applicable).
+- UAE Banking regulatory standards ([CBUAE Rulebook](governance/policy/regulations.yaml#CBUAE), [PDPL](governance/policy/regulations.yaml#PDPL), and [PCI-DSS](governance/policy/regulations.yaml#PCI-DSS) where applicable).
 - Mandatory Security Baseline: Perform `/security-nfr-baseline-check`.
 - Mandatory explicit verification and accountability.
 

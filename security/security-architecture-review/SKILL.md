@@ -105,10 +105,8 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - [risk-register](../../documentation/risk-register/SKILL.md) â€” where residual risks land.
 - [architecture-review](../../architecture/architecture-review/SKILL.md) â€” the broader architecture review; this is the security-specific complement.
 
-### Regulatory References
-1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
-2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
-3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+## Bulletproofing
+- **Governance Policy:** Enforce [CBUAE Rulebook](governance/policy/regulations.yaml#CBUAE), [PDPL](governance/policy/regulations.yaml#PDPL), and [PCI-DSS](governance/policy/regulations.yaml#PCI-DSS) where applicable.
 
 ## Anti-patterns
 - **Focusing exclusively on external threats while ignoring insider threats (Zero Trust violation)**

@@ -103,10 +103,8 @@ To prevent data lake swamps and untraceable pipelines, you MUST:
 - **Sample Outcome:** "ETL transformation logic validated against `Sharia-Governance-Book`."
 - **Common Pitfall:** ETL pipeline applying a generic interest-accrual formula instead of the Sharia-compliant profit-rate formula, resulting in non-compliant customer repayment plans.
 
-### Regulatory References
-1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
-2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
-3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+## Bulletproofing
+- **Governance Policy:** Enforce [CBUAE Rulebook](governance/policy/regulations.yaml#CBUAE), [PDPL](governance/policy/regulations.yaml#PDPL), and [PCI-DSS](governance/policy/regulations.yaml#PCI-DSS) where applicable.
 
 ## Anti-patterns
 - **Pulling entire tables daily (full loads) instead of incremental delta updates**

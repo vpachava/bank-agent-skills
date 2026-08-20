@@ -103,10 +103,8 @@ To prevent solution-masked requirements and omitted constraints, you MUST:
 - **UAE Context:** Product description, `Sharia Board Approval`, and `Takaful Insurance` inclusion are non-negotiable functional requirements.
 - **Common Pitfall:** Defining loan requirements as a standard Interest-based product. Missing the mandatory `Sharia Governance` and `Takaful` components makes the product impossible to certify compliant.
 
-### Regulatory References
-1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
-2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
-3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+## Bulletproofing
+- **Governance Policy:** Enforce [CBUAE Rulebook](governance/policy/regulations.yaml#CBUAE), [PDPL](governance/policy/regulations.yaml#PDPL), and [PCI-DSS](governance/policy/regulations.yaml#PCI-DSS) where applicable.
 
 ## Anti-patterns
 - **Eliciting functional features while neglecting non-functional requirements**

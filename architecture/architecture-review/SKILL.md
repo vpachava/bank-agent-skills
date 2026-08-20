@@ -62,14 +62,8 @@ Use before a design reaches the build or board â€” to check fit against sta
 
 6. **Flag what the design *doesn't* yet cover.** Unaddressed risk areas (the open questions, the not-yet-modeled exception paths) are findings of omission, not silence.
 
-## Bulletproofing against Rationalization
-- **Severity inflation** â€” everything "Critical" desensitizes the board and dilutes the genuinely-blocking findings; reserve Critical.
-- **BIAN-compliance scored vs. fit-gap** â€” docking a design for not covering all 322 service domains when the bank runs selective decomposition; score selective-decomposition fit.
-- **Residency not a lens** â€” reviewing a UAE-bank design without the onshore/DIFC/ADGM perimeter as an explicit lens misses the cross-border violation; make it a lens.
-- **Integration seam review skipped** â€” "and the legacy core is integrated" treated as a checkbox rather than reviewed for ACL/strangler-fig/idempotency; findings get weak.
-- **Findings without owners/paths** â€” "improve the observability story" with no owner and no ADR is a finding nobody closes; require a path.
-- **Reuse posture not examined** â€” tacit accepting a big-bang-replace assumption in a design for a bank with a legacy core is a missed Critical; the reuse-vs-replace verdict is a lens.
-- **Review as gatekeeping, not shaping** â€” a review that only says "approve/reject" without shaping the remedy is less useful; a good review names the path to approve.
+## Bulletproofing
+- **Governance Policy:** Enforce [CBUAE Rulebook](governance/policy/regulations.yaml#CBUAE), [PDPL](governance/policy/regulations.yaml#PDPL), and [PCI-DSS](governance/policy/regulations.yaml#PCI-DSS) where applicable.
 
 ## Bulletproofing against Rationalization
 To prevent Architecture reviews from becoming ceremonial overviews, you MUST:

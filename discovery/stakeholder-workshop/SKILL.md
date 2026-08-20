@@ -74,10 +74,8 @@ To prevent decisions without accountability and architectural drifting in a silo
 - [gap-analysis](../gap-analysis/SKILL.md) â€” when the workshop surfaces current-state capability gaps.
 - [raid-log](../../documentation/raid-log/SKILL.md) â€” where the workshop's open threads live as the initiative runs.
 
-### Regulatory References
-1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
-2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
-3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+## Bulletproofing
+- **Governance Policy:** Enforce [CBUAE Rulebook](governance/policy/regulations.yaml#CBUAE), [PDPL](governance/policy/regulations.yaml#PDPL), and [PCI-DSS](governance/policy/regulations.yaml#PCI-DSS) where applicable.
 
 ## Anti-patterns
 - **Running workshops without a designated and empowered decision owner**

@@ -48,6 +48,8 @@ Use after you have both a current-state capability map *and* a target (target ca
 7. **Flag gaps that are actually decisions not yet made.** Some "gaps" are unresolved target-state decisions wearing a gap's clothing; surface them as decisions (`/solution-options`) rather than letting them masquerade as capability holes.
 
 ## Bulletproofing against Rationalization
+- **Governance Policy:** Enforce [CBUAE Rulebook](governance/policy/regulations.yaml#CBUAE), [PDPL](governance/policy/regulations.yaml#PDPL), and [PCI-DSS](governance/policy/regulations.yaml#PCI-DSS) where applicable.
+
 To prevent cosmetic gap classification and effort-bias planning, you MUST:
 
 1. **Mandatory Consequence Scoring:** Severity MUST be derived exclusively from Regulatory Exposure, Strategic Critical-Path adherence, and Risk. If you score severity based on how "big" the effort is to fix, the analysis is rejected.
@@ -77,10 +79,6 @@ To prevent cosmetic gap classification and effort-bias planning, you MUST:
 - [roadmap](../../greenfield/roadmap/SKILL.md) â€” turns the priority view into a phased plan.
 - [legacy-assessment](../../modernization/legacy-assessment/SKILL.md) â€” for gaps on legacy-core capabilities.
 
-### Regulatory References
-1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
-2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
-3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
 
 ## Anti-patterns
 - **Recommending solutions without clarifying the current state baseline**

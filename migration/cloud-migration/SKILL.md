@@ -42,14 +42,8 @@ Use during the planning phase for shifting banking workloads to cloud. Ensures t
 - **Integration-seam breakage** â€” Failing to account for how the migrated workload integrates with non-migrated core-banking systems (latency, security barriers).
 - **Hard-coding residency** â€” Assuming cloud-region availability means residency compliance without validating the specific Azure/AWS/OCI region meets in-country residency rules.
 
-## Bulletproofing against Rationalization
-To prevent this skill from being applied as superficial box-ticking, you MUST:
-
-1. **Mandatory Explicit Verification:** You CANNOT assume compliance. You MUST explicitly verify that the output of cloud-migration meets all regulatory, security, and enterprise standards.
-2. **Mandatory Accountability:** Every output artifact MUST clearly trace back to an identified business requirement, NFR, or technical constraint without ambiguity.
-3. **No Unjustified Exemptions:** Any deviation from the standard architecture patterns MUST be explicitly documented as a critical risk and formally accepted.
-
-**Violating these rules invalidates the cloud-migration process.**
+## Bulletproofing
+- **Governance Policy:** Enforce [CBUAE Rulebook](governance/policy/regulations.yaml#CBUAE), [PDPL](governance/policy/regulations.yaml#PDPL), and [PCI-DSS](governance/policy/regulations.yaml#PCI-DSS) where applicable.
 
 ## Outputs
 - **Cloud migration plan** â€” Phased plan including transition architecture.

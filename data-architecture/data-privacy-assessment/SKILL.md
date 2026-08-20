@@ -33,7 +33,7 @@ When focusing on data privacy assessment.
 - Over-engineering for low-impact workloads.
 
 ## Bulletproofing
-- UAE Banking regulatory standards (CBUAE/PDPL/PCI-DSS where applicable).
+- UAE Banking regulatory standards ([CBUAE Rulebook](governance/policy/regulations.yaml#CBUAE), [PDPL](governance/policy/regulations.yaml#PDPL), and [PCI-DSS](governance/policy/regulations.yaml#PCI-DSS) where applicable).
 
 ## Banking Examples
 - Credit risk assessment improvement.

@@ -36,7 +36,7 @@ When a proposed solution or change spans multiple architectural domains or modif
 - Ignoring downstream data consumer applications during schema changes.
 
 ## Bulletproofing
-- UAE Banking regulatory standards (CBUAE/PDPL/PCI-DSS where applicable).
+- **Governance Policy:** Enforce [CBUAE Rulebook](governance/policy/regulations.yaml#CBUAE), [PDPL](governance/policy/regulations.yaml#PDPL), and [PCI-DSS](governance/policy/regulations.yaml#PCI-DSS) where applicable.
 - Assess impact on cross-border data flows and local data residency (CBUAE).
 
 ## Banking Examples

@@ -34,15 +34,8 @@ Use for the final technical-assurance of a solution. This is the peer-review tha
 4. **Implementation-Viability.** Can the team actually build/deploy this using bank-standard tools (CI/CD, Landing-Zone)?
 5. **Issue-Report.** Clearly documented-defects.
 
-## Bulletproofing against Rationalization
-To prevent superficial box-ticking masquerading as a Design Review, you MUST:
-
-1. **Mandatory Artifact Grounding:** A Design Review CANNOT be executed against abstract concepts, slideware, or verbal descriptions. You MUST validate against a formalized HLD or LLD.
-2. **Explicit Constraint Verification:** Validation MUST force explicit checking of Regulatory (CBUAE Residency, KYC Depth) and NFR boundaries. Silence is failure; compliance must be affirmatively documented.
-3. **No Conditional Go-Lives on Critical Path:** If a Design Review surfaces a flaw in data-handling or security postures, you CANNOT issue a "Passed with exception". The review fails.
-4. **Accountability Sign-Off:** Each review element MUST have an identified reviewer.
-
-**Violating these rules invalidates the Design Review.**
+## Bulletproofing
+- **Governance Policy:** Enforce [CBUAE Rulebook](governance/policy/regulations.yaml#CBUAE), [PDPL](governance/policy/regulations.yaml#PDPL), and [PCI-DSS](governance/policy/regulations.yaml#PCI-DSS) where applicable.
 
 ## Outputs
 - **Technical design-review report** â€” Formal-feedback on the spec.

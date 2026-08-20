@@ -102,10 +102,8 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - **Sample Outcome:** "Roadmap Wave-X: Migration of Sharia ledger to target-architecture, following formal `Sharia-Governance-Board` sign-off and ledger-parallel-run."
 - **Common Pitfall:** Inadvertently introducing a temporary "interest-based ledger" path during a modernization wave; this would disqualify the bank from Sharia-certification compliance for all affected accounts, a permanent regulatory error.
 
-### Regulatory References
-1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
-2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
-3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+## Bulletproofing
+- **Governance Policy:** Enforce [CBUAE Rulebook](governance/policy/regulations.yaml#CBUAE), [PDPL](governance/policy/regulations.yaml#PDPL), and [PCI-DSS](governance/policy/regulations.yaml#PCI-DSS) where applicable.
 
 ## Anti-patterns
 - **Planning monolithic, multi-year rewrites without intermediate valuable deliverables**

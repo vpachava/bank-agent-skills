@@ -41,14 +41,8 @@ Use for the continuous lifecycle-management of banking-projects. RAID logs (Risk
 - **Assumption-Creep** â€” Not auditing your "assumptions" when the project-landscape changes (e.g. "We assumed we could use global cloud, but CBUAE-rules-changed").
 - **No-PII-in-RAID** â€” Accidentally putting PII or sensitive-bank-internal-data into a project-RAID that might be visible to 3rd-party-consultants.
 
-## Bulletproofing against Rationalization
-To prevent this skill from being applied as superficial box-ticking, you MUST:
-
-1. **Mandatory Explicit Verification:** You CANNOT assume compliance. You MUST explicitly verify that the output of raid-log meets all regulatory, security, and enterprise standards.
-2. **Mandatory Accountability:** Every output artifact MUST clearly trace back to an identified business requirement, NFR, or technical constraint without ambiguity.
-3. **No Unjustified Exemptions:** Any deviation from the standard architecture patterns MUST be explicitly documented as a critical risk and formally accepted.
-
-**Violating these rules invalidates the raid-log process.**
+## Bulletproofing
+- **Governance Policy:** Enforce [CBUAE Rulebook](governance/policy/regulations.yaml#CBUAE), [PDPL](governance/policy/regulations.yaml#PDPL), and [PCI-DSS](governance/policy/regulations.yaml#PCI-DSS) where applicable.
 
 ## Outputs
 - **RAID log artifact** â€” Central register.

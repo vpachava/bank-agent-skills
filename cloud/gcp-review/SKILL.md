@@ -84,9 +84,7 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - **Common Pitfall:** Letting logs die in Cloud Logging dashboard. If the security team isn't ingesting these logs into their primary toolchain (like Sentinel), they are functionally blind to attacks on the production API.
 
 ### Regulatory References
-1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
-2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
-3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+Enforced under [Governance Policy](governance/policy/regulations.yaml): [CBUAE Rulebook](governance/policy/regulations.yaml#CBUAE), [PDPL](governance/policy/regulations.yaml#PDPL), and [PCI-DSS](governance/policy/regulations.yaml#PCI-DSS).
 
 ## Anti-patterns
 - **Using the default VPC network and its automatic subnet IP allocations**

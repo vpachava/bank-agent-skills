@@ -84,10 +84,8 @@ To prevent this skill from being applied as superficial box-ticking, you MUST:
 - **Sample Outcome:** "Egress Compliance: Pod traffic limited via Egress-Gateway to API-whitelisted domains only."
 - **Common Pitfall:** Allowing `0.0.0.0/0` egress to the public internet. A compromised container can then exfiltrate sensitive data or reach a command-and-control server without being blocked by the clusterâ€™s network configuration.
 
-### Regulatory References
-1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
-2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
-3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
+## Bulletproofing
+- **Governance Policy:** Enforce [CBUAE Rulebook](governance/policy/regulations.yaml#CBUAE), [PDPL](governance/policy/regulations.yaml#PDPL), and [PCI-DSS](governance/policy/regulations.yaml#PCI-DSS) where applicable.
 
 ## Anti-patterns
 - **Running containers with privileged flags or hostPath directory access**

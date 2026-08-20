@@ -33,7 +33,7 @@ When focusing on ml pipeline architecture.
 - Over-engineering for low-impact workloads.
 
 ## Bulletproofing
-- UAE Banking regulatory standards (CBUAE/PDPL/PCI-DSS where applicable).
+- **Governance Policy:** Enforce [CBUAE Rulebook](governance/policy/regulations.yaml#CBUAE), [PDPL](governance/policy/regulations.yaml#PDPL), and [PCI-DSS](governance/policy/regulations.yaml#PCI-DSS) where applicable.
 
 ## Banking Examples
 - Credit risk assessment improvement.
