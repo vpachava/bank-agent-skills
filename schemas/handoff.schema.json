@@ -1,0 +1,41 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Handoff Schema",
+  "description": "Standardized output schema for architectural skill execution",
+  "type": "object",
+  "required": ["artifact_id", "timestamp", "skill_name", "evidence_links"],
+  "properties": {
+    "artifact_id": {
+      "type": "string",
+      "description": "Unique identifier for the generated architectural artifact"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time",
+      "description": "ISO-8601 timestamp of execution"
+    },
+    "skill_name": {
+      "type": "string",
+      "description": "Canonical name of the skill that produced the artifact"
+    },
+    "evidence_links": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type", "path", "description"],
+        "properties": {
+          "type": {
+            "type": "string",
+            "enum": ["iac", "code", "config", "diagram", "doc"]
+          },
+          "path": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

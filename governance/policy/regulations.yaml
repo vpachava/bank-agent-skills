@@ -1,0 +1,22 @@
+# Regulatory Policy Centralization
+
+This directory contains YAML definitions for banking regulations and standards enforced within the architecture.
+
+## Policy Definitions
+
+# CBUAE Rulebook
+code: CBUAE
+name: CBUAE Central Bank Rulebook
+link: https://rulebook.centralbank.ae/
+description: The comprehensive rulebook for all licensed financial institutions in the UAE.
+
+# PDPL
+code: PDPL
+name: Personal Data Protection Law
+law: Federal Decree-Law No. 45 of 2021
+description: Regulatory framework for processing and protecting personal data.
+
+# PCI-DSS
+code: PCI-DSS
+name: Payment Card Industry Data Security Standard
+description: Mandatory security standards for entities handling credit/debit card information.
