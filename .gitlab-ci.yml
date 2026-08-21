@@ -1,0 +1,40 @@
+stages:
+  - test
+  - deploy
+
+variables:
+  PIP_CACHE_DIR: "$CI_PROJECT_DIR/.cache/pip"
+
+cache:
+  paths:
+    - .cache/pip
+    - venv/
+
+before_script:
+  - python3 -V
+  - python3 -m venv venv
+  - source venv/bin/activate
+  - pip install --upgrade pip
+  - pip install pyyaml jsonschema pytest
+
+lint-and-test:
+  stage: test
+  script:
+    - PYTHONPATH=. pytest tests/ -v
+    - python3 scripts/skills_lint/engine.py . || true
+    - python3 scripts/links_lint.py || true
+    - python3 governance/scripts/staleness-detector.py .
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
+    - if: $CI_PIPELINE_SOURCE == "merge_request_event"
+
+pages:
+  stage: deploy
+  script:
+    - pip install mkdocs-material
+    - mkdocs build --site-dir public
+  artifacts:
+    paths:
+      - public
+  rules:
+    - if: $CI_COMMIT_BRANCH == "main"
