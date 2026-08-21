@@ -1,0 +1,23 @@
+region: UAE
+name: United Arab Emirates Financial Regulatory Framework
+jurisdiction: UAE Onshore, DIFC, ADGM
+
+regulations:
+  - code: CBUAE-CBF
+    name: CBUAE Cybersecurity Framework
+    authority: Central Bank of the UAE
+    domains: [Governance, Risk Management, Operations, Incident Response]
+    data_residency_required: true
+    cross_border_approval_required: true
+
+  - code: UAE-PDPL
+    name: UAE Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
+    authority: UAE Data Office
+    pii_encryption_at_rest: true
+    pii_encryption_in_transit: true
+    cross_border_transfer_mechanism: Standard Contractual Clauses (SCC) or Binding Corporate Rules (BCR)
+
+  - code: PCI-DSS-v4
+    name: Payment Card Industry Data Security Standard v4.0
+    authority: PCI SSC
+    scope: Payment Card Onboarding, Processing, Tokenization

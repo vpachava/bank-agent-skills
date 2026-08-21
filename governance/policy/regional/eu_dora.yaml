@@ -1,0 +1,23 @@
+region: EU
+name: European Union Financial Regulatory Framework
+jurisdiction: European Union
+
+regulations:
+  - code: EU-DORA
+    name: Digital Operational Resilience Act (DORA - Regulation EU 2022/2554)
+    authority: EBA / ESMA / EIOPA
+    domains: [ICT Risk Management, ICT Incident Reporting, Digital Operational Resilience Testing, Third-Party Risk]
+    third_party_vendor_register: true
+    penetration_testing_mandate: Threat-Led Penetration Testing (TLPT)
+
+  - code: EU-GDPR
+    name: General Data Protection Regulation (Regulation EU 2016/679)
+    authority: European Data Protection Board (EDPB)
+    pii_encryption_at_rest: true
+    right_to_be_forgotten: true
+    cross_border_adequacy: Standard Contractual Clauses (SCC)
+
+  - code: EU-PSD2-PSD3
+    name: Payment Services Directive (PSD2 / PSD3 Framework)
+    authority: European Banking Authority (EBA)
+    security_profile: Strong Customer Authentication (SCA) & FAPI 2.0

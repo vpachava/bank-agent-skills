@@ -1,16 +1,31 @@
 {
   "name": "bank-agent-skills",
-  "version": "1.0.0",
-  "description": "Production-Grade Architectural Governance Engine for Retail Banking.",
+  "version": "1.2.0",
+  "description": "Production-Grade AI-Native Architectural Governance Engine for Enterprise Banking.",
   "author": "Enterprise Architecture Team",
-  "entry_point": "skills/solution-arch-orchestrator/SKILL.md",
+  "entry_point": "solution-arch-orchestrator/SKILL.md",
   "capabilities": [
     "solution-architecture",
     "cbuae-compliance",
+    "sama-compliance",
+    "dora-compliance",
     "evidence-gating",
-    "automated-raid-logging"
+    "automated-raid-logging",
+    "diagram-as-code",
+    "openapi-asyncapi-export"
+  ],
+  "supported_regions": [
+    "UAE",
+    "KSA",
+    "EU"
+  ],
+  "runtimes": [
+    "hermes-agent",
+    "claude-code"
   ],
   "dependencies": {
-    "claude-cli": ">=0.2.0"
+    "python": ">=3.11",
+    "jsonschema": ">=4.0",
+    "pyyaml": ">=6.0"
   }
 }

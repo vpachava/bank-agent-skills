@@ -1,0 +1,24 @@
+region: KSA
+name: Kingdom of Saudi Arabia Financial Regulatory Framework
+jurisdiction: KSA Onshore
+
+regulations:
+  - code: SAMA-CSF
+    name: SAMA Cyber Security Framework
+    authority: Saudi Central Bank (SAMA)
+    domains: [Cyber Security Leadership, Cyber Security Risk Management, Cyber Security Operations]
+    data_residency_required: true
+    onshore_data_mandate: true
+
+  - code: KSA-PDPL
+    name: KSA Personal Data Protection Law
+    authority: SDAIA (Saudi Data and Artificial Intelligence Authority)
+    pii_encryption_at_rest: true
+    pii_encryption_in_transit: true
+    data_localization_mandate: true
+
+  - code: SAMA-OPEN-BANKING
+    name: SAMA Open Banking Framework
+    authority: Saudi Central Bank (SAMA)
+    security_profile: FAPI 1.0 / 2.0 Advanced
+    mtls_mandatory: true
