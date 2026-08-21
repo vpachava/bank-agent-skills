@@ -1,0 +1,12 @@
+{
+    "report_time": "2026-08-21T21:10:02.163229",
+    "risk_summary": {
+        "total_risks": 0,
+        "high_severity": 0
+    },
+    "staleness": {
+        "total_artifacts": 0,
+        "stale_artifacts": 0,
+        "health_score": 100
+    }
+}
