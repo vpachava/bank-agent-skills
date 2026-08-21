@@ -1,23 +1,71 @@
-<svg width="600" height="400" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="title desc">
-    <title id="arch-title">Project Architecture Overview</title>
-    <desc id="arch-desc">High-level architecture showing Customer, API Gateway, Payment Hub, Core Banking, CBUAE Clearing, and Security Zone.</desc>
-    <rect width="100%" height="100%" fill="#f5f5f5"/>
-    <!-- Boxes -->
-    <rect x="50" y="50" width="100" height="40" rx="6" fill="white" stroke="#333"/>
-    <text x="100" y="75" font-family="Geist, sans-serif" font-size="12" text-anchor="middle" font-weight="600">Customer</text>
-    
-    <rect x="200" y="50" width="120" height="40" rx="6" fill="#fbb" stroke="#333"/>
-    <text x="260" y="75" font-family="Geist, sans-serif" font-size="12" text-anchor="middle" font-weight="600">API Gateway</text>
+<svg viewBox="0 0 900 650" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .bg { fill: #0d1117; }
+    .box { fill: #161b22; stroke: #30363d; stroke-width: 2px; rx: 8px; }
+    .title { fill: #c9d1d9; font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif; font-size: 18px; font-weight: bold; }
+    .subtitle { fill: #8b949e; font-family: sans-serif; font-size: 12px; }
+    .node-text { fill: #e6edf3; font-family: sans-serif; font-size: 13px; font-weight: bold; }
+    .node-sub { fill: #8b949e; font-family: sans-serif; font-size: 10px; }
+    .edge { stroke: #58a6ff; stroke-width: 2; fill: none; marker-end: url(#arrow); }
+  </style>
+  <defs>
+    <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 2 L 10 5 L 0 8 z" fill="#58a6ff"/>
+    </marker>
+  </defs>
+  <rect width="100%" height="100%" class="bg" />
+  <text x="30" y="40" class="title">Global Banking Architectural Governance Engine</text>
+  <text x="30" y="60" class="subtitle">End-to-End Agentic Architecture Flow (95 Skills Across 15 Categories)</text>
 
-    <rect x="200" y="150" width="120" height="40" rx="6" fill="#bbf" stroke="#333"/>
-    <text x="260" y="175" font-family="Geist, sans-serif" font-size="12" text-anchor="middle" font-weight="600">Payment Hub</text>
+  <!-- Orchestrator -->
+  <rect x="350" y="90" width="200" height="60" class="box" />
+  <text x="450" y="115" text-anchor="middle" class="node-text">Solution-Arch-Orchestrator</text>
+  <text x="450" y="135" text-anchor="middle" class="node-sub">Jurisdiction &amp; Scope Routing</text>
 
-    <rect x="200" y="250" width="120" height="40" rx="6" fill="#f9f" stroke="#333"/>
-    <text x="260" y="275" font-family="Geist, sans-serif" font-size="12" text-anchor="middle" font-weight="600">Core Banking</text>
+  <!-- Flow 1 -->
+  <path d="M 450 150 L 450 190" class="edge" />
 
-    <rect x="400" y="150" width="120" height="40" rx="6" fill="white" stroke="#333"/>
-    <text x="460" y="175" font-family="Geist, sans-serif" font-size="12" text-anchor="middle" font-weight="600">CBUAE Clearing</text>
+  <!-- Discovery -->
+  <rect x="325" y="190" width="250" height="55" class="box" />
+  <text x="450" y="212" text-anchor="middle" class="node-text">Discovery &amp; Modernization</text>
+  <text x="450" y="230" text-anchor="middle" class="node-sub">Capability Maps &amp; Legacy Triage</text>
 
-    <rect x="50" y="150" width="100" height="140" rx="6" fill="#fbf" stroke="#333"/>
-    <text x="100" y="220" font-family="Geist, sans-serif" font-size="12" text-anchor="middle" font-weight="600">Governance</text>
+  <!-- Flow 2 -->
+  <path d="M 450 245 L 450 285" class="edge" />
+
+  <!-- HLD / LLD -->
+  <rect x="300" y="285" width="300" height="55" class="box" />
+  <text x="450" y="307" text-anchor="middle" class="node-text">Architecture &amp; Design (HLD/LLD)</text>
+  <text x="450" y="325" text-anchor="middle" class="node-sub">C4 Models, Sequence &amp; Archify</text>
+
+  <!-- Split flow to Data/AI & Security -->
+  <path d="M 350 340 L 200 390" class="edge" />
+  <path d="M 550 340 L 700 390" class="edge" />
+
+  <!-- Data Architecture -->
+  <rect x="80" y="390" width="240" height="55" class="box" />
+  <text x="200" y="412" text-anchor="middle" class="node-text">Data &amp; AI/ML Architecture</text>
+  <text x="200" y="430" text-anchor="middle" class="node-sub">Pipelines, Feature Stores &amp; Governance</text>
+
+  <!-- Security & Compliance -->
+  <rect x="580" y="390" width="240" height="55" class="box" />
+  <text x="700" y="412" text-anchor="middle" class="node-text">Security &amp; Compliance</text>
+  <text x="700" y="430" text-anchor="middle" class="node-sub">CBUAE, SAMA, DORA, FAPI 2.0</text>
+
+  <!-- Converge to Evidence Gate -->
+  <path d="M 200 445 L 400 485" class="edge" />
+  <path d="M 700 445 L 500 485" class="edge" />
+
+  <!-- Governance & Evidence Gate -->
+  <rect x="325" y="485" width="250" height="55" class="box" />
+  <text x="450" y="507" text-anchor="middle" class="node-text">Governance &amp; Evidence-Gate</text>
+  <text x="450" y="525" text-anchor="middle" class="node-sub">Schema Verification &amp; RAID Logs</text>
+
+  <!-- Flow to Export -->
+  <path d="M 450 540 L 450 575" class="edge" />
+
+  <!-- Export Bridges -->
+  <rect x="300" y="575" width="300" height="55" class="box" />
+  <text x="450" y="597" text-anchor="middle" class="node-text">Export Bridges &amp; CI/CD</text>
+  <text x="450" y="615" text-anchor="middle" class="node-sub">OpenAPI 3.1, AsyncAPI 3.0, Jira/Linear &amp; CI/CD</text>
 </svg>

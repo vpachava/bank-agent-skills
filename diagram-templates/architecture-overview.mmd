@@ -1,0 +1,16 @@
+graph TD
+    Solution-Arch-Orchestrator(Solution-Arch-Orchestrator)
+    Discovery_&_Modernization(Discovery & Modernization)
+    Architecture_&_Design_(HLD/LLD)[Architecture & Design (HLD/LLD)]
+    Data_&_AI/ML_Architecture[Data & AI/ML Architecture]
+    Security_&_Compliance_(CBUAE/SAMA/DORA)[(database: Security & Compliance (CBUAE/SAMA/DORA))]
+    Cloud_&_DevOps_Pipelines[Cloud & DevOps Pipelines]
+    Governance_&_Evidence-Gate[(database: Governance & Evidence-Gate)]
+    Export_Bridges_(OpenAPI/AsyncAPI/Jira)[Export Bridges (OpenAPI/AsyncAPI/Jira)]
+    Solution-Arch-Orchestrator -->|1. Raw Req & Jurisdiction| Discovery_&_Modernization
+    Discovery_&_Modernization -->|2. Gap Analysis & Options| Architecture_&_Design_(HLD/LLD)
+    Architecture_&_Design_(HLD/LLD) -->|3. Data & Model Specs| Data_&_AI/ML_Architecture
+    Architecture_&_Design_(HLD/LLD) -->|4. Threat Model & Policy| Security_&_Compliance_(CBUAE/SAMA/DORA)
+    Security_&_Compliance_(CBUAE/SAMA/DORA) -->|5. Evidence Verification| Governance_&_Evidence-Gate
+    Governance_&_Evidence-Gate -->|6. Spec & Ticket Sync| Export_Bridges_(OpenAPI/AsyncAPI/Jira)
+    Export_Bridges_(OpenAPI/AsyncAPI/Jira) -->|7. CI/CD & Deploy| Cloud_&_DevOps_Pipelines
