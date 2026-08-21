@@ -1,65 +1,39 @@
 ﻿---
-name: solution-arch-orchestrator
+name: orchestrator
 owner: Architectural Governance
-version: 0.1.1
-last-reviewed: 2026-08-16
-description: "Meta-skill: Receives a raw requirement, maps it to the necessary subset of 72 architectural skills, and generates an actionable dependency roadmap (workflow)."
+version: 1.2.0
+description: "Meta-skill: Receives a raw banking requirement, prompts the user to select their target country/regulatory jurisdiction (e.g., UAE, KSA, EU, USA, UK, Singapore), and maps it to the necessary subset of architectural skills with region-specific compliance overlays."
 required-inputs:
   - Raw business requirement
-  - Initiative stage (e.g., discovery, design, hardening)
+  - Target country / regulatory jurisdiction
 expected-deliverables:
-  - Skill-mapping report
-  - Actionable dependency workflow
+  - Country-aware skill-mapping report
+  - Actionable dependency workflow with regional guardrails
 togaf-phases: [Phase A]
 togaf-artifacts: [Architecture Vision]
 bian-service-domains: [Customer Account.Origination]
 ---
 
-# /solution-arch-orchestrator
+# /solution-arch-orchestrator (Global Banking Edition)
 
 ## When to apply
-Use as the entry point for *any* new initiative. It acts as the "Solution Architect Orchestrator" for the 72-skill library, taking the cognitive load of selecting the right subset of skills away from you and structuring the project lifecycle.
+Use as the universal entry point for *any* banking initiative worldwide. It acts as the global Wayfinder for the skills library, taking your raw prompt, executing a mandatory **Country/Jurisdiction Selection Grilling Session**, and tailoring the architectural workflow to local regulations.
 
 ## Inputs
 - Raw business requirement
-- Context/Constraint
+- Target country / jurisdiction (Prompted interactively: UAE, KSA, EU, UK, USA, SG, or Global)
 
-## Process
-1. Discover current constraints.
-2. Analyze domain gaps.
-3. Propose target design.
+## Process (Global Grilling Workflow)
+1. **Jurisdiction Selection:** Prompt the user: *"Which country or regulatory jurisdiction is this solution targeting? (e.g., UAE / KSA / EU / UK / USA / Singapore)"*
+2. **Regulatory Overlay Binding:** Automatically bind the corresponding policy files from `governance/policy/regional/` (e.g., CBUAE, SAMA, DORA/GDPR, FCA/PRA, OCC/Fed, MAS).
+3. **Capability Mapping:** Map the requirements against BIAN service domains and TOGAF phases.
+4. **Actionable Roadmap Generation:** Produce a tailored dependency roadmap embedding local data residency, cross-border, and security requirements.
 
 ## Outputs
-- Standardized architectural artifact.
+- Country-scoped architectural workflow & artifact plan.
+- Regional compliance matrix.
 
 ## Related skills
-- [[tdd-documentation]]
-- [[design-review]]
-## Bulletproofing
-- UAE Banking regulatory standards ([CBUAE Rulebook](governance/policy/regulations.yaml#CBUAE), [PDPL](governance/policy/regulations.yaml#PDPL), and [PCI-DSS](governance/policy/regulations.yaml#PCI-DSS) where applicable).
-- Mandatory Security Baseline: Perform `/security-nfr-baseline-check`.
-- Mandatory explicit verification and accountability.
-
-
-## Banking pitfalls
-- **Over-orchestration:** Mapping *too many* skills. The solution-arch-orchestrator must filter, not accumulate.
-- **Ignoring non-optional governance:** Always injecting `/security-architecture-review` or `/production-readiness` for regulated paths, even if the user didn't ask.
-
-## Automated Reinforcement
-- The solution-arch-orchestrator now performs a mandatory `/security-architecture-review` baseline as the first sub-step in any modernization trigger.
-
-### Regulatory References
-1. **CBUAE Rulebook:** https://rulebook.centralbank.ae/
-2. **PDPL:** Personal Data Protection Law (Federal Decree-Law No. 45 of 2021)
-3. **CBUAE Cybersecurity Framework:** Domain 1: Governance & Risk Management
-
-## Anti-patterns
-- **Commanding agents without clearly defined success criteria or bounded domains**
-  - **Consequence:** Agents drift into endless conversational loops, hallucinate tasks, or execute infinite web searches without yielding actionable artifacts.
-  - **Correct Approach:** Define sharp, boolean completion gates ("Produce a 500-word markdown ADR", "Find the IP range") before delegating a subtask.
-- **Failing to maintain conversational memory or artifact context across sequential agent handoffs**
-  - **Consequence:** Each newly spawned agent starts from scratch, forcing the user to repeat instructions and resulting in disjointed, conflicting solutions.
-  - **Correct Approach:** Utilize structured summary blocks, shared memory files, or centralized context repositories explicitly passed between orchestration steps.
-- **Executing destructive code changes (e.g., Git pushes, database drops) without Human-In-The-Loop review**
-  - **Consequence:** Agents autonomously overwrite critical production configurations based on hallucinated confidence, causing major system outages.
-  - **Correct Approach:** Implement hard-stop validation gates for any mutable action, requiring manual human approval before execution algorithms proceed.
+- [/governance/policy/regional/](../governance/policy/regional/)
+- [/security/compliance](../security/compliance/SKILL.md)
+- [/architecture/hld-generator](../architecture/hld-generator/SKILL.md)

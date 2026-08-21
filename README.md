@@ -1,6 +1,6 @@
-# UAE Retail-Bank Solution-Architect Skills Library
+# Global Banking Solution-Architect Skills Library
 
-Welcome to the comprehensive skills library for UAE retail-bank solution architecture. This repository contains **invoke-and-act** Claude Code skills covering the complete solution-architecture lifecycle — from initial discovery through operational readiness.
+Welcome to the comprehensive skills library for global banking and financial services solution architecture. This repository contains **invoke-and-act** agentic skills covering the complete solution-architecture lifecycle — from initial discovery through operational readiness across any international jurisdiction (UAE, KSA, EU, UK, USA, Singapore, and Global Basel III/ISO20022 baselines).
 
 ## What is this library?
 

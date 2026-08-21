@@ -1,0 +1,24 @@
+region: GLOBAL
+name: Universal Banking Architectural Baseline
+applicability: Worldwide Financial Institutions
+
+universal_standards:
+  - code: BASEL-III-IV
+    name: Basel III / IV Capital and Liquidity Standards
+    authority: Basel Committee on Banking Supervision (BCBS)
+    focus: Risk-weighted assets, liquidity coverage ratio (LCR), net stable funding ratio (NSFR).
+
+  - code: ISO-20022
+    name: Universal Financial Messaging Standard
+    authority: ISO / SWIFT
+    focus: High-value payment messaging (pacs.008, camt.053, pain.001).
+
+  - code: FATF-AML-KYC
+    name: Financial Action Task Force Recommendations
+    authority: FATF-GAFI
+    focus: Anti-Money Laundering (AML), Countering Financing of Terrorism (CFT), Beneficial Ownership, Travel Rule.
+
+  - code: PCI-DSS-v4
+    name: Payment Card Industry Data Security Standard v4.0
+    authority: PCI SSC
+    focus: Secure cardholder data transmission, tokenization, and encryption.
