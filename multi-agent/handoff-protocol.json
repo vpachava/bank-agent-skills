@@ -1,0 +1,60 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "MultiAgentHandoffProtocol",
+  "description": "Standardized payload contract for asynchronous agent-to-agent collaboration and state synthesis.",
+  "type": "object",
+  "required": ["session_id", "source_agent", "target_agent", "artifact_id", "timestamp", "payload", "evidence_refs"],
+  "properties": {
+    "session_id": {
+      "type": "string",
+      "format": "uuid"
+    },
+    "source_agent": {
+      "type": "string",
+      "enum": ["business-expert", "security-expert", "cloud-expert", "data-expert", "solution-arch-orchestrator"]
+    },
+    "target_agent": {
+      "type": "string",
+      "enum": ["business-expert", "security-expert", "cloud-expert", "data-expert", "solution-arch-orchestrator"]
+    },
+    "artifact_id": {
+      "type": "string"
+    },
+    "timestamp": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "payload": {
+      "type": "object",
+      "required": ["status", "summary"],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": ["drafted", "verified", "flagged_risk", "ready_for_arb"]
+        },
+        "summary": {
+          "type": "string"
+        },
+        "decisions": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "risks": {
+          "type": "array",
+          "items": { "type": "object" }
+        }
+      }
+    },
+    "evidence_refs": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type", "path"],
+        "properties": {
+          "type": { "type": "string", "enum": ["iac", "code", "policy", "diagram", "doc"] },
+          "path": { "type": "string" }
+        }
+      }
+    }
+  }
+}
