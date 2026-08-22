@@ -4,7 +4,7 @@ import yaml
 from pathlib import Path
 
 # Base directory for skills
-SKILLS_DIR = "C:/code/ai/BrainStorming/skills"
+SKILLS_DIR = "."
 
 def parse_skill(file_path):
     print(f"Reading: {file_path}")

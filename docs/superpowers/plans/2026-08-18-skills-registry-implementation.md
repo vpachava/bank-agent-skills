@@ -29,7 +29,7 @@ import json
 import yaml
 from pathlib import Path
 
-SKILLS_DIR = "C:/code/ai/BrainStorming/skills" # Adjust if needed
+SKILLS_DIR = "." # Adjust if needed
 
 def generate_index():
     index = []

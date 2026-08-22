@@ -4,7 +4,7 @@ from jsonschema import validate
 import sys
 
 def run_tests():
-    with open('C:/code/ai/BrainStorming/skills/solution-arch-orchestrator/handoff.schema.json', 'r') as f:
+    with open('./solution-arch-orchestrator/handoff.schema.json', 'r') as f:
         schema = json.load(f)
 
     # GREEN SCENARIO
