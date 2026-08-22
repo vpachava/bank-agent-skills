@@ -1,0 +1,19 @@
+region: India
+name: Indian Financial & Data Regulatory Framework
+jurisdiction: India (RBI, MeitY, SEBI)
+
+regulations:
+  - code: RBI-CYBER-FRAMEWORK
+    name: RBI Cyber Security Framework for Banks
+    authority: Reserve Bank of India (RBI)
+    domains: [IT Governance, Cyber Hygiene, Security Operations Center (SOC), Payment Security]
+
+  - code: DPDP-ACT-2023
+    name: Digital Personal Data Protection Act 2023 (DPDP)
+    authority: Data Protection Board of India
+    domains: [Data Fiduciary Obligations, Consent Managers, Data Principal Rights, Data Localization]
+
+  - code: RBI-MASTER-DIRECTION-OUTSOURCING
+    name: RBI Master Direction on Outsourcing of IT Services
+    authority: RBI
+    domains: [Third-Party Risk, Material Outsourcing, Data Sovereignty]

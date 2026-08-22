@@ -1,0 +1,24 @@
+region: USA
+name: United States Federal & State Regulatory Framework
+jurisdiction: USA Federal & State (OCC, Fed, SEC, NYDFS, CCPA)
+
+regulations:
+  - code: OCC-GUIDELINES
+    name: Office of the Comptroller of the Currency Risk Management Guidelines
+    authority: OCC / FFIEC
+    domains: [Operational Risk, Third-Party Risk, Model Risk Management]
+
+  - code: FFIEC-CYBER
+    name: FFIEC Cybersecurity Assessment Tool (CAT)
+    authority: FFIEC
+    domains: [Risk Management, Threat Intelligence, Cybersecurity Controls]
+
+  - code: SOX-SECTION-404
+    name: Sarbanes-Oxley Act (SOX Section 404)
+    authority: SEC
+    domains: [Financial Internal Controls, IT General Controls (ITGC), Access Management]
+
+  - code: NYDFS-500
+    name: NYDFS Cybersecurity Regulation (23 NYCRR 500)
+    authority: New York Department of Financial Services
+    domains: [MFA, Encrypted PII, CISO Reporting, Penetration Testing]

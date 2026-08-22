@@ -1,0 +1,26 @@
+[
+  {
+    "id": "hld-generator",
+    "name": "hld-generator",
+    "category": "architecture",
+    "version": "0.1.0",
+    "downloads": 1540,
+    "rating": 4.8
+  },
+  {
+    "id": "threat-model",
+    "name": "threat-model",
+    "category": "security",
+    "version": "0.1.0",
+    "downloads": 1280,
+    "rating": 4.9
+  },
+  {
+    "id": "healthcare-architecture",
+    "name": "healthcare-architecture",
+    "category": "industries",
+    "version": "0.1.0",
+    "downloads": 120,
+    "rating": 4.5
+  }
+]

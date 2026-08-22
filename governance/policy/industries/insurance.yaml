@@ -1,0 +1,12 @@
+industry: Insurance
+name: Insurance Industry Compliance Overlay
+regulations:
+  - code: SOLVENCY-II
+    name: Solvency II Directive (EU Insurance Capital Standard)
+    focus: Capital requirements, risk management, governance, and supervisory reporting for insurers.
+  - code: IFRS-17
+    name: International Financial Reporting Standard 17 (Insurance Contracts)
+    focus: Actuarial data modeling, cash-flow transparency, financial disclosures.
+  - code: NAIC-MODEL
+    name: National Association of Insurance Commissioners (NAIC) Model Laws
+    focus: U.S. insurance solvency, market regulation, cybersecurity data protection model law.

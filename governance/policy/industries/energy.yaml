@@ -1,0 +1,9 @@
+industry: Energy
+name: Critical Infrastructure & Energy Compliance Overlay
+regulations:
+  - code: NERC-CIP
+    name: NERC Critical Infrastructure Protection
+    focus: Cybersecurity of the bulk electric system, physical security, incident reporting.
+  - code: IEC-62443
+    name: Industrial Automation and Control Systems Security (ISA/IEC 62443)
+    focus: Security for industrial automation control systems (IACS), zoning, conduit security.

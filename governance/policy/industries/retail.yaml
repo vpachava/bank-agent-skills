@@ -1,0 +1,12 @@
+industry: Retail
+name: Retail & E-Commerce Compliance Overlay
+regulations:
+  - code: PCI-DSS-ENHANCED
+    name: PCI-DSS v4.0 Payment Security & E-Commerce Security (Script Integrity, Tokenization)
+    focus: End-to-end payment card encryption, CSP script integrity, merchant vault tokenization.
+  - code: SOC-2-TYPE-2
+    name: Service Organization Control 2 (Security, Availability, Confidentiality)
+    focus: Continuous audit trails, change management, encryption, access controls.
+  - code: ISO-27001
+    name: ISO/IEC 27001:2022 Information Security Management System
+    focus: ISMS controls, risk treatment plans, asset protection.

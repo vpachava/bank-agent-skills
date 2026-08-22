@@ -1,0 +1,19 @@
+region: Australia
+name: Australian Financial Regulatory Framework
+jurisdiction: Australia (APRA, ASIC, OAIC)
+
+regulations:
+  - code: APRA-CPS-234
+    name: Prudential Standard CPS 234 (Information Security)
+    authority: Australian Prudential Regulation Authority (APRA)
+    domains: [Information Security Capability, Policy Framework, Asset Classification, Testing & Audit]
+
+  - code: AU-PRIVACY-ACT
+    name: Australian Privacy Act 1988 & Australian Privacy Principles (APPs)
+    authority: Office of the Australian Information Commissioner (OAIC)
+    domains: [Open & Transparent Management of Personal Info, Cross-border Disclosure, Security of Personal Info]
+
+  - code: AU-CDR
+    name: Consumer Data Right (CDR / Open Banking Australia)
+    authority: ACCC / OAIC
+    domains: [Accredited Data Recipient (ADR) Security Standards, Open Banking APIs, Customer Consent]

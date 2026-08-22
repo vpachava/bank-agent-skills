@@ -1,0 +1,19 @@
+region: Singapore
+name: Singapore Financial Regulatory Framework
+jurisdiction: Singapore (Monetary Authority of Singapore - MAS)
+
+regulations:
+  - code: MAS-TRM
+    name: MAS Technology Risk Management Guidelines (TRM)
+    authority: Monetary Authority of Singapore (MAS)
+    domains: [IT Governance, Cyber Hygiene, System Resiliency, Cryptography, High Availability]
+
+  - code: SG-PDPA
+    name: Personal Data Protection Act 2012 (Singapore PDPA)
+    authority: PDPC (Personal Data Protection Commission Singapore)
+    domains: [Data Protection Provisions, Mandatory Data Breach Notification, Cross-Border Transfers]
+
+  - code: MAS-FINTECH-API
+    name: MAS Financial Services API Playbook
+    authority: MAS
+    domains: [Open Banking APIs, Data Governance, Information Security Standards]

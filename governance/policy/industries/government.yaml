@@ -1,0 +1,12 @@
+industry: Government
+name: Federal & Defense Industry Compliance Overlay
+regulations:
+  - code: NIST-SP-800-53
+    name: NIST Special Publication 800-53 Security and Privacy Controls
+    focus: Low/Moderate/High security controls, access control, audit, configuration management.
+  - code: FISMA
+    name: Federal Information Security Modernization Act
+    focus: Federal system risk management, agency security reporting.
+  - code: FEDRAMP
+    name: Federal Risk and Authorization Management Program (FedRAMP Authorized)
+    focus: Cloud service authorization, standard security baseline, continuous monitoring.

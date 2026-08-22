@@ -1,0 +1,12 @@
+industry: Healthcare
+name: Healthcare Industry Compliance Overlay
+regulations:
+  - code: HIPAA-HITECH
+    name: Health Insurance Portability and Accountability Act & HITECH Act
+    focus: Protected Health Information (PHI) encryption at rest/transit, audit logging, BAA compliance.
+  - code: FDA-21-CFR-PART-11
+    name: FDA 21 CFR Part 11 Electronic Records & Signatures
+    focus: Data integrity, audit trails, system validation, non-repudiation.
+  - code: HL7-FHIR
+    name: Health Level Seven International (FHIR) Interoperability Standard
+    focus: RESTful API exchange of electronic health records (EHR).
