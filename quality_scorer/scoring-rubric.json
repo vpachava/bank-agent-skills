@@ -1,0 +1,27 @@
+{
+  "categories": {
+    "architecture": {
+      "completeness_weight": 0.3,
+      "evidence_weight": 0.4,
+      "compliance_weight": 0.3,
+      "required_sections": ["context", "containers", "key_flows", "nfrs"]
+    },
+    "security": {
+      "completeness_weight": 0.2,
+      "evidence_weight": 0.5,
+      "compliance_weight": 0.3,
+      "required_sections": ["stride_threats", "trust_boundaries", "mitigations"]
+    },
+    "integration": {
+      "completeness_weight": 0.3,
+      "evidence_weight": 0.3,
+      "compliance_weight": 0.4,
+      "required_sections": ["endpoints", "idempotency_keys", "headers"]
+    }
+  },
+  "gamification_badges": [
+    { "badge": "Gold Standard Architecture", "min_score": 4.5 },
+    { "badge": "Silver Compliant Architecture", "min_score": 3.5 },
+    { "badge": "Governance Revision Required", "min_score": 0.0 }
+  ]
+}
