@@ -1,11 +1,37 @@
-site_name: Bank Agent Skills
+site_name: bank-agent-skills Documentation
+site_description: Production-Grade AI-Native Architectural Governance Engine for Enterprise Banking & Regulated Industries.
+site_author: Enterprise Architecture Team
+site_url: https://vpachava.github.io/bank-agent-skills/
+
 theme:
   name: material
+  palette:
+    scheme: slate
+    primary: indigo
+    accent: blue
+  features:
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - search.suggest
+    - search.highlight
+    - content.code.copy
+
 plugins:
   - search
-  - gen-files:
-      scripts:
-        - gen_nav.py
-  - literate-nav:
-      nav_file: SUMMARY.md
-  - section-index
+
+nav:
+  - Home: index.md
+  - Getting Started:
+    - Installation Wizard: getting-started/installation.md
+    - Quick-Start Tutorial: getting-started/tutorial.md
+  - Skills Reference:
+    - Overview: skills-reference/index.md
+    - Core Domains: skills-reference/domains.md
+  - Tutorials:
+    - Greenfield Banking: tutorials/greenfield-banking.md
+    - Multi-Jurisdiction Compliance: tutorials/compliance-routing.md
+  - Best Practices: best-practices/patterns.md
+  - Troubleshooting: troubleshooting/faq.md
+  - Contributing: contributing/pr-process.md
+  - API & Schemas: api-reference/handoff-schema.md
