@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Security Skill Reference Cards - bank-agent-skills</title>
+    <style>
+        @page { size: A4; margin: 15mm; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; background: #fff; color: #1f2328; margin: 0; padding: 20px; }
+        h1 { font-size: 20pt; border-bottom: 2px solid #f85149; padding-bottom: 5px; color: #0d1117; margin-top: 0; }
+        .header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .cards-container { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; page-break-inside: avoid; }
+        .card { border: 1px solid #d0d7de; border-radius: 6px; padding: 12px; background: #f6f8fa; page-break-inside: avoid; }
+        .card-header { display: flex; justify-content: space-between; align-items: center; padding-left: 8px; margin-bottom: 8px; }
+        .skill-name { font-weight: bold; font-size: 11pt; font-family: monospace; color: #0969da; }
+        .category-badge { font-size: 8pt; padding: 2px 6px; border-radius: 12px; text-transform: uppercase; font-weight: bold; }
+        .description { font-size: 9pt; color: #57606a; margin: 4px 0 8px 0; }
+        .io-grid { font-size: 8pt; color: #24292f; margin-bottom: 8px; background: #fff; padding: 6px; border-radius: 4px; border: 1px solid #e1e4e8; }
+        .usage-box { background: #24292f; color: #f6f8fa; padding: 4px 8px; border-radius: 4px; font-size: 9pt; font-family: monospace; display: inline-block; }
+        .footer { margin-top: 30px; font-size: 8pt; color: #8c959f; text-align: center; border-top: 1px solid #d0d7de; padding-top: 10px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>bank-agent-skills: Security</h1>
+        <div>Category Reference Cards (v1.0.1)</div>
+    </div>
+    <div class="cards-container">
+        
+        <div class="card">
+            <div class="card-header" style="border-left: 5px solid #f85149;">
+                <span class="skill-name">/adversarial-compliance</span>
+                <span class="category-badge" style="background-color: #f8514922; color: #f85149; border: 1px solid #f8514944;">security</span>
+            </div>
+            <div class="card-body">
+                <p class="description"><strong>Description:</strong> Red-teaming test suite that attempts to bypass data-residency and compliance guardrails.</p>
+                <div class="io-grid">
+                    <div><strong>Inputs:</strong> User prompt / Context files / Requirements</div>
+                    <div><strong>Outputs:</strong> Architectural deliverable / Handoff payload / Diagram</div>
+                </div>
+                <div class="usage-box">
+                    <code>/adversarial-compliance</code>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header" style="border-left: 5px solid #f85149;">
+                <span class="skill-name">/compliance</span>
+                <span class="category-badge" style="background-color: #f8514922; color: #f85149; border: 1px solid #f8514944;">security</span>
+            </div>
+            <div class="card-body">
+                <p class="description"><strong>Description:</strong> Compliance skill</p>
+                <div class="io-grid">
+                    <div><strong>Inputs:</strong> User prompt / Context files / Requirements</div>
+                    <div><strong>Outputs:</strong> Architectural deliverable / Handoff payload / Diagram</div>
+                </div>
+                <div class="usage-box">
+                    <code>/compliance</code>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header" style="border-left: 5px solid #f85149;">
+                <span class="skill-name">/iam-review</span>
+                <span class="category-badge" style="background-color: #f8514922; color: #f85149; border: 1px solid #f8514944;">security</span>
+            </div>
+            <div class="card-body">
+                <p class="description"><strong>Description:</strong> ﻿---</p>
+                <div class="io-grid">
+                    <div><strong>Inputs:</strong> User prompt / Context files / Requirements</div>
+                    <div><strong>Outputs:</strong> Architectural deliverable / Handoff payload / Diagram</div>
+                </div>
+                <div class="usage-box">
+                    <code>/iam-review</code>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header" style="border-left: 5px solid #f85149;">
+                <span class="skill-name">/owasp-review</span>
+                <span class="category-badge" style="background-color: #f8514922; color: #f85149; border: 1px solid #f8514944;">security</span>
+            </div>
+            <div class="card-body">
+                <p class="description"><strong>Description:</strong> ﻿---</p>
+                <div class="io-grid">
+                    <div><strong>Inputs:</strong> User prompt / Context files / Requirements</div>
+                    <div><strong>Outputs:</strong> Architectural deliverable / Handoff payload / Diagram</div>
+                </div>
+                <div class="usage-box">
+                    <code>/owasp-review</code>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header" style="border-left: 5px solid #f85149;">
+                <span class="skill-name">/security-architecture-review</span>
+                <span class="category-badge" style="background-color: #f8514922; color: #f85149; border: 1px solid #f8514944;">security</span>
+            </div>
+            <div class="card-body">
+                <p class="description"><strong>Description:</strong> ﻿---</p>
+                <div class="io-grid">
+                    <div><strong>Inputs:</strong> User prompt / Context files / Requirements</div>
+                    <div><strong>Outputs:</strong> Architectural deliverable / Handoff payload / Diagram</div>
+                </div>
+                <div class="usage-box">
+                    <code>/security-architecture-review</code>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header" style="border-left: 5px solid #f85149;">
+                <span class="skill-name">/threat-model</span>
+                <span class="category-badge" style="background-color: #f8514922; color: #f85149; border: 1px solid #f8514944;">security</span>
+            </div>
+            <div class="card-body">
+                <p class="description"><strong>Description:</strong> ﻿---</p>
+                <div class="io-grid">
+                    <div><strong>Inputs:</strong> User prompt / Context files / Requirements</div>
+                    <div><strong>Outputs:</strong> Architectural deliverable / Handoff payload / Diagram</div>
+                </div>
+                <div class="usage-box">
+                    <code>/threat-model</code>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <div class="card-header" style="border-left: 5px solid #f85149;">
+                <span class="skill-name">/zero-trust</span>
+                <span class="category-badge" style="background-color: #f8514922; color: #f85149; border: 1px solid #f8514944;">security</span>
+            </div>
+            <div class="card-body">
+                <p class="description"><strong>Description:</strong> ﻿---</p>
+                <div class="io-grid">
+                    <div><strong>Inputs:</strong> User prompt / Context files / Requirements</div>
+                    <div><strong>Outputs:</strong> Architectural deliverable / Handoff payload / Diagram</div>
+                </div>
+                <div class="usage-box">
+                    <code>/zero-trust</code>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+    <div class="footer">
+        Global Banking Solution-Architect Skills Library | https://github.com/vpachava/bank-agent-skills
+    </div>
+</body>
+</html>
