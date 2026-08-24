@@ -1,12 +1,13 @@
 {
-  "artifact_id": "EXAMPLE-ART-101",
+  "artifact_id": "SAMPLE-ART-001",
   "timestamp": "2026-08-22T12:00:00Z",
+  "skill_name": "sample-skill-name",
   "status": "APPROVED",
   "evidence_links": [
     {
-      "path": "terraform/main.tf",
       "type": "iac",
-      "description": "Encrypted S3 bucket config"
+      "path": "terraform/main.tf",
+      "description": "Validated infrastructure deployment"
     }
   ]
 }
