@@ -1,29 +1,42 @@
 # Contributing to bank-agent-skills
 
-First off, thank you for considering contributing to ank-agent-skills! It's people like you that make this library a great tool for enterprise banking architecture.
+Welcome! We are thrilled that you want to contribute to the **Global Banking Solution-Architect Skills Library**. Whether you are fixing a bug, adding a regional compliance overlay, or contributing a brand-new skill, your help makes this engine better for enterprise architects worldwide.
 
-## How Can I Contribute?
+---
 
-### Reporting Bugs
-If you find a bug in a skill or the documentation, please create an issue on GitHub. Include:
-- A clear descriptive title.
-- Steps to reproduce the issue.
-- Expected behavior vs. actual behavior.
+## 📜 Code of Conduct
+- Be respectful, welcoming, and inclusive.
+- Constructive feedback is encouraged; ad-hominem attacks will not be tolerated.
+- Uphold high engineering standards and robust security practices.
 
-### Suggesting Enhancements & Providing Feedback
-We welcome new skills and improvements to existing ones! Your feedback from using these skills in real-world scenarios is invaluable for enhancing them.
-- Open an issue discussing your proposed changes or feedback before putting in significant work.
-- Provide a clear rationale for why this change benefits the enterprise banking domain or how a skill can be improved based on your architectural usage.
-- If a skill feels generic or misses a specific constraint like PDPL or CBUAE regulations, let us know so we can harden it!
+---
 
-### Pull Requests
-1. Fork the repo and create your branch from main.
-2. Format your new or updated skills using the SKILL_TEMPLATE.md.
-3. Ensure your PR description clearly describes the problem and solution.
-4. If you've added or changed an agentic skill, please test it locally with Claude Code, Cursor, or your preferred agent.
-5. Submit the PR for review!
+## 🛠️ How to Contribute a Skill
 
-## Code Style & Formatting
-- Ensure all markdown files are well-formatted and easy to read.
-- Follow the established directory structure (e.g., domain/skill-name/SKILL.md).
-- Adhere to the frontmatter requirements defined in SKILL_TEMPLATE.md.
+1. **Fork the Repository:** Fork `vpachava/bank-agent-skills` to your personal GitHub account.
+2. **Create a Feature Branch:** `git checkout -b feature/my-new-skill`
+3. **Choose the Right Category:** Place your skill inside the appropriate domain directory under root (e.g., `security/`, `integration/`, `architecture/`).
+4. **Use the Skill Template:** Follow the `SKILL.md` archetype provided in `skill-template/`.
+5. **Write Unit Tests:** Every skill or feature must include a corresponding pytest test under `tests/`.
+6. **Submit a Pull Request (PR):** Open a PR against `main`. Our automated CI/CD pipeline will validate your syntax, schema, and test suite.
+
+---
+
+## 📋 Skill Template Structure
+Every skill requires a valid YAML frontmatter and standard markdown sections. See `skill-template/SKILL.md` for the exact reference.
+
+---
+
+## 🧪 Testing Requirements
+- All contributions must pass the test suite:
+  ```bash
+  PYTHONPATH=. pytest tests/ -v
+  ```
+- 100% test pass rate is mandatory for merge approval.
+
+---
+
+## 🚀 Release Cycle
+- **Patch Releases:** Weekly (bug fixes and small compliance updates).
+- **Minor Releases:** Monthly (new skills, regional overlays, and features).
+- **Major Releases:** Quarterly (breaking schema updates, core orchestration refactors).

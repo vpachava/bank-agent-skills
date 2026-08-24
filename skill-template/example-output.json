@@ -1,0 +1,12 @@
+{
+  "artifact_id": "EXAMPLE-ART-101",
+  "timestamp": "2026-08-22T12:00:00Z",
+  "status": "APPROVED",
+  "evidence_links": [
+    {
+      "path": "terraform/main.tf",
+      "type": "iac",
+      "description": "Encrypted S3 bucket config"
+    }
+  ]
+}
