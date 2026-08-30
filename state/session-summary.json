@@ -1,0 +1,23 @@
+{
+  "compressed_at": "2026-08-22T21:00:00Z",
+  "original_turn_count": 15,
+  "rolling_summary": "Summarized 11 past turns into historical context. Key architectural decisions locked: Jurisdiction binding (UAE), HLD generated, Evidence gate passed.",
+  "active_turns": [
+    {
+      "turn": 11,
+      "content": "Message 11"
+    },
+    {
+      "turn": 12,
+      "content": "Message 12"
+    },
+    {
+      "turn": 13,
+      "content": "Message 13"
+    },
+    {
+      "turn": 14,
+      "content": "Message 14"
+    }
+  ]
+}

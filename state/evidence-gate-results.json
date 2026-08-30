@@ -1,0 +1,9 @@
+{
+  "last_run": "2026-08-22T20:00:00Z",
+  "gates_passed": [
+    "evidence-gate",
+    "security-nfr-baseline-check"
+  ],
+  "gates_failed": [],
+  "compliance_status": "VERIFIED"
+}

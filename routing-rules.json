@@ -1,0 +1,24 @@
+{
+  "routing_strategy": "cost-quality-optimized",
+  "default_model": "claude-3-5-sonnet",
+  "rules": [
+    {
+      "task_type": "quick_discovery_or_lint",
+      "complexity": "low",
+      "recommended_model": "claude-3-haiku",
+      "rationale": "High speed, low cost for syntax checking and indexing."
+    },
+    {
+      "task_type": "hld_generation_or_threat_modeling",
+      "complexity": "high",
+      "recommended_model": "claude-3-5-sonnet",
+      "rationale": "Requires deep structural reasoning, compliance mapping, and architectural synthesis."
+    },
+    {
+      "task_type": "multi_jurisdiction_audit",
+      "complexity": "very_high",
+      "recommended_model": "claude-3-opus",
+      "rationale": "Maximum reasoning capability for complex cross-border regulatory evaluations."
+    }
+  ]
+}

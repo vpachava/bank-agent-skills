@@ -1,0 +1,15 @@
+{
+  "project_metadata": {
+    "project_name": "Global Banking Platform",
+    "version": "1.0.1",
+    "jurisdiction": "UAE",
+    "frameworks": ["TOGAF", "BIAN", "C4"]
+  },
+  "active_domains": [
+    "discovery",
+    "architecture",
+    "security",
+    "governance"
+  ],
+  "last_updated": "2026-08-22T20:00:00Z"
+}
