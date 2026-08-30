@@ -1,0 +1,25 @@
+{
+  "skill_name": "/design-review",
+  "category": "governance",
+  "path": "governance/design-review/SKILL.md",
+  "evaluations": [
+    {
+      "case_type": "trigger",
+      "input": "Execute standard design-review for my architecture project.",
+      "expected_activation": true,
+      "validation": "Skill /design-review activates and returns standard handoff artifact."
+    },
+    {
+      "case_type": "non_trigger",
+      "input": "Write a python function to print hello world.",
+      "expected_activation": false,
+      "validation": "Skill /design-review should remain inactive for generic non-architectural requests."
+    },
+    {
+      "case_type": "edge_case",
+      "input": "Can you review my design and evaluate design-review feasibility?",
+      "expected_activation": true,
+      "validation": "Skill /design-review activates conditionally based on intent extraction."
+    }
+  ]
+}

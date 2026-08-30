@@ -1,0 +1,25 @@
+{
+  "skill_name": "/integration-patterns",
+  "category": "integration",
+  "path": "integration/integration-patterns/SKILL.md",
+  "evaluations": [
+    {
+      "case_type": "trigger",
+      "input": "Execute standard integration-patterns for my architecture project.",
+      "expected_activation": true,
+      "validation": "Skill /integration-patterns activates and returns standard handoff artifact."
+    },
+    {
+      "case_type": "non_trigger",
+      "input": "Write a python function to print hello world.",
+      "expected_activation": false,
+      "validation": "Skill /integration-patterns should remain inactive for generic non-architectural requests."
+    },
+    {
+      "case_type": "edge_case",
+      "input": "Can you review my design and evaluate integration-patterns feasibility?",
+      "expected_activation": true,
+      "validation": "Skill /integration-patterns activates conditionally based on intent extraction."
+    }
+  ]
+}

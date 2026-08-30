@@ -1,0 +1,25 @@
+{
+  "skill_name": "/energy",
+  "category": "industries",
+  "path": "industries/energy/SKILL.md",
+  "evaluations": [
+    {
+      "case_type": "trigger",
+      "input": "Execute standard energy for my architecture project.",
+      "expected_activation": true,
+      "validation": "Skill /energy activates and returns standard handoff artifact."
+    },
+    {
+      "case_type": "non_trigger",
+      "input": "Write a python function to print hello world.",
+      "expected_activation": false,
+      "validation": "Skill /energy should remain inactive for generic non-architectural requests."
+    },
+    {
+      "case_type": "edge_case",
+      "input": "Can you review my design and evaluate energy feasibility?",
+      "expected_activation": true,
+      "validation": "Skill /energy activates conditionally based on intent extraction."
+    }
+  ]
+}

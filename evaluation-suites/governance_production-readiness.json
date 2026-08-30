@@ -1,0 +1,25 @@
+{
+  "skill_name": "/production-readiness",
+  "category": "governance",
+  "path": "governance/production-readiness/SKILL.md",
+  "evaluations": [
+    {
+      "case_type": "trigger",
+      "input": "Execute standard production-readiness for my architecture project.",
+      "expected_activation": true,
+      "validation": "Skill /production-readiness activates and returns standard handoff artifact."
+    },
+    {
+      "case_type": "non_trigger",
+      "input": "Write a python function to print hello world.",
+      "expected_activation": false,
+      "validation": "Skill /production-readiness should remain inactive for generic non-architectural requests."
+    },
+    {
+      "case_type": "edge_case",
+      "input": "Can you review my design and evaluate production-readiness feasibility?",
+      "expected_activation": true,
+      "validation": "Skill /production-readiness activates conditionally based on intent extraction."
+    }
+  ]
+}

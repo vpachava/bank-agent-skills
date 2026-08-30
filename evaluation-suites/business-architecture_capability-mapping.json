@@ -1,0 +1,25 @@
+{
+  "skill_name": "/capability-mapping",
+  "category": "business-architecture",
+  "path": "business-architecture/capability-mapping/SKILL.md",
+  "evaluations": [
+    {
+      "case_type": "trigger",
+      "input": "Execute standard capability-mapping for my architecture project.",
+      "expected_activation": true,
+      "validation": "Skill /capability-mapping activates and returns standard handoff artifact."
+    },
+    {
+      "case_type": "non_trigger",
+      "input": "Write a python function to print hello world.",
+      "expected_activation": false,
+      "validation": "Skill /capability-mapping should remain inactive for generic non-architectural requests."
+    },
+    {
+      "case_type": "edge_case",
+      "input": "Can you review my design and evaluate capability-mapping feasibility?",
+      "expected_activation": true,
+      "validation": "Skill /capability-mapping activates conditionally based on intent extraction."
+    }
+  ]
+}

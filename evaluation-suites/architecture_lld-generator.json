@@ -1,0 +1,25 @@
+{
+  "skill_name": "/lld-generator",
+  "category": "architecture",
+  "path": "architecture/lld-generator/SKILL.md",
+  "evaluations": [
+    {
+      "case_type": "trigger",
+      "input": "Execute standard lld-generator for my architecture project.",
+      "expected_activation": true,
+      "validation": "Skill /lld-generator activates and returns standard handoff artifact."
+    },
+    {
+      "case_type": "non_trigger",
+      "input": "Write a python function to print hello world.",
+      "expected_activation": false,
+      "validation": "Skill /lld-generator should remain inactive for generic non-architectural requests."
+    },
+    {
+      "case_type": "edge_case",
+      "input": "Can you review my design and evaluate lld-generator feasibility?",
+      "expected_activation": true,
+      "validation": "Skill /lld-generator activates conditionally based on intent extraction."
+    }
+  ]
+}

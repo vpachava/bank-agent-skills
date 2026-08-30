@@ -1,0 +1,25 @@
+{
+  "skill_name": "/ml-pipeline-architecture",
+  "category": "ai-ml-architecture",
+  "path": "ai-ml-architecture/ml-pipeline-architecture/SKILL.md",
+  "evaluations": [
+    {
+      "case_type": "trigger",
+      "input": "Execute standard ml-pipeline-architecture for my architecture project.",
+      "expected_activation": true,
+      "validation": "Skill /ml-pipeline-architecture activates and returns standard handoff artifact."
+    },
+    {
+      "case_type": "non_trigger",
+      "input": "Write a python function to print hello world.",
+      "expected_activation": false,
+      "validation": "Skill /ml-pipeline-architecture should remain inactive for generic non-architectural requests."
+    },
+    {
+      "case_type": "edge_case",
+      "input": "Can you review my design and evaluate ml-pipeline-architecture feasibility?",
+      "expected_activation": true,
+      "validation": "Skill /ml-pipeline-architecture activates conditionally based on intent extraction."
+    }
+  ]
+}

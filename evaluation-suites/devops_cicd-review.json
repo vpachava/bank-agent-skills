@@ -1,0 +1,25 @@
+{
+  "skill_name": "/cicd-review",
+  "category": "devops",
+  "path": "devops/cicd-review/SKILL.md",
+  "evaluations": [
+    {
+      "case_type": "trigger",
+      "input": "Execute standard cicd-review for my architecture project.",
+      "expected_activation": true,
+      "validation": "Skill /cicd-review activates and returns standard handoff artifact."
+    },
+    {
+      "case_type": "non_trigger",
+      "input": "Write a python function to print hello world.",
+      "expected_activation": false,
+      "validation": "Skill /cicd-review should remain inactive for generic non-architectural requests."
+    },
+    {
+      "case_type": "edge_case",
+      "input": "Can you review my design and evaluate cicd-review feasibility?",
+      "expected_activation": true,
+      "validation": "Skill /cicd-review activates conditionally based on intent extraction."
+    }
+  ]
+}

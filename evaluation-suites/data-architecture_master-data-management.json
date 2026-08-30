@@ -1,0 +1,25 @@
+{
+  "skill_name": "/master-data-management",
+  "category": "data-architecture",
+  "path": "data-architecture/master-data-management/SKILL.md",
+  "evaluations": [
+    {
+      "case_type": "trigger",
+      "input": "Execute standard master-data-management for my architecture project.",
+      "expected_activation": true,
+      "validation": "Skill /master-data-management activates and returns standard handoff artifact."
+    },
+    {
+      "case_type": "non_trigger",
+      "input": "Write a python function to print hello world.",
+      "expected_activation": false,
+      "validation": "Skill /master-data-management should remain inactive for generic non-architectural requests."
+    },
+    {
+      "case_type": "edge_case",
+      "input": "Can you review my design and evaluate master-data-management feasibility?",
+      "expected_activation": true,
+      "validation": "Skill /master-data-management activates conditionally based on intent extraction."
+    }
+  ]
+}

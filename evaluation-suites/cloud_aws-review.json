@@ -1,0 +1,25 @@
+{
+  "skill_name": "/aws-review",
+  "category": "cloud",
+  "path": "cloud/aws-review/SKILL.md",
+  "evaluations": [
+    {
+      "case_type": "trigger",
+      "input": "Execute standard aws-review for my architecture project.",
+      "expected_activation": true,
+      "validation": "Skill /aws-review activates and returns standard handoff artifact."
+    },
+    {
+      "case_type": "non_trigger",
+      "input": "Write a python function to print hello world.",
+      "expected_activation": false,
+      "validation": "Skill /aws-review should remain inactive for generic non-architectural requests."
+    },
+    {
+      "case_type": "edge_case",
+      "input": "Can you review my design and evaluate aws-review feasibility?",
+      "expected_activation": true,
+      "validation": "Skill /aws-review activates conditionally based on intent extraction."
+    }
+  ]
+}

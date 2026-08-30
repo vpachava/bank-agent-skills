@@ -1,0 +1,25 @@
+{
+  "skill_name": "/zero-trust",
+  "category": "security",
+  "path": "security/zero-trust/SKILL.md",
+  "evaluations": [
+    {
+      "case_type": "trigger",
+      "input": "Execute standard zero-trust for my architecture project.",
+      "expected_activation": true,
+      "validation": "Skill /zero-trust activates and returns standard handoff artifact."
+    },
+    {
+      "case_type": "non_trigger",
+      "input": "Write a python function to print hello world.",
+      "expected_activation": false,
+      "validation": "Skill /zero-trust should remain inactive for generic non-architectural requests."
+    },
+    {
+      "case_type": "edge_case",
+      "input": "Can you review my design and evaluate zero-trust feasibility?",
+      "expected_activation": true,
+      "validation": "Skill /zero-trust activates conditionally based on intent extraction."
+    }
+  ]
+}

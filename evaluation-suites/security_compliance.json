@@ -1,0 +1,25 @@
+{
+  "skill_name": "/compliance",
+  "category": "security",
+  "path": "security/compliance/SKILL.md",
+  "evaluations": [
+    {
+      "case_type": "trigger",
+      "input": "Execute standard compliance for my architecture project.",
+      "expected_activation": true,
+      "validation": "Skill /compliance activates and returns standard handoff artifact."
+    },
+    {
+      "case_type": "non_trigger",
+      "input": "Write a python function to print hello world.",
+      "expected_activation": false,
+      "validation": "Skill /compliance should remain inactive for generic non-architectural requests."
+    },
+    {
+      "case_type": "edge_case",
+      "input": "Can you review my design and evaluate compliance feasibility?",
+      "expected_activation": true,
+      "validation": "Skill /compliance activates conditionally based on intent extraction."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "skill_name": "/migration-wave-planning",
+  "category": "migration",
+  "path": "migration/migration-wave-planning/SKILL.md",
+  "evaluations": [
+    {
+      "case_type": "trigger",
+      "input": "Execute standard migration-wave-planning for my architecture project.",
+      "expected_activation": true,
+      "validation": "Skill /migration-wave-planning activates and returns standard handoff artifact."
+    },
+    {
+      "case_type": "non_trigger",
+      "input": "Write a python function to print hello world.",
+      "expected_activation": false,
+      "validation": "Skill /migration-wave-planning should remain inactive for generic non-architectural requests."
+    },
+    {
+      "case_type": "edge_case",
+      "input": "Can you review my design and evaluate migration-wave-planning feasibility?",
+      "expected_activation": true,
+      "validation": "Skill /migration-wave-planning activates conditionally based on intent extraction."
+    }
+  ]
+}

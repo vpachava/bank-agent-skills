@@ -1,0 +1,25 @@
+{
+  "skill_name": "/release-readiness",
+  "category": "devops",
+  "path": "devops/release-readiness/SKILL.md",
+  "evaluations": [
+    {
+      "case_type": "trigger",
+      "input": "Execute standard release-readiness for my architecture project.",
+      "expected_activation": true,
+      "validation": "Skill /release-readiness activates and returns standard handoff artifact."
+    },
+    {
+      "case_type": "non_trigger",
+      "input": "Write a python function to print hello world.",
+      "expected_activation": false,
+      "validation": "Skill /release-readiness should remain inactive for generic non-architectural requests."
+    },
+    {
+      "case_type": "edge_case",
+      "input": "Can you review my design and evaluate release-readiness feasibility?",
+      "expected_activation": true,
+      "validation": "Skill /release-readiness activates conditionally based on intent extraction."
+    }
+  ]
+}

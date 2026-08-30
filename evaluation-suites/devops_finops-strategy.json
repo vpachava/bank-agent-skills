@@ -1,0 +1,25 @@
+{
+  "skill_name": "/finops-strategy",
+  "category": "devops",
+  "path": "devops/finops-strategy/SKILL.md",
+  "evaluations": [
+    {
+      "case_type": "trigger",
+      "input": "Execute standard finops-strategy for my architecture project.",
+      "expected_activation": true,
+      "validation": "Skill /finops-strategy activates and returns standard handoff artifact."
+    },
+    {
+      "case_type": "non_trigger",
+      "input": "Write a python function to print hello world.",
+      "expected_activation": false,
+      "validation": "Skill /finops-strategy should remain inactive for generic non-architectural requests."
+    },
+    {
+      "case_type": "edge_case",
+      "input": "Can you review my design and evaluate finops-strategy feasibility?",
+      "expected_activation": true,
+      "validation": "Skill /finops-strategy activates conditionally based on intent extraction."
+    }
+  ]
+}

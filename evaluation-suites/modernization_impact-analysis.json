@@ -1,0 +1,25 @@
+{
+  "skill_name": "/impact-analysis",
+  "category": "modernization",
+  "path": "modernization/impact-analysis/SKILL.md",
+  "evaluations": [
+    {
+      "case_type": "trigger",
+      "input": "Execute standard impact-analysis for my architecture project.",
+      "expected_activation": true,
+      "validation": "Skill /impact-analysis activates and returns standard handoff artifact."
+    },
+    {
+      "case_type": "non_trigger",
+      "input": "Write a python function to print hello world.",
+      "expected_activation": false,
+      "validation": "Skill /impact-analysis should remain inactive for generic non-architectural requests."
+    },
+    {
+      "case_type": "edge_case",
+      "input": "Can you review my design and evaluate impact-analysis feasibility?",
+      "expected_activation": true,
+      "validation": "Skill /impact-analysis activates conditionally based on intent extraction."
+    }
+  ]
+}

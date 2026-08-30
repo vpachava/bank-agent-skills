@@ -1,0 +1,25 @@
+{
+  "skill_name": "/kubernetes",
+  "category": "cloud",
+  "path": "cloud/kubernetes/SKILL.md",
+  "evaluations": [
+    {
+      "case_type": "trigger",
+      "input": "Execute standard kubernetes for my architecture project.",
+      "expected_activation": true,
+      "validation": "Skill /kubernetes activates and returns standard handoff artifact."
+    },
+    {
+      "case_type": "non_trigger",
+      "input": "Write a python function to print hello world.",
+      "expected_activation": false,
+      "validation": "Skill /kubernetes should remain inactive for generic non-architectural requests."
+    },
+    {
+      "case_type": "edge_case",
+      "input": "Can you review my design and evaluate kubernetes feasibility?",
+      "expected_activation": true,
+      "validation": "Skill /kubernetes activates conditionally based on intent extraction."
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "skill_name": "/business-case-development",
+  "category": "business-architecture",
+  "path": "business-architecture/business-case-development/SKILL.md",
+  "evaluations": [
+    {
+      "case_type": "trigger",
+      "input": "Execute standard business-case-development for my architecture project.",
+      "expected_activation": true,
+      "validation": "Skill /business-case-development activates and returns standard handoff artifact."
+    },
+    {
+      "case_type": "non_trigger",
+      "input": "Write a python function to print hello world.",
+      "expected_activation": false,
+      "validation": "Skill /business-case-development should remain inactive for generic non-architectural requests."
+    },
+    {
+      "case_type": "edge_case",
+      "input": "Can you review my design and evaluate business-case-development feasibility?",
+      "expected_activation": true,
+      "validation": "Skill /business-case-development activates conditionally based on intent extraction."
+    }
+  ]
+}

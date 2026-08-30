@@ -1,0 +1,25 @@
+{
+  "skill_name": "/value-stream-design",
+  "category": "business-architecture",
+  "path": "business-architecture/value-stream-design/SKILL.md",
+  "evaluations": [
+    {
+      "case_type": "trigger",
+      "input": "Execute standard value-stream-design for my architecture project.",
+      "expected_activation": true,
+      "validation": "Skill /value-stream-design activates and returns standard handoff artifact."
+    },
+    {
+      "case_type": "non_trigger",
+      "input": "Write a python function to print hello world.",
+      "expected_activation": false,
+      "validation": "Skill /value-stream-design should remain inactive for generic non-architectural requests."
+    },
+    {
+      "case_type": "edge_case",
+      "input": "Can you review my design and evaluate value-stream-design feasibility?",
+      "expected_activation": true,
+      "validation": "Skill /value-stream-design activates conditionally based on intent extraction."
+    }
+  ]
+}

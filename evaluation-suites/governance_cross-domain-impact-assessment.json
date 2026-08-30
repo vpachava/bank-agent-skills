@@ -1,0 +1,25 @@
+{
+  "skill_name": "/cross-domain-impact-assessment",
+  "category": "governance",
+  "path": "governance/cross-domain-impact-assessment/SKILL.md",
+  "evaluations": [
+    {
+      "case_type": "trigger",
+      "input": "Execute standard cross-domain-impact-assessment for my architecture project.",
+      "expected_activation": true,
+      "validation": "Skill /cross-domain-impact-assessment activates and returns standard handoff artifact."
+    },
+    {
+      "case_type": "non_trigger",
+      "input": "Write a python function to print hello world.",
+      "expected_activation": false,
+      "validation": "Skill /cross-domain-impact-assessment should remain inactive for generic non-architectural requests."
+    },
+    {
+      "case_type": "edge_case",
+      "input": "Can you review my design and evaluate cross-domain-impact-assessment feasibility?",
+      "expected_activation": true,
+      "validation": "Skill /cross-domain-impact-assessment activates conditionally based on intent extraction."
+    }
+  ]
+}

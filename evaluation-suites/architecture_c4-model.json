@@ -1,0 +1,25 @@
+{
+  "skill_name": "/c4-model",
+  "category": "architecture",
+  "path": "architecture/c4-model/SKILL.md",
+  "evaluations": [
+    {
+      "case_type": "trigger",
+      "input": "Execute standard c4-model for my architecture project.",
+      "expected_activation": true,
+      "validation": "Skill /c4-model activates and returns standard handoff artifact."
+    },
+    {
+      "case_type": "non_trigger",
+      "input": "Write a python function to print hello world.",
+      "expected_activation": false,
+      "validation": "Skill /c4-model should remain inactive for generic non-architectural requests."
+    },
+    {
+      "case_type": "edge_case",
+      "input": "Can you review my design and evaluate c4-model feasibility?",
+      "expected_activation": true,
+      "validation": "Skill /c4-model activates conditionally based on intent extraction."
+    }
+  ]
+}
