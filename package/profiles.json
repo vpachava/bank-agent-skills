@@ -1,0 +1,14 @@
+{
+  "minimal": {
+    "description": "Core orchestration and high-impact discovery/governance skills.",
+    "skills": ["/solution-arch-orchestrator", "/discovery/gap-analysis", "/governance/evidence-gate", "/governance/dashboard", "/governance/archify"]
+  },
+  "standard": {
+    "description": "Core + full architecture and security suite for production banking.",
+    "skills": ["/solution-arch-orchestrator", "/architecture/*", "/security/*", "/integration/*", "/governance/*"]
+  },
+  "full": {
+    "description": "All 100+ skills including industries and legacy modernization.",
+    "skills": ["/*"]
+  }
+}

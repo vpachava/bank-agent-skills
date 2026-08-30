@@ -1,0 +1,7 @@
+{
+  "profile_name": "full",
+  "version": "1.0.1",
+  "description": "Full enterprise installation containing all 100+ skills across all 16 categories.",
+  "target_tokens": 120000,
+  "skills": ["/*"]
+}
