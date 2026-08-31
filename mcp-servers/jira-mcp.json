@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "jira": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-jira"],
+      "env": {
+        "JIRA_URL": "https://your-domain.atlassian.net",
+        "JIRA_API_TOKEN": "YOUR_JIRA_API_TOKEN",
+        "JIRA_USER_EMAIL": "user@company.com"
+      },
+      "capabilities": [
+        "create_issue",
+        "update_issue",
+        "transition_issue",
+        "add_comment"
+      ]
+    }
+  }
+}

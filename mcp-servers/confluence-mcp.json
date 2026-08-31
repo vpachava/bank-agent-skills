@@ -1,0 +1,19 @@
+{
+  "mcpServers": {
+    "confluence": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-confluence"],
+      "env": {
+        "CONFLUENCE_URL": "https://your-domain.atlassian.net/wiki",
+        "CONFLUENCE_API_TOKEN": "YOUR_CONFLUENCE_API_TOKEN",
+        "CONFLUENCE_USER_EMAIL": "user@company.com"
+      },
+      "capabilities": [
+        "create_page",
+        "update_page",
+        "get_page",
+        "add_attachment"
+      ]
+    }
+  }
+}

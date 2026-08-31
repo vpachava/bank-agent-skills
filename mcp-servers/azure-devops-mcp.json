@@ -1,0 +1,17 @@
+{
+  "mcpServers": {
+    "azure-devops": {
+      "command": "npx",
+      "args": ["-y", "@modelcontextprotocol/server-azure-devops"],
+      "env": {
+        "AZDO_ORG_URL": "https://dev.azure.com/your-org",
+        "AZDO_PERSONAL_ACCESS_TOKEN": "YOUR_AZDO_PAT"
+      },
+      "capabilities": [
+        "create_work_item",
+        "update_work_item",
+        "create_pull_request"
+      ]
+    }
+  }
+}
