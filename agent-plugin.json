@@ -1,0 +1,13 @@
+{
+  "name": "bank-agent-skills",
+  "version": "1.0.1",
+  "description": "Production-Grade AI-Native Architectural Governance Engine for Enterprise Banking and Regulated Industries.",
+  "author": "Enterprise Architecture Team",
+  "license": "Apache-2.0",
+  "skills_directory": "skills/",
+  "mcp_config": "mcp-servers/jira-mcp.json",
+  "compatibility": {
+    "cli_agents": ["claude-code", "hermes-agent", "codex", "opencode", "cursor"],
+    "spec_version": "1.0.0"
+  }
+}
