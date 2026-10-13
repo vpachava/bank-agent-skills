@@ -76,6 +76,26 @@ python scripts/setup_hooks.py
 
 ---
 
+
+---
+
+## 👥 Persona-Based Entry Points
+
+Whether you are governing enterprise tech stacks, designing microservices, or planning delivery sprints, find your entry point below:
+
+### 🏛️ Architecture Personas
+- **Enterprise Architect:** Use `/solution-arch-orchestrator` and `architecture/c4-model` to establish enterprise baselines and BIAN domain maps.
+- **Solution Architect:** Use `architecture/hld-generator`, `architecture/lld-generator`, and `archify` to design and render end-to-end flows (e.g., dual-orchestration credit limit increases).
+- **Domain Architect:** Use `discovery/business-capability-map` and domain-specific modeling skills.
+- **Technical Architect:** Use `architecture/database-design` and `cloud/terraform` for deep technical realization.
+- **Integration Architect:** Use `integration/api-design`, `integration/event-driven`, and `integration/idempotent-api` for reliable enterprise messaging.
+- **Security & Infosec Architect:** Use `security/threat-model`, `security/zero-trust`, and `security/compliance` (CBUAE, SAMA, DORA, PCI-DSS v4).
+- **API Governance Architect:** Use `integration/api-design` and OpenAPI/AsyncAPI verification rules.
+
+### 🚀 Delivery & Product Personas (Effort Sizing & Execution)
+- **Product Owner & AI PM:** Use `discovery/effort-estimation`, `discovery/solution-options`, and `workflows/ai-native-mobile.md` for feature sizing and AI-native mobile transformation.
+- **Scrum Master & Head of IT:** Use `discovery/effort-estimation`, `devops/release-readiness`, and `governance/operational-readiness` for capacity planning, risk logs, and sprint governance.
+
 ## 🛡️ Compliance & Regional Overlays
 
 The engine includes built-in compliance modules under `governance/policy/regional/`:

@@ -1,5 +1,5 @@
 ﻿---
-name: orchestrator
+name: solution-arch-orchestrator
 owner: Architectural Governance
 version: 1.2.0
 description: "Meta-skill: Receives a raw banking requirement, prompts the user to select their target country/regulatory jurisdiction (e.g., UAE, KSA, EU, USA, UK, Singapore), and maps it to the necessary subset of architectural skills with region-specific compliance overlays."
