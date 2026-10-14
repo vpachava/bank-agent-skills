@@ -51,28 +51,39 @@ The repository comprises **100 active skills** partitioned across **16 core arch
 
 ---
 
-## 🚀 Quick Start for Fellow Architects
+---
 
-### 1. Installation
-Clone the repository and install the skills into your local agent environment (Hermes Agent or Claude Code CLI):
+## 🛠️ Setting up your environment
+
+To integrate the **Global Banking Solution-Architect Skills Library** into your development tools, follow these setup instructions based on your preferred agent environment.
+
+### 1. For Cursor & IDE-based Agents
+1. **Clone the repository** to a local directory on your machine.
+2. **Open the folder** in Cursor or your preferred IDE.
+3. **Verify `.cursorrules`**: Ensure your IDE is configured to read `.cursorrules` files. This file automatically instructs the IDE agent to adopt our enterprise banking architectural governance, BFF patterns, and glossary definitions.
+4. **Local Context**: Your agent will now automatically reference this repository when performing architectural reviews or feature development.
+
+### 2. For MCP-compliant Agents (Claude Code, OpenCode)
+To allow your CLI-based agent to discover the skills directly, add the following configuration to your `mcp-config.json` file (typically located in `~/.config/mcp/` or your tool's configuration directory):
+
+```json
+{
+  "mcpServers": {
+    "bank-agent-skills": {
+      "command": "python",
+      "args": ["<PATH_TO_REPO>/governance/scripts/governance_engine.py"]
+    }
+  }
+}
+```
+*Replace `<PATH_TO_REPO>` with the absolute path to your local clone.*
+
+### 3. Verification
+Run the following command in the repository root to verify that your environment is correctly configured and ready to execute architecture skills:
 ```bash
-git clone https://github.com/vpachava/bank-agent-skills.git
-cd bank-agent-skills
-./install.sh
+python scripts/validate_skill_readiness.py
 ```
-
-### 2. Execution Entry Point
-Invoke the global orchestrator to start any new initiative:
-```text
-/solution-arch-orchestrator
-```
-*The orchestrator will prompt you for your initiative scope and target jurisdiction, generating a tailored, compliance-bound execution workflow.*
-
-### 3. Local Quality Gates (Pre-commit hooks)
-Ensure your architecture specs and code conform to repository standards:
-```bash
-python scripts/setup_hooks.py
-```
+If this passes, your environment is correctly linked to the governance layer and ready for production architectural tasks.
 
 ---
 
