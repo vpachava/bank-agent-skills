@@ -34,7 +34,11 @@ class GovernanceEngine:
                 
                 # Check evidence links
                 for link in data.get("evidence_links", []):
-                    link_path = self.repo_root / link.get("path", "")
+                    path_str = link.get("path")
+                    if not path_str:
+                        results["errors"].append(f"Evidence path missing or empty in handoff: {h_path}")
+                        continue
+                    link_path = self.repo_root / path_str
                     if not link_path.exists():
                         results["errors"].append(f"Evidence path inaccessible: {link_path}")
             except Exception as e:

@@ -23,3 +23,18 @@ class TestGovernanceEngine(unittest.TestCase):
 
 if __name__ == "__main__":
     unittest.main()
+
+    def test_evidence_gate_fails_on_missing_evidence(self):
+        # We need to set up the engine to point to the correct repo root if necessary, 
+        # but since we are running within the test environment, we should use the class instance.
+        handoff_path = "tests/dummy_handoff/invalid_handoff.json"
+        result = self.engine.run_evidence_gate(str(Path(self.engine.repo_root) / handoff_path))
+        self.assertEqual(result["status"], "failed")
+        self.assertTrue(len(result["errors"]) > 0)
+        self.assertIn("Evidence path inaccessible", result["errors"][0])
+
+    def test_evidence_gate_fails_on_empty_evidence_path(self):
+        handoff_path = "tests/dummy_handoff/empty_path.json"
+        result = self.engine.run_evidence_gate(str(Path(self.engine.repo_root) / handoff_path))
+        # This SHOULD fail because an empty path is not valid evidence
+        self.assertEqual(result["status"], "failed")

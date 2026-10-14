@@ -1,0 +1,11 @@
+{
+  "name": "bank-agent-skills-registry",
+  "version": "1.0.0",
+  "description": "Registry of architectural skills for enterprise banking",
+  "mcpServers": {
+    "discovery": {
+      "command": "python",
+      "args": ["governance/scripts/governance_engine.py"]
+    }
+  }
+}

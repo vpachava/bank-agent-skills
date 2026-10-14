@@ -1,0 +1,12 @@
+# Bank Agent Skills - Architectural Rules
+
+This repository is the authoritative source for enterprise-grade banking solution architecture. All AI agents working in this codebase or on related initiatives MUST adhere to these rules:
+
+1. **Spec-Driven Development**: Every architectural change MUST be preceded by a design ticket in `solution-arch-orchestrator/tickets/`.
+2. **Governance Enforcement**: Before committing, run `scripts/validate_skill_readiness.py` to ensure all new skills have tests and documentation.
+3. **Domain Modeling**: Consistent terminology is paramount. Always refer to `GLOSSARY.md` for definitions (e.g., Module, Depth, Seam, Idempotency). Avoid using "component", "service", or "boundary" in an architectural context; use "module", "interface", or "seam" instead.
+4. **BFF Pattern**: All mobile-to-core traffic MUST traverse a BFF (Backend-for-Frontend) seam. Direct mobile-to-core calls are prohibited.
+5. **Idempotency**: All transactional requests in conversational banking workflows (AI-Native) MUST include idempotency keys and be designed for safe retries.
+6. **Compliance**: When modifying or adding skills, always verify regional policy overlays (e.g., CBUAE, SAMA, DORA) in `governance/policy/regional/`.
+
+Always consult `BANKING_WORKFLOWS.md` before starting new tasks to identify the correct skill sequence.
