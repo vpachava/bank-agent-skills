@@ -34,3 +34,7 @@ jobs:
           else:
               print('No schema to validate')
           PY
+      - name: Run skill readiness validation
+        run: python scripts/validate_skill_readiness.py
+      - name: Run test suite
+        run: PYTHONPATH=. pytest tests/ -v

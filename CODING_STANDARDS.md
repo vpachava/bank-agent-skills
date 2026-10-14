@@ -7,31 +7,22 @@ Mechanical rules (lint, formatting, idempotency header presence) are enforced au
 
 ## 1. Deep-Module Vocabulary
 
-Use these terms exactly across all specifications, skills, diagrams, and documentation.
-Never substitute "component", "service", "API", or "boundary" — use the precise term from the list below.
+Enforced mechanically by CI (ruff) — see `.github/workflows/ci.yml`.
 
-| Correct Term | Prohibited Synonyms | Meaning |
-|---|---|---|
-| **module** | component, service, unit | Anything with an interface and an implementation |
-| **interface** | API, signature | Everything a caller must know: types, invariants, ordering, errors |
-| **seam** | boundary, layer boundary | The location at which a module's interface lives |
-| **adapter** | plugin, connector, bridge | A concrete thing that satisfies an interface at a seam |
-| **depth** | richness, complexity | Amount of behaviour per unit of interface |
-| **leverage** | reuse, DRY | What callers gain from depth |
-| **locality** | single-source-of-truth, cohesion | What maintainers gain from depth |
+**Reviewer judgement call**: Flag PRs where a term is used with the *wrong intent* — e.g., "module" applied to a UI widget rather than a behaviour-bearing unit with an interface. Mechanical lint cannot catch semantic misuse.
 
-**Reviewer rule**: Flag any PR that uses "component", "service", "boundary", or "API" where one of the above terms applies.
+Canonical vocabulary → `GLOSSARY.md §Architectural Design Vocabulary`.
 
 ---
 
 ## 2. Idempotency
 
-Every HTTP handler in a transactional workflow MUST:
-- Accept an `Idempotency-Key` request header.
-- Return a `409 Conflict` (not `200`) if a duplicate key is detected with a different payload.
-- Document the idempotency contract in the skill's `SKILL.md` under an `## Idempotency` section.
+Enforced mechanically by CI (`validate_skill_readiness.py`) — see `.github/workflows/ci.yml`.
 
-**This is also mechanically enforced** by the CI job `validate_skill_readiness.py`. The reviewer's role is to check that the *contract is documented correctly* (e.g., correct status codes, key TTL mentioned).
+**Reviewer judgement call**: Check that the documented idempotency contract is *correct*, not just present:
+- Status code on duplicate-key collision is `409 Conflict`, not `200` or `422`.
+- Key TTL (expiry window) is stated explicitly in the `## Idempotency` section.
+- Retry-safe behaviour is described (what the caller does on `5xx` vs `409`).
 
 ---
 
@@ -60,12 +51,9 @@ Any skill touching payments, identity, or data residency MUST cite the applicabl
 
 ## 5. Skill File Structure
 
-Every skill directory MUST contain:
-- `SKILL.md` — with valid YAML frontmatter (`name`, `description`)
-- `tests/` — at least one test stub
+Enforced mechanically by CI (`validate_skill_readiness.py`) — see `.github/workflows/ci.yml`.
 
-The CI job `validate_skill_readiness.py` enforces this mechanically.
-The reviewer's role is to check that tests verify **behaviour**, not implementation internals.
+**Reviewer judgement call**: Check that tests verify **behaviour through the public interface**, not implementation internals. A test that mocks private methods or asserts internal state passes the mechanical check but fails this standard.
 
 ---
 

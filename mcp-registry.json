@@ -1,11 +1,13 @@
 {
   "name": "bank-agent-skills-registry",
   "version": "1.0.0",
-  "description": "Registry of architectural skills for enterprise banking",
+  "description": "Registry of architectural skills for enterprise banking. MCP server entry point is mcp-servers/bank_skills_server.py — see TODO ticket solution-arch-orchestrator/tickets/mcp-server-implementation.md.",
   "mcpServers": {
-    "discovery": {
+    "bank-agent-skills": {
       "command": "python",
-      "args": ["governance/scripts/governance_engine.py"]
+      "args": ["mcp-servers/bank_skills_server.py"],
+      "status": "not-yet-implemented",
+      "note": "Server stub pending. governance/scripts/governance_engine.py is the underlying deep module but is NOT an MCP server. Track: solution-arch-orchestrator/tickets/mcp-server-implementation.md"
     }
   }
 }
