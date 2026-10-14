@@ -63,4 +63,10 @@ Introduce ML pipelines and operational governance checks.
   1. `governance/ai-model-governance` (Assess model risks)
   2. `governance/ai-governance` (Audit AI systems)
 
-All 10 workflows are validated against the composition taxonomy.
+## 11. AI-Native Mobile Transformation
+Transform legacy mobile banking into AI-native platforms with edge SLM inference and Flutter microfrontends.
+- **Sequence:**
+  1. `discovery/business-capability-map` (Identify Journeys)
+  2. `workflows/ai-native-mobile` (Modernization Workflow)
+  3. `discovery/effort-estimation` (Size & Roadmap)
+
