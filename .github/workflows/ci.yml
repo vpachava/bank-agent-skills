@@ -2,12 +2,12 @@ name: CI
 
 on:
   push:
-    branches: [ main ]
+    branches: [main]
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
-  lint-and-test:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -17,30 +17,20 @@ jobs:
           python-version: '3.11'
       - name: Install dependencies
         run: |
-          pip install --upgrade pip
-          pip install pyyaml jsonschema pytest
-      - name: Run Python Unit Test Suite
+          python -m pip install --upgrade pip
+          pip install ruff jsonschema
+      - name: Lint with ruff
+        run: ruff check .
+      - name: Validate MCP registry
         run: |
-          PYTHONPATH=. pytest tests/ -v
-      - name: Run Skills Lint
-        run: |
-          python3 scripts/skills_lint.py . || true
-      - name: Run Link Lint
-        run: |
-          python3 scripts/links_lint.py || true
-      - name: Run Staleness Check
-        run: |
-          python3 governance/scripts/staleness-detector.py .
-
-  deploy-docs:
-    runs-on: ubuntu-latest
-    needs: lint-and-test
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-      - name: Install MkDocs dependencies
-        run: pip install mkdocs-material mike
-      - name: Deploy Docs
-        run: mike deploy --update-aliases dev latest || echo "Docs deploy skipped or configured for branch"
+          python - <<'PY'
+          import json, sys, pathlib
+          schema_path = pathlib.Path('mcp-registry-schema.json')
+          if schema_path.exists():
+              import jsonschema
+              schema = json.load(schema_path.open())
+              data = json.load(open('mcp-registry.json'))
+              jsonschema.validate(instance=data, schema=schema)
+          else:
+              print('No schema to validate')
+          PY

@@ -26,6 +26,9 @@ ENV/
 graphify-out/
 *.jsonl
 
+# Ticket archive — historical only; clone with --no-checkout or sparse-checkout to include
+solution-arch-orchestrator/tickets/archive/
+
 # IDEs
 .idea/
 .vscode/
